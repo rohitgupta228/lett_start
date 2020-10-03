@@ -36,7 +36,7 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         if (!$token = auth()->attempt($credentials)) {
             $response = [
@@ -46,7 +46,7 @@ class AuthController extends Controller
             return response()->json($response, 401);
         }
 
-        $user = User::where('email', $request->get('email'))->first();
+        $user = User::where('username', $request->get('username'))->first();
 
         $token = $this->respondWithToken(JWTAuth::fromUser($user));
         $response = [
@@ -63,7 +63,7 @@ class AuthController extends Controller
     public function signup(Request $request)
     {
         $validator = Validator::make($request->all(), [
-                    'name' => 'required|string|max:255',
+                    'username' => 'required|string|max:255|unique:users',
                     'email' => 'required|string|email|max:255|unique:users',
                     'password' => 'required|confirmed|min:6',
         ]);
@@ -76,9 +76,9 @@ class AuthController extends Controller
             return response()->json($response, 400);
         }
         $user = User::create([
-                    'name' => $request->get('name'),
-                    'email' => $request->get('email'),
-                    'password' => Hash::make($request->get('password')),
+                    'username' => $request->username,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -105,10 +105,12 @@ class AuthController extends Controller
      */
     public function getUser()
     {
+        $user = $this->guard()->user();
+        $userInfo = $this->guard()->user()->userDetails;
         $response = [
             'code' => 200,
             'data' => [
-                'user' => $this->guard()->user()
+                'user' => $user,
             ],
             'message' => 'User details fetch successfully'
         ];
@@ -188,14 +190,16 @@ class AuthController extends Controller
 
             $fileUrl = url('uploads/' . $fileName);
 
-            $user->update([
-                'image' => $fileUrl,
+            $userDetails = ($user->userDetails) ? $user->userDetails()->update([
+                        'image' => $fileUrl,
+                    ]) : $user->userDetails()->create([
+                        'image' => $fileUrl,
             ]);
         }
         $response = [
             'code' => 200,
             'data' => [
-                'user' => $user,
+                'imageUrl' => $fileUrl,
             ],
             'message' => 'Image uploaded successfully'
         ];
@@ -204,7 +208,6 @@ class AuthController extends Controller
 
     public function updateProfile(Request $request)
     {
-        $data = $request->only('address', 'mobile', 'name');
         $validator = Validator::make($request->all(), [
                     'mobile' => 'digits:10'
         ]);
@@ -217,12 +220,11 @@ class AuthController extends Controller
             return response()->json($response, 400);
         }
         $user = $this->guard()->user();
-        $user->update($data);
+
+        $userDetails = ($user->userDetails) ? $user->userDetails()->update($request->all()) : $user->userDetails()->create($request->all());
+        
         $response = [
             'code' => 200,
-            'data' => [
-                'user' => $user,
-            ],
             'message' => 'Profile updated successfully'
         ];
         return response()->json($response, 200);
@@ -231,7 +233,7 @@ class AuthController extends Controller
     public function forgotPassword(Request $request)
     {
         $user = User::where('email', $request->email)->first();
-        $encryptedValue =  Crypt::encryptString($request->email);
+        $encryptedValue = Crypt::encryptString($request->email);
         $message = 'User not found';
         if ($user) {
             $token = str_random(60);

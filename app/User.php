@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'image', 'address', 'mobile'
+        'username', 'email', 'password'
     ];
 
     /**
@@ -28,6 +28,14 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the phone record associated with the user.
+     */
+    public function userDetails()
+    {
+        return $this->hasOne('App\Models\UserDetail');
+    }
 
     // Rest omitted for brevity
 
