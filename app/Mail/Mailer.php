@@ -32,17 +32,13 @@ class Mailer extends Mailable
      */
     public function build()
     {
-        $address = 'janeexampexample@example.com';
-        $subject = 'This is a demo!';
-        $name = 'Jane Doe';
-
+        $address = env('MAIL_FROM_ADDRESS');
+        $subject = 'Password Reset';
+        $name = env('MAIL_FROM_NAME');
         return $this->view('emails.password_reset')
-                        ->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
-//                        ->cc($this->data['cc_emails'], $this->data['cc_name'])
-//                        ->bcc($this->data['bcc_emails'], $this->data['bcc_name'])
-                        ->replyTo('rohit.gupta171994@gmail.com', 'rohit')
+                        ->from($address, $name)
                         ->subject($subject)
-                        ->with(['test_message' => $this->data['message']]);
+                        ->with([$this->data]);
     }
 
 }

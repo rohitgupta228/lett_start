@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Mail;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Crypt;
 
 class AuthController extends Controller
 {
@@ -229,22 +230,19 @@ class AuthController extends Controller
 
     public function forgotPassword(Request $request)
     {
-        $user = User::where('email', $request->get('email'))->first();
-
+        $user = User::where('email', $request->email)->first();
+        $encryptedValue =  Crypt::encryptString($request->email);
         $message = 'User not found';
         if ($user) {
             $token = str_random(60);
+            $email = Crypt::encryptString($request->email);
             DB::table('password_resets')->insert([
                 'email' => $user->email,
                 'token' => $token,
                 'created_at' => Carbon::now()
             ]);
-            $data = array('name' => $user->name, 'url' => env('FRONT_END_BASE_URL', 'http://127.0.0.1:8000') . '/home?token=' . $token . '&email=' . urlencode($user->email) . '&forgot=true');
-            Mail::send('emails.password_reset', $data, function($message) use ($user) {
-                $message->to($user->email, 'Password Reset')->subject
-                        ('Password Reset');
-                $message->from('rohit.gupta@daffodilsw.com', 'Rohit Gupta');
-            });
+            $data = array('name' => $user->name, 'url' => env('FRONT_END_BASE_URL') . '/home?token=' . $token . '&email=' . $email . '&forgot=true');
+            Mail::to($user->email)->send(new \App\Mail\Mailer($data));
             $message = 'Email send successfully';
         }
         $response = [
@@ -256,7 +254,9 @@ class AuthController extends Controller
 
     public function resetPassword(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $data = $request->all();
+        $data['email'] = Crypt::decryptString($data['email']);
+        $validator = Validator::make($data, [
                     'email' => 'required|email|exists:users,email',
                     'password' => 'required|confirmed|min:6',
                     'token' => 'required']);
@@ -270,9 +270,10 @@ class AuthController extends Controller
             return response()->json($response, 400);
         }
 
+        $email = Crypt::decryptString($request->email);
         $tokenData = DB::table('password_resets')
                         ->where('token', $request->token)
-                        ->where('email', $request->email)->first();
+                        ->where('email', $email)->first();
         if (!$tokenData) {
             $response = [
                 'code' => 400,
