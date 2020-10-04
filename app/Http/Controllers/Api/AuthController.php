@@ -243,7 +243,7 @@ class AuthController extends Controller
                 'token' => $token,
                 'created_at' => Carbon::now()
             ]);
-            $data = array('name' => $user->name, 'url' => env('FRONT_END_BASE_URL') . '/home?token=' . $token . '&email=' . $email . '&forgot=true');
+            $data = array('name' => $user->name, 'url' => env('FRONT_END_BASE_URL') . '/reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true');
             Mail::to($user->email)->send(new \App\Mail\Mailer($data));
             $message = 'Email send successfully';
         }
