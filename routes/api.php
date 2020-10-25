@@ -35,3 +35,11 @@ Route::group(['prefix' => 'user','middleware' => 'api'], function() {
     
     Route::post('reset-password', 'Api\AuthController@resetPassword')->name('api.user.reset.password');
 });
+
+Route::group(['prefix' => 'product','middleware' => 'api'], function() {
+    Route::post('create', 'Api\ProductController@create')->name('product.create');
+    
+    Route::put('update', 'Api\ProductController@update')->name('product.update');
+    
+    Route::delete('delete', 'Api\ProductController@delete')->name('product.delete');
+});
