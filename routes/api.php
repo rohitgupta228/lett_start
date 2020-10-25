@@ -42,4 +42,6 @@ Route::group(['prefix' => 'product','middleware' => 'api'], function() {
     Route::put('update', 'Api\ProductController@update')->name('product.update');
     
     Route::delete('delete', 'Api\ProductController@delete')->name('product.delete');
+    
+    Route::get('details/{productId}', 'Api\ProductController@details')->name('product.details');
 });

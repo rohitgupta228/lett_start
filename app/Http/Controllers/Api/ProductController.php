@@ -96,6 +96,33 @@ class ProductController extends Controller
     }
 
     /**
+     * Update Product
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function details($productId)
+    {
+        $product = Product::where('product_id', $productId)->first();
+        $response = [
+            'code' => 404,
+            'message' => 'Product not found'
+        ];
+        if ($product) {
+            $response = [
+                'code' => 200,
+                'data' => [
+                    'product' => $product,
+                ],
+                'message' => 'Product details fetch successfully'
+            ];
+        }
+
+        return response()->json($response, 200);
+    }
+
+    /**
      * Delete Product
      *
      * @param  \Illuminate\Http\Request  $request
