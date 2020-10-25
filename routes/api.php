@@ -44,4 +44,6 @@ Route::group(['prefix' => 'product','middleware' => 'api'], function() {
     Route::delete('delete', 'Api\ProductController@delete')->name('product.delete');
     
     Route::get('details/{productId}', 'Api\ProductController@details')->name('product.details');
+    
+    Route::get('lists', 'Api\ProductController@lists')->name('product.lists');
 });

@@ -146,4 +146,18 @@ class ProductController extends Controller
         return response()->json($response, 200);
     }
 
+    public function lists()
+    {
+        $products = Product::all();
+        $response = [
+            'code' => 200,
+            'data' => [
+                'products' => $products,
+            ],
+            'message' => 'Products fetched successfully'
+        ];
+
+        return response()->json($response, 200);
+    }
+
 }
