@@ -47,3 +47,9 @@ Route::group(['prefix' => 'product','middleware' => 'api'], function() {
     
     Route::get('lists', 'Api\ProductController@lists')->name('product.lists');
 });
+
+Route::group(['prefix' => 'transaction','middleware' => 'api'], function() {
+    Route::post('save', 'Api\PaymentController@save')->name('transaction.save');
+});
+
+Route::get('download-theme', 'Api\PaymentController@downloadTheme')->name('download.theme');

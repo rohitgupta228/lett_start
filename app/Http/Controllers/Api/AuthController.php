@@ -177,32 +177,41 @@ class AuthController extends Controller
 
     public function uploadImage(Request $request)
     {
-        $user = $this->guard()->user();
-        if ($file = $request->hasFile('image')) {
+        $response = [];
+        try {
+            $user = $this->guard()->user();
+            if ($file = $request->hasFile('image')) {
+                $file = $request->file('image');
 
-            $file = $request->file('image');
+                $fileName = 'file-' . date('Y-m-d') . '-' . date('H-i-s') . '.' . $file->getClientOriginalExtension();
 
-            $fileName = 'file-' . date('Y-m-d') . '-' . date('H-i-s') . '.' . $file->getClientOriginalExtension();
+                $destinationPath = public_path() . '/uploads/';
 
-            $destinationPath = public_path() . '/uploads/';
+                $file->move($destinationPath, $fileName);
 
-            $file->move($destinationPath, $fileName);
+                $fileUrl = url('uploads/' . $fileName);
 
-            $fileUrl = url('uploads/' . $fileName);
+                $userDetails = ($user->userDetails) ? $user->userDetails()->update([
+                            'image' => $fileUrl,
+                        ]) : $user->userDetails()->create([
+                            'image' => $fileUrl,
+                ]);
 
-            $userDetails = ($user->userDetails) ? $user->userDetails()->update([
-                        'image' => $fileUrl,
-                    ]) : $user->userDetails()->create([
-                        'image' => $fileUrl,
-            ]);
+                $response = [
+                    'imageUrl' => $fileUrl,
+                ];
+            }
+            $response = [
+                'code' => 200,
+                'data' => $response,
+                'message' => 'Image uploaded successfully'
+            ];
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
         }
-        $response = [
-            'code' => 200,
-            'data' => [
-                'imageUrl' => $fileUrl,
-            ],
-            'message' => 'Image uploaded successfully'
-        ];
         return response()->json($response, 200);
     }
 
@@ -222,7 +231,7 @@ class AuthController extends Controller
         $user = $this->guard()->user();
 
         $userDetails = ($user->userDetails) ? $user->userDetails()->update($request->all()) : $user->userDetails()->create($request->all());
-        
+
         $response = [
             'code' => 200,
             'message' => 'Profile updated successfully'
@@ -243,7 +252,12 @@ class AuthController extends Controller
                 'token' => $token,
                 'created_at' => Carbon::now()
             ]);
-            $data = array('name' => $user->name, 'url' => env('FRONT_END_BASE_URL') . '/reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true');
+            $data = [
+                'name' => $user->name,
+                'url' => env('FRONT_END_BASE_URL') . '/reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
+                'subject' => 'Password Reset',
+                'template' => 'emails.password_reset'
+            ];
             Mail::to($user->email)->send(new \App\Mail\Mailer($data));
             $message = 'Email send successfully';
         }

@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTransactionsTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -17,11 +18,12 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('product_id');
-            $table->string('razorpay_payment_id');
-            $table->string('razorpay_order_id');
-            $table->string('razorpay_signature');
-            $table->json('response');
-            $table->boolean('payment_status');           
+            $table->string('order_id')->nullable();
+            $table->string('txn_id')->nullable();
+            $table->string('amount')->nullable();
+            $table->json('response')->nullable();
+            $table->tinyInteger('payment_type')->comment('1 => Paypal, 2 => Razorpay');
+            $table->string('payment_status');
             $table->timestamps();
         });
     }
@@ -35,4 +37,5 @@ class CreateTransactionsTable extends Migration
     {
         Schema::dropIfExists('transactions');
     }
+
 }

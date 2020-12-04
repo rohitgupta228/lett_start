@@ -33,9 +33,9 @@ class Mailer extends Mailable
     public function build()
     {
         $address = env('MAIL_FROM_ADDRESS');
-        $subject = 'Password Reset';
+        $subject = $this->data['subject'];
         $name = env('MAIL_FROM_NAME');
-        return $this->view('emails.password_reset')
+        return $this->view($this->data['template'])
                         ->from($address, $name)
                         ->subject($subject)
                         ->with([$this->data]);
