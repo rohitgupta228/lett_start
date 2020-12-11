@@ -320,7 +320,7 @@ class AuthController extends Controller
         ];
         return response()->json($response, 200);
     }
-    
+
     public function orderHistory(Request $request)
     {
         $user = $this->guard()->user();
@@ -337,11 +337,14 @@ class AuthController extends Controller
         ];
         return response()->json($response, 200);
     }
-    
+
     public function downloadTheme($productId)
     {
         $product = \App\Models\Product::where('productId', $productId)->first();
-        return response()->download(public_path() . '/uploads/' . $product->id . '.zip');
+        if ($product) {
+            return response()->download(public_path() . '/uploads/' . $product->id . '.zip');
+        }
+        print_r('No data found');die;
     }
 
 }
