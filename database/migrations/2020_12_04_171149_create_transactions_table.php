@@ -6,7 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTransactionsTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -16,7 +15,7 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+	    $table->integer('user_id');
             $table->string('product_id');
             $table->string('order_id')->nullable();
             $table->string('txn_id')->nullable();
@@ -37,5 +36,4 @@ class CreateTransactionsTable extends Migration
     {
         Schema::dropIfExists('transactions');
     }
-
 }
