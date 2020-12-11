@@ -338,10 +338,9 @@ class AuthController extends Controller
         return response()->json($response, 200);
     }
     
-    public function downloadTheme(Request $request)
+    public function downloadTheme($productId)
     {
-        $data = $request->all();
-        return response()->download(public_path() . '/uploads/' . $data['productId'] . '.zip');
+        return response()->download(public_path() . '/uploads/' . $productId . '.zip');
     }
 
 }
