@@ -69,7 +69,8 @@ class PaymentController extends Controller
                     $paymentData['payment_status'] = self::PAYMENT_STATUS[0];
                 }
                 $transaction = Transaction::create($paymentData);
-                $this->sendEmailOnSuccess($data['product_id']);
+                $this->sendEmailOnSuccess($product);
+//                $this->sendEmailOnSuccess($data['product_id']);
                 $response = [
                     'code' => 200,
                     'data' => [
@@ -95,22 +96,24 @@ class PaymentController extends Controller
         return response()->json($response, 200);
     }
 
-    public function sendEmailOnSuccess($productId)
+//    public function sendEmailOnSuccess($productId)
+    public function sendEmailOnSuccess($product)
     {
         $user = $this->guard()->user();
         $email = Crypt::encryptString($user->email);
-        $encryptedProductId = Crypt::encryptString($productId);
+//        $encryptedProductId = Crypt::encryptString($productId);
         $token = str_random(60);
         ProductDownload::create([
             'email' => $user->email,
-            'product_id' => $productId,
+//            'product_id' => $productId,
+            'product_id' => $product->id,
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
-       
+
         $data = [
             'username' => $user->name,
-            'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $encryptedProductId . '&token=' . $token,
+            'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
             'subject' => 'Download Theme',
             'template' => 'emails.product_download'
         ];
@@ -132,7 +135,7 @@ class PaymentController extends Controller
                 $dateAfter24Hours = Carbon::parse($product->created_at)->addHour(24)->toDateTimeString();
                 if (Carbon::now()->toDateTimeString() < $dateAfter24Hours) {
                     $product->delete();
-                    return response()->download(public_path() . '/uploads/' . 'file-2020-10-24-09-01-35.png');
+                    return response()->download(public_path() . '/uploads/' . $data['productId'] . '.zip');
                 } else {
                     print_r('This url has been expired');
                     die;

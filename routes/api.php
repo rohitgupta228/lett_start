@@ -36,6 +36,8 @@ Route::group(['prefix' => 'user','middleware' => 'api'], function() {
     Route::post('reset-password', 'Api\AuthController@resetPassword')->name('api.user.reset.password');
     
     Route::get('order-history', 'Api\AuthController@orderHistory')->name('api.user.order.history');
+    
+    Route::get('download-theme/{productId}', 'Api\AuthController@downloadTheme')->name('api.user.download.theme');
 });
 
 Route::group(['prefix' => 'product','middleware' => 'api'], function() {

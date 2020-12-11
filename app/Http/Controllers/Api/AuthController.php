@@ -324,6 +324,23 @@ class AuthController extends Controller
     public function orderHistory(Request $request)
     {
         $user = $this->guard()->user();
+        $products = [];
+        $transactions = \App\Models\Transaction::where('user_id', $user->id)->where('payment_status', 'SUCCESS')->get();
+        foreach ($transactions as $key => $transaction) {
+            $products[$key] = $transaction->product;
+        }
+        $response = [
+            'code' => 200,
+            'data' => $products,
+            'message' => 'Password updated successfully',
+        ];
+        return response()->json($response, 200);
+    }
+    
+    public function downloadTheme(Request $request)
+    {
+        $data = $request->all();
+        return response()->download(public_path() . '/uploads/' . $data['productId'] . '.zip');
     }
 
 }
