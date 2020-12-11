@@ -1,0 +1,3533 @@
+[
+  {
+    "id": "070620201",
+    "name": "Letstart WB",
+    "oneLinerDesc": "Multipages Bootstrap 4 Templates",
+    "detailLink": "letstart-wb.html",
+    "price": 12,
+    "mainCat": "Landing Pages",
+    "catLink": "landing-pages.html",
+    "demolink": "theme/letstart-wb.html#demos",
+    "docLink": "https://lettstartdesign.com/letstartwb/documentation/",
+    "screenshot": "lettstartwb.jpg",
+    "category": ["portfolio", "landing", "business", "SASS", "bootstrap"],
+    "added": ["popular"],
+    "createDate": "2019-05-21",
+    "updateDate": "2020-05-21",
+    "screenshotDir": "letstart-wb",
+    "liveDemoBaseStr": "https://lettstartdesign.com/letstartwb/app/",
+    "overviewHTML": "<p><strong>Letstart WB</strong> template comes with unique layouts of portfolio landing pages. This template built with bootstrap framework followed by best code practices. This template comes with 15+ Homepages and 16+ Supportive pages.</p><p>This template is easily customized, fully responsive and supports all modern browsers and devices. Letstart WB is a full featured, multipurpose, premium Bootstrap HTML5 template built with the Bootstrap 4 Framework, HTML5, CSS3 and JQuery. This HTML5 template will suit for any type of business template, portfolio template, App template, SAAS and for all type of industries.</p><p>Letstart WB includes very smooth animations which makes your website more beautiful. This template includes modern design, clean code, elegant curves, practical layouts and is easy to customize, easy to change colors, and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>This template is tested by our testing department to make sure it is bug free and work best in all devices. Letstart WB supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "15+ Homepages",
+      "16+ Suportive Pages",
+      "Built on Bootstrap 4, SaSS, jQuery and Gulp",
+      "Integrated contact form with PHP",
+      "Sticky and normal menus",
+      "Multi menu variation",
+      "Image light box and sorting Integrated"
+    ],
+    "highlight2": [
+      "Best suite for any type of showcase",
+      "App Layouts",
+      "Easy to Customize components",
+      "Parallax Pages",
+      "Auth, Coming Soon and Blog Pages",
+      "Attractive animation",
+      "Best selling template"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "15+",
+          "text": "Homepages"
+        },
+        {
+          "title": "16+",
+          "text": "Supportive Pages"
+        },
+        {
+          "title": "Menu",
+          "text": "Sticky, Normal, Sidebar"
+        },
+        {
+          "title": "Contact",
+          "text": "Integrated Contact Form with PHP"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Parallax",
+          "text": "Parallax Pages and Scrolling"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "Creative Landing Pages",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Demo 1",
+            "link": "index.3.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Demo 2",
+            "link": "index.5.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Demo 3",
+            "link": "index.8.html"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Demo 4",
+            "link": "index.html"
+          },
+          {
+            "img": "7.jpg",
+            "imgTitle": "Demo 5",
+            "link": "index.2.html"
+          },
+          {
+            "img": "12.jpg",
+            "imgTitle": "Demo 6",
+            "link": "index.12.html"
+          }
+        ]
+      },
+      {
+        "title": "App Landing Pages",
+        "screens": [
+          {
+            "img": "4.jpg",
+            "imgTitle": "Demo 1",
+            "link": "index.6.html"
+          },
+          {
+            "img": "15.jpg",
+            "imgTitle": "Demo 2",
+            "link": "index.15.html"
+          }
+        ]
+      },
+      {
+        "title": "Component Variations",
+        "screens": [
+          {
+            "img": "8.jpg",
+            "imgTitle": "Demo 1",
+            "link": "index.4.html"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Demo 2",
+            "link": "index.10.html"
+          },
+          {
+            "img": "10.jpg",
+            "imgTitle": "Demo 3",
+            "link": "index.9.html"
+          },
+          {
+            "img": "9.jpg",
+            "imgTitle": "Demo 4",
+            "link": "index.7.html"
+          },
+          {
+            "img": "11.jpg",
+            "imgTitle": "Demo 5",
+            "link": "index.11.html"
+          },
+          {
+            "img": "13.jpg",
+            "imgTitle": "Demo 6",
+            "link": "index.13.html"
+          },
+          {
+            "img": "14.jpg",
+            "imgTitle": "Demo 7",
+            "link": "index.14.html"
+          }
+        ]
+      },
+      {
+        "title": "Blog Landing Pages",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blog-full-width.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs Right Sidebar",
+            "link": "blog-right-sidebar.html"
+          },
+          {
+            "img": "blogs-ls.jpg",
+            "imgTitle": "Blogs Left Sidebar",
+            "link": "blog-left-sidebar.html"
+          }
+        ]
+      },
+      {
+        "title": "Blog Detail Pages",
+        "screens": [
+          {
+            "img": "blog-detail.jpg",
+            "imgTitle": "Blog Detail",
+            "link": "blog-details-full-width.html"
+          },
+          {
+            "img": "blog-detail-rs.jpg",
+            "imgTitle": "Blog Detail Right Sidebar",
+            "link": "blog-details-right-sidebar.2.html"
+          },
+          {
+            "img": "blog-detail-rs-2.jpg",
+            "imgTitle": "Blog Detail Right Sidebar 2",
+            "link": "blog-details-right-sidebar.2.html"
+          },
+          {
+            "img": "blog-detail-ls.jpg",
+            "imgTitle": "Blog Detail Left Sidebar",
+            "link": "blog-details-left-sidebar.html"
+          }
+        ]
+      },
+      {
+        "title": "Contact Us Pages",
+        "screens": [
+          {
+            "img": "contact-us.jpg",
+            "imgTitle": "Contact Us",
+            "link": "contact-us.html"
+          }
+        ]
+      },
+      {
+        "title": "Coming Soon Pages",
+        "screens": [
+          {
+            "img": "coming-soon.jpg",
+            "imgTitle": "Coming Soon",
+            "link": "coming-soon.html"
+          },
+          {
+            "img": "coming-soon-2.jpg",
+            "imgTitle": "Coming Soon 2",
+            "link": "coming-soon.2.html"
+          }
+        ]
+      },
+      {
+        "title": "Auth Pages",
+        "screens": [
+          {
+            "img": "login.jpg",
+            "imgTitle": "Login",
+            "link": "login.html"
+          },
+          {
+            "img": "login-2.jpg",
+            "imgTitle": "Login 2",
+            "link": "login.2.html"
+          },
+          {
+            "img": "register-2.jpg",
+            "imgTitle": "Register",
+            "link": "register.html"
+          },
+          {
+            "img": "register.jpg",
+            "imgTitle": "Register 2",
+            "link": "register.2.html"
+          },
+          {
+            "img": "lockscreen-1.jpg",
+            "imgTitle": "Lockscreen",
+            "link": "lockscreen.html"
+          },
+          {
+            "img": "lockscreen-2.jpg",
+            "imgTitle": "Lockscreen 2",
+            "link": "lockscreen.2.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620202",
+    "name": "ORYO Angular Landing Pages",
+    "detailLink": "oryo-angular-landing-pages.html",
+    "price": 8,
+    "docLink": "",
+    "oneLinerDesc": "Angular APP Template",
+    "mainCat": "Angular",
+    "catLink": "angular.html",
+    "demolink": "http://preview.lettstartdesign.com/item/oryo-angular-app-templates/070620202",
+    "screenshot": "angular-app.jpg",
+    "category": ["landing", "portfolio", "business", "angular"],
+    "added": ["angular"],
+    "createDate": "2020-06-30",
+    "screenshotDir": "angular-app",
+    "liveDemoBaseStr": "https://lettstartdesign.com/oryo-app/app/#/",
+    "overviewHTML": "<p><strong>ORYO</strong> is powerful and stunning App landing page templates based on Angular CLI framework. ORYO is high customisable, fully responsive and flexible template built with Bootstrap 4, SaSS and Angular 9. It helps you to create well designed App landing pages.</p><p>ORYO is multipurpose App landing page template, so it is perfect fit for any niche of landing pages you are building, like portfolio landing, app landing, PPC campaign, digital agency, mobile, blog, business one and multi-page landing and technology websites. This includes very smooth animations which makes your website more beautiful. This template has clean and attractive design So this could be the best fit for your project.</p><p>ORYO is tested by our testing department to make sure it is bug free and work best in all devices. ORYO supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "6+ Home Header Variants",
+      "6+ Combination of Blog and Detail Pages",
+      "4+ Authentication Pages",
+      "Working Contact form integrated with PHP",
+      "No jQuery Used"
+    ],
+    "highlight2": [
+      "Built on Angular 9 using Angular CLI",
+      "All form validation",
+      "Fully Mobile Responsive",
+      "1 Year premium support",
+      "Detailed Documentation"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-angular",
+        "iconClass": "angular",
+        "tooltip": "Angular 9"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "16+",
+          "text": "Pages"
+        },
+        {
+          "title": "6+",
+          "text": "Blog Pages"
+        },
+        {
+          "title": "Form",
+          "text": "Working contact form"
+        },
+        {
+          "title": "Others",
+          "text": "No jQuery Used"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Tech Used",
+          "text": "Angular 9, SaSS & Bootstrap"
+        },
+        {
+          "title": "Forms",
+          "text": "Complete Validation and Data Submission"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index-1"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "index-2"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Index 3",
+            "link": "index-3"
+          },
+          {
+            "img": "4.jpg",
+            "imgTitle": "Index 4",
+            "link": "index-4"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Index 5",
+            "link": "index-5"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Index 6",
+            "link": "index-6"
+          }
+        ]
+      },
+      {
+        "title": "Blog Pages",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blogs"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs Right Sidebar",
+            "link": "blogs-rightsidebar"
+          },
+          {
+            "img": "blogs-ls.jpg",
+            "imgTitle": "Blogs Left Sidebar",
+            "link": "blogs-leftsidebar"
+          },
+          {
+            "img": "blog-detail.jpg",
+            "imgTitle": "Blog Post",
+            "link": "blogs-details"
+          },
+          {
+            "img": "blog-detail-rs.jpg",
+            "imgTitle": "Blog Post Right Sidebar",
+            "link": "blogs-details-rightsidebar"
+          },
+          {
+            "img": "blog-detail-ls.jpg",
+            "imgTitle": "Blog Post Left Sidebar",
+            "link": "blogs-details-leftsidebar"
+          }
+        ]
+      },
+      {
+        "title": "Authentication UI",
+        "screens": [
+          {
+            "img": "login.jpg",
+            "imgTitle": "Login User",
+            "link": "login"
+          },
+          {
+            "img": "register.jpg",
+            "imgTitle": "Register User",
+            "link": "signup"
+          },
+          {
+            "img": "forgot.jpg",
+            "imgTitle": "Forgot Password",
+            "link": "reset"
+          },
+          {
+            "img": "confirm.jpg",
+            "imgTitle": "Confirmation",
+            "link": "confirm"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620203",
+    "name": "Creative Landing Pages",
+    "detailLink": "creative-landing-page-templates.html",
+    "price": 8,
+    "oneLinerDesc": "Bootstrap 4 Landing Pages with Versions",
+    "mainCat": "Landing Pages",
+    "docLink": "",
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/creative-landing-page-templates/070620203",
+    "screenshot": "creative.jpg",
+    "category": ["portfolio", "landing", "bootstrap", "portfolio"],
+    "createDate": "2020-06-21",
+    "added": ["recently", "bootstrap"],
+    "screenshotDir": "creative",
+    "liveDemoBaseStr": "https://lettstartdesign.com/creative/app/",
+    "overviewHTML": "<p><strong>Creative</strong> is powerful and stunning agency and portfolio landing page templates based on bootstrap framework. Creative is high customisable, fully responsive and flexible template built with Bootstrap 4, HTML5, SaSS, jQuery and Gulp. It helps you to create well designed Agency landing pages.</p><p>Creative is multipurpose Agency landing page template, so it is perfect fit for any niche of landing pages you are building, like portfolio landing, app landing, creative, digital agency, mobile, resume, blog, business one and multi-page landing and technology websites. This template includes modern design, clean code, elegant curves, practical layouts and is easy to customize, easy to change colors, and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>Creative is tested by our testing department to make sure it is bug free and work best in all devices. Creative supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "14+ Home Header Variants",
+      "6+ Combination of Blog and Detail Pages",
+      "Working Contact form integrated with PHP",
+      "Built on Bootstrap 4, SaSS and Gulp",
+      "Attractive Sliders"
+    ],
+    "highlight2": [
+      "Menu variation",
+      "Fully Mobile Responsive",
+      "1 Year premium support",
+      "Detailed Documentation"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "20+",
+          "text": "Pages"
+        },
+        {
+          "title": "14+",
+          "text": "Header Variations"
+        },
+        {
+          "title": "Menu",
+          "text": "Sticky, Sidebar Menus"
+        },
+        {
+          "title": "Form",
+          "text": "Working Contact Form"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Extra UI",
+          "text": "Blogs"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "index.2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Index 3",
+            "link": "index.3.html"
+          },
+          {
+            "img": "4.jpg",
+            "imgTitle": "Index 4",
+            "link": "index.4.html"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Index 5",
+            "link": "index.5.html"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Index 6",
+            "link": "index.6.html"
+          },
+          {
+            "img": "7.jpg",
+            "imgTitle": "Index 7",
+            "link": "index.7.html"
+          },
+          {
+            "img": "8.jpg",
+            "imgTitle": "Index 8",
+            "link": "index.8.html"
+          },
+          {
+            "img": "9.jpg",
+            "imgTitle": "Index 9",
+            "link": "index.9.html"
+          },
+          {
+            "img": "10.jpg",
+            "imgTitle": "Index 10",
+            "link": "index.10.html"
+          },
+          {
+            "img": "11.jpg",
+            "imgTitle": "Index 11",
+            "link": "index.11.html"
+          },
+          {
+            "img": "12.jpg",
+            "imgTitle": "Index 12",
+            "link": "index.12.html"
+          },
+          {
+            "img": "13.jpg",
+            "imgTitle": "Index 13",
+            "link": "index.13.html"
+          },
+          {
+            "img": "14.jpg",
+            "imgTitle": "Index 14",
+            "link": "index.14.html"
+          }
+        ]
+      },
+      {
+        "title": "Blog Pages",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blog.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs Right Sidebar",
+            "link": "blog-rightsidebar.html"
+          },
+          {
+            "img": "blogs-ls.jpg",
+            "imgTitle": "Blogs Left Sidebar",
+            "link": "blog-leftsidebar.html"
+          },
+          {
+            "img": "blog-detail.jpg",
+            "imgTitle": "Blog Post",
+            "link": "blog-details.html"
+          },
+          {
+            "img": "blog-detail-rs.jpg",
+            "imgTitle": "Blog Post Right Sidebar",
+            "link": "blog-details-rightsidebar.html"
+          },
+          {
+            "img": "blog-detail-ls.jpg",
+            "imgTitle": "Blog Post Left Sidebar",
+            "link": "blog-details-leftsidebar.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620204",
+    "name": "ORYO Single Page Template",
+    "detailLink": "oryo-single-page-template.html",
+    "price": 0,
+    "oneLinerDesc": "Single/One Page Template Bootstrap 4 Template",
+    "mainCat": "Landing Pages",
+    "docLink": "",
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/oryo-single-page-template/070620204",
+    "screenshot": "oryo.jpg",
+    "added": ["recently", "bootstrap"],
+    "category": ["one page", "landing", "bootstrap", "freebies"],
+    "createDate": "2020-06-15",
+    "screenshotDir": "oryo",
+    "liveDemoBaseStr": "https://lettstartdesign.com/freebies/oryo-sp/app/",
+    "overviewHTML": "<p><strong>ORYO</strong> single page template comes with unique layout of agency landing page. This template built with bootstrap framework followed by best code practices. </p><p>This template is easily customized, fully responsive and supports all modern browsers and devices. ORYO is a full featured, multipurpose, premium Bootstrap HTML5 template built with the Bootstrap 4 Framework, HTML5, CSS3 and JQuery.</p><p>ORYO is multipurpose single page template, so it is perfect fit for any niche of landing pages you are building, like agency template, portfolio Templates and services websites and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>This template is tested by our testing department to make sure it is bug free and work best in all devices. ORYO supported all major browser like chrome, firefox, edge, IE11, safari.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4, SaSS, jQuery and Gulp",
+      "Integrated contact form with PHP",
+      "Creative UI/UX experience",
+      "Smooth animation effects"
+    ],
+    "highlight2": [
+      "Easy to customize",
+      "W3C Validated code",
+      "Easy to Customize components",
+      "Unique in design"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620205",
+    "name": "Letstart CV Templates",
+    "detailLink": "letstart-cv-templates.html",
+    "price": 8,
+    "docLink": "",
+    "oneLinerDesc": "Bootstrap 4 CV Template with Versions",
+    "mainCat": "Portfolio & Resumes",
+    "catLink": "portfolio-resumes.html",
+    "demolink": "http://preview.lettstartdesign.com/item/letstart-cv-templates/070620205",
+    "screenshot": "cv.jpg",
+    "category": ["cv", "resume", "portfolio", "one page", "bootstrap"],
+    "added": ["popular"],
+    "createDate": "2020-06-15",
+    "screenshotDir": "cv",
+    "liveDemoBaseStr": "https://lettstartdesign.com/cv/app/",
+    "overviewHTML": "<p><strong>Letstart</strong> CV/Resume template comes with unique layout of resume landing page. This template built with bootstrap framework followed by best code practices. It helps you to showcase your works and services. </p><p>This template is easily customized, fully responsive and supports all modern browsers and devices. Letstart CV is a full featured, multipurpose, premium Bootstrap HTML5 template built with the Bootstrap 4 Framework, HTML5, CSS3 and JQuery. This HTML5 template will suit CV/Resume websites.</p><p>Letstart CV is multipurpose CV template, so it is perfect fit for any niche of landing pages you are building, like CV template, Resume Templates, portfolio and services websites and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>This template is tested by our testing department to make sure it is bug free and work best in all devices. Letstart CV supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4 and SaSS",
+      "Integrated contact form with PHP",
+      "Completely responsive pages",
+      "W3C Validated code"
+    ],
+    "highlight2": [
+      "Best suite for CV/Resume",
+      "Easy to Customize components",
+      "Parallax Pages",
+      "Show case work and sorting Integrated"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "index.2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Box Layout",
+            "link": "box-layout.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Slide Animation",
+            "link": "anim-layout.html"
+          }
+        ]
+      },
+      {
+        "title": "Blog Pages",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blog.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs Right Sidebar",
+            "link": "blog-sidebar.html"
+          },
+          {
+            "img": "blog-post.jpg",
+            "imgTitle": "Blog Post",
+            "link": "blog-post.html"
+          },
+          {
+            "img": "blog-post-rs.jpg",
+            "imgTitle": "Blog Post Right Sidebar",
+            "link": "blog-post-sidebar.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620206",
+    "name": "Letstart App Templates",
+    "detailLink": "letstart-app-templates.html",
+    "oneLinerDesc": "Bootstrap 4 App Templates",
+    "price": 0,
+    "mainCat": "App & SASS Templates",
+    "catLink": "landing-pages.html",
+    "docLink": "",
+    "demolink": "http://preview.lettstartdesign.com/item/letstart-app-templates/070620206",
+    "screenshot": "app-theme.jpg",
+    "category": ["landing", "one page", "business", "freebies", "bootstrap"],
+    "added": ["recently", "bootstrap"],
+    "createDate": "2019-10-11",
+    "screenshotDir": "app-theme",
+    "liveDemoBaseStr": "https://lettstartdesign.com/freebies/app-theme/HTML/",
+    "overviewHTML": "<p><strong>Letstart App</strong> is powerful and stunning App landing page templates based on Bootstrap framework. Letstart App is high customisable, fully responsive and flexible template built with Bootstrap 4, SaSS and Gulp. It helps you to create well designed App landing pages.</p><p>Letstart App is multipurpose App landing page template, so it is perfect fit for any niche of landing pages you are building, like portfolio landing, app landing, PPC campaign, digital agency, mobile, blog, business one and multi-page landing and technology websites. This template includes modern design, clean code, elegant curves, practical layouts and is easy to customize, easy to change colors, and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>Letstart App is tested by our testing department to make sure it is bug free and work best in all devices. Letstart App supported all major browser like chrome, firefox, edge, IE11, safari.</p>",
+    "highlight1": [
+      "6+ Homepages",
+      "6+ Blog Pages",
+      "Built on Bootstrap 4, SaSS, jQuery and Gulp",
+      "Integrated contact form with PHP",
+      "Smooth animation effects"
+    ],
+    "highlight2": [
+      "Easy to customize",
+      "W3C Validated code",
+      "Easy to Customize components",
+      "Unique in design"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index",
+            "link": "index.2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Index",
+            "link": "index.3.html"
+          },
+          {
+            "img": "4.jpg",
+            "imgTitle": "Index",
+            "link": "index.4.html"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Index",
+            "link": "index.5.html"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Index",
+            "link": "index.6.html"
+          }
+        ]
+      },
+      {
+        "title": "Blog",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blog.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blog Right Sidebar",
+            "link": "blog-rightsidebar.html"
+          },
+          {
+            "img": "blogs-ls.jpg",
+            "imgTitle": "Blog Left Sidebar",
+            "link": "blog-leftsidebar.html"
+          },
+          {
+            "img": "blog-detail.jpg",
+            "imgTitle": "Blog Detail",
+            "link": "blog-details.html"
+          },
+          {
+            "img": "blog-detail-rs.jpg",
+            "imgTitle": "Blog Detail Right Sidebar",
+            "link": "blog-details-rightsidebar.html"
+          },
+          {
+            "img": "blog-detail-ls.jpg",
+            "imgTitle": "Blog Detail Left Sidebar",
+            "link": "blog-details-leftsidebar.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620207",
+    "name": "Agency Landing Page",
+    "detailLink": "agency-landing-pages.html",
+    "price": 8,
+    "mainCat": "Landing Pages",
+    "docLink": "",
+    "oneLinerDesc": "Bootstrap 4 Agency Landing Pages",
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/letstart-agency-landing-pages/070620207",
+    "screenshot": "lp.jpg",
+    "category": ["landing", "portfolio", "business", "bootstrap"],
+    "createDate": "2020-06-25",
+    "added": ["recently", "bootstrap"],
+    "screenshotDir": "lp",
+    "liveDemoBaseStr": "https://lettstartdesign.com/lp/html/",
+    "overviewHTML": "<p><strong>Letstart</strong> is powerful and stunning agency landing page template based on bootstrap framework. Letstart is high customisable, fully responsive and flexible template built with Bootstrap 4, HTML5, SaSS, jQuery and Gulp. It helps you to create well designed Agency landing pages.</p><p>Letstart is multipurpose Agency landing page template, so it is perfect fit for any niche of landing pages you are building, like portfolio landing, app landing, PPC campaign, digital agency, mobile, blog, business one and multi-page landing and technology websites. This includes very smooth animations which makes your website more beautiful. This template has clean and attractive design So this could be the best fit for your project.</p><p>Letstart is tested by our testing department to make sure it is bug free and work best in all devices. Letstart supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "6+ Home Header Variants",
+      "6+ Combination of Blog and Detail Pages",
+      "Working Contact form integrated with PHP",
+      "W3C Validated code",
+      "Easy to Customize components"
+    ],
+    "highlight2": [
+      "Built on Bootstrap 4 and SaSS",
+      "Fully Mobile Responsive",
+      "1 Year premium support",
+      "Detailed Documentation"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "index-2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Index 3",
+            "link": "index-3.html"
+          },
+          {
+            "img": "4.jpg",
+            "imgTitle": "Index 4",
+            "link": "index-4.html"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Index 5",
+            "link": "index-5.html"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Index 6",
+            "link": "index-6.html"
+          },
+          {
+            "img": "7.jpg",
+            "imgTitle": "Index 7",
+            "link": "index-7.html"
+          }
+        ]
+      },
+      {
+        "title": "Blog Pages",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blog.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs Right Sidebar",
+            "link": "blog-rightsidebar.html"
+          },
+          {
+            "img": "blogs-ls.jpg",
+            "imgTitle": "Blogs Left Sidebar",
+            "link": "blog-leftsidebar.html"
+          },
+          {
+            "img": "blog-post.jpg",
+            "imgTitle": "Blog Post",
+            "link": "blog-details.html"
+          },
+          {
+            "img": "blog-post-rs.jpg",
+            "imgTitle": "Blog Post Right Sidebar",
+            "link": "blog-details-rightsidebar.html"
+          },
+          {
+            "img": "blog-post-ls.jpg",
+            "imgTitle": "Blog Post Left Sidebar",
+            "link": "blog-details-leftsidebar.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620208",
+    "name": "Letstart Admin Theme",
+    "detailLink": "letstart-admin-theme.html",
+    "price": 8,
+    "mainCat": "Admin",
+    "docLink": "",
+    "oneLinerDesc": "Bootstrap 4 Admin Template",
+    "catLink": "admin-dashboard.html",
+    "demolink": "http://preview.lettstartdesign.com/item/letstart-admin-theme/070620208",
+    "screenshot": "admin.jpg",
+    "category": ["admin", "dashboard", "bootstrap"],
+    "added": ["popular"],
+    "createDate": "2019-01-21",
+    "screenshotDir": "admin",
+    "liveDemoBaseStr": "https://lettstartdesign.com/admin/html-demos/",
+    "overviewHTML": "<p><strong>Letstart Admin</strong> is an Bootstrap admin template followed by best code practices. LetStart Admin is a full featured, multipurpose, premium bootstrap admin theme built with Bootstrap 4 Framework, HTML5, SaSS and JQuery.It is a fully responsive bootstrap admin theme / bootstrap admin dashboard theme that comes with a huge collection of reusable UI components & plugins.</p><p>In the event that your prime concern is adaptability, customization and client experience at that point Letstart Admin dashboard layout is one such item to keep an eye out for. The premium administrator UI dashboard is rewarding with its highlights and can be utilized for building all types of Web applications like custom admin panel or admin dashboard, web application backend, eCommerce backends, CMS, CRM or SAAS.</p><p>Letstart admin comes with tons of carefully designed flexible components, UI elements, application pages and much more. The theme is fully responsive and works across all modern/supported browsers, devices. The well structured code allows easy customization and helps to build a modern web application with great speed.</p><p>This will accelerate your development, reduce QA time and save a lot of time & money. LetStart bootstrap admin template follows flat design guidelines which make it sleek, clean, intuitive and user-friendly. Once you purchase LetStart admin panel template, you will be entitled to free download of all future updates.</p>",
+    "highlight1": [
+      "3 Dashboard Variant",
+      "70+ Pages",
+      "100+ Components",
+      "Widgets",
+      "Ecommerce and Other UI"
+    ],
+    "highlight2": [
+      "Forms Validation",
+      "ChartJs, Chartist, C3 etc. chart plugins",
+      "Datatables",
+      "Miscellaneous UI",
+      "Email UI"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "3",
+          "text": "Dashboard Variant"
+        },
+        {
+          "title": "70+",
+          "text": "Page Templates"
+        },
+        {
+          "title": "100+",
+          "text": "Components"
+        },
+        {
+          "title": "Others",
+          "text": "Miscellaneous UI"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Extra UI",
+          "text": "Invoices, Ecommerce"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "Dashboard Variations",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Dashboard 1",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Dashboard 2",
+            "link": "dashboards/dashboard2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Dashboard 3",
+            "link": "dashboards/dashboard3.html"
+          }
+        ]
+      },
+      {
+        "title": "6+ Application and Useful UI",
+        "screens": [
+          {
+            "img": "inbox.jpg",
+            "imgTitle": "Inbox UI",
+            "link": "mail/mail-inbox.html"
+          },
+          {
+            "img": "compose.jpg",
+            "imgTitle": "Compose UI",
+            "link": "mail/compose-mail.html"
+          },
+          {
+            "img": "inv.jpg",
+            "imgTitle": "Invoice UI",
+            "link": "ecommerce/invoice.html"
+          },
+          {
+            "img": "orders.jpg",
+            "imgTitle": "Orders UI",
+            "link": "ecommerce/orders.html"
+          },
+          {
+            "img": "pricing.jpg",
+            "imgTitle": "Pricing UI",
+            "link": "ecommerce/pricing-table.html"
+          },
+          {
+            "img": "profile.jpg",
+            "imgTitle": "Profile UI",
+            "link": "general-pages/profile.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620209",
+    "name": "Marvel Admin Theme",
+    "detailLink": "marvel-admin-theme.html",
+    "price": 16,
+    "mainCat": "Admin",
+    "docLink": "",
+    "oneLinerDesc": "Bootstrap 4 Admin Template",
+    "catLink": "admin-dashboard.html",
+    "demolink": "http://preview.lettstartdesign.com/item/marvel-bootstrap-admin-theme/070620209",
+    "screenshot": "marvel.jpg",
+    "added": ["recently", "popular"],
+    "category": ["admin", "dashboard", "bootstrap"],
+    "createDate": "2020-07-18",
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "screenshotDir": "marvel",
+    "liveDemoBaseStr": "https://lettstartdesign.com/marvel/app/",
+    "overviewHTML": "<p>Lettstart Design <strong>Marvel</strong> is an Bootstrap admin template followed by best code practices.</p><p>In the event that your prime concern is adaptability, customization and client experience at that point Lettstart Design Marvel Admin dashboard layout is one such item to keep an eye out for. The premium administrator UI dashboard is rewarding with its highlights and can be utilized for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce panel, etc.</p><p>Lettstart Design Marvel admin comes with tons of carefully designed flexible components, UI elements, application pages and much more. The theme is fully responsive and works across all modern/supported browsers, devices. The well structured code allows easy customization and helps to build a modern web application with great speed.</p><p>Lettstart Design Marvel admin theme is one of the best bootstrap admin template. With this template, you can quickly start your project so why wasting time to start project from scretch. try out our admin theme and save tons of hours.</p>",
+    "highlight1": [
+      "135+ Pages",
+      "350+ Components",
+      "End 2 End Front End Solution",
+      "Create, Manage, Delete Project's UI",
+      "Create, Manage, Delete Task's UI",
+      "Add, delete, list, filter, Ecommerce UI",
+      "Add, Delete, Submit Invoice UI's",
+      "Form validation and UI submission"
+    ],
+    "highlight2": [
+      "Dark and Light sidebar themes",
+      "Horizontal and Vertical Demo",
+      "Condensed and Fixed with sidebar",
+      "Easy to Customize components",
+      "Invoices and Email UI",
+      "Form, Tables and Charts",
+      "Data Tables",
+      "Advanced UI like tours, drag and drop, range slider, rating, alertify etc."
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "135+",
+          "text": "Page Templates"
+        },
+        {
+          "title": "350+",
+          "text": "Components"
+        },
+        {
+          "title": "Extra UI",
+          "text": "Invoices, Ecommerce"
+        },
+        {
+          "title": "Others",
+          "text": "Tasks and Projects"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Utility",
+          "text": "Gallery, Timeline etc."
+        },
+        {
+          "title": "Forms",
+          "text": "Complete Validation and Data Submission"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "8 ready to use dashboard variations",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index 1",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "dashboard2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Index 3",
+            "link": "dashboard3.html"
+          },
+          {
+            "img": "mini.jpg",
+            "imgTitle": "Mini Sidebar",
+            "link": "layout-icon-sidebar.html"
+          },
+          {
+            "img": "compact.jpg",
+            "imgTitle": "Compact Sidebar",
+            "link": "layout-compact-side-menu.html"
+          },
+          {
+            "img": "dark.jpg",
+            "imgTitle": "Dark Sidebar",
+            "link": "layout-dark-sidebar.html"
+          },
+          {
+            "img": "horizontal.jpg",
+            "imgTitle": "Horizontal Layout",
+            "link": "index-horizontal.html"
+          },
+          {
+            "img": "box.jpg",
+            "imgTitle": "Box Layout",
+            "link": "layout-box.html"
+          }
+        ]
+      },
+      {
+        "title": "Chat and Calendar UI's included in the package",
+        "screens": [
+          {
+            "img": "chat.jpg",
+            "imgTitle": "Chat",
+            "link": "chat.html"
+          },
+          {
+            "img": "calender.jpg",
+            "imgTitle": "Calendar",
+            "link": "calender.html"
+          }
+        ]
+      },
+      {
+        "title": "Contacts UI",
+        "screens": [
+          {
+            "img": "add-member.jpg",
+            "imgTitle": "Add Member",
+            "link": "member-create.html"
+          },
+          {
+            "img": "member-list.jpg",
+            "imgTitle": "Member List",
+            "link": "member-list.html"
+          },
+          {
+            "img": "member-grid.jpg",
+            "imgTitle": "Member Grid",
+            "link": "member-grid.html"
+          },
+          {
+            "img": "member-profile.jpg",
+            "imgTitle": "Member Profile",
+            "link": "member-profile.html"
+          }
+        ]
+      },
+      {
+        "title": "Ecommerce UI",
+        "screens": [
+          {
+            "img": "add-product.jpg",
+            "imgTitle": "Add Product",
+            "link": "ecommerce-add-product.html"
+          },
+          {
+            "img": "product-list.jpg",
+            "imgTitle": "Product List",
+            "link": "ecommerce-product.html"
+          },
+          {
+            "img": "product-detail.jpg",
+            "imgTitle": "Product Detail",
+            "link": "ecommerce-product-details.html"
+          },
+          {
+            "img": "order-list.jpg",
+            "imgTitle": "Order List",
+            "link": "ecommerce-orders.html"
+          },
+          {
+            "img": "customer-list.jpg",
+            "imgTitle": "Customer List",
+            "link": "ecommerce-customers.html"
+          },
+          {
+            "img": "cart.jpg",
+            "imgTitle": "Cart",
+            "link": "ecommerce-cart.html"
+          },
+          {
+            "img": "checkout.jpg",
+            "imgTitle": "Checkout",
+            "link": "ecommerce-checkout.html"
+          }
+        ]
+      },
+      {
+        "title": "Mail UI",
+        "screens": [
+          {
+            "img": "inbox.jpg",
+            "imgTitle": "Inbox",
+            "link": "email-inbox.html"
+          },
+          {
+            "img": "compose-mail.jpg",
+            "imgTitle": "Compose Mail",
+            "link": "email-compose.html"
+          },
+          {
+            "img": "read-mail.jpg",
+            "imgTitle": "Read Mail",
+            "link": "email-read.html"
+          }
+        ]
+      },
+      {
+        "title": "Invoice UI",
+        "screens": [
+          {
+            "img": "inv-create.jpg",
+            "imgTitle": "Create Invoice",
+            "link": "invoice-create.html"
+          },
+          {
+            "img": "inv-list.jpg",
+            "imgTitle": "Invoice List",
+            "link": "invoice-list.html"
+          },
+          {
+            "img": "inv-grid.jpg",
+            "imgTitle": "Invoice Grid",
+            "link": "invoice-grid.html"
+          },
+          {
+            "img": "inv-detail.jpg",
+            "imgTitle": "Invoice Detail",
+            "link": "invoice-details.html"
+          }
+        ]
+      },
+      {
+        "title": "Project UI",
+        "screens": [
+          {
+            "img": "create-project.jpg",
+            "imgTitle": "Create Project",
+            "link": "project-create.html"
+          },
+          {
+            "img": "project-list.jpg",
+            "imgTitle": "Project List",
+            "link": "project-list.html"
+          },
+          {
+            "img": "project-grid.jpg",
+            "imgTitle": "Project Grid",
+            "link": "project-grid.html"
+          },
+          {
+            "img": "project-details.jpg",
+            "imgTitle": "Project Detail",
+            "link": "project-overview.html"
+          }
+        ]
+      },
+      {
+        "title": "Task UI",
+        "screens": [
+          {
+            "img": "task-create.jpg",
+            "imgTitle": "Create Task",
+            "link": "task-create.html"
+          },
+          {
+            "img": "task-list.jpg",
+            "imgTitle": "Task List",
+            "link": "task-list.html"
+          },
+          {
+            "img": "task-overview.jpg",
+            "imgTitle": "Task Overview",
+            "link": "task-overview.html"
+          },
+          {
+            "img": "kanban-board.jpg",
+            "imgTitle": "Kanban Board",
+            "link": "kanban-board.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620211",
+    "name": "Hugo CV Template",
+    "detailLink": "hugo-cv.html",
+    "price": 4,
+    "mainCat": "Portfolio & Resumes",
+    "docLink": "",
+    "oneLinerDesc": "Bootstrap 4 Resume/CV Template",
+    "catLink": "portfolio-resumes.html",
+    "demolink": "http://preview.lettstartdesign.com/item/hugo-single-page-cv-templates/070620211",
+    "screenshot": "hugo.jpg",
+    "category": ["cv", "resume", "portfolio", "one page", "bootstrap"],
+    "createDate": "2020-06-25",
+    "screenshotDir": "hugo",
+    "added": ["recently", "bootstrap"],
+    "liveDemoBaseStr": "https://lettstartdesign.com/hugo/",
+    "overviewHTML": "<p><strong>Hugo</strong> CV/Resume template comes with unique layout of resume landing page. This template built with bootstrap framework followed by best code practices. It helps you to showcase your works and services. </p><p>This template is easily customized, fully responsive and supports all modern browsers and devices. Hugo is a full featured, multipurpose, premium Bootstrap HTML5 template built with the Bootstrap 4 Framework, HTML5, CSS3 and JQuery. This HTML5 template will suit CV/Resume websites.</p><p>Hugo is multipurpose CV template, so it is perfect fit for any niche of landing pages you are building, like CV template, Resume Templates, portfolio and services websites and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>This template is tested by our testing department to make sure it is bug free and work best in all devices. Hugo supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4 and SaSS",
+      "Integrated contact form with PHP",
+      "Completely responsive pages",
+      "W3C Validated code"
+    ],
+    "highlight2": [
+      "Best suite for CV/Resume",
+      "Easy to Customize components",
+      "Parallax Pages",
+      "Show case work and sorting Integrated"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": ""
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620212",
+    "name": "Busiplus Multipages Theme",
+    "detailLink": "busiplus-multipages-theme.html",
+    "price": 8,
+    "mainCat": "Business & Corporates",
+    "docLink": "",
+    "catLink": "business-corporate.html",
+    "oneLinerDesc": "Bootstrap 4 Business Theme",
+    "demolink": "http://preview.lettstartdesign.com/item/busiplus-business-multipurpose-theme/070620212",
+    "screenshot": "busiplus.jpg",
+    "category": ["business", "multipurpose", "product", "bootstrap"],
+    "added": ["recently", "bootstrap"],
+    "createDate": "2020-07-10",
+    "screenshotDir": "busiplus",
+    "liveDemoBaseStr": "https://lettstartdesign.com/busiplus/app/",
+    "overviewHTML": "<p><strong>Busiplus</strong> is powerful and stunning multi pages template/website based on bootstrap framework. Busiplus is high customisable, fully responsive and flexible template built with Bootstrap 4, SaSS and Gulp. It helps you to create well designed agency and multi purpose websites.</p><p>Busiplus is multipurpose website, so it is perfect fit for any type of business and corporate website. This website has clean and attractive design So this could be the best fit for your project as the hard part is already been done by us.</p><p>Busiplus is tested by our testing department to make sure it is bug free and work best in all devices. Busiplus supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4 and SaSS",
+      "Integrated Contact Form with PHP",
+      "Completely responsive pages",
+      "Multi Pages website",
+      "Unique, Clean and Modern Design"
+    ],
+    "highlight2": [
+      "Fully Mobile Responsive",
+      "W3C Validated code",
+      "Well organized codes",
+      "Easy to Customize components",
+      "Cross Browser Optimization"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "24+",
+          "text": "Pages"
+        },
+        {
+          "title": "Multipages",
+          "text": "Multipages Website"
+        },
+        {
+          "title": "Form",
+          "text": "Working Contact Form"
+        },
+        {
+          "title": "Variant",
+          "text": "Multi Variant Layout"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Others",
+          "text": "Supportive Pages"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "index.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          }
+        ]
+      },
+      {
+        "title": "About Us",
+        "screens": [
+          {
+            "img": "about.jpg",
+            "imgTitle": "About Us",
+            "link": "about-us.html"
+          }
+        ]
+      },
+      {
+        "title": "Services",
+        "screens": [
+          {
+            "img": "services-3.jpg",
+            "imgTitle": "Services",
+            "link": "services.html"
+          },
+          {
+            "img": "services-2.jpg",
+            "imgTitle": "Services V2",
+            "link": "services.2.html"
+          },
+          {
+            "img": "services.jpg",
+            "imgTitle": "Services V3",
+            "link": "services.3.html"
+          }
+        ]
+      },
+      {
+        "title": "Works",
+        "screens": [
+          {
+            "img": "portfolio-2.jpg",
+            "imgTitle": "Works",
+            "link": "portfolio.html"
+          },
+          {
+            "img": "portfolio.jpg",
+            "imgTitle": "Works V2",
+            "link": "portfolio.2.html"
+          },
+          {
+            "img": "portfolio-detail.jpg",
+            "imgTitle": "Work Details",
+            "link": "portfolio-single.html"
+          }
+        ]
+      },
+      {
+        "title": "Career",
+        "screens": [
+          {
+            "img": "career-3.jpg",
+            "imgTitle": "Career",
+            "link": "career.html"
+          },
+          {
+            "img": "career-2.jpg",
+            "imgTitle": "Career V2",
+            "link": "career.2.html"
+          },
+          {
+            "img": "career.jpg",
+            "imgTitle": "Career Single",
+            "link": "career-single.html"
+          }
+        ]
+      },
+      {
+        "title": "Contact Us",
+        "screens": [
+          {
+            "img": "contact-us-2.jpg",
+            "imgTitle": "Contact Us",
+            "link": "contactus.html"
+          },
+          {
+            "img": "contact-us.jpg",
+            "imgTitle": "Contact Us V2",
+            "link": "contactus.2.html"
+          }
+        ]
+      },
+      {
+        "title": "FAQ",
+        "screens": [
+          {
+            "img": "faq2.jpg",
+            "imgTitle": "FAQ",
+            "link": "faq.html"
+          },
+          {
+            "img": "faq1.jpg",
+            "imgTitle": "FAQ V2",
+            "link": "faq.2.html"
+          }
+        ]
+      },
+      {
+        "title": "Teams",
+        "screens": [
+          {
+            "img": "teams.jpg",
+            "imgTitle": "Teams",
+            "link": "our-team.html"
+          },
+          {
+            "img": "team-member.jpg",
+            "imgTitle": "Member Profile",
+            "link": "team-member.html"
+          }
+        ]
+      },
+      {
+        "title": "Testimonial",
+        "screens": [
+          {
+            "img": "testimonial-1.jpg",
+            "imgTitle": "Testimonial",
+            "link": "testimonial.html"
+          },
+          {
+            "img": "testimonial-2.jpg",
+            "imgTitle": "Testimonial V2",
+            "link": "testimonial.2.html"
+          }
+        ]
+      },
+      {
+        "title": "Blogs",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blog.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs with Right Sidebar",
+            "link": "blog-sidebar.html"
+          },
+          {
+            "img": "blog-post.jpg",
+            "imgTitle": "Blog Post",
+            "link": "blog-post.html"
+          },
+          {
+            "img": "blog-post-rs.jpg",
+            "imgTitle": "Blog Post with Right Sidebar",
+            "link": "blog-post-sidebar.html"
+          }
+        ]
+      },
+      {
+        "title": "Others",
+        "screens": [
+          {
+            "img": "404.jpg",
+            "imgTitle": "404",
+            "link": "404.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620213",
+    "name": "Adminator Angular 10 Admin Theme",
+    "detailLink": "adminator-angular-admin-theme.html",
+    "price": 12,
+    "mainCat": "Admin",
+    "catLink": "admin-dashboard.html",
+    "docLink": "",
+    "oneLinerDesc": "Angular 10 Admin Template",
+    "demolink": "http://preview.lettstartdesign.com/item/adminator-angular-admin-theme/070620213",
+    "screenshot": "adminator.jpg",
+    "added": ["recently", "angular"],
+    "category": ["admin", "dashboard", "angular"],
+    "createDate": "2020-07-19",
+    "updateDate": "2020-11-27",
+    "screenshotDir": "adminator",
+    "liveDemoBaseStr": "https://lettstartdesign.com/adminator/",
+    "overviewHTML": "<p>Lettstart Design <strong>Adminator Angular 10 Admin</strong> is an Angular-10 CLI WebApp template with bootstrap framework followed by best code practices.</p><p>In the event that your prime concern is adaptability, customization and client experience at that point Lettstart Design Angular 10 Admin dashboard layout is one such item to keep an eye out for. The premium administrator UI dashboard is rewarding with its highlights and can be utilized for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce panel, etc.</p><p>Lettstart Design <strong>Adminator Angular 10 Admin</strong> comes with tons of carefully designed flexible components, UI elements, application pages and much more. The theme is fully responsive and works across all modern/supported browsers, devices. The well structured code allows easy customization and helps to build a modern web application with great speed.</p><p>Lettstart Design <strong>Adminator Angular 10 Admin</strong> admin theme is one of the best Angular 10 admin template. With this theme, you can quickly start your project so why wasting time to start project from scretch. try out our admin theme and save tons of hours.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4 and SaSS",
+      "Built on Angular 10 and Typescript",
+      "No jQuery is used",
+      "Completely responsive pages",
+      "Working Calendar with add, remove or edit events based UI.",
+      "Application UI.",
+      "Working Kanban Board with add, remove boards and tasks UI.",
+      "Charts UI"
+    ],
+    "highlight2": [
+      "Dark and Light sidebar themes",
+      "Horizontal and Vertical Demo",
+      "Condensed and Fixed with sidebar",
+      "Easy to Customize components",
+      "Widgets and Component UI",
+      "Data Tables",
+      "Forms Validation",
+      "Advanced UI like sliders, drag and drop, image gallery, etc."
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bxl-angular",
+        "iconClass": "angular",
+        "tooltip": "Angular 10"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "50+",
+          "text": "Page Templates"
+        },
+        {
+          "title": "150+",
+          "text": "Angular Components"
+        },
+        {
+          "title": "Colors",
+          "text": "Dark and Light Skin"
+        },
+        {
+          "title": "Layout",
+          "text": "Vertical & Horizontal"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Others",
+          "text": "Supportive Pages"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "6 ready to use demo variations build on angular 10 included",
+        "screens": [
+          {
+            "img": "default-demo.jpg",
+            "imgTitle": "Default Demo",
+            "link": ""
+          },
+          {
+            "img": "horizontal.jpg",
+            "imgTitle": "Horizontal Demo",
+            "link": ""
+          },
+          {
+            "img": "dark-sidebar.jpg",
+            "imgTitle": "Dark Sidebar Demo",
+            "link": ""
+          },
+          {
+            "img": "light.jpg",
+            "imgTitle": "Light Demo",
+            "link": ""
+          },
+          {
+            "img": "condensed.jpg",
+            "imgTitle": "Mini Sidebar Demo",
+            "link": ""
+          },
+          {
+            "img": "full-width.jpg",
+            "imgTitle": "Scrollable Demo",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "title": "7 highly customizable and powerful application UI's included in the package",
+        "screens": [
+          {
+            "img": "calendar.jpg",
+            "imgTitle": "Calendar",
+            "link": "apps/calendar"
+          },
+          {
+            "img": "chat.jpg",
+            "imgTitle": "Chat Demo",
+            "link": "apps/chat"
+          },
+          {
+            "img": "inbox.jpg",
+            "imgTitle": "Mail Demo",
+            "link": "apps/email-inbox"
+          },
+          {
+            "img": "project-list.jpg",
+            "imgTitle": "Projects Demo",
+            "link": "apps/project-list"
+          },
+          {
+            "img": "task-list.jpg",
+            "imgTitle": "Tasks Demo",
+            "link": "apps/task-list"
+          },
+          {
+            "img": "kanban.jpg",
+            "imgTitle": "Kanban Board Demo",
+            "link": "apps/task-board"
+          },
+          {
+            "img": "task-detail.jpg",
+            "imgTitle": "Task Details Demo",
+            "link": "apps/task-detail/1"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620214",
+    "name": "Business Plus Multipages Website",
+    "detailLink": "business-plus-multipages.html",
+    "oneLinerDesc": "Bootstrap 4 Business Theme",
+    "price": 0,
+    "mainCat": "Business & Corporates",
+    "added": ["recently", "bootstrap"],
+    "docLink": "",
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/letstart-business-plus/070620214",
+    "screenshot": "businessplus.jpg",
+    "category": [
+      "business",
+      "multipurpose",
+      "product",
+      "freebies",
+      "bootstrap"
+    ],
+    "createDate": "2020-01-01",
+    "screenshotDir": "business-plus",
+    "liveDemoBaseStr": "https://lettstartdesign.com/freebies/business/app/",
+    "overviewHTML": "<p><strong>Business Plus</strong> is powerful and stunning multi pages template/website based on bootstrap framework. Business Plus is high customisable, fully responsive and flexible template built with Bootstrap 4, SaSS and Gulp. It helps you to create well designed agency and multi purpose websites.</p><p>Business Plus is multipurpose website, so it is perfect fit for any type of business and corporate website. This website has clean and attractive design So this could be the best fit for your project as the hard part is already been done by us.</p><p>Business Plus is tested by our testing department to make sure it is bug free and work best in all devices. Business Plus supported all major browser like chrome, firefox, edge, IE11, safari.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4 and SaSS",
+      "Integrated Contact Form with PHP",
+      "Completely responsive pages",
+      "Multi Pages website",
+      "Unique, Clean and Modern Design"
+    ],
+    "highlight2": [
+      "Fully Mobile Responsive",
+      "W3C Validated code",
+      "Well organized codes",
+      "Easy to Customize components",
+      "Cross Browser Optimization"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "25+",
+          "text": "Pages"
+        },
+        {
+          "title": "Multipages",
+          "text": "Multipages Website"
+        },
+        {
+          "title": "Form",
+          "text": "Working Contact Form"
+        },
+        {
+          "title": "Variant",
+          "text": "Multi Variant Layout"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Others",
+          "text": "Supportive Pages"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index",
+            "link": "index.2.html"
+          }
+        ]
+      },
+      {
+        "title": "About US",
+        "screens": [
+          {
+            "img": "about-us.jpg",
+            "imgTitle": "About Us",
+            "link": "about-us.html"
+          }
+        ]
+      },
+      {
+        "title": "Services",
+        "screens": [
+          {
+            "img": "services.jpg",
+            "imgTitle": "Services",
+            "link": "services.html"
+          },
+          {
+            "img": "services-2.jpg",
+            "imgTitle": "Services V2",
+            "link": "services.2.html"
+          },
+          {
+            "img": "services-3.jpg",
+            "imgTitle": "Services V3",
+            "link": "services.3.html"
+          }
+        ]
+      },
+      {
+        "title": "Works",
+        "screens": [
+          {
+            "img": "works.jpg",
+            "imgTitle": "Works",
+            "link": "portfolio.html"
+          },
+          {
+            "img": "works-2.jpg",
+            "imgTitle": "Works V2",
+            "link": "portfolio.2.html"
+          },
+          {
+            "img": "work-single.jpg",
+            "imgTitle": "Work Single",
+            "link": "portfolio-single.html"
+          }
+        ]
+      },
+      {
+        "title": "Testimonial",
+        "screens": [
+          {
+            "img": "testimonial.jpg",
+            "imgTitle": "Testimonial",
+            "link": "testimonial.html"
+          },
+          {
+            "img": "testimonial-2.jpg",
+            "imgTitle": "Testimonial V2",
+            "link": "testimonial.2.html"
+          },
+          {
+            "img": "testimonial-3.jpg",
+            "imgTitle": "Testimonial V3",
+            "link": "testimonial.3.html"
+          }
+        ]
+      },
+      {
+        "title": "Career",
+        "screens": [
+          {
+            "img": "career.jpg",
+            "imgTitle": "Career",
+            "link": "career.html"
+          },
+          {
+            "img": "career-2.jpg",
+            "imgTitle": "Career V2",
+            "link": "career.2.html"
+          },
+          {
+            "img": "career-single.jpg",
+            "imgTitle": "Career Single",
+            "link": "career-single.html"
+          }
+        ]
+      },
+      {
+        "title": "Blog",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blog.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blog Right Sidebar",
+            "link": "blog-sidebar.html"
+          },
+          {
+            "img": "blog-detail.jpg",
+            "imgTitle": "Blog Detail",
+            "link": "blog-post.html"
+          },
+          {
+            "img": "blog-detail-rs.jpg",
+            "imgTitle": "Blog Detail Right Sidebar",
+            "link": "blog-post-sidebar.html"
+          }
+        ]
+      },
+      {
+        "title": "Teams",
+        "screens": [
+          {
+            "img": "teams.jpg",
+            "imgTitle": "Teams",
+            "link": "our-team.html"
+          }
+        ]
+      },
+      {
+        "title": "FAQ",
+        "screens": [
+          {
+            "img": "faq.jpg",
+            "imgTitle": "FAQ",
+            "link": "faq.html"
+          },
+          {
+            "img": "faq-2.jpg",
+            "imgTitle": "FAQ V2",
+            "link": "faq.2.html"
+          }
+        ]
+      },
+      {
+        "title": "Contact US",
+        "screens": [
+          {
+            "img": "contact-us.jpg",
+            "imgTitle": "Contact US",
+            "link": "contactus.html"
+          },
+          {
+            "img": "contact-us-2.jpg",
+            "imgTitle": "Contact US V2",
+            "link": "contactus.2.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620215",
+    "name": "Creative PPC - Single Page Template",
+    "detailLink": "creative-ppc.html",
+    "oneLinerDesc": "Bootstrap 3 PPC Template",
+    "price": 0,
+    "mainCat": "Landing Pages",
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/creative-ppc-single-page/070620215",
+    "screenshot": "ppc.jpg",
+    "added": ["recently", "bootstrap"],
+    "docLink": "",
+    "category": [
+      "landing",
+      "one page",
+      "ppc",
+      "campaign",
+      "freebies",
+      "bootstrap"
+    ],
+    "createDate": "2019-01-11",
+    "screenshotDir": "ppc",
+    "liveDemoBaseStr": "https://lettstartdesign.com/freebies/ppc/",
+    "overviewHTML": "<p><strong>Creative</strong> is powerful and stunning single page template based on bootstrap framework. Creative PPC - single page template comes with unique layouts of PPC landing page. This template is high customisable, fully responsive and flexible template built with Bootstrap 3 Framework, HTML5, CSS3 and JQuery. It helps you to create well designed all type of promotional pages, PPC campaigns, campaigns websites.</p><p>Creative PPC is multipurpose website, so it is perfect fit for any type of campaigns and promotional website. This website has clean and attractive design So this could be the best fit for your project as the hard part is already been done by us.</p><p>Creative PPC is tested by our testing department to make sure it is bug free and work best in all devices. Creative PPC supported all major browser like chrome, firefox, edge, IE11, safari.</p>",
+    "highlight1": [
+      "Built on Bootstrap 3 and CSS",
+      "Completely responsive pages",
+      "Single Page website",
+      "Unique, Clean and Modern Design",
+      "Parallax Website"
+    ],
+    "highlight2": [
+      "Fully Mobile Responsive",
+      "W3C Validated code",
+      "Well organized codes",
+      "Easy to Customize components",
+      "Cross Browser Optimization"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620216",
+    "name": "Creative - Single Page Templates",
+    "detailLink": "creative-single-page-template.html",
+    "oneLinerDesc": "Bootstrap 4 Portfolio Template",
+    "price": 0,
+    "mainCat": "Landing Pages",
+    "docLink": "",
+    "added": ["recently", "bootstrap"],
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/creative-single-page-templates/070620216",
+    "screenshot": "creative-sp.jpg",
+    "category": ["landing", "one page", "freebies", "bootstrap"],
+    "createDate": "2018-05-11",
+    "screenshotDir": "creative-sp",
+    "liveDemoBaseStr": "https://lettstartdesign.com/freebies/creative-sp/app/",
+    "overviewHTML": "<p><strong>Creative</strong> SP is powerful and stunning single page template based on bootstrap framework. Creative SP - single page template comes with unique layouts of portfolio landing page. This template is high customisable, fully responsive and flexible template built with Bootstrap 4 Framework, HTML5, CSS and JQuery. It helps you to create well designed all type of portfolio pages, showcase of works websites.</p><p>Creative SP is multipurpose website, so it is perfect fit for any type of portfolio website. This website has clean and attractive design So this could be the best fit for your project as the hard part is already been done by us.</p><p>Creative SP is tested by our testing department to make sure it is bug free and work best in all devices. Creative SP supported all major browser like chrome, firefox, edge, IE11, safari.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4 and SaSS",
+      "Completely responsive pages",
+      "Single Page website",
+      "Unique, Clean and Modern Design",
+      "Parallax Website"
+    ],
+    "highlight2": [
+      "Fully Mobile Responsive",
+      "W3C Validated code",
+      "Well organized codes",
+      "Easy to Customize components",
+      "Cross Browser Optimization"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "index.2.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620217",
+    "name": "Kiosk - App Landing Templates",
+    "detailLink": "kiosk-app-templates.html",
+    "oneLinerDesc": "Bootstrap 4 App Templates",
+    "price": 8,
+    "mainCat": "Landing Pages",
+    "docLink": "",
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/kiosk-app-templates/070620217",
+    "screenshot": "kiosk.jpg",
+    "category": ["landing", "one page", "bootstrap"],
+    "added": ["recently"],
+    "createDate": "2020-09-21",
+    "screenshotDir": "kiosk",
+    "liveDemoBaseStr": "https://lettstartdesign.com/kiosk/app/",
+    "overviewHTML": "<p><strong>KIOSK</strong> is powerful and stunning one page template based on bootstrap framework. KIOSK is high customisable, fully responsive and flexible template built with Bootstrap 4 and SASS. It helps you to create well designed APP or Product landing pages.</p><p>KIOSK template comes with 10 unique layouts of app landing pages. This template is easily customized, fully responsive and supports all modern browsers and devices. KIOSK is a full featured, multipurpose, premium Bootstrap HTML5 template built with the Bootstrap 4 Framework, HTML5, SCSS and JQuery.</p><p>KIOSK is multipurpose APP template, so it is perfect fit for any niche of landing pages you are building, like App landing, Product landing pages, multi-page landing and technology websites and much more. This includes very smooth animations which makes your website more beautiful. This template has clean and attractive design So this could be the best fit for your project.</p><p>KIOSK is tested by our testing department to make sure it is bug free and work best in all devices. KIOSK supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "10+ Page Variants",
+      "6+ Combination of Blog and Detail Pages",
+      "Team, Works and Contact US pages",
+      "Auth Pages like Login, Register etc.",
+      "Working Contact form integrated with PHP",
+      "All form's with UI Validations"
+    ],
+    "highlight2": [
+      "Built on Bootstrap 4 and SaSS",
+      "Fully Mobile Responsive",
+      "1 Year premium support",
+      "Detailed Documentation",
+      "W3C Validated code",
+      "Easy to Customize components"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "10+",
+          "text": "Home Templates"
+        },
+        {
+          "title": "30+",
+          "text": "Page Templates"
+        },
+        {
+          "title": "Header",
+          "text": "Dark and Light Topbar"
+        },
+        {
+          "title": "Sidebar",
+          "text": "Left & Right Sidebar"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Others",
+          "text": "Supportive Pages"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "10 ready to use demo variations",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index 1",
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "index.2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Index 3",
+            "link": "index.3.html"
+          },
+          {
+            "img": "4.jpg",
+            "imgTitle": "Index 4",
+            "link": "index.4.html"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Index 5",
+            "link": "index.5.html"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Index 6",
+            "link": "index.6.html"
+          },
+          {
+            "img": "7.jpg",
+            "imgTitle": "Index 7",
+            "link": "index.7.html"
+          },
+          {
+            "img": "8.jpg",
+            "imgTitle": "Index 8",
+            "link": "index.8.html"
+          },
+          {
+            "img": "9.jpg",
+            "imgTitle": "Index 9",
+            "link": "index.9.html"
+          },
+          {
+            "img": "10.jpg",
+            "imgTitle": "Index 10",
+            "link": "index.10.html"
+          }
+        ]
+      },
+      {
+        "title": "6 blog UI's included in the package",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blogs.html"
+          },
+          {
+            "img": "blogs-ls.jpg",
+            "imgTitle": "Blogs Left Sidebar",
+            "link": "blogs-left-sidebar.html"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs Right Sidebar",
+            "link": "blogs-right-sidebar.html"
+          },
+          {
+            "img": "blog-post.jpg",
+            "imgTitle": "Blog Post",
+            "link": "blog-details.html"
+          },
+          {
+            "img": "blog-post-ls.jpg",
+            "imgTitle": "Blog Post Left Sidebar",
+            "link": "blog-details-left-sidebar.html"
+          },
+          {
+            "img": "blog-post-rs.jpg",
+            "imgTitle": "Blog Post Right Sidebar",
+            "link": "blog-details-right-sidebar.html"
+          }
+        ]
+      },
+      {
+        "title": "5 Extra UI's included in the package",
+        "screens": [
+          {
+            "img": "contact-us.jpg",
+            "imgTitle": "Contact US",
+            "link": "contactus.html"
+          },
+          {
+            "img": "teams.jpg",
+            "imgTitle": "Teams",
+            "link": "teams.html"
+          },
+          {
+            "img": "team-single.jpg",
+            "imgTitle": "Team Single",
+            "link": "team-single.html"
+          },
+          {
+            "img": "works.jpg",
+            "imgTitle": "Works",
+            "link": "works.html"
+          },
+          {
+            "img": "work-single.jpg",
+            "imgTitle": "Work Single",
+            "link": "work-single.html"
+          },
+          {
+            "img": "elements.jpg",
+            "imgTitle": "Elements",
+            "link": "elements.html"
+          }
+        ]
+      },
+      {
+        "title": "8 Authentication UI's included in the package",
+        "screens": [
+          {
+            "img": "login.jpg",
+            "imgTitle": "Login",
+            "link": "login.html"
+          },
+          {
+            "img": "register.jpg",
+            "imgTitle": "Register",
+            "link": "register.html"
+          },
+          {
+            "img": "recover.jpg",
+            "imgTitle": "Recover",
+            "link": "recover.html"
+          },
+          {
+            "img": "lockscreen.jpg",
+            "imgTitle": "Lock Screen",
+            "link": "lockscreen.html"
+          },
+          {
+            "img": "confirm.jpg",
+            "imgTitle": "Confirm",
+            "link": "confirmation.html"
+          },
+          {
+            "img": "400.jpg",
+            "imgTitle": "400",
+            "link": "400.html"
+          },
+          {
+            "img": "404.jpg",
+            "imgTitle": "404",
+            "link": "404.html"
+          },
+          {
+            "img": "500.jpg",
+            "imgTitle": "500",
+            "link": "500.html"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620218",
+    "name": "Kiosk - App Angular Landing Templates",
+    "detailLink": "kiosk-angular-app-templates.html",
+    "oneLinerDesc": "Angular 10 App Templates",
+    "price": 12,
+    "docLink": "",
+    "mainCat": "Angular",
+    "catLink": "angular.html",
+    "demolink": "http://preview.lettstartdesign.com/item/kiosk-angular-app-templates/070620218",
+    "screenshot": "kiosk.jpg",
+    "category": ["landing", "one page", "angular"],
+    "added": ["angular"],
+    "createDate": "2020-09-28",
+    "screenshotDir": "kiosk",
+    "liveDemoBaseStr": "https://lettstartdesign.com/kiosk-angular/app/",
+    "overviewHTML": "<p><strong>KIOSK</strong> is powerful and stunning one page Angular-10 CLI WebApp template with bootstrap framework followed by best code practices. KIOSK is high customisable, fully responsive and flexible template built with Angular 10, Bootstrap 4 and SASS. It helps you to create well designed APP or Product landing pages.</p><p>KIOSK template comes with 10 unique layouts of app landing pages. This template is easily customized, fully responsive and supports all modern browsers and devices. KIOSK is a full featured, multipurpose, premium Bootstrap HTML5 template built with the Bootstrap 4 Framework, Angular 10, HTML5, SaSS.</p><p>KIOSK is multipurpose APP template, so it is perfect fit for any niche of landing pages you are building, like App landing, Product landing pages, multi-page landing and technology websites and much more. This includes very smooth animations which makes your website more beautiful. This template has clean and attractive design So this could be the best fit for your project.</p><p>KIOSK is tested by our testing department to make sure it is bug free and work best in all devices. KIOSK supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "10+ Page Variants",
+      "6+ Combination of Blog and Detail Pages",
+      "Team, Works and Contact US pages",
+      "Auth Pages like Login, Register etc.",
+      "Working Contact form integrated with PHP",
+      "All form's with UI Validations"
+    ],
+    "highlight2": [
+      "Built on Bootstrap 4 and SaSS",
+      "Fully Mobile Responsive",
+      "1 Year premium support",
+      "Detailed Documentation",
+      "W3C Validated code",
+      "Easy to Customize components"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bxl-angular",
+        "iconClass": "angular",
+        "tooltip": "Angular 10"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "10+",
+          "text": "Home Templates"
+        },
+        {
+          "title": "30+",
+          "text": "Page Templates"
+        },
+        {
+          "title": "Header",
+          "text": "Dark and Light Topbar"
+        },
+        {
+          "title": "Sidebar",
+          "text": "Left & Right Sidebar"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Others",
+          "text": "Supportive Pages"
+        },
+        {
+          "title": "Doc",
+          "text": "Detailed Documentation"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
+    "screenshots": [
+      {
+        "title": "10 ready to use demo variations",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index 1",
+            "link": "index"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Index 2",
+            "link": "index-2"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Index 3",
+            "link": "index-3"
+          },
+          {
+            "img": "4.jpg",
+            "imgTitle": "Index 4",
+            "link": "index-4"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Index 5",
+            "link": "index-5"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Index 6",
+            "link": "index-6"
+          },
+          {
+            "img": "7.jpg",
+            "imgTitle": "Index 7",
+            "link": "index-7"
+          },
+          {
+            "img": "8.jpg",
+            "imgTitle": "Index 8",
+            "link": "index-8"
+          },
+          {
+            "img": "9.jpg",
+            "imgTitle": "Index 9",
+            "link": "index-9"
+          },
+          {
+            "img": "10.jpg",
+            "imgTitle": "Index 10",
+            "link": "index-10"
+          }
+        ]
+      },
+      {
+        "title": "6 blog UI's included in the package",
+        "screens": [
+          {
+            "img": "blogs.jpg",
+            "imgTitle": "Blogs",
+            "link": "blogs"
+          },
+          {
+            "img": "blogs-ls.jpg",
+            "imgTitle": "Blogs Left Sidebar",
+            "link": "blogs-leftsidebar"
+          },
+          {
+            "img": "blogs-rs.jpg",
+            "imgTitle": "Blogs Right Sidebar",
+            "link": "blogs-rightsidebar"
+          },
+          {
+            "img": "blog-post.jpg",
+            "imgTitle": "Blog Post",
+            "link": "blog-detail"
+          },
+          {
+            "img": "blog-post-ls.jpg",
+            "imgTitle": "Blog Post Left Sidebar",
+            "link": "blog-detail-leftsidebar"
+          },
+          {
+            "img": "blog-post-rs.jpg",
+            "imgTitle": "Blog Post Right Sidebar",
+            "link": "blog-detail-rightsidebar"
+          }
+        ]
+      },
+      {
+        "title": "5 Extra UI's included in the package",
+        "screens": [
+          {
+            "img": "contact-us.jpg",
+            "imgTitle": "Contact US",
+            "link": "contactus"
+          },
+          {
+            "img": "teams.jpg",
+            "imgTitle": "Teams",
+            "link": "teams"
+          },
+          {
+            "img": "team-single.jpg",
+            "imgTitle": "Team Single",
+            "link": "team-single"
+          },
+          {
+            "img": "works.jpg",
+            "imgTitle": "Works",
+            "link": "works"
+          },
+          {
+            "img": "work-single.jpg",
+            "imgTitle": "Work Single",
+            "link": "work-single"
+          }
+        ]
+      },
+      {
+        "title": "8 Authentication UI's included in the package",
+        "screens": [
+          {
+            "img": "login.jpg",
+            "imgTitle": "Login",
+            "link": "login"
+          },
+          {
+            "img": "register.jpg",
+            "imgTitle": "Register",
+            "link": "register"
+          },
+          {
+            "img": "recover.jpg",
+            "imgTitle": "Recover",
+            "link": "recover"
+          },
+          {
+            "img": "lockscreen.jpg",
+            "imgTitle": "Lock Screen",
+            "link": "lockscreen"
+          },
+          {
+            "img": "confirm.jpg",
+            "imgTitle": "Confirm",
+            "link": "confirm"
+          },
+          {
+            "img": "400.jpg",
+            "imgTitle": "400",
+            "link": "400"
+          },
+          {
+            "img": "404.jpg",
+            "imgTitle": "404",
+            "link": "404"
+          },
+          {
+            "img": "500.jpg",
+            "imgTitle": "500",
+            "link": "500"
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  },
+  {
+    "id": "070620220",
+    "name": "Dark - Bootstrap Template",
+    "detailLink": "dark.html",
+    "oneLinerDesc": "Bootstrap 4 Single Page Template",
+    "price": 8,
+    "docLink": "",
+    "mainCat": "Landing Pages",
+    "catLink": "landing-pages.html",
+    "demolink": "http://preview.lettstartdesign.com/item/dark/070620220",
+    "screenshot": "dark.jpg",
+    "category": ["landing", "one page", "bootstrap"],
+    "added": ["recently", "bootstrap"],
+    "createDate": "2020-11-03",
+    "screenshotDir": "dark",
+    "liveDemoBaseStr": "https://lettstartdesign.com/dark/",
+    "overviewHTML": "<p><strong>Dark</strong> is powerful and stunning one page template based on bootstrap framework. Dark is high customisable, fully responsive and flexible template built with Bootstrap 4 and SASS. It helps you to create well designed portfolio or agency landing page.</p><p>Dark is multipurpose agency template, so it is perfect fit for any niche of landing pages you are building, like Portfolio, One page, Agency, and much more. This template has clean and attractive design So this could be the best fit for your project as the hard part is already been done by us.</p><p>Dark is tested by our testing department to make sure it is bug free and work best in all devices. Dark supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
+    "highlight1": [
+      "Built on Bootstrap 4 and SaSS",
+      "Fully Mobile Responsive",
+      "Contact form integrated with PHP",
+      "1 Year premium support",
+      "Detailed Documentation"
+    ],
+    "highlight2": [
+      "W3C Validated code",
+      "Well organized codes",
+      "Easy to Customize components",
+      "Cross Browser Optimization",
+      "Google fonts"
+    ],
+    "techUsed": [
+      {
+        "icon": "bxl-bootstrap",
+        "iconClass": "bootstrap",
+        "tooltip": "Bootstrap 4.5"
+      },
+      {
+        "icon": "bxl-sass",
+        "iconClass": "sass",
+        "tooltip": "SaSS"
+      },
+      {
+        "icon": "bxl-html5",
+        "iconClass": "html5",
+        "tooltip": "HTML5"
+      },
+      {
+        "icon": "bx-globe",
+        "iconClass": "globe",
+        "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
+      }
+    ],
+    "themeFacts": {},
+    "screenshots": [
+      {
+        "title": "Homepage Demo",
+        "screens": [
+          {
+            "img": "1.jpg",
+            "imgTitle": "Index",
+            "link": ""
+          }
+        ]
+      }
+    ],
+    "initialLog": [
+      {
+        "text": "Created:",
+        "icon": "bx-pencil"
+      },
+      {
+        "text": "Updated:",
+        "icon": "bx-refresh"
+      },
+      {
+        "text": "Well Documented",
+        "icon": "bx-file"
+      },
+      {
+        "text": "1 Year Support",
+        "icon": "bx-support"
+      },
+      {
+        "text": "Lifetime Updated",
+        "icon": "bx-check-circle"
+      }
+    ],
+    "changeLog": []
+  }
+]

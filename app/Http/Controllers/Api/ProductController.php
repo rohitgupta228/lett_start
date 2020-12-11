@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Mail;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Crypt;
 
 class ProductController extends Controller
 {
@@ -42,6 +43,34 @@ class ProductController extends Controller
     public function guard()
     {
         return Auth::guard();
+    }
+
+    public function bulkUpload()
+    {
+        try {
+            $json = file_get_contents(storage_path('themes-list.json'));
+            $fileContent = json_decode($json, true);
+            $data = [];
+            if (count($fileContent)) {
+                Product::truncate();
+                foreach ($fileContent as $key => $content) {
+                    $content['productId'] = Crypt::encryptString($key + 1);
+                    foreach ($content as $key => $data) {
+                        if (gettype($data) == 'array') {
+                            $content[$key] = json_encode($data);
+                        }
+                    }
+                    $product = Product::create($content);
+                }
+            }
+            $response = [
+                'code' => 200,
+                'message' => 'Products added successfully'
+            ];
+            return response()->json($response, 200);
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
     }
 
     /**
@@ -146,9 +175,14 @@ class ProductController extends Controller
         return response()->json($response, 200);
     }
 
-    public function lists()
+    public function lists(Request $request)
     {
-        $products = Product::all();
+        $query = $request->all();
+        if (count($query) && isset($query['name']) && $query['name'] != '') {
+            $products = Product::where('name', 'LIKE', '%' . $request->all()['name'] . '%')->paginate(10);
+        } else {
+            $products = Product::paginate(10);
+        }
         $response = [
             'code' => 200,
             'data' => [
@@ -156,7 +190,6 @@ class ProductController extends Controller
             ],
             'message' => 'Products fetched successfully'
         ];
-
         return response()->json($response, 200);
     }
 

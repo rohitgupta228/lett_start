@@ -34,6 +34,8 @@ Route::group(['prefix' => 'user','middleware' => 'api'], function() {
     Route::post('forgot-password', 'Api\AuthController@forgotPassword')->name('api.user.fogot.password');
     
     Route::post('reset-password', 'Api\AuthController@resetPassword')->name('api.user.reset.password');
+    
+    Route::get('order-history', 'Api\AuthController@orderHistory')->name('api.user.order.history');
 });
 
 Route::group(['prefix' => 'product','middleware' => 'api'], function() {
@@ -44,6 +46,8 @@ Route::group(['prefix' => 'product','middleware' => 'api'], function() {
     Route::delete('delete', 'Api\ProductController@delete')->name('product.delete');
     
     Route::get('details/{productId}', 'Api\ProductController@details')->name('product.details');
+    
+    Route::get('bulk-upload', 'Api\ProductController@bulkUpload')->name('product.bulk.upload');
     
     Route::get('lists', 'Api\ProductController@lists')->name('product.lists');
 });

@@ -320,5 +320,10 @@ class AuthController extends Controller
         ];
         return response()->json($response, 200);
     }
+    
+    public function orderHistory(Request $request)
+    {
+        $user = $this->guard()->user();
+    }
 
 }
