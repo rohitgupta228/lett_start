@@ -133,7 +133,7 @@ class ProductController extends Controller
      */
     public function details($productId)
     {
-        $product = Product::where('product_id', $productId)->first();
+        $product = Product::where('productId', $productId)->first();
         $response = [
             'code' => 404,
             'message' => 'Product not found'
