@@ -131,9 +131,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function details($productId)
+    public function details($detailLink)
     {
-        $product = Product::where('productId', $productId)->first();
+        $product = Product::where('detailLink', $detailLink)->first();
         $response = [
             'code' => 404,
             'message' => 'Product not found'
