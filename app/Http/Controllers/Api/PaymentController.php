@@ -54,19 +54,20 @@ class PaymentController extends Controller
         try {
             $data = $request->request->all();
             $product = \App\Models\Product::find($data['product_id']);
+            $paymentStatus = config('settings.payment_status');
             if ($product && $product->price == $data['amount']) {
                 DB::beginTransaction();
                 $paymentData = [
                     'user_id' => $data['user_id'],
                     'product_id' => $data['product_id'],
-                    'payment_status' => self::PAYMENT_STATUS[1],
+                    'payment_status' => $paymentStatus[1],
                     'payment_type' => 2,
                 ];
                 if ($data['success']) {
                     $paymentData['txn_id'] = $data['razorpay_response']['id'];
                     $paymentData['order_id'] = $data['razorpay_response']['order_id'];
                     $paymentData['response'] = json_encode($data['razorpay_response']);
-                    $paymentData['payment_status'] = self::PAYMENT_STATUS[0];
+                    $paymentData['payment_status'] = $paymentStatus[0];
                 }
                 $transaction = Transaction::create($paymentData);
                 $this->sendEmailOnSuccess($product);

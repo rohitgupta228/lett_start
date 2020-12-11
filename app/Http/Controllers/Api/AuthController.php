@@ -324,8 +324,9 @@ class AuthController extends Controller
     public function orderHistory(Request $request)
     {
         $user = $this->guard()->user();
+        $paymentStatus = config('settings.payment_status');
         $products = [];
-        $transactions = \App\Models\Transaction::where('user_id', $user->id)->where('payment_status', 'SUCCESS')->get();
+        $transactions = \App\Models\Transaction::where('user_id', $user->id)->where('payment_status', $paymentStatus[0])->get();
         foreach ($transactions as $key => $transaction) {
             $products[$key] = $transaction->product;
         }
