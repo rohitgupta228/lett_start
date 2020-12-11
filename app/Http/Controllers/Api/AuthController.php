@@ -342,9 +342,13 @@ class AuthController extends Controller
     {
         $product = \App\Models\Product::where('productId', $productId)->first();
         if ($product) {
-            return response()->download(public_path() . '/uploads/' . $product->id . '.zip');
+            $headers = array(
+                'Content-Type' => 'application/octet-stream',
+            );
+            return response()->download(public_path() . '/uploads/' . $product->id . '.zip', $product->name . '.zip', $headers);
         }
-        print_r('No data found');die;
+        print_r('No data found');
+        die;
     }
 
 }
