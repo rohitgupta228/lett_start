@@ -340,7 +340,8 @@ class AuthController extends Controller
     
     public function downloadTheme($productId)
     {
-        return response()->download(public_path() . '/uploads/' . $productId . '.zip');
+        $product = \App\Models\Product::where('productId', $productId)->first();
+        return response()->download(public_path() . '/uploads/' . $product->id . '.zip');
     }
 
 }
