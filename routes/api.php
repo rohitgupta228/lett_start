@@ -60,6 +60,8 @@ Route::group(['prefix' => 'transaction','middleware' => 'api'], function() {
     Route::post('save', 'Api\PaymentController@save')->name('transaction.save');
     
     Route::post('stripe/save', 'Api\PaymentController@submitPayment')->name('transaction.stripe.save');
+    
+    Route::post('postPaymentWithpaypal', 'Api\PaymentController@postPaymentWithpaypal')->name('transaction.postPaymentWithpaypal');
 });
 
 Route::get('download-theme', 'Api\PaymentController@downloadTheme')->name('download.theme');

@@ -13,6 +13,22 @@ use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Stripe;
+/** All Paypal Details class * */
+use PayPal\Rest\ApiContext;
+use PayPal\Auth\OAuthTokenCredential;
+use PayPal\Api\Amount;
+use PayPal\Api\Details;
+use PayPal\Api\Item;
+use PayPal\Api\ItemList;
+use PayPal\Api\Payer;
+use PayPal\Api\Payment;
+use PayPal\Api\RedirectUrls;
+use PayPal\Api\ExecutePayment;
+use PayPal\Api\PaymentExecution;
+use PayPal\Api\Transaction as PaypalTransaction;
+use Session;
+use Redirect;
+use Input;
 
 class PaymentController extends Controller
 {
@@ -31,6 +47,13 @@ class PaymentController extends Controller
     {
         $this->url = $url;
         $this->middleware('auth:api', ['except' => ['downloadTheme']]);
+
+        /** PayPal api context * */
+        $paypal_conf = \Config::get('paypal');
+        $this->_api_context = new ApiContext(new OAuthTokenCredential(
+                $paypal_conf['client_id'], $paypal_conf['secret'])
+        );
+        $this->_api_context->setConfig($paypal_conf['settings']);
     }
 
     /**
@@ -58,17 +81,31 @@ class PaymentController extends Controller
             if ($product && $product->price > 0) {
                 $amount = $product->price * 100;
                 $stripe = \Stripe\Token::create([
-                            'card' => [
-                                'number' => $data['card_num'],
-                                'exp_month' => $data['exp_month'],
-                                'exp_year' => $data['exp_year'],
-                                'cvc' => $data['cvv'],
-                            ],
+                        'card' => [
+                            'number' => $data['card_num'],
+                            'exp_month' => $data['exp_month'],
+                            'exp_year' => $data['exp_year'],
+                            'cvc' => $data['cvv'],
+                        ],
                 ]);
+                $customer = \Stripe\Customer::create(array(
+                            'name' => 'test',
+                            'description' => 'test description',
+                            'email' => 'rohit@gmail.com',
+                            'source' => $stripe->id,
+                            'address' => [
+                                'line1' => 'test',
+                                'postal_code' => '12345',
+                                'city' => 'test',
+                                'state' => 'test',
+                                'country' => 'US',
+                            ],
+                ));
+
                 $payment = \Stripe\Charge::create([
                             "amount" => $amount,
                             "currency" => 'USD',
-                            "source" => $stripe->id,
+                            'customer' => $customer->id,
                             "description" => "Test payment from itsolutionstuff.com."
                 ]);
                 if ($payment->status == 'succeeded') {
@@ -99,13 +136,94 @@ class PaymentController extends Controller
     }
 
     /**
+     * Function to submit paypal request
+     *
+     * @param Request $request
+     * @return type
+     */
+    public function postPaymentWithpaypal(Request $request)
+    {
+        $payer = new Payer();
+        $payer->setPaymentMethod('paypal');
+        $amountPaid = 1;
+        $item_1 = new Item();
+        $item_1->setName('Item 1') /** item name * */
+                ->setCurrency('USD')
+                ->setQuantity(1)
+                ->setPrice($amountPaid);/** unit price * */
+        $item_list = new ItemList();
+        $item_list->setItems(array($item_1));
+        $amount = new Amount();
+        $amount->setCurrency("USD")
+                ->setTotal($amountPaid);
+        $transaction = new PaypalTransaction();
+        $transaction->setAmount($amount)
+                ->setItemList($item_list)
+                ->setDescription('Your transaction description');
+        $redirect_urls = new RedirectUrls();
+        $redirect_urls->setReturnUrl("http://localhost:4200/#/paypal-response/" . 1)->setCancelUrl("http://localhost:4200/#/paypal-response/" . 1);
+        $payment = new Payment();
+        $payment->setIntent('Sale')
+                ->setPayer($payer)
+                ->setRedirectUrls($redirect_urls)
+                ->setTransactions(array($transaction));
+        try {
+            $payment->create($this->_api_context);
+        } catch (\PayPal\Exception\PPConnectionException $ex) {
+            if (\Config::get('app.debug')) {
+                \Session::put('error', 'Connection timeout');
+                return Redirect::route('paywithpaypal');
+            } else {
+                \Session::put('error', 'Some error occur, sorry for inconvenient');
+                return Redirect::route('paywithpaypal');
+            }
+        }
+        foreach ($payment->getLinks() as $link) {
+            if ($link->getRel() == 'approval_url') {
+                $redirect_url = $link->getHref();
+                break;
+            }
+        }
+        /** add payment ID to session * */
+        Session::put('paypal_payment_id', $payment->getId());
+        print_r($redirect_url);
+        die;
+        \Session::put('error', 'Unknown error occurred');
+        return Redirect::route('paywithpaypal');
+    }
+
+    /**
+     * Function to save paypal response
+     *
+     * @param Request $request
+     * @return type
+     */
+    public function savePaypalResponse(Request $request)
+    {
+        $paymentStatus = config('settings.payment_status');
+        $transaction = Transaction::where('order_id', $request->order_id)->orderBy('id', 'desc')->first();
+        $payment_id = $transaction->txn_id;
+        if ($payment_id == $request->payment_id) {
+            $payment = Payment::get($payment_id, $this->_api_context);
+            $execution = new PaymentExecution();
+            $execution->setPayerId($request->payer_id);
+            $result = $payment->execute($execution, $this->_api_context);
+            if ($result->getState() == 'approved') {
+                $request->amount = $transaction->amount;
+                $this->actionsAfterPayment($request);
+                $transaction->update(['payment_status' => $paymentStatus[0], 'gateway_status' => $result->getState(), 'response' => $result]);
+                return response(json_encode(['status' => true]));
+            }
+        }
+        return response(['status' => false]);
+    }
+
+    /**
      * Function to set stripe api key
      */
     private function setApikey()
     {
-//        echo env('STRIPE_S'); die;
-        Stripe\Stripe::setApiKey('sk_test_JDHrf5PETtIsTSngJixUxw3R006xHvzI9E');
-//        Stripe\Stripe::setApiKey(env('STRIPE_S'));
+        Stripe\Stripe::setApiKey(env('STRIPE_S'));
     }
 
     /**
