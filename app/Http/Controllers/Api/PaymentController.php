@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Stripe;
 
 class PaymentController extends Controller
 {
@@ -40,6 +41,71 @@ class PaymentController extends Controller
     public function guard()
     {
         return Auth::guard();
+    }
+
+    /**
+     * Function to save payment by stripe
+     *
+     * @param Request $request
+     * @return type
+     */
+    public function submitPayment(Request $request)
+    {
+        $this->setApikey();
+        $data = $request->request->all();
+        $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+        try {
+            if ($product && $product->price > 0) {
+                $amount = $product->price * 100;
+                $stripe = \Stripe\Token::create([
+                            'card' => [
+                                'number' => $data['card_num'],
+                                'exp_month' => $data['exp_month'],
+                                'exp_year' => $data['exp_year'],
+                                'cvc' => $data['cvv'],
+                            ],
+                ]);
+                $payment = \Stripe\Charge::create([
+                            "amount" => $amount,
+                            "currency" => 'USD',
+                            "source" => $stripe->id,
+                            "description" => "Test payment from itsolutionstuff.com."
+                ]);
+                if ($payment->status == 'succeeded') {
+                    $data['txn_id'] = $payment->id;
+                    $data['order_id'] = $payment->id;
+                    $data['response'] = json_encode($payment);
+                    $data['product'] = $product;
+                    $data['type'] = 2;
+                    $this->actionsAfterPayment($data);
+                }
+                $response = [
+                    'code' => 200,
+                    'message' => 'Payment done successfully'
+                ];
+            } else {
+                $response = [
+                    'code' => 404,
+                    'message' => 'No product found'
+                ];
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
+        }
+        return response()->json($response);
+    }
+
+    /**
+     * Function to set stripe api key
+     */
+    private function setApikey()
+    {
+//        echo env('STRIPE_S'); die;
+        Stripe\Stripe::setApiKey('sk_test_JDHrf5PETtIsTSngJixUxw3R006xHvzI9E');
+//        Stripe\Stripe::setApiKey(env('STRIPE_S'));
     }
 
     /**
@@ -97,16 +163,39 @@ class PaymentController extends Controller
         return response()->json($response, 200);
     }
 
-//    public function sendEmailOnSuccess($productId)
+    public function actionsAfterPayment($data)
+    {
+        $paymentStatus = config('settings.payment_status');
+        $user = $this->guard()->user();
+        DB::beginTransaction();
+        $paymentData = [
+            'user_id' => $user->id,
+            'product_id' => $data['product_id'],
+            'payment_status' => $paymentStatus[0],
+            'payment_type' => $data['type'],
+            'txn_id' => $data['txn_id'],
+            'order_id' => $data['order_id'],
+            'response' => $data['response'],
+        ];
+        $transaction = Transaction::create($paymentData);
+        $this->sendEmailOnSuccess($data['product']);
+        $response = [
+            'code' => 200,
+            'data' => [
+                'payment_details' => $transaction,
+            ],
+            'message' => 'Success'
+        ];
+        DB::commit();
+    }
+
     public function sendEmailOnSuccess($product)
     {
         $user = $this->guard()->user();
         $email = Crypt::encryptString($user->email);
-//        $encryptedProductId = Crypt::encryptString($productId);
         $token = str_random(60);
         ProductDownload::create([
             'email' => $user->email,
-//            'product_id' => $productId,
             'product_id' => $product->id,
             'token' => $token,
             'created_at' => Carbon::now()
