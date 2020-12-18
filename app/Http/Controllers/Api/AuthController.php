@@ -36,54 +36,18 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $credentials = $request->only('username', 'password');
+        try {
+            $credentials = $request->only('username', 'password');
 
-        if (!$token = auth()->attempt($credentials)) {
-            $response = [
-                'code' => 401,
-                'error' => 'Unauthorized',
-            ];
-            return response()->json($response, 401);
-        }
+            if (!$token = auth()->attempt($credentials)) {
+                $response = [
+                    'code' => 401,
+                    'error' => 'Unauthorized',
+                ];
+                return response()->json($response, 401);
+            }
 
-        $user = User::where('username', $request->get('username'))->first();
-
-        $token = $this->respondWithToken(JWTAuth::fromUser($user));
-        $response = [
-            'code' => 200,
-            'data' => [
-                'user' => $user,
-                'token' => $token,
-            ],
-            'message' => 'user login successfully'
-        ];
-        return response()->json($response, 200);
-    }
-
-    public function signup(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-                    'username' => 'required|string|max:255|unique:users',
-                    'email' => 'required|string|email|max:255|unique:users',
-                    'password' => 'required|confirmed|min:6',
-        ]);
-
-        if ($validator->fails()) {
-            $response = [
-                'code' => 400,
-                'error' => $validator->errors(),
-            ];
-            return response()->json($response, 400);
-        }
-        $user = User::create([
-                    'username' => $request->username,
-                    'email' => $request->email,
-                    'password' => Hash::make($request->password),
-        ]);
-
-        $credentials = $request->only('email', 'password');
-
-        if ($token = $this->guard()->attempt($credentials)) {
+            $user = User::where('username', $request->get('username'))->first();
 
             $token = $this->respondWithToken(JWTAuth::fromUser($user));
             $response = [
@@ -92,10 +56,59 @@ class AuthController extends Controller
                     'user' => $user,
                     'token' => $token,
                 ],
-                'message' => 'user register successfully'
+                'message' => 'user login successfully'
             ];
-            return response()->json($response, 200);
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
         }
+        return response()->json($response, 200);
+    }
+
+    public function signup(Request $request)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
+                        'username' => 'required|string|max:255|unique:users',
+                        'email' => 'required|string|email|max:255|unique:users',
+                        'password' => 'required|confirmed|min:6',
+            ]);
+
+            if ($validator->fails()) {
+                $response = [
+                    'code' => 400,
+                    'error' => $validator->errors(),
+                ];
+                return response()->json($response, 400);
+            }
+            $user = User::create([
+                        'username' => $request->username,
+                        'email' => $request->email,
+                        'password' => Hash::make($request->password),
+            ]);
+
+            $credentials = $request->only('email', 'password');
+
+            if ($token = $this->guard()->attempt($credentials)) {
+                $token = $this->respondWithToken(JWTAuth::fromUser($user));
+                $response = [
+                    'code' => 200,
+                    'data' => [
+                        'user' => $user,
+                        'token' => $token,
+                    ],
+                    'message' => 'user register successfully'
+                ];
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
+        }
+        return response()->json($response, 200);
     }
 
     /**
@@ -105,15 +118,22 @@ class AuthController extends Controller
      */
     public function getUser()
     {
-        $user = $this->guard()->user();
-        $userInfo = $this->guard()->user()->userDetails;
-        $response = [
-            'code' => 200,
-            'data' => [
-                'user' => $user,
-            ],
-            'message' => 'User details fetch successfully'
-        ];
+        try {
+            $user = $this->guard()->user();
+            $userInfo = $this->guard()->user()->userDetails;
+            $response = [
+                'code' => 200,
+                'data' => [
+                    'user' => $user,
+                ],
+                'message' => 'User details fetch successfully'
+            ];
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
+        }
         return response()->json($response);
     }
 
@@ -217,138 +237,178 @@ class AuthController extends Controller
 
     public function updateProfile(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-                    'mobile' => 'digits:10'
-        ]);
+        try {
+            $validator = Validator::make($request->all(), [
+                        'mobile' => 'digits:10'
+            ]);
 
-        if ($validator->fails()) {
+            if ($validator->fails()) {
+                $response = [
+                    'code' => 400,
+                    'error' => $validator->errors(),
+                ];
+                return response()->json($response, 400);
+            }
+            $user = $this->guard()->user();
+
+            $userDetails = ($user->userDetails) ? $user->userDetails()->update($request->all()) : $user->userDetails()->create($request->all());
+
             $response = [
-                'code' => 400,
-                'error' => $validator->errors(),
+                'code' => 200,
+                'message' => 'Profile updated successfully'
             ];
-            return response()->json($response, 400);
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
         }
-        $user = $this->guard()->user();
 
-        $userDetails = ($user->userDetails) ? $user->userDetails()->update($request->all()) : $user->userDetails()->create($request->all());
-
-        $response = [
-            'code' => 200,
-            'message' => 'Profile updated successfully'
-        ];
         return response()->json($response, 200);
     }
 
     public function forgotPassword(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
-        $encryptedValue = Crypt::encryptString($request->email);
-        $message = 'User not found';
-        if ($user) {
-            $token = str_random(60);
-            $email = Crypt::encryptString($request->email);
-            DB::table('password_resets')->insert([
-                'email' => $user->email,
-                'token' => $token,
-                'created_at' => Carbon::now()
-            ]);
-            $data = [
-                'name' => $user->name,
-                'url' => env('FRONT_END_BASE_URL') . '/reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
-                'subject' => 'Password Reset',
-                'template' => 'emails.password_reset'
+        try {
+            $user = User::where('email', $request->email)->first();
+            $encryptedValue = Crypt::encryptString($request->email);
+            $message = 'User not found';
+            if ($user) {
+                $token = str_random(60);
+                $email = Crypt::encryptString($request->email);
+                DB::table('password_resets')->insert([
+                    'email' => $user->email,
+                    'token' => $token,
+                    'created_at' => Carbon::now()
+                ]);
+                $data = [
+                    'name' => $user->name,
+                    'url' => env('FRONT_END_BASE_URL') . '/reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
+                    'subject' => 'Password Reset',
+                    'template' => 'emails.password_reset'
+                ];
+                Mail::to($user->email)->send(new \App\Mail\Mailer($data));
+                $message = 'Email send successfully';
+            }
+            $response = [
+                'code' => 200,
+                'message' => $message
             ];
-            Mail::to($user->email)->send(new \App\Mail\Mailer($data));
-            $message = 'Email send successfully';
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
         }
-        $response = [
-            'code' => 200,
-            'message' => $message
-        ];
+
         return response()->json($response, 200);
     }
 
     public function resetPassword(Request $request)
     {
-        $data = $request->all();
-        $data['email'] = Crypt::decryptString($data['email']);
-        $validator = Validator::make($data, [
-                    'email' => 'required|email|exists:users,email',
-                    'password' => 'required|confirmed|min:6',
-                    'token' => 'required']);
+        try {
+            $data = $request->all();
+            $data['email'] = Crypt::decryptString($data['email']);
+            $validator = Validator::make($data, [
+                        'email' => 'required|email|exists:users,email',
+                        'password' => 'required|confirmed|min:6',
+                        'token' => 'required']);
 
-        //check if payload is valid before moving on
-        if ($validator->fails()) {
+            //check if payload is valid before moving on
+            if ($validator->fails()) {
+                $response = [
+                    'code' => 400,
+                    'error' => $validator->errors(),
+                ];
+                return response()->json($response, 400);
+            }
+
+            $email = Crypt::decryptString($request->email);
+            $tokenData = DB::table('password_resets')
+                            ->where('token', $request->token)
+                            ->where('email', $email)->first();
+            if (!$tokenData) {
+                $response = [
+                    'code' => 400,
+                    'error' => 'Invalid token',
+                ];
+                return response()->json($response, 400);
+            }
+            $user = User::where('email', $tokenData->email)->first();
+
+            if (!$user) {
+                $response = [
+                    'code' => 400,
+                    'error' => 'User Not found',
+                ];
+                return response()->json($response, 400);
+            };
+
+            $user->password = Hash::make($request->password);
+
+            $user->update();
+
+            //Delete the token
+            DB::table('password_resets')->where('email', $user->email)
+                    ->delete();
             $response = [
-                'code' => 400,
-                'error' => $validator->errors(),
+                'code' => 200,
+                'message' => 'Password updated successfully',
             ];
-            return response()->json($response, 400);
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
         }
 
-        $email = Crypt::decryptString($request->email);
-        $tokenData = DB::table('password_resets')
-                        ->where('token', $request->token)
-                        ->where('email', $email)->first();
-        if (!$tokenData) {
-            $response = [
-                'code' => 400,
-                'error' => 'Invalid token',
-            ];
-            return response()->json($response, 400);
-        }
-        $user = User::where('email', $tokenData->email)->first();
-
-        if (!$user) {
-            $response = [
-                'code' => 400,
-                'error' => 'User Not found',
-            ];
-            return response()->json($response, 400);
-        };
-
-        $user->password = Hash::make($request->password);
-
-        $user->update();
-
-        //Delete the token
-        DB::table('password_resets')->where('email', $user->email)
-                ->delete();
-        $response = [
-            'code' => 200,
-            'message' => 'Password updated successfully',
-        ];
         return response()->json($response, 200);
     }
 
     public function orderHistory(Request $request)
     {
-        $user = $this->guard()->user();
-        $paymentStatus = config('settings.payment_status');
-        $products = [];
-        $transactions = \App\Models\Transaction::where('user_id', $user->id)->where('payment_status', $paymentStatus[0])->get();
-        foreach ($transactions as $key => $transaction) {
-            $products[$key] = $transaction->product;
+        try {
+            $user = $this->guard()->user();
+            $paymentStatus = config('settings.payment_status');
+            $products = [];
+            $transactions = \App\Models\Transaction::where('user_id', $user->id)->where('payment_status', $paymentStatus[0])->get();
+            foreach ($transactions as $key => $transaction) {
+                $products[$key] = $transaction->product;
+            }
+            $response = [
+                'code' => 200,
+                'data' => $products,
+                'message' => 'Password updated successfully',
+            ];
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
         }
-        $response = [
-            'code' => 200,
-            'data' => $products,
-            'message' => 'Password updated successfully',
-        ];
+
         return response()->json($response, 200);
     }
 
     public function downloadTheme($productId)
     {
-        $product = \App\Models\Product::where('productId', $productId)->first();
-        if ($product) {
-            $headers = array(
-                'Content-Type' => 'application/octet-stream',
-            );
-            return response()->download(public_path() . '/uploads/' . $product->id . '.zip', $product->name . '.zip', $headers);
+        try {
+            $product = \App\Models\Product::where('productId', $productId)->first();
+            if ($product) {
+                $headers = array(
+                    'Content-Type' => 'application/octet-stream',
+                );
+                return response()->download(public_path() . '/uploads/' . $product->id . '.zip', $product->name . '.zip', $headers);
+            }
+            print_r('No data found');
+            die;
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
+            return response()->json($response, 200);
         }
-        print_r('No data found');
-        die;
     }
 
 }
