@@ -78,16 +78,17 @@ class PaymentController extends Controller
         $this->setApikey();
         $data = $request->request->all();
         $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+        $productName = '';
         try {
             if ($product && $product->price > 0) {
                 $amount = $product->price * 100;
                 $stripe = \Stripe\Token::create([
-                        'card' => [
-                            'number' => $data['card_num'],
-                            'exp_month' => $data['exp_month'],
-                            'exp_year' => $data['exp_year'],
-                            'cvc' => $data['cvv'],
-                        ],
+                            'card' => [
+                                'number' => $data['card_num'],
+                                'exp_month' => $data['exp_month'],
+                                'exp_year' => $data['exp_year'],
+                                'cvc' => $data['cvv'],
+                            ],
                 ]);
                 $customer = \Stripe\Customer::create(array(
                             'name' => 'test',
@@ -116,21 +117,23 @@ class PaymentController extends Controller
                     $data['product'] = $product;
                     $data['type'] = 2;
                     $this->actionsAfterPayment($data);
+                    $productName = $product->name;
+                    $response = [
+                        'code' => 200,
+                        'message' => 'Payment done successfully',
+                        'product_name' => $productName
+                    ];
                 }
-                $response = [
-                    'code' => 200,
-                    'message' => 'Payment done successfully'
-                ];
             } else {
                 $response = [
                     'code' => 404,
-                    'message' => 'No product found'
+                    'message' => 'No product found',
                 ];
             }
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
+                'message' => $exc->getMessage(),
             ];
         }
         return response()->json($response);
@@ -344,7 +347,7 @@ class PaymentController extends Controller
                 $dateAfter24Hours = Carbon::parse($product->created_at)->addHour(24)->toDateTimeString();
                 if (Carbon::now()->toDateTimeString() < $dateAfter24Hours) {
                     $product->delete();
-                    return response()->download(public_path() . '/uploads/' . $data['productId'] . '.zip');
+                    return response()->download(public_path() . '/uploads/' . $productId . '.zip');
                 } else {
                     print_r('This url has been expired');
                     die;
