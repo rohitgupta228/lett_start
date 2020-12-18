@@ -52,6 +52,8 @@ Route::group(['prefix' => 'product','middleware' => 'api'], function() {
     Route::get('bulk-upload', 'Api\ProductController@bulkUpload')->name('product.bulk.upload');
     
     Route::get('lists', 'Api\ProductController@lists')->name('product.lists');
+    
+    Route::get('home', 'Api\ProductController@homeProductsList')->name('product.home');
 });
 
 Route::group(['prefix' => 'transaction','middleware' => 'api'], function() {

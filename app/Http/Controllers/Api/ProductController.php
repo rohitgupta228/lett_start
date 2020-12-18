@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api', ['except' => ['details', 'lists', 'homeProductsList']]);
         $user = $this->guard()->user();
         if ($user->email !== env('ADMIN_EMAIL')) {
             $response = [
@@ -178,11 +178,20 @@ class ProductController extends Controller
     public function lists(Request $request)
     {
         $query = $request->all();
-        if (count($query) && isset($query['name']) && $query['name'] != '') {
-            $products = Product::where('name', 'LIKE', '%' . $request->all()['name'] . '%')->paginate(10);
-        } else {
-            $products = Product::paginate(10);
+        $result = Product::query();
+        if (count($query)) {
+            if (isset($query['category']) && $query['category'] != '') {
+                $result = $result->where('name', 'LIKE', '%' . $query['category'] . '%');
+            }
+            if (isset($query['category']) && $query['category'] != '') {
+                $categoryArary = explode(' ', $query['category']);
+                $result = $result->where('category', 'LIKE', "%{$categoryArary[0]}%");
+                if (count($categoryArary) >= 2) {
+                    $result = $result->orwhere('name', 'LIKE', '%' . $categoryArary[1] . '%');
+                }
+            }
         }
+        $products = $result->paginate(10);
         $response = [
             'code' => 200,
             'data' => [
@@ -191,6 +200,29 @@ class ProductController extends Controller
             'message' => 'Products fetched successfully'
         ];
         return response()->json($response, 200);
+    }
+
+    public function homeProductsList()
+    {
+        $query = [
+            'added' => 'popular',
+            'angular' => 'angular',
+            'recently' => 'recently'
+        ];
+        $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->paginate(4);
+        $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->paginate(4);
+        $latest = Product::where('added', 'LIKE', "%{$query['recently']}%")->paginate(4);
+        $response = [
+            'code' => 200,
+            'data' => [
+                'bestSelling' => $bestSelling,
+                'angular' => $angular,
+                'latest' => $latest
+            ],
+            'message' => 'Products fetched successfully'
+        ];
+        return response()->json($response, 200);
+        
     }
 
 }
