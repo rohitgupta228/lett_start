@@ -29,6 +29,7 @@ use PayPal\Api\Transaction as PaypalTransaction;
 use Session;
 use Redirect;
 use Input;
+use Illuminate\Support\Facades\Redirect;
 
 class PaymentController extends Controller
 {
@@ -351,9 +352,8 @@ class PaymentController extends Controller
             }
             print_r('This url has been expired');
             die;
-        } catch (Exception $exc) {
-            print_r('This url has been expired');
-            die;
+        } catch (\Exception $exc) {
+            return Redirect::to('https://www.google.co.in/');
         }
     }
 
