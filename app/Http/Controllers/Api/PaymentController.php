@@ -80,7 +80,7 @@ class PaymentController extends Controller
         $productName = '';
         try {
             if ($product && $product->price > 0) {
-                $amount = $product->price * 100;
+                $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
                 $stripe = \Stripe\Token::create([
                             'card' => [
                                 'number' => $data['card_num'],
@@ -151,7 +151,7 @@ class PaymentController extends Controller
             $product = \App\Models\Product::where('productId', $data['product_id'])->first();
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
-            $amountPaid = $product->price;
+            $amountPaid = $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
             $item_1 = new Item();
             $item_1->setName('Item 1') /** item name * */
                     ->setCurrency('USD')
@@ -167,7 +167,7 @@ class PaymentController extends Controller
                     ->setItemList($item_list)
                     ->setDescription('Your transaction description');
             $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . '?pid=' . $data['product_id'])->setCancelUrl(env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false');
+            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . '?pid=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false');
             $payment = new Payment();
             $payment->setIntent('Sale')
                     ->setPayer($payer)
@@ -231,7 +231,7 @@ class PaymentController extends Controller
                 $execution->setPayerId($data['payer_id']);
                 $result = $payment->execute($execution, $this->_api_context);
                 if ($result->getState() == 'approved') {
-                    $this->sendEmailOnSuccess($product);
+                    $this->sendEmailOnSuccess($product, $data['multi']);
                     $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
                     return response(json_encode(['status' => true, 'product_name' => $product->name, 'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=true']));
                 }
@@ -271,11 +271,11 @@ class PaymentController extends Controller
             'amount' => $data['product']->price
         ];
         $transaction = Transaction::create($paymentData);
-        $this->sendEmailOnSuccess($data['product']);
+        $this->sendEmailOnSuccess($data['product'], $data['multi']);
         DB::commit();
     }
 
-    public function sendEmailOnSuccess($product)
+    public function sendEmailOnSuccess($product, $licenseType = false)
     {
         $user = $this->guard()->user();
         $email = Crypt::encryptString($user->email);
@@ -287,7 +287,8 @@ class PaymentController extends Controller
             'created_at' => Carbon::now()
         ]);
         $data = [
-            'username' => $user->name,
+            'license' => $licenseType ? 'multiple' : 'single',
+            'product_name' => $product->name,
             'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
             'subject' => 'Download Theme',
             'template' => 'emails.product_download'
