@@ -134,15 +134,20 @@ class ProductController extends Controller
     public function details($detailLink)
     {
         $product = Product::where('detailLink', $detailLink)->first();
+        $categoryArary[0] = 'landing';
         $response = [
             'code' => 404,
             'message' => 'Product not found'
         ];
         if ($product) {
+            $categoryArray = explode(' ', $product->mainCat);
+            $category = strtolower($categoryArray[0]);
+            $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->paginate(3);
             $response = [
                 'code' => 200,
                 'data' => [
                     'product' => $product,
+                    'realtedProducts' => $realtedProducts
                 ],
                 'message' => 'Product details fetch successfully'
             ];
