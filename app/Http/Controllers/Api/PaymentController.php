@@ -204,11 +204,24 @@ class PaymentController extends Controller
                     'response' => null,
                 ];
                 $transaction = Transaction::create($paymentData);
-                return response(json_encode(['url' => $redirect_url, 'status' => true]));
+                $response = [
+                    'code' => 200,
+                    'data' => [
+                        'url' => $redirect_url,
+                        'status' => true
+                    ],
+                ];
             }
         } catch (\Exception $exc) {
-            return response(json_encode(['url' => '', 'status' => false, 'code' => $exc->getCode()]));
+            $response = [
+                'code' => $exc->getCode(),
+                'data' => [
+                    'url' => '',
+                    'status' => false
+                ],
+            ];
         }
+        return response(json_encode($response));
     }
 
     /**
@@ -233,18 +246,27 @@ class PaymentController extends Controller
                 if ($result->getState() == 'approved') {
                     $this->sendEmailOnSuccess($product, $data['multi']);
                     $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
-                    return response(json_encode(['status' => true, 'product_name' => $product->name, 'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=true']));
+                    $response = [
+                        'code' => 200,
+                        'data' => [
+                            'product_name' => $product->name, 
+                            'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=true',
+                            'status' => true
+                        ],
+                    ];
                 }
             }
-            return response(['status' => false, 'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false']);
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
                 'message' => $exc->getMessage(),
-                'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false'
+                'data' => [
+                    'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false',
+                    'status' => false
+                ],
             ];
-            return response()->json($response, $exc->getCode());
         }
+        return response(json_encode($response));
     }
 
     /**
