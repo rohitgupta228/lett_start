@@ -374,14 +374,14 @@ END OF IMPORTANT
       font-weight: bold;
       font-style: normal;
       line-height: 120%;
-      color: #ffffff;
+      color: #ffffff !important;
       text-decoration: none;
       width: auto;
       text-align: center;
     }
 
     .button:hover {
-      color: #ffffff;
+      color: #ffffff !important;
     }
 
     .button-border:hover a.button,
