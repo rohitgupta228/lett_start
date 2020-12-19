@@ -56,12 +56,13 @@ Route::group(['prefix' => 'product','middleware' => 'api'], function() {
     Route::get('home', 'Api\ProductController@homeProductsList')->name('product.home');
 });
 
-Route::group(['prefix' => 'transaction','middleware' => 'api'], function() {
-    Route::post('save', 'Api\PaymentController@save')->name('transaction.save');
+Route::group(['prefix' => 'payment','middleware' => 'api'], function() {
     
-    Route::post('stripe/save', 'Api\PaymentController@submitPayment')->name('transaction.stripe.save');
+    Route::post('stripe', 'Api\PaymentController@submitPayment')->name('payment.stripe');
     
-    Route::post('postPaymentWithpaypal', 'Api\PaymentController@postPaymentWithpaypal')->name('transaction.postPaymentWithpaypal');
+    Route::post('paypal', 'Api\PaymentController@postPaymentWithpaypal')->name('payment.paypal');
+    
+    Route::post('paypal-response', 'Api\PaymentController@savePaypalResponse')->name('payment.paypal.response');
 });
 
 Route::get('download-theme', 'Api\PaymentController@downloadTheme')->name('download.theme');

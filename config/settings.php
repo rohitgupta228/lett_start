@@ -4,7 +4,8 @@ return [
     
     'payment_status' => [
         "SUCCESS",
-         "FAILURE"
+         "FAILURE",
+        "INITIATED"
     ]
 ];
 

@@ -29,7 +29,6 @@ use PayPal\Api\Transaction as PaypalTransaction;
 use Session;
 use Redirect;
 use Input;
-use Illuminate\Support\Facades\Redirect;
 
 class PaymentController extends Controller
 {
@@ -147,53 +146,69 @@ class PaymentController extends Controller
      */
     public function postPaymentWithpaypal(Request $request)
     {
-        $payer = new Payer();
-        $payer->setPaymentMethod('paypal');
-        $amountPaid = 1;
-        $item_1 = new Item();
-        $item_1->setName('Item 1') /** item name * */
-                ->setCurrency('USD')
-                ->setQuantity(1)
-                ->setPrice($amountPaid);/** unit price * */
-        $item_list = new ItemList();
-        $item_list->setItems(array($item_1));
-        $amount = new Amount();
-        $amount->setCurrency("USD")
-                ->setTotal($amountPaid);
-        $transaction = new PaypalTransaction();
-        $transaction->setAmount($amount)
-                ->setItemList($item_list)
-                ->setDescription('Your transaction description');
-        $redirect_urls = new RedirectUrls();
-        $redirect_urls->setReturnUrl("http://localhost:4200/#/paypal-response/" . 1)->setCancelUrl("http://localhost:4200/#/paypal-response/" . 1);
-        $payment = new Payment();
-        $payment->setIntent('Sale')
-                ->setPayer($payer)
-                ->setRedirectUrls($redirect_urls)
-                ->setTransactions(array($transaction));
         try {
-            $payment->create($this->_api_context);
-        } catch (\PayPal\Exception\PPConnectionException $ex) {
-            if (\Config::get('app.debug')) {
-                \Session::put('error', 'Connection timeout');
-                return Redirect::route('paywithpaypal');
-            } else {
-                \Session::put('error', 'Some error occur, sorry for inconvenient');
-                return Redirect::route('paywithpaypal');
+            $data = $request->all();
+            $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+            $payer = new Payer();
+            $payer->setPaymentMethod('paypal');
+            $amountPaid = $product->price;
+            $item_1 = new Item();
+            $item_1->setName('Item 1') /** item name * */
+                    ->setCurrency('USD')
+                    ->setQuantity(1)
+                    ->setPrice($amountPaid);/** unit price * */
+            $item_list = new ItemList();
+            $item_list->setItems(array($item_1));
+            $amount = new Amount();
+            $amount->setCurrency("USD")
+                    ->setTotal($amountPaid);
+            $transaction = new PaypalTransaction();
+            $transaction->setAmount($amount)
+                    ->setItemList($item_list)
+                    ->setDescription('Your transaction description');
+            $redirect_urls = new RedirectUrls();
+            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . '?pid=' . $data['product_id'])->setCancelUrl(env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false');
+            $payment = new Payment();
+            $payment->setIntent('Sale')
+                    ->setPayer($payer)
+                    ->setRedirectUrls($redirect_urls)
+                    ->setTransactions(array($transaction));
+            try {
+                $payment->create($this->_api_context);
+            } catch (\PayPal\Exception\PPConnectionException $ex) {
+                if (\Config::get('app.debug')) {
+                    \Session::put('error', 'Connection timeout');
+                    return Redirect::route('paywithpaypal');
+                } else {
+                    \Session::put('error', 'Some error occur, sorry for inconvenient');
+                    return Redirect::route('paywithpaypal');
+                }
             }
-        }
-        foreach ($payment->getLinks() as $link) {
-            if ($link->getRel() == 'approval_url') {
-                $redirect_url = $link->getHref();
-                break;
+            foreach ($payment->getLinks() as $link) {
+                if ($link->getRel() == 'approval_url') {
+                    $redirect_url = $link->getHref();
+                    break;
+                }
             }
+            if (isset($redirect_url)) {
+                $paymentStatus = config('settings.payment_status');
+                $user = $this->guard()->user();
+                $paymentData = [
+                    'user_id' => $user->id,
+                    'product_id' => $data['product_id'],
+                    'payment_status' => $paymentStatus[2],
+                    'payment_type' => 1,
+                    'txn_id' => $payment->getId(),
+                    'order_id' => $payment->getId(),
+                    'amount' => $amountPaid,
+                    'response' => json_encode([]),
+                ];
+                $transaction = Transaction::create($paymentData);
+                return response(json_encode(['url' => $redirect_url, 'status' => true]));
+            }
+        } catch (\Exception $exc) {
+            return response(json_encode(['url' => '', 'status' => false, 'code' => $exc->getCode()]));
         }
-        /** add payment ID to session * */
-        Session::put('paypal_payment_id', $payment->getId());
-        print_r($redirect_url);
-        die;
-        \Session::put('error', 'Unknown error occurred');
-        return Redirect::route('paywithpaypal');
     }
 
     /**
@@ -204,22 +219,32 @@ class PaymentController extends Controller
      */
     public function savePaypalResponse(Request $request)
     {
-        $paymentStatus = config('settings.payment_status');
-        $transaction = Transaction::where('order_id', $request->order_id)->orderBy('id', 'desc')->first();
-        $payment_id = $transaction->txn_id;
-        if ($payment_id == $request->payment_id) {
-            $payment = Payment::get($payment_id, $this->_api_context);
-            $execution = new PaymentExecution();
-            $execution->setPayerId($request->payer_id);
-            $result = $payment->execute($execution, $this->_api_context);
-            if ($result->getState() == 'approved') {
-                $request->amount = $transaction->amount;
-                $this->actionsAfterPayment($request);
-                $transaction->update(['payment_status' => $paymentStatus[0], 'gateway_status' => $result->getState(), 'response' => $result]);
-                return response(json_encode(['status' => true]));
+        $data = $request->all();
+        $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+        try {
+            $paymentStatus = config('settings.payment_status');
+            $transaction = Transaction::where('product_id', $data['product_id'])->orderBy('id', 'desc')->first();
+            $payment_id = $transaction->txn_id;
+            if ($payment_id == $data['payment_id']) {
+                $payment = Payment::get($payment_id, $this->_api_context);
+                $execution = new PaymentExecution();
+                $execution->setPayerId($data['payer_id']);
+                $result = $payment->execute($execution, $this->_api_context);
+                if ($result->getState() == 'approved') {
+                    $this->sendEmailOnSuccess($product);
+                    $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
+                    return response(json_encode(['status' => true, 'product_name' => $product->name, 'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=true']));
+                }
             }
+            return response(['status' => false, 'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false']);
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage(),
+                'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false'
+            ];
+            return response()->json($response, $exc->getCode());
         }
-        return response(['status' => false]);
     }
 
     /**
@@ -228,61 +253,6 @@ class PaymentController extends Controller
     private function setApikey()
     {
         Stripe\Stripe::setApiKey(env('STRIPE_S'));
-    }
-
-    /**
-     * Create Product
-     *
-     * @param  \Illuminate\Http\Request  $request
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function save(Request $request)
-    {
-        try {
-            $data = $request->request->all();
-            $product = \App\Models\Product::find($data['product_id']);
-            $paymentStatus = config('settings.payment_status');
-            if ($product && $product->price == $data['amount']) {
-                DB::beginTransaction();
-                $paymentData = [
-                    'user_id' => $data['user_id'],
-                    'product_id' => $data['product_id'],
-                    'payment_status' => $paymentStatus[1],
-                    'payment_type' => 2,
-                ];
-                if ($data['success']) {
-                    $paymentData['txn_id'] = $data['razorpay_response']['id'];
-                    $paymentData['order_id'] = $data['razorpay_response']['order_id'];
-                    $paymentData['response'] = json_encode($data['razorpay_response']);
-                    $paymentData['payment_status'] = $paymentStatus[0];
-                }
-                $transaction = Transaction::create($paymentData);
-                $this->sendEmailOnSuccess($product);
-//                $this->sendEmailOnSuccess($data['product_id']);
-                $response = [
-                    'code' => 200,
-                    'data' => [
-                        'payment_details' => $transaction,
-                    ],
-                    'message' => 'Success'
-                ];
-                DB::commit();
-            } else {
-                $response = [
-                    'code' => 400,
-                    'message' => 'Bad Request'
-                ];
-            }
-        } catch (\Exception $exc) {
-            DB::rollBack();
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
-            ];
-        }
-
-        return response()->json($response, 200);
     }
 
     public function actionsAfterPayment($data)
@@ -298,16 +268,10 @@ class PaymentController extends Controller
             'txn_id' => $data['txn_id'],
             'order_id' => $data['order_id'],
             'response' => $data['response'],
+            'amount' => $data['product']->price
         ];
         $transaction = Transaction::create($paymentData);
         $this->sendEmailOnSuccess($data['product']);
-        $response = [
-            'code' => 200,
-            'data' => [
-                'payment_details' => $transaction,
-            ],
-            'message' => 'Success'
-        ];
         DB::commit();
     }
 
@@ -322,7 +286,6 @@ class PaymentController extends Controller
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
-
         $data = [
             'username' => $user->name,
             'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
