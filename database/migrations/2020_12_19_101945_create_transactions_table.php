@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTransactionsTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -15,13 +16,13 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-	    $table->integer('user_id');
+            $table->integer('user_id');
             $table->string('product_id');
-            $table->string('order_id')->nullable();
             $table->string('txn_id')->nullable();
             $table->string('amount')->nullable();
+            $table->boolean('multi');
             $table->json('response')->nullable();
-            $table->tinyInteger('payment_type')->comment('1 => Paypal, 2 => Razorpay');
+            $table->tinyInteger('payment_type')->comment('1 => Paypal, 2 => Stripe');
             $table->string('payment_status');
             $table->timestamps();
         });
@@ -36,4 +37,5 @@ class CreateTransactionsTable extends Migration
     {
         Schema::dropIfExists('transactions');
     }
+
 }
