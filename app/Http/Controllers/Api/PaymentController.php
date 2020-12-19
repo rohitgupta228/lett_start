@@ -151,7 +151,7 @@ class PaymentController extends Controller
             $product = \App\Models\Product::where('productId', $data['product_id'])->first();
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
-            $amountPaid = $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
+            $amountPaid = $amount = $data['multi'] ? $product->price * 5 : $product->price;
             $item_1 = new Item();
             $item_1->setName('Item 1') /** item name * */
                     ->setCurrency('USD')
@@ -334,7 +334,7 @@ class PaymentController extends Controller
                 if (Carbon::now()->toDateTimeString() > $dateAfter24Hours) {
                     $product->delete();
                     return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
-                } 
+                }
                 return response()->download(public_path() . '/uploads/' . $productId . '.zip');
             }
         } catch (\Exception $exc) {
