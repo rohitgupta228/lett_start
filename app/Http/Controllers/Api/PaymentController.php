@@ -199,9 +199,9 @@ class PaymentController extends Controller
                     'payment_status' => $paymentStatus[2],
                     'payment_type' => 1,
                     'txn_id' => $payment->getId(),
-                    'order_id' => $payment->getId(),
+                    'multi' => $data['multi'],
                     'amount' => $amountPaid,
-                    'response' => json_encode([]),
+                    'response' => null,
                 ];
                 $transaction = Transaction::create($paymentData);
                 return response(json_encode(['url' => $redirect_url, 'status' => true]));
@@ -264,9 +264,8 @@ class PaymentController extends Controller
             'user_id' => $user->id,
             'product_id' => $data['product_id'],
             'payment_status' => $paymentStatus[0],
-            'payment_type' => $data['type'],
+            'payment_type' => 2,
             'txn_id' => $data['txn_id'],
-            'order_id' => $data['order_id'],
             'response' => $data['response'],
             'amount' => $data['multi'] ? $data['product']->price * 5 : $data['product']->price,
             'multi' => $data['multi']
