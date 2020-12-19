@@ -142,7 +142,7 @@ class ProductController extends Controller
         if ($product) {
             $categoryArray = explode(' ', $product->mainCat);
             $category = strtolower($categoryArray[0]);
-            $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->paginate(3);
+            $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price' , '!=', 0)->paginate(3);
             $response = [
                 'code' => 200,
                 'data' => [
