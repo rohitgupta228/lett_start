@@ -271,6 +271,7 @@ class AuthController extends Controller
     {
         try {
             $user = User::where('email', $request->email)->first();
+            $userInfo = $user->userDetails;
             $encryptedValue = Crypt::encryptString($request->email);
             $message = 'User not found';
             if ($user) {
@@ -282,7 +283,8 @@ class AuthController extends Controller
                     'created_at' => Carbon::now()
                 ]);
                 $data = [
-                    'name' => $user->name,
+                    'first_name' => $userInfo->first_name,
+                    'last_name' => $userInfo->last_name,
                     'url' => env('FRONT_END_BASE_URL') . '/reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
                     'subject' => 'Password Reset',
                     'template' => 'emails.password_reset'
