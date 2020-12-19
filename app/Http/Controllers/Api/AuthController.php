@@ -13,6 +13,7 @@ use Mail;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Crypt;
+use Redirect;
 
 class AuthController extends Controller
 {
@@ -285,7 +286,7 @@ class AuthController extends Controller
                 $data = [
                     'first_name' => $userInfo->first_name,
                     'last_name' => $userInfo->last_name,
-                    'url' => env('FRONT_END_BASE_URL') . '/reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
+                    'url' => env('FRONT_END_BASE_URL') . 'reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
                     'subject' => 'Password Reset',
                     'template' => 'emails.password_reset'
                 ];
@@ -402,15 +403,17 @@ class AuthController extends Controller
                 );
                 return response()->download(public_path() . '/uploads/' . $product->id . '.zip', $product->name . '.zip', $headers);
             }
-            print_r('No data found');
-            die;
+            $response = [
+                'code' => 404,
+                'message' => 'No product found'
+            ];
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
                 'message' => $exc->getMessage()
             ];
-            return response()->json($response, 200);
         }
+        return response()->json($response, 200);
     }
 
 }

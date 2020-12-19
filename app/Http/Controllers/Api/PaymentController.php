@@ -249,8 +249,8 @@ class PaymentController extends Controller
                     $response = [
                         'code' => 200,
                         'data' => [
-                            'product_name' => $product->name, 
-                            'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=true',
+                            'product_name' => $product->name,
+                            'url' => env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=true',
                             'status' => true
                         ],
                     ];
@@ -261,7 +261,7 @@ class PaymentController extends Controller
                 'code' => $exc->getCode(),
                 'message' => $exc->getMessage(),
                 'data' => [
-                    'url' => env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false',
+                    'url' => env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=false',
                     'status' => false
                 ],
             ];
@@ -331,19 +331,16 @@ class PaymentController extends Controller
             if ($product) {
                 $createdDate = $product->created_at;
                 $dateAfter24Hours = Carbon::parse($product->created_at)->addHour(24)->toDateTimeString();
-                if (Carbon::now()->toDateTimeString() < $dateAfter24Hours) {
+                if (Carbon::now()->toDateTimeString() > $dateAfter24Hours) {
                     $product->delete();
-                    return response()->download(public_path() . '/uploads/' . $productId . '.zip');
-                } else {
-                    print_r('This url has been expired');
-                    die;
-                }
+                    return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
+                } 
+                return response()->download(public_path() . '/uploads/' . $productId . '.zip');
             }
-            print_r('This url has been expired');
-            die;
         } catch (\Exception $exc) {
-            return Redirect::to('https://www.google.co.in/');
+            logger($exc->getMessage());
         }
+        return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
     }
 
 }
