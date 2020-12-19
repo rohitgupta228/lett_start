@@ -268,7 +268,8 @@ class PaymentController extends Controller
             'txn_id' => $data['txn_id'],
             'order_id' => $data['order_id'],
             'response' => $data['response'],
-            'amount' => $data['product']->price
+            'amount' => $data['multi'] ? $data['product']->price * 5 : $data['product']->price,
+            'multi' => $data['multi']
         ];
         $transaction = Transaction::create($paymentData);
         $this->sendEmailOnSuccess($data['product'], $data['multi']);

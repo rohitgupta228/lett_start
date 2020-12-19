@@ -13,7 +13,7 @@ class Transaction extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'product_id', 'txn_id', 'order_id', 'payment_type', 'response', 'payment_status'
+        'user_id', 'product_id', 'txn_id', 'amount', 'multi', 'payment_type', 'response', 'payment_status'
     ];
 
     /**
