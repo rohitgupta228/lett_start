@@ -53,6 +53,8 @@ Route::group(['prefix' => 'product','middleware' => 'api'], function() {
     
     Route::get('lists', 'Api\ProductController@lists')->name('product.lists');
     
+    Route::get('search', 'Api\ProductController@search')->name('product.search');
+    
     Route::get('home', 'Api\ProductController@homeProductsList')->name('product.home');
 });
 

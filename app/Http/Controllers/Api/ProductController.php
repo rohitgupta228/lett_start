@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['details', 'lists', 'homeProductsList']]);
+        $this->middleware('auth:api', ['except' => ['details', 'lists', 'homeProductsList', 'search']]);
     }
 
     public function checkAdmin()
@@ -227,17 +227,42 @@ class ProductController extends Controller
     {
         try {
             $query = $request->all();
+            $category = strtolower($query['category']);
             $result = Product::query();
-            if (count($query)) {
-                if (isset($query['category']) && $query['category'] != '') {
-                    $result = $result->where('name', 'LIKE', '%' . $query['category'] . '%');
-                }
-                if (isset($query['category']) && $query['category'] != '') {
-                    $categoryArary = explode(' ', $query['category']);
-                    $result = $result->where('category', 'LIKE', "%{$categoryArary[0]}%");
-                    if (count($categoryArary) >= 2) {
-                        $result = $result->orwhere('name', 'LIKE', '%' . $categoryArary[1] . '%');
-                    }
+            if ($category !== 'freebies') {
+                $result = $result->where('price', '!=', 0);
+            }
+            $result = $result->where('category', 'LIKE', "%{$category}%");
+            $products = $result->paginate(10);
+            $response = [
+                'code' => 200,
+                'data' => [
+                    'products' => $products,
+                ],
+                'message' => 'Products fetched successfully'
+            ];
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage()
+            ];
+        }
+
+        return response()->json($response, 200);
+    }
+
+    public function search(Request $request)
+    {
+        try {
+            $query = $request->all();
+            $result = Product::query();
+            if (isset($query['category']) && $query['category'] != '') {
+                $categoryArray = explode(' ', $query['category']);
+                $category = strtolower($categoryArray[0]);
+                $result = $result->where('category', 'LIKE', "%{$category}%")->orWhere('name', 'LIKE', '%' . $category . '%');
+                if (count($categoryArray) >= 2) {
+                    $category = strtolower($categoryArray[1]);
+                    $result = $result->orWhere('category', 'LIKE', "%{$category}%")->orWhere('name', 'LIKE', '%' . $category . '%');
                 }
             }
             $products = $result->paginate(10);
