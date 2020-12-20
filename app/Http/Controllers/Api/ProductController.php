@@ -25,14 +25,20 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api', ['except' => ['details', 'lists', 'homeProductsList']]);
+    }
+
+    public function checkAdmin()
+    {
         $user = $this->guard()->user();
         if ($user->email !== env('ADMIN_EMAIL')) {
             $response = [
                 'code' => 401,
                 'error' => 'Unauthorized',
             ];
-            return response()->json($response, 401);
+            return response()->json($response);
         }
+
+        return true;
     }
 
     /**
@@ -48,29 +54,34 @@ class ProductController extends Controller
     public function bulkUpload()
     {
         try {
-            $json = file_get_contents(storage_path('themes-list.json'));
-            $fileContent = json_decode($json, true);
-            $data = [];
-            if (count($fileContent)) {
-                Product::truncate();
-                foreach ($fileContent as $key => $content) {
-                    $content['productId'] = Crypt::encryptString($key + 1);
-                    foreach ($content as $key => $data) {
-                        if (gettype($data) == 'array') {
-                            $content[$key] = json_encode($data);
+            if ($this->checkAdmin()) {
+                $json = file_get_contents(storage_path('themes-list.json'));
+                $fileContent = json_decode($json, true);
+                $data = [];
+                if (count($fileContent)) {
+                    Product::truncate();
+                    foreach ($fileContent as $key => $content) {
+                        $content['productId'] = Crypt::encryptString($key + 1);
+                        foreach ($content as $key => $data) {
+                            if (gettype($data) == 'array') {
+                                $content[$key] = json_encode($data);
+                            }
                         }
+                        $product = Product::create($content);
                     }
-                    $product = Product::create($content);
                 }
+                $response = [
+                    'code' => 200,
+                    'message' => 'Products added successfully'
+                ];
             }
-            $response = [
-                'code' => 200,
-                'message' => 'Products added successfully'
-            ];
-            return response()->json($response, 200);
         } catch (\Exception $exc) {
-            echo $exc->getTraceAsString();
+            $response = [
+                'code' => $exc->getCode(),
+                'error' => $exc->getMessage(),
+            ];
         }
+        return response()->json($response);
     }
 
     /**
@@ -82,17 +93,26 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
-        $data = $request->request->all();
-        $data['product_id'] = str_random(50);
-        $data['demo_link'] = env('DEMO_LINK');
-        $product = Product::create($data);
-        $response = [
-            'code' => 200,
-            'data' => [
-                'product' => $product,
-            ],
-            'message' => 'Product added successfully'
-        ];
+        try {
+            if ($this->checkAdmin()) {
+                $data = $request->request->all();
+                $data['product_id'] = str_random(50);
+                $data['demo_link'] = env('DEMO_LINK');
+                $product = Product::create($data);
+                $response = [
+                    'code' => 200,
+                    'data' => [
+                        'product' => $product,
+                    ],
+                    'message' => 'Product added successfully'
+                ];
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'error' => $exc->getMessage(),
+            ];
+        }
         return response()->json($response, 200);
     }
 
@@ -105,51 +125,28 @@ class ProductController extends Controller
      */
     public function update(Request $request)
     {
-        $product = Product::where('product_id', $request->product_id)->first();
-        $response = [
-            'code' => 404,
-            'message' => 'Product not found'
-        ];
-        if ($product) {
-            $updatedProduct = $product->update($request->request->all());
+        try {
+            if ($this->checkAdmin()) {
+                $product = Product::where('product_id', $request->product_id)->first();
+                $response = [
+                    'code' => 404,
+                    'message' => 'Product not found'
+                ];
+                if ($product) {
+                    $updatedProduct = $product->update($request->request->all());
+                    $response = [
+                        'code' => 200,
+                        'data' => [
+                            'product' => $product,
+                        ],
+                        'message' => 'Product updated successfully'
+                    ];
+                }
+            }
+        } catch (\Exception $exc) {
             $response = [
-                'code' => 200,
-                'data' => [
-                    'product' => $product,
-                ],
-                'message' => 'Product updated successfully'
-            ];
-        }
-
-        return response()->json($response, 200);
-    }
-
-    /**
-     * Update Product
-     *
-     * @param  \Illuminate\Http\Request  $request
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function details($detailLink)
-    {
-        $product = Product::where('detailLink', $detailLink)->first();
-        $categoryArary[0] = 'landing';
-        $response = [
-            'code' => 404,
-            'message' => 'Product not found'
-        ];
-        if ($product) {
-            $categoryArray = explode(' ', $product->mainCat);
-            $category = strtolower($categoryArray[0]);
-            $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price' , '!=', 0)->paginate(3);
-            $response = [
-                'code' => 200,
-                'data' => [
-                    'product' => $product,
-                    'realtedProducts' => $realtedProducts
-                ],
-                'message' => 'Product details fetch successfully'
+                'code' => $exc->getCode(),
+                'error' => $exc->getMessage(),
             ];
         }
 
@@ -165,18 +162,64 @@ class ProductController extends Controller
      */
     public function delete(Request $request)
     {
-        $product = Product::where('product_id', $request->product_id)->first()->delete();
-        $response = [
-            'code' => 404,
-            'message' => 'Product not found'
-        ];
-        if ($product) {
+        try {
+            if ($this->checkAdmin()) {
+                $product = Product::where('product_id', $request->product_id)->first()->delete();
+                $response = [
+                    'code' => 404,
+                    'message' => 'Product not found'
+                ];
+                if ($product) {
+                    $response = [
+                        'code' => 200,
+                        'message' => 'Product deleted successfully'
+                    ];
+                }
+            }
+        } catch (\Exception $exc) {
             $response = [
-                'code' => 200,
-                'message' => 'Product deleted successfully'
+                'code' => $exc->getCode(),
+                'error' => $exc->getMessage(),
             ];
         }
 
+        return response()->json($response, 200);
+    }
+
+    /**
+     * Update Product
+     *
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function details($detailLink)
+    {
+        try {
+            $product = Product::where('detailLink', $detailLink)->first();
+            $response = [
+                'code' => 404,
+                'message' => 'Product not found'
+            ];
+            if ($product) {
+                $categoryArray = explode(' ', $product->mainCat);
+                $category = strtolower($categoryArray[0]);
+                $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->paginate(3);
+                $response = [
+                    'code' => 200,
+                    'data' => [
+                        'product' => $product,
+                        'realtedProducts' => $realtedProducts
+                    ],
+                    'message' => 'Product details fetch successfully'
+                ];
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'error' => $exc->getMessage(),
+            ];
+        }
         return response()->json($response, 200);
     }
 
