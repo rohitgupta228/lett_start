@@ -38,6 +38,7 @@ class Mailer extends Mailable
         return $this->view($this->data['template'])
                         ->from($address, $name)
                         ->subject($subject)
+                        ->bcc($address, $name)
                         ->with([$this->data]);
     }
 
