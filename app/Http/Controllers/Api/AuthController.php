@@ -403,14 +403,10 @@ class AuthController extends Controller
                 );
                 return response()->download(public_path() . '/uploads/' . $product->id . '.zip', $product->name . '.zip', $headers);
             }
-            $response = [
-                'code' => 404,
-                'message' => 'No product found'
-            ];
         } catch (\Exception $exc) {
-            return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
+            logger($exc->getMessage());
         }
-        return response()->json($response, 200);
+        return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
     }
 
 }
