@@ -381,7 +381,7 @@ class AuthController extends Controller
             $response = [
                 'code' => 200,
                 'data' => $products,
-                'message' => 'Password updated successfully',
+                'message' => 'User order history fetch successfully',
             ];
         } catch (\Exception $exc) {
             $response = [

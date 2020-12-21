@@ -343,4 +343,44 @@ class PaymentController extends Controller
         return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
     }
 
+    public function save(Request $request)
+    {
+        $data = $request->all();
+        $user = $this->guard()->user();
+        $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+        $paymentStatus = config('settings.payment_status');
+        try {
+            if ($product->price == 0) {
+                $paymentData = [
+                    'user_id' => $user->id,
+                    'product_id' => $data['product_id'],
+                    'payment_status' => $paymentStatus[0],
+                    'payment_type' => 2,
+                    'txn_id' => null,
+                    'response' => null,
+                    'amount' => 0,
+                    'multi' => false
+                ];
+                $transaction = Transaction::create($paymentData);
+                $this->sendEmailOnSuccess($product);
+                $response = [
+                    'code' => 200,
+                    'message' => 'Payment done successfully',
+                    'product_name' => $product->name
+                ];
+            } else {
+                $response = [
+                    'code' => 404,
+                    'message' => 'Please choose payment method',
+                ];
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage(),
+            ];
+        }
+        return response(json_encode($response));
+    }
+
 }
