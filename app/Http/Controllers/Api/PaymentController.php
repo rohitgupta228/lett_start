@@ -107,7 +107,7 @@ class PaymentController extends Controller
                             "amount" => $amount,
                             "currency" => 'USD',
                             'customer' => $customer->id,
-                            "description" => "Test payment from itsolutionstuff.com."
+                            "description" => "Product Name: " . $product->name . " and Product Id: " . $product->id
                 ]);
                 if ($payment->status == 'succeeded') {
                     $data['txn_id'] = $payment->id;
@@ -165,7 +165,7 @@ class PaymentController extends Controller
             $transaction = new PaypalTransaction();
             $transaction->setAmount($amount)
                     ->setItemList($item_list)
-                    ->setDescription('Your transaction description');
+                    ->setDescription("Product Name: " . $product->name . " and Product Id: " . $product->id);
             $redirect_urls = new RedirectUrls();
             $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . '?pid=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false');
             $payment = new Payment();

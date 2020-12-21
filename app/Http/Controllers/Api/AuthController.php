@@ -408,10 +408,7 @@ class AuthController extends Controller
                 'message' => 'No product found'
             ];
         } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
-            ];
+            return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
         }
         return response()->json($response, 200);
     }
