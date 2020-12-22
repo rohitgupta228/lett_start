@@ -293,14 +293,14 @@ class ProductController extends Controller
                 'angular' => 'angular',
                 'recently' => 'recently'
             ];
-            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
             if (count($bestSelling))
                 $bestSelling = array_slice($bestSelling, 0, 4);
-            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
             if (count($angular))
                 $angular = array_slice($angular, 0, 4);
 
-            $latest = Product::where('added', 'LIKE', "%{$query['recently']}%")->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            $latest = Product::where('added', 'LIKE', "%{$query['recently']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
             if (count($latest))
                 $latest = array_slice($latest, 0, 4);
             $response = [
