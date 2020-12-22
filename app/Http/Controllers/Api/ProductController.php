@@ -204,7 +204,9 @@ class ProductController extends Controller
             if ($product) {
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
-                $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->paginate(3);
+                $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+                if (count($realtedProducts))
+                    $realtedProducts = array_slice($realtedProducts, 0, 3);
                 $response = [
                     'code' => 200,
                     'data' => [
@@ -233,7 +235,7 @@ class ProductController extends Controller
                 $result = $result->where('price', '!=', 0);
             }
             $result = $result->where('category', 'LIKE', "%{$category}%");
-            $products = $result->paginate(10);
+            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
             $response = [
                 'code' => 200,
                 'data' => [
@@ -265,7 +267,7 @@ class ProductController extends Controller
                     $result = $result->orWhere('category', 'LIKE', "%{$category}%")->orWhere('name', 'LIKE', '%' . $category . '%');
                 }
             }
-            $products = $result->paginate(10);
+            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
             $response = [
                 'code' => 200,
                 'data' => [
@@ -291,9 +293,16 @@ class ProductController extends Controller
                 'angular' => 'angular',
                 'recently' => 'recently'
             ];
-            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->paginate(4);
-            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->paginate(4);
-            $latest = Product::where('added', 'LIKE', "%{$query['recently']}%")->paginate(4);
+            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            if (count($bestSelling))
+                $bestSelling = array_slice($bestSelling, 0, 4);
+            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            if (count($angular))
+                $angular = array_slice($angular, 0, 4);
+
+            $latest = Product::where('added', 'LIKE', "%{$query['recently']}%")->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            if (count($latest))
+                $latest = array_slice($latest, 0, 4);
             $response = [
                 'code' => 200,
                 'data' => [

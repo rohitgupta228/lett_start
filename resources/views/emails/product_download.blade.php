@@ -62,7 +62,7 @@
                           <td align="center" class="pb-40" style="padding-bottom: 40px;">
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
-                            line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">Thank you very much for puchasing <strong>{{ $data['product_name'] }}</strong></p>
+                            line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">Thank you very much for puchasing <strong>{{ $data['product_name'] }} {{ $data['txnId'] }} {{$data['price']}}</strong></p>
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                             line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">It really means a lot to us :)</p>
@@ -89,9 +89,9 @@
                                 <p style="color: #666666; font-size: 14px;
                                 font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;
                                 line-height: 150%;">If you have any trouble to download your files or setup your project. Please <a
-                                    href="#" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                                    href="https://lettstartdesign.com/contact.html" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                                     font-size: 14px;
-                                    text-decoration: none;color: #2982de;">contact us</a> or <a href="#" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                                    text-decoration: none;color: #2982de;">contact us</a> or <a href="mailto:support@lettstartdesign.com" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                                     font-size: 14px;
                                     text-decoration: none;color: #2982de;">email us</a></p>
                               </li>
@@ -133,12 +133,11 @@
                           <td align="center" class="pb-40 border-bottom" style="padding-bottom: 40px; border-bottom: 1px solid #ccc;">
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
-                            line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">You have purchased <strong>{{ $data['product_name'] }}</strong> with <strong>{{ $data['license'] }}</strong>
-                              license.</p>
+                            line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">You have purchased <strong>{{ $data['product_name'] }}</strong> with <strong>{{ $data['license'] }}</strong> license. Yout transaction id is %TRANSACTION_ID%</p>
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                             line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">To know more about the license please visit this  <a
-                                    href="#" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                                    href="https://lettstartdesign.com/license.html" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                                     font-size: 14px;
                                     text-decoration: none;color: #2982de;">link</a></p>
                           </td>
@@ -165,9 +164,9 @@
                                 <p style="color: #666666;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; font-size: 14px;
                                 font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                                 line-height: 150%;">If you have any trouble to download your files or setup your project. Please <a
-                                  href="#" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                                  href="https://lettstartdesign.com/contact.html" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                                   font-size: 14px;
-                                  text-decoration: none;color: #2982de;">contact us</a> or <a href="#" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                                  text-decoration: none;color: #2982de;">contact us</a> or <a href="mailto:support@lettstartdesign.com" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                                   font-size: 14px;
                                   text-decoration: none;color: #2982de;">email us</a></p>
                               </li>
@@ -241,24 +240,24 @@
                               <tbody>
                                 <tr>
                                   <td class="pr-10" style="padding-right: 10px;">
-                                    <a href="#">
+                                    <a href="https://www.facebook.com/LettstartDesign/">
                                       <img
-                                        src="https://tlr.stripocdn.email/content/assets/img/social-icons/rounded-gray/facebook-rounded-gray.png"
+                                        src="https://lettstartdesign.com/assets/images/fb-icon.png"
                                         alt="Fb" title="Facebook" width="32">
                                     </a>
                                   </td>
                                   <td class="pr-10" style="padding-right: 10px;">
-                                    <a href="#">
+                                    <a href="https://dribbble.com/lettstartdesign">
                                       <img
-                                        src="https://tlr.stripocdn.email/content/assets/img/social-icons/rounded-gray/facebook-rounded-gray.png"
-                                        alt="Fb" title="Facebook" width="32">
+                                        src="https://lettstartdesign.com/assets/images/dribble-icon.png"
+                                        alt="Dribble" title="Dribble" width="32">
                                     </a>
                                   </td>
                                   <td>
-                                    <a href="#">
+                                    <a href="https://gumroad.com/letstartdesign">
                                       <img
-                                        src="https://tlr.stripocdn.email/content/assets/img/social-icons/rounded-gray/facebook-rounded-gray.png"
-                                        alt="Fb" title="Facebook" width="32">
+                                        src="https://lettstartdesign.com/assets/images/gumroad-icon.png"
+                                        alt="Gumroad" title="Gumroad" width="32">
                                     </a>
                                   </td>
                                 </tr>

@@ -244,7 +244,7 @@ class PaymentController extends Controller
                 $execution->setPayerId($data['payer_id']);
                 $result = $payment->execute($execution, $this->_api_context);
                 if ($result->getState() == 'approved') {
-                    $this->sendEmailOnSuccess($product, $data['multi']);
+                    $this->sendEmailOnSuccess($product, $data['multi'], $transaction->txn_id);
                     $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
                     $response = [
                         'code' => 200,
@@ -293,11 +293,11 @@ class PaymentController extends Controller
             'multi' => $data['multi']
         ];
         $transaction = Transaction::create($paymentData);
-        $this->sendEmailOnSuccess($data['product'], $data['multi']);
+        $this->sendEmailOnSuccess($data['product'], $data['multi'], $data['txn_id']);
         DB::commit();
     }
 
-    public function sendEmailOnSuccess($product, $licenseType = false)
+    public function sendEmailOnSuccess($product, $licenseType = false, $txnId = null)
     {
         $user = $this->guard()->user();
         $email = Crypt::encryptString($user->email);
@@ -311,6 +311,8 @@ class PaymentController extends Controller
         $data = [
             'license' => $licenseType ? 'multiple' : 'single',
             'product_name' => $product->name,
+            'price' => $licenseType ? $product->price * 5 : $product->price,
+            'txnId' => $txnId,
             'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
             'subject' => 'Download Theme',
             'template' => 'emails.product_download'
@@ -362,7 +364,7 @@ class PaymentController extends Controller
                     'multi' => false
                 ];
                 $transaction = Transaction::create($paymentData);
-                $this->sendEmailOnSuccess($product);
+//                $this->sendEmailOnSuccess($product);
                 $response = [
                     'code' => 200,
                     'message' => 'Payment done successfully',
