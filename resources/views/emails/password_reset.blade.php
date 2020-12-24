@@ -116,7 +116,7 @@
                               color: #ffffff !important;
                               text-decoration: none;
                               width: auto;
-                              text-align: center;">Reset Password</a>
+                              text-align: center;">Reset Your Password</a>
                             </span>
                           </td>
                         </tr>
