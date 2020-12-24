@@ -337,7 +337,11 @@ class PaymentController extends Controller
                     $product->delete();
                     return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
                 }
-                return response()->download(public_path() . '/uploads/' . $productId . '.zip');
+                $headers = array(
+                    'Content-Type' => 'application/octet-stream',
+                );
+                
+                return response()->download(public_path() . '/packages/' . $product->packageName . '.zip', $product->name . '.zip', $headers);
             }
         } catch (\Exception $exc) {
             logger($exc->getMessage());

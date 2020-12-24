@@ -401,7 +401,7 @@ class AuthController extends Controller
                 $headers = array(
                     'Content-Type' => 'application/octet-stream',
                 );
-                return response()->download(public_path() . '/uploads/' . $product->id . '.zip', $product->name . '.zip', $headers);
+                return response()->download(public_path() . '/packages/' . $product->packageName . '.zip', $product->name . '.zip', $headers);
             }
         } catch (\Exception $exc) {
             logger($exc->getMessage());

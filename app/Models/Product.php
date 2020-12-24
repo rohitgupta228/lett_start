@@ -13,7 +13,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'productId', 'name', 'oneLinerDesc', 'detailLink', 'price', 'mainCat', 'catLink', 'demolink', 'docLink', 'screenshot','category', 'added','screenshotDir', 'liveDemoBaseStr', 'overviewHTML', 'highlight1', 'highlight2', 'techUsed', 'themeFacts', 'screenshots', 'initialLog', 'changeLog'
+        'productId', 'name', 'packageName', 'oneLinerDesc', 'detailLink', 'price', 'mainCat', 'catLink', 'demolink', 'docLink', 'screenshot', 'category', 'added', 'screenshotDir', 'liveDemoBaseStr', 'overviewHTML', 'highlight1', 'highlight2', 'techUsed', 'themeFacts', 'screenshots', 'initialLog', 'changeLog'
     ];
 
     /**

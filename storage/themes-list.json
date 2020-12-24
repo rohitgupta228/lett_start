@@ -2,6 +2,7 @@
   {
     "id": "070620201",
     "name": "Letstart WB",
+    "packageName": 1,
     "oneLinerDesc": "Multipages Bootstrap 4 Templates",
     "detailLink": "letstart-wb.html",
     "price": 12,
@@ -319,6 +320,7 @@
   {
     "id": "070620202",
     "name": "ORYO Angular Landing Pages",
+    "packageName": 2,
     "detailLink": "oryo-angular-landing-pages.html",
     "price": 8,
     "docLink": "",
@@ -536,6 +538,7 @@
   {
     "id": "070620203",
     "name": "Creative Landing Pages",
+    "packageName": 3,
     "detailLink": "creative-landing-page-templates.html",
     "price": 8,
     "oneLinerDesc": "Bootstrap 4 Landing Pages with Versions",
@@ -762,6 +765,7 @@
   {
     "id": "070620204",
     "name": "ORYO Single Page Template",
+    "packageName": 4,
     "detailLink": "oryo-single-page-template.html",
     "price": 0,
     "oneLinerDesc": "Single/One Page Template Bootstrap 4 Template",
@@ -850,6 +854,7 @@
   {
     "id": "070620205",
     "name": "Letstart CV Templates",
+    "packageName": 5,
     "detailLink": "letstart-cv-templates.html",
     "price": 8,
     "docLink": "",
@@ -978,6 +983,7 @@
   {
     "id": "070620206",
     "name": "Letstart App Templates",
+    "packageName": 6,
     "detailLink": "letstart-app-templates.html",
     "oneLinerDesc": "Bootstrap 4 App Templates",
     "price": 0,
@@ -1127,6 +1133,7 @@
   {
     "id": "070620207",
     "name": "Agency Landing Page",
+    "packageName": 7,
     "detailLink": "agency-landing-pages.html",
     "price": 8,
     "mainCat": "Landing Pages",
@@ -1281,6 +1288,7 @@
   {
     "id": "070620208",
     "name": "Letstart Admin Theme",
+    "packageName": 8,
     "detailLink": "letstart-admin-theme.html",
     "price": 8,
     "mainCat": "Admin",
@@ -1453,6 +1461,7 @@
   {
     "id": "070620209",
     "name": "Marvel Admin Theme",
+    "packageName": 9,
     "detailLink": "marvel-admin-theme.html",
     "price": 16,
     "mainCat": "Admin",
@@ -1796,6 +1805,7 @@
   {
     "id": "070620211",
     "name": "Hugo CV Template",
+    "packageName": 10,
     "detailLink": "hugo-cv.html",
     "price": 4,
     "mainCat": "Portfolio & Resumes",
@@ -1884,6 +1894,7 @@
   {
     "id": "070620212",
     "name": "Busiplus Multipages Theme",
+    "packageName": 11,
     "detailLink": "busiplus-multipages-theme.html",
     "price": 8,
     "mainCat": "Business & Corporates",
@@ -2176,6 +2187,7 @@
   {
     "id": "070620213",
     "name": "Adminator Angular 10 Admin Theme",
+    "packageName": 12,
     "detailLink": "adminator-angular-admin-theme.html",
     "price": 12,
     "mainCat": "Admin",
@@ -2380,6 +2392,7 @@
   {
     "id": "070620214",
     "name": "Business Plus Multipages Website",
+    "packageName": 13,
     "detailLink": "business-plus-multipages.html",
     "oneLinerDesc": "Bootstrap 4 Business Theme",
     "price": 0,
@@ -2673,6 +2686,7 @@
   {
     "id": "070620215",
     "name": "Creative PPC - Single Page Template",
+    "packageName": 14,
     "detailLink": "creative-ppc.html",
     "oneLinerDesc": "Bootstrap 3 PPC Template",
     "price": 0,
@@ -2770,6 +2784,7 @@
   {
     "id": "070620216",
     "name": "Creative - Single Page Templates",
+    "packageName": 15,
     "detailLink": "creative-single-page-template.html",
     "oneLinerDesc": "Bootstrap 4 Portfolio Template",
     "price": 0,
@@ -2865,6 +2880,7 @@
   {
     "id": "070620217",
     "name": "Kiosk - App Landing Templates",
+    "packageName": 16,
     "detailLink": "kiosk-app-templates.html",
     "oneLinerDesc": "Bootstrap 4 App Templates",
     "price": 8,
@@ -3154,6 +3170,7 @@
   {
     "id": "070620218",
     "name": "Kiosk - App Angular Landing Templates",
+    "packageName": 17,
     "detailLink": "kiosk-angular-app-templates.html",
     "oneLinerDesc": "Angular 10 App Templates",
     "price": 12,
@@ -3443,6 +3460,7 @@
   {
     "id": "070620220",
     "name": "Dark - Bootstrap Template",
+    "packageName": 18,
     "detailLink": "dark.html",
     "oneLinerDesc": "Bootstrap 4 Single Page Template",
     "price": 8,
