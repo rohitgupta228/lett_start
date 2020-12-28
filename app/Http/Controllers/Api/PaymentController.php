@@ -317,7 +317,9 @@ class PaymentController extends Controller
             'subject' => 'Download Theme',
             'template' => 'emails.product_download'
         ];
-        Mail::to($user->email)->send(new \App\Mail\Mailer($data));
+        $address = env('MAIL_FROM_ADDRESS');
+        $name = env('MAIL_FROM_NAME');
+        Mail::to($user->email)->send(new \App\Mail\Mailer($data))->bcc($address, $name);
     }
 
     public function downloadTheme(Request $request)
