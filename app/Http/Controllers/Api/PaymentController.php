@@ -167,7 +167,7 @@ class PaymentController extends Controller
                     ->setItemList($item_list)
                     ->setDescription("Product Name: " . $product->name . " and Product Id: " . $product->id);
             $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . '?pid=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('FRONT_END_BASE_URL') . $product->detailLink . '?success=false');
+            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . '?pid=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=false');
             $payment = new Payment();
             $payment->setIntent('Sale')
                     ->setPayer($payer)
@@ -342,7 +342,7 @@ class PaymentController extends Controller
                 $headers = array(
                     'Content-Type' => 'application/octet-stream',
                 );
-                
+
                 return response()->download(public_path() . '/packages/' . $product->packageName . '.zip', $product->name . '.zip', $headers);
             }
         } catch (\Exception $exc) {
