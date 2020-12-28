@@ -76,7 +76,7 @@
                               style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                             line-height: 150%; margin-top: 0px; margin-bottom: 5px; margin-left: 0px; margin-right: 0px;">
-                              Hi, {{ $data['first_name'] }} {{ $data['last_name'] }}</p>
+                              Hi {{ $data['first_name'] }} {{ $data['last_name'] }},</p>
                             <p
                               style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
