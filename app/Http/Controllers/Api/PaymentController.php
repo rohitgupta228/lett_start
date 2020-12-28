@@ -319,7 +319,7 @@ class PaymentController extends Controller
         ];
         $address = env('MAIL_FROM_ADDRESS');
         $name = env('MAIL_FROM_NAME');
-        Mail::to($user->email)->send(new \App\Mail\Mailer($data))->bcc($address, $name);
+        Mail::to($user->email)->bcc($address, $name)->send(new \App\Mail\Mailer($data));
     }
 
     public function downloadTheme(Request $request)
