@@ -239,17 +239,17 @@ class AuthController extends Controller
     public function updateProfile(Request $request)
     {
         try {
-            $validator = Validator::make($request->all(), [
-                        'mobile' => 'digits:10'
-            ]);
-
-            if ($validator->fails()) {
-                $response = [
-                    'code' => 400,
-                    'error' => $validator->errors(),
-                ];
-                return response()->json($response, 400);
-            }
+//            $validator = Validator::make($request->all(), [
+//                        'mobile' => 'digits:10'
+//            ]);
+//
+//            if ($validator->fails()) {
+//                $response = [
+//                    'code' => 400,
+//                    'error' => $validator->errors(),
+//                ];
+//                return response()->json($response, 400);
+//            }
             $user = $this->guard()->user();
 
             $userDetails = ($user->userDetails) ? $user->userDetails()->update($request->all()) : $user->userDetails()->create($request->all());
@@ -284,8 +284,8 @@ class AuthController extends Controller
                     'created_at' => Carbon::now()
                 ]);
                 $data = [
-                    'first_name' => $userInfo->first_name,
-                    'last_name' => $userInfo->last_name,
+                    'first_name' => $userInfo->first_name ?? '',
+                    'last_name' => $userInfo->last_name ?? '',
                     'url' => env('FRONT_END_BASE_URL') . 'reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
                     'subject' => 'Password Reset',
                     'template' => 'emails.password_reset'
