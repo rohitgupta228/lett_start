@@ -286,7 +286,7 @@ class AuthController extends Controller
                 $data = [
                     'first_name' => $userInfo->first_name ?? '',
                     'last_name' => $userInfo->last_name ?? '',
-                    'url' => env('FRONT_END_BASE_URL') . 'reset-password.html?token=' . $token . '&email=' . $email . '&forgot=true',
+                    'url' => env('FRONT_END_BASE_URL') . 'index.html?token=' . $token . '&email=' . $email . '&forgot=true',
                     'subject' => 'Password Reset',
                     'template' => 'emails.password_reset'
                 ];
