@@ -80,7 +80,8 @@ class PaymentController extends Controller
         $productName = '';
         try {
             if ($product && $product->price > 0) {
-                $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
+                $amount = 100; //$data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
+
                 $stripe = \Stripe\Token::create([
                             'card' => [
                                 'number' => $data['card_num'],
@@ -89,26 +90,43 @@ class PaymentController extends Controller
                                 'cvc' => $data['cvv'],
                             ],
                 ]);
-                $customer = \Stripe\Customer::create(array(
-                            'name' => 'test',
-                            'description' => 'test description',
-                            'email' => 'rohit@gmail.com',
-                            'source' => $stripe->id,
-                            'address' => [
-                                'line1' => 'test',
-                                'postal_code' => '12345',
-                                'city' => 'test',
-                                'state' => 'test',
-                                'country' => 'US',
-                            ],
-                ));
 
                 $payment = \Stripe\Charge::create([
                             "amount" => $amount,
                             "currency" => 'USD',
-                            'customer' => $customer->id,
+                            "source" => $stripe->id,
                             "description" => "Product Name: " . $product->name . " and Product Id: " . $product->id
                 ]);
+//
+//
+//                $stripe = \Stripe\Token::create([
+//                            'card' => [
+//                                'number' => $data['card_num'],
+//                                'exp_month' => $data['exp_month'],
+//                                'exp_year' => $data['exp_year'],
+//                                'cvc' => $data['cvv'],
+//                            ],
+//                ]);
+//                $customer = \Stripe\Customer::create(array(
+//                            'name' => 'test',
+//                            'description' => 'test description',
+//                            'email' => 'rohit@gmail.com',
+//                            'source' => $stripe->id,
+//                            'address' => [
+//                                'line1' => 'test',
+//                                'postal_code' => '12345',
+//                                'city' => 'test',
+//                                'state' => 'test',
+//                                'country' => 'US',
+//                            ],
+//                ));
+//
+//                $payment = \Stripe\Charge::create([
+//                            "amount" => $amount,
+//                            "currency" => 'USD',
+//                            'customer' => $customer->id,
+//                            "description" => "Product Name: " . $product->name . " and Product Id: " . $product->id
+//                ]);
                 if ($payment->status == 'succeeded') {
                     $data['txn_id'] = $payment->id;
                     $data['order_id'] = $payment->id;
