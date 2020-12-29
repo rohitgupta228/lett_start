@@ -81,8 +81,8 @@ class PaymentController extends Controller
         $user = $this->guard()->user();
         try {
             if ($product && $product->price > 0) {
-                $amount = 50; //$data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
-                
+                $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
+
                 $stripe = \Stripe\Token::create([
                             'card' => [
                                 'number' => $data['card_num'],
@@ -91,19 +91,19 @@ class PaymentController extends Controller
                                 'cvc' => $data['cvv'],
                             ],
                 ]);
-                
+
                 $customer = \Stripe\Customer::create(array(
-//                            'name' => 'test',
-//                            'description' => 'test description',
+                            'name' => 'test',
+                            'description' => 'test description',
                             'email' => $user->email,
                             'source' => $stripe->id,
-//                            'address' => [
-//                                'line1' => 'test',
-//                                'postal_code' => '12345',
-//                                'city' => 'test',
-//                                'state' => 'test',
-//                                'country' => 'IN',
-//                            ],
+                            'address' => [
+                                'line1' => 'test',
+                                'postal_code' => '12345',
+                                'city' => 'test',
+                                'state' => 'test',
+                                'country' => 'IN',
+                            ],
                 ));
 
                 $payment = \Stripe\Charge::create([
