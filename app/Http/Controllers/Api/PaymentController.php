@@ -78,6 +78,7 @@ class PaymentController extends Controller
         $data = $request->request->all();
         $product = \App\Models\Product::where('productId', $data['product_id'])->first();
         $productName = '';
+        $user = $this->guard()->user();
         try {
             if ($product && $product->price > 0) {
                 $amount = 50; //$data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
@@ -90,23 +91,24 @@ class PaymentController extends Controller
                                 'cvc' => $data['cvv'],
                             ],
                 ]);
+                
                 $customer = \Stripe\Customer::create(array(
-                            'name' => 'test',
-                            'description' => 'test description',
-                            'email' => 'rohit@gmail.com',
+//                            'name' => 'test',
+//                            'description' => 'test description',
+                            'email' => $user->email,
                             'source' => $stripe->id,
-                            'address' => [
-                                'line1' => 'test',
-                                'postal_code' => '12345',
-                                'city' => 'test',
-                                'state' => 'test',
-                                'country' => 'IN',
-                            ],
+//                            'address' => [
+//                                'line1' => 'test',
+//                                'postal_code' => '12345',
+//                                'city' => 'test',
+//                                'state' => 'test',
+//                                'country' => 'IN',
+//                            ],
                 ));
 
                 $payment = \Stripe\Charge::create([
                             "amount" => $amount,
-                            "currency" => 'USD',
+                            "currency" => 'usd',
                             'customer' => $customer->id,
                             "description" => "Product Name: " . $product->name . " and Product Id: " . $product->id
                 ]);
