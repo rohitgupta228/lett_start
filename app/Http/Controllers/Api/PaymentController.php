@@ -29,6 +29,7 @@ use PayPal\Api\Transaction as PaypalTransaction;
 use Session;
 use Redirect;
 use Input;
+use Razorpay\Api\Api;
 
 class PaymentController extends Controller
 {
@@ -117,7 +118,7 @@ class PaymentController extends Controller
                     $data['order_id'] = $payment->id;
                     $data['response'] = json_encode($payment);
                     $data['product'] = $product;
-                    $data['type'] = 2;
+                    $data['payment_type'] = 2;
                     $this->actionsAfterPayment($data);
                     $productName = $product->name;
                     $response = [
@@ -289,7 +290,7 @@ class PaymentController extends Controller
             'user_id' => $user->id,
             'product_id' => $data['product_id'],
             'payment_status' => $paymentStatus[0],
-            'payment_type' => 2,
+            'payment_type' => $data['payment_type'],
             'txn_id' => $data['txn_id'],
             'response' => $data['response'],
             'amount' => $data['multi'] ? $data['product']->price * 5 : $data['product']->price,
@@ -392,6 +393,79 @@ class PaymentController extends Controller
             ];
         }
         return response(json_encode($response));
+    }
+
+    public function orderCreate(Request $request)
+    {
+        try {
+            $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+            $data = $request->request->all();
+            $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+            if ($product && $product->price > 0) {
+                $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
+                $order = $api->order->create(array(
+                    'receipt' => 'rcptid_11',
+                    'amount' => $amount,
+                    'currency' => 'USD'
+                        )
+                );
+                $response = [
+                    'code' => 200,
+                    'data' => [
+                        'order_id' => $order->id
+                    ],
+                ];
+                return response()->json($response);
+            } else {
+                $response = [
+                    'code' => 404,
+                    'message' => 'No product found',
+                ];
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'message' => $exc->getMessage(),
+            ];
+        }
+        return response()->json($response);
+    }
+
+    public function verifySignature(Request $request)
+    {
+        $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+        $data = $request->request->all();
+        $attributes = [
+            'razorpay_signature' => $data['razorpay_signature'], 
+            'razorpay_payment_id' => $data['razorpay_payment_id'], 
+            'razorpay_order_id' => $data['razorpay_order_id']
+        ];
+        try {
+            $order = $api->utility->verifyPaymentSignature($attributes);
+            $data['txn_id'] = $data['razorpay_payment_id'];
+            $data['response'] = json_encode([
+                'razorpay_signature' => $data['razorpay_signature'],
+                'razorpay_payment_id' => $data['razorpay_payment_id'],
+                'razorpay_order_id' => $data['razorpay_order_id']
+            ]);
+            $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+            $data['product'] = $product;
+            $data['payment_type'] = 3;
+            $this->actionsAfterPayment($data);
+            $response = [
+                'code' => 200,
+                'message' => 'Payment done successfully',
+                'product_name' => $product->name
+            ];
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'data' => [
+                    'status' => false
+                ]
+            ];
+        }
+        return response()->json($response);
     }
 
 }
