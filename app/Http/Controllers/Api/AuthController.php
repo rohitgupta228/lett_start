@@ -393,13 +393,13 @@ class AuthController extends Controller
         return response()->json($response, 200);
     }
 
-    public function downloadTheme($productId)
+    public function downloadTheme($productId, $userId)
     {
         try {
             $user = $this->guard()->user();
             $product = \App\Models\Product::where('productId', $productId)->first();
             $paymentStatus = config('settings.payment_status');
-            $transaction = \App\Models\Transaction::where('product_id', $productId)->where('user_id', $user->id)->where('payment_status', $paymentStatus[0])->first();
+            $transaction = \App\Models\Transaction::where('product_id', $productId)->where('user_id', $userId)->where('payment_status', $paymentStatus[0])->first();
             if ($product && $transaction) {
                 $headers = array(
                     'Content-Type' => 'application/octet-stream',

@@ -37,7 +37,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'api'], function() {
 
     Route::get('order-history', 'Api\AuthController@orderHistory')->name('api.user.order.history');
 
-    Route::get('download-theme/{productId}', 'Api\AuthController@downloadTheme')->name('api.user.download.theme');
+    Route::get('download-theme/{productId}/{userId}', 'Api\AuthController@downloadTheme')->name('api.user.download.theme');
 });
 
 Route::group(['prefix' => 'product', 'middleware' => 'api'], function() {
