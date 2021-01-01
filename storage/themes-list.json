@@ -2,17 +2,26 @@
   {
     "id": "070620201",
     "name": "Letstart WB",
-    "packageName": 1,
-    "oneLinerDesc": "Multipages Bootstrap 4 Templates",
+    "oneLinerDesc": "Multipages Bootstrap 4 Templates with 30+ Pages",
     "detailLink": "letstart-wb.html",
-    "price": 12,
+    "price": 5,
     "mainCat": "Landing Pages",
     "catLink": "landing-pages.html",
     "demolink": "theme/letstart-wb.html#demos",
+    "gumroadLink": "https://gumroad.com/l/QvRJR?wanted=true",
     "docLink": "https://lettstartdesign.com/letstartwb/documentation/",
+    "packageName": "1",
     "screenshot": "lettstartwb.jpg",
-    "category": ["portfolio", "landing", "business", "SASS", "bootstrap"],
-    "added": ["popular"],
+    "category": [
+      "portfolio",
+      "landing",
+      "business",
+      "SASS",
+      "bootstrap"
+    ],
+    "added": [
+      "popular"
+    ],
     "createDate": "2019-05-21",
     "updateDate": "2020-05-21",
     "screenshotDir": "letstart-wb",
@@ -320,17 +329,25 @@
   {
     "id": "070620202",
     "name": "ORYO Angular Landing Pages",
-    "packageName": 2,
     "detailLink": "oryo-angular-landing-pages.html",
-    "price": 8,
-    "docLink": "",
-    "oneLinerDesc": "Angular APP Template",
+    "price": 5,
+    "oneLinerDesc": "Angular APP Template with 16+ Pages",
     "mainCat": "Angular",
+    "gumroadLink": "https://gumroad.com/l/ADYgJ?wanted=true",
+    "demolink": "https://lettstartdesign.com/oryo-app/preview/",
+    "docLink": "https://lettstartdesign.com/oryo-app/documentation/index.html",
     "catLink": "angular.html",
-    "demolink": "http://preview.lettstartdesign.com/item/oryo-angular-app-templates/070620202",
+    "packageName": "2",
     "screenshot": "angular-app.jpg",
-    "category": ["landing", "portfolio", "business", "angular"],
-    "added": ["angular"],
+    "category": [
+      "landing",
+      "portfolio",
+      "business",
+      "angular"
+    ],
+    "added": [
+      "angular"
+    ],
     "createDate": "2020-06-30",
     "screenshotDir": "angular-app",
     "liveDemoBaseStr": "https://lettstartdesign.com/oryo-app/app/#/",
@@ -538,18 +555,24 @@
   {
     "id": "070620203",
     "name": "Creative Landing Pages",
-    "packageName": 3,
     "detailLink": "creative-landing-page-templates.html",
-    "price": 8,
-    "oneLinerDesc": "Bootstrap 4 Landing Pages with Versions",
+    "price": 4,
+    "oneLinerDesc": "Bootstrap 4 Landing Pages with 20+ Pages",
     "mainCat": "Landing Pages",
-    "docLink": "",
     "catLink": "landing-pages.html",
+    "gumroadLink": "https://gumroad.com/l/UleOx?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/creative-landing-page-templates/070620203",
+    "docLink": "https://lettstartdesign.com/creative/documentation/index.html",
+    "packageName": "3",
     "screenshot": "creative.jpg",
-    "category": ["portfolio", "landing", "bootstrap", "portfolio"],
+    "added": [],
+    "category": [
+      "portfolio",
+      "landing",
+      "bootstrap",
+      "portfolio"
+    ],
     "createDate": "2020-06-21",
-    "added": ["recently", "bootstrap"],
     "screenshotDir": "creative",
     "liveDemoBaseStr": "https://lettstartdesign.com/creative/app/",
     "overviewHTML": "<p><strong>Creative</strong> is powerful and stunning agency and portfolio landing page templates based on bootstrap framework. Creative is high customisable, fully responsive and flexible template built with Bootstrap 4, HTML5, SaSS, jQuery and Gulp. It helps you to create well designed Agency landing pages.</p><p>Creative is multipurpose Agency landing page template, so it is perfect fit for any niche of landing pages you are building, like portfolio landing, app landing, creative, digital agency, mobile, resume, blog, business one and multi-page landing and technology websites. This template includes modern design, clean code, elegant curves, practical layouts and is easy to customize, easy to change colors, and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>Creative is tested by our testing department to make sure it is bug free and work best in all devices. Creative supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
@@ -765,17 +788,23 @@
   {
     "id": "070620204",
     "name": "ORYO Single Page Template",
-    "packageName": 4,
     "detailLink": "oryo-single-page-template.html",
     "price": 0,
     "oneLinerDesc": "Single/One Page Template Bootstrap 4 Template",
     "mainCat": "Landing Pages",
-    "docLink": "",
     "catLink": "landing-pages.html",
+    "gumroadLink": "https://gum.co/cabII?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/oryo-single-page-template/070620204",
+    "docLink": "https://lettstartdesign.com/freebies/oryo-sp/documentation/index.html",
+    "packageName": "4",
     "screenshot": "oryo.jpg",
-    "added": ["recently", "bootstrap"],
-    "category": ["one page", "landing", "bootstrap", "freebies"],
+    "added": [],
+    "category": [
+      "one page",
+      "landing",
+      "bootstrap",
+      "freebies"
+    ],
     "createDate": "2020-06-15",
     "screenshotDir": "oryo",
     "liveDemoBaseStr": "https://lettstartdesign.com/freebies/oryo-sp/app/",
@@ -854,17 +883,26 @@
   {
     "id": "070620205",
     "name": "Letstart CV Templates",
-    "packageName": 5,
     "detailLink": "letstart-cv-templates.html",
-    "price": 8,
-    "docLink": "",
-    "oneLinerDesc": "Bootstrap 4 CV Template with Versions",
+    "price": 5,
+    "oneLinerDesc": "Bootstrap 4 CV Template with 8+ Pages",
     "mainCat": "Portfolio & Resumes",
     "catLink": "portfolio-resumes.html",
+    "gumroadLink": "https://gum.co/dyFQd?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/letstart-cv-templates/070620205",
+    "docLink": "https://lettstartdesign.com/cv/documentation/index.html",
+    "packageName": "5",
     "screenshot": "cv.jpg",
-    "category": ["cv", "resume", "portfolio", "one page", "bootstrap"],
-    "added": ["popular"],
+    "category": [
+      "cv",
+      "resume",
+      "portfolio",
+      "one page",
+      "bootstrap"
+    ],
+    "added": [
+      "popular"
+    ],
     "createDate": "2020-06-15",
     "screenshotDir": "cv",
     "liveDemoBaseStr": "https://lettstartdesign.com/cv/app/",
@@ -983,17 +1021,24 @@
   {
     "id": "070620206",
     "name": "Letstart App Templates",
-    "packageName": 6,
     "detailLink": "letstart-app-templates.html",
     "oneLinerDesc": "Bootstrap 4 App Templates",
     "price": 0,
     "mainCat": "App & SASS Templates",
     "catLink": "landing-pages.html",
-    "docLink": "",
+    "gumroadLink": "https://gum.co/plINc?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/letstart-app-templates/070620206",
+    "docLink": "https://lettstartdesign.com/freebies/app-theme/documentation/index.html",
+    "packageName": "6",
     "screenshot": "app-theme.jpg",
-    "category": ["landing", "one page", "business", "freebies", "bootstrap"],
-    "added": ["recently", "bootstrap"],
+    "added": [],
+    "category": [
+      "landing",
+      "one page",
+      "business",
+      "freebies",
+      "bootstrap"
+    ],
     "createDate": "2019-10-11",
     "screenshotDir": "app-theme",
     "liveDemoBaseStr": "https://lettstartdesign.com/freebies/app-theme/HTML/",
@@ -1133,18 +1178,24 @@
   {
     "id": "070620207",
     "name": "Agency Landing Page",
-    "packageName": 7,
     "detailLink": "agency-landing-pages.html",
-    "price": 8,
+    "price": 4,
     "mainCat": "Landing Pages",
-    "docLink": "",
-    "oneLinerDesc": "Bootstrap 4 Agency Landing Pages",
+    "oneLinerDesc": "Bootstrap 4 Agency Landing Pages with 13+ Pages",
     "catLink": "landing-pages.html",
+    "gumroadLink": "https://gum.co/tBCXe?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/letstart-agency-landing-pages/070620207",
+    "docLink": "https://lettstartdesign.com/lp/documentation/index.html",
+    "packageName": "7",
     "screenshot": "lp.jpg",
-    "category": ["landing", "portfolio", "business", "bootstrap"],
+    "added": [],
+    "category": [
+      "landing",
+      "portfolio",
+      "business",
+      "bootstrap"
+    ],
     "createDate": "2020-06-25",
-    "added": ["recently", "bootstrap"],
     "screenshotDir": "lp",
     "liveDemoBaseStr": "https://lettstartdesign.com/lp/html/",
     "overviewHTML": "<p><strong>Letstart</strong> is powerful and stunning agency landing page template based on bootstrap framework. Letstart is high customisable, fully responsive and flexible template built with Bootstrap 4, HTML5, SaSS, jQuery and Gulp. It helps you to create well designed Agency landing pages.</p><p>Letstart is multipurpose Agency landing page template, so it is perfect fit for any niche of landing pages you are building, like portfolio landing, app landing, PPC campaign, digital agency, mobile, blog, business one and multi-page landing and technology websites. This includes very smooth animations which makes your website more beautiful. This template has clean and attractive design So this could be the best fit for your project.</p><p>Letstart is tested by our testing department to make sure it is bug free and work best in all devices. Letstart supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
@@ -1288,17 +1339,24 @@
   {
     "id": "070620208",
     "name": "Letstart Admin Theme",
-    "packageName": 8,
     "detailLink": "letstart-admin-theme.html",
-    "price": 8,
-    "mainCat": "Admin",
-    "docLink": "",
-    "oneLinerDesc": "Bootstrap 4 Admin Template",
-    "catLink": "admin-dashboard.html",
+    "price": 5,
     "demolink": "http://preview.lettstartdesign.com/item/letstart-admin-theme/070620208",
+    "docLink": "https://lettstartdesign.com/admin/documentation/index.html",
+    "gumroadLink": "https://gum.co/sBFrG?wanted=true",
+    "mainCat": "Admin",
+    "oneLinerDesc": "Bootstrap 4 Admin Template and 70+ Pages",
+    "catLink": "admin-dashboard.html",
     "screenshot": "admin.jpg",
-    "category": ["admin", "dashboard", "bootstrap"],
-    "added": ["popular"],
+    "packageName": "8",
+    "category": [
+      "admin",
+      "dashboard",
+      "bootstrap"
+    ],
+    "added": [
+      "popular"
+    ],
     "createDate": "2019-01-21",
     "screenshotDir": "admin",
     "liveDemoBaseStr": "https://lettstartdesign.com/admin/html-demos/",
@@ -1461,17 +1519,25 @@
   {
     "id": "070620209",
     "name": "Marvel Admin Theme",
-    "packageName": 9,
     "detailLink": "marvel-admin-theme.html",
-    "price": 16,
+    "price": 5,
     "mainCat": "Admin",
-    "docLink": "",
-    "oneLinerDesc": "Bootstrap 4 Admin Template",
+    "oneLinerDesc": "Bootstrap 4 Admin Template and 135+ Pages",
     "catLink": "admin-dashboard.html",
+    "gumroadLink": "https://gum.co/joAokU?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/marvel-bootstrap-admin-theme/070620209",
+    "docLink": "https://lettstartdesign.com/marvel/documentation/index.html",
     "screenshot": "marvel.jpg",
-    "added": ["recently", "popular"],
-    "category": ["admin", "dashboard", "bootstrap"],
+    "packageName": "9",
+    "added": [
+      "recently",
+      "popular"
+    ],
+    "category": [
+      "admin",
+      "dashboard",
+      "bootstrap"
+    ],
     "createDate": "2020-07-18",
     "techUsed": [
       {
@@ -1497,7 +1563,7 @@
     ],
     "screenshotDir": "marvel",
     "liveDemoBaseStr": "https://lettstartdesign.com/marvel/app/",
-    "overviewHTML": "<p>Lettstart Design <strong>Marvel</strong> is an Bootstrap admin template followed by best code practices.</p><p>In the event that your prime concern is adaptability, customization and client experience at that point Lettstart Design Marvel Admin dashboard layout is one such item to keep an eye out for. The premium administrator UI dashboard is rewarding with its highlights and can be utilized for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce panel, etc.</p><p>Lettstart Design Marvel admin comes with tons of carefully designed flexible components, UI elements, application pages and much more. The theme is fully responsive and works across all modern/supported browsers, devices. The well structured code allows easy customization and helps to build a modern web application with great speed.</p><p>Lettstart Design Marvel admin theme is one of the best bootstrap admin template. With this template, you can quickly start your project so why wasting time to start project from scretch. try out our admin theme and save tons of hours.</p>",
+    "overviewHTML": "<p>Lettstart Design <strong>Marvel</strong> is an Bootstrap admin template followed by best code practices.</p><p>In the event that your prime concern is adaptability, customization and client experience at that point Lettstart Design Marvel Admin dashboard layout is one such item to keep an eye out for. The premium administrator UI dashboard is rewarding with its highlights and can be utilized for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce panel, etc.</p><p>Lettstart Design Marvel admin comes with tons of carefully designed flexible components, UI elements, application pages and much more. The theme is fully responsive and works across all modern/supported browsers, devices. The well structured code allows easy customization and helps to build a modern web application with great speed.</p><p>All component of this UI working end 2 end for front end solution like kanban board, invoice generation, all form submission data, cart, chat means all apps UI. Once you submitted the form you can see their values in console logs.</p><p>Lettstart Design Marvel admin theme is one of the best bootstrap admin template. With this template, you can quickly start your project so why wasting time to start project from scretch. try out our admin theme and save tons of hours.</p>",
     "highlight1": [
       "135+ Pages",
       "350+ Components",
@@ -1803,34 +1869,43 @@
     "changeLog": []
   },
   {
-    "id": "070620211",
+    "id": "070620210",
     "name": "Hugo CV Template",
-    "packageName": 10,
     "detailLink": "hugo-cv.html",
-    "price": 4,
+    "price": 5,
     "mainCat": "Portfolio & Resumes",
-    "docLink": "",
-    "oneLinerDesc": "Bootstrap 4 Resume/CV Template",
+    "oneLinerDesc": "Bootstrap 4 Resume/CV Template with 8+ Pages",
     "catLink": "portfolio-resumes.html",
+    "gumroadLink": "https://gum.co/aTBcA?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/hugo-single-page-cv-templates/070620211",
+    "docLink": "https://lettstartdesign.com/hugo/documentation/index.html",
     "screenshot": "hugo.jpg",
-    "category": ["cv", "resume", "portfolio", "one page", "bootstrap"],
+    "packageName": "10",
+    "added": [],
+    "category": [
+      "cv",
+      "resume",
+      "portfolio",
+      "one page",
+      "bootstrap"
+    ],
     "createDate": "2020-06-25",
     "screenshotDir": "hugo",
-    "added": ["recently", "bootstrap"],
-    "liveDemoBaseStr": "https://lettstartdesign.com/hugo/",
+    "liveDemoBaseStr": "https://lettstartdesign.com/hugo/app/",
     "overviewHTML": "<p><strong>Hugo</strong> CV/Resume template comes with unique layout of resume landing page. This template built with bootstrap framework followed by best code practices. It helps you to showcase your works and services. </p><p>This template is easily customized, fully responsive and supports all modern browsers and devices. Hugo is a full featured, multipurpose, premium Bootstrap HTML5 template built with the Bootstrap 4 Framework, HTML5, CSS3 and JQuery. This HTML5 template will suit CV/Resume websites.</p><p>Hugo is multipurpose CV template, so it is perfect fit for any niche of landing pages you are building, like CV template, Resume Templates, portfolio and services websites and much more. This template has clean and attractive design So this could be the best fit for your project.</p><p>This template is tested by our testing department to make sure it is bug free and work best in all devices. Hugo supported all major browser like chrome, firefox, edge, IE11, safari.</p><p>By purchasing this template, you are assured with detailed documentation along with 1 Year Premium Support by our dedicated support team and free lifetime updates from us.</p>",
     "highlight1": [
+      "9+ Pages",
+      "6+ Layouts",
       "Built on Bootstrap 4 and SaSS",
       "Integrated contact form with PHP",
-      "Completely responsive pages",
-      "W3C Validated code"
+      "Completely responsive pages"
     ],
     "highlight2": [
       "Best suite for CV/Resume",
       "Easy to Customize components",
       "Parallax Pages",
-      "Show case work and sorting Integrated"
+      "Show case work and sorting Integrated",
+      "W3C Validated code"
     ],
     "techUsed": [
       {
@@ -1854,7 +1929,44 @@
         "tooltip": "Browser supported: chrome (latest), Mozila, Edge"
       }
     ],
-    "themeFacts": {},
+    "themeFacts": {
+      "fact1": [
+        {
+          "title": "9+",
+          "text": "Pages"
+        },
+        {
+          "title": "6+",
+          "text": "Home Layouts"
+        },
+        {
+          "title": "3+",
+          "text": "Work Gallery Types"
+        },
+        {
+          "title": "Form",
+          "text": "Working contact form"
+        }
+      ],
+      "fact2": [
+        {
+          "title": "Layouts",
+          "text": "Vertical & Horizontal"
+        },
+        {
+          "title": "Tech Used",
+          "text": "Bootstrap, SCSS and jQuery"
+        },
+        {
+          "title": "Free",
+          "text": "Lifetime Updates"
+        },
+        {
+          "title": "1 Year",
+          "text": "Dedicated Support"
+        }
+      ]
+    },
     "screenshots": [
       {
         "title": "Homepage",
@@ -1862,7 +1974,47 @@
           {
             "img": "1.jpg",
             "imgTitle": "Index",
-            "link": ""
+            "link": "index.html"
+          },
+          {
+            "img": "2.jpg",
+            "imgTitle": "Homepage Particle Version",
+            "link": "index-2.html"
+          },
+          {
+            "img": "3.jpg",
+            "imgTitle": "Full Page",
+            "link": "index-3.html"
+          },
+          {
+            "img": "4.jpg",
+            "imgTitle": "Full Page Particle",
+            "link": "index-4.html"
+          },
+          {
+            "img": "5.jpg",
+            "imgTitle": "Color Sidebar",
+            "link": "index-5.html"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Horizontal Layout",
+            "link": "index-6.html"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Work Gallery",
+            "link": "index-7.html#works"
+          },
+          {
+            "img": "6.jpg",
+            "imgTitle": "Work Detail Modal",
+            "link": "index-8.html#works"
+          },
+          {
+            "img": "7.jpg",
+            "imgTitle": "Work Single",
+            "link": "work-single.html"
           }
         ]
       }
@@ -1892,19 +2044,25 @@
     "changeLog": []
   },
   {
-    "id": "070620212",
+    "id": "070620211",
     "name": "Busiplus Multipages Theme",
-    "packageName": 11,
     "detailLink": "busiplus-multipages-theme.html",
-    "price": 8,
+    "price": 5,
     "mainCat": "Business & Corporates",
-    "docLink": "",
     "catLink": "business-corporate.html",
-    "oneLinerDesc": "Bootstrap 4 Business Theme",
+    "gumroadLink": "https://gumroad.com/l/RtjtK?wanted=true",
+    "oneLinerDesc": "Bootstrap 4 Business Theme and 24+ Pages",
     "demolink": "http://preview.lettstartdesign.com/item/busiplus-business-multipurpose-theme/070620212",
+    "docLink": "http://lettstartdesign.com/busiplus/documentation/index.html",
     "screenshot": "busiplus.jpg",
-    "category": ["business", "multipurpose", "product", "bootstrap"],
-    "added": ["recently", "bootstrap"],
+    "packageName": "11",
+    "added": [],
+    "category": [
+      "business",
+      "multipurpose",
+      "product",
+      "bootstrap"
+    ],
     "createDate": "2020-07-10",
     "screenshotDir": "busiplus",
     "liveDemoBaseStr": "https://lettstartdesign.com/busiplus/app/",
@@ -2185,23 +2343,31 @@
     "changeLog": []
   },
   {
-    "id": "070620213",
+    "id": "070620212",
     "name": "Adminator Angular 10 Admin Theme",
-    "packageName": 12,
     "detailLink": "adminator-angular-admin-theme.html",
-    "price": 12,
+    "price": 5,
     "mainCat": "Admin",
     "catLink": "admin-dashboard.html",
-    "docLink": "",
-    "oneLinerDesc": "Angular 10 Admin Template",
+    "gumroadLink": "https://gum.co/wHGhR?wanted=true",
+    "oneLinerDesc": "Angular 10 Admin Template with 150+ Components",
     "demolink": "http://preview.lettstartdesign.com/item/adminator-angular-admin-theme/070620213",
+    "docLink": "https://lettstartdesign.com/adminator/documentation/",
     "screenshot": "adminator.jpg",
-    "added": ["recently", "angular"],
-    "category": ["admin", "dashboard", "angular"],
+    "packageName": "12",
+    "added": [
+      "recently",
+      "angular"
+    ],
+    "category": [
+      "admin",
+      "dashboard",
+      "angular"
+    ],
     "createDate": "2020-07-19",
     "updateDate": "2020-11-27",
     "screenshotDir": "adminator",
-    "liveDemoBaseStr": "https://lettstartdesign.com/adminator/",
+    "liveDemoBaseStr": "https://lettstartdesign.com/adminator/app/",
     "overviewHTML": "<p>Lettstart Design <strong>Adminator Angular 10 Admin</strong> is an Angular-10 CLI WebApp template with bootstrap framework followed by best code practices.</p><p>In the event that your prime concern is adaptability, customization and client experience at that point Lettstart Design Angular 10 Admin dashboard layout is one such item to keep an eye out for. The premium administrator UI dashboard is rewarding with its highlights and can be utilized for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce panel, etc.</p><p>Lettstart Design <strong>Adminator Angular 10 Admin</strong> comes with tons of carefully designed flexible components, UI elements, application pages and much more. The theme is fully responsive and works across all modern/supported browsers, devices. The well structured code allows easy customization and helps to build a modern web application with great speed.</p><p>Lettstart Design <strong>Adminator Angular 10 Admin</strong> admin theme is one of the best Angular 10 admin template. With this theme, you can quickly start your project so why wasting time to start project from scretch. try out our admin theme and save tons of hours.</p>",
     "highlight1": [
       "Built on Bootstrap 4 and SaSS",
@@ -2390,18 +2556,19 @@
     "changeLog": []
   },
   {
-    "id": "070620214",
+    "id": "070620213",
     "name": "Business Plus Multipages Website",
-    "packageName": 13,
     "detailLink": "business-plus-multipages.html",
     "oneLinerDesc": "Bootstrap 4 Business Theme",
     "price": 0,
     "mainCat": "Business & Corporates",
-    "added": ["recently", "bootstrap"],
-    "docLink": "",
     "catLink": "landing-pages.html",
+    "gumroadLink": "https://gum.co/LnGFo?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/letstart-business-plus/070620214",
+    "docLink": "https://lettstartdesign.com/freebies/business/documentation.html",
     "screenshot": "businessplus.jpg",
+    "packageName": "13",
+    "added": [],
     "category": [
       "business",
       "multipurpose",
@@ -2684,18 +2851,19 @@
     "changeLog": []
   },
   {
-    "id": "070620215",
+    "id": "070620214",
     "name": "Creative PPC - Single Page Template",
-    "packageName": 14,
     "detailLink": "creative-ppc.html",
     "oneLinerDesc": "Bootstrap 3 PPC Template",
     "price": 0,
     "mainCat": "Landing Pages",
     "catLink": "landing-pages.html",
+    "gumroadLink": "https://gum.co/keCsL?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/creative-ppc-single-page/070620215",
+    "docLink": "#",
     "screenshot": "ppc.jpg",
-    "added": ["recently", "bootstrap"],
-    "docLink": "",
+    "packageName": "14",
+    "added": [],
     "category": [
       "landing",
       "one page",
@@ -2782,19 +2950,25 @@
     "changeLog": []
   },
   {
-    "id": "070620216",
+    "id": "070620215",
     "name": "Creative - Single Page Templates",
-    "packageName": 15,
     "detailLink": "creative-single-page-template.html",
     "oneLinerDesc": "Bootstrap 4 Portfolio Template",
     "price": 0,
     "mainCat": "Landing Pages",
-    "docLink": "",
-    "added": ["recently", "bootstrap"],
     "catLink": "landing-pages.html",
+    "gumroadLink": "https://gum.co/TmbFH?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/creative-single-page-templates/070620216",
+    "docLink": "https://lettstartdesign.com/freebies/creative-sp/documentation.html",
     "screenshot": "creative-sp.jpg",
-    "category": ["landing", "one page", "freebies", "bootstrap"],
+    "packageName": "15",
+    "added": [],
+    "category": [
+      "landing",
+      "one page",
+      "freebies",
+      "bootstrap"
+    ],
     "createDate": "2018-05-11",
     "screenshotDir": "creative-sp",
     "liveDemoBaseStr": "https://lettstartdesign.com/freebies/creative-sp/app/",
@@ -2878,19 +3052,26 @@
     "changeLog": []
   },
   {
-    "id": "070620217",
+    "id": "070620216",
     "name": "Kiosk - App Landing Templates",
-    "packageName": 16,
     "detailLink": "kiosk-app-templates.html",
-    "oneLinerDesc": "Bootstrap 4 App Templates",
-    "price": 8,
+    "oneLinerDesc": "Bootstrap 4 App Templates with 30+ Pages",
+    "price": 5,
     "mainCat": "Landing Pages",
-    "docLink": "",
     "catLink": "landing-pages.html",
+    "gumroadLink": "https://gum.co/qSQcG?wanted=true",
     "demolink": "http://preview.lettstartdesign.com/item/kiosk-app-templates/070620217",
+    "docLink": "https://lettstartdesign.com/kiosk/documentation/index.html",
     "screenshot": "kiosk.jpg",
-    "category": ["landing", "one page", "bootstrap"],
-    "added": ["recently"],
+    "packageName": "16",
+    "category": [
+      "landing",
+      "one page",
+      "bootstrap"
+    ],
+    "added": [
+      "recently"
+    ],
     "createDate": "2020-09-21",
     "screenshotDir": "kiosk",
     "liveDemoBaseStr": "https://lettstartdesign.com/kiosk/app/",
@@ -3168,19 +3349,26 @@
     "changeLog": []
   },
   {
-    "id": "070620218",
+    "id": "070620217",
     "name": "Kiosk - App Angular Landing Templates",
-    "packageName": 17,
     "detailLink": "kiosk-angular-app-templates.html",
-    "oneLinerDesc": "Angular 10 App Templates",
-    "price": 12,
-    "docLink": "",
+    "oneLinerDesc": "Angular 10 App Templates with 30+ Pages",
+    "price": 5,
     "mainCat": "Angular",
     "catLink": "angular.html",
-    "demolink": "http://preview.lettstartdesign.com/item/kiosk-angular-app-templates/070620218",
+    "gumroadLink": "https://gum.co/iBFLD?wanted=true",
+    "demolink": "theme/kiosk-angular-app-templates.html#demos",
+    "docLink": "https://lettstartdesign.com/kiosk-angular/documentation/index.html",
     "screenshot": "kiosk.jpg",
-    "category": ["landing", "one page", "angular"],
-    "added": ["angular"],
+    "packageName": "17",
+    "category": [
+      "landing",
+      "one page",
+      "angular"
+    ],
+    "added": [
+      "angular"
+    ],
     "createDate": "2020-09-28",
     "screenshotDir": "kiosk",
     "liveDemoBaseStr": "https://lettstartdesign.com/kiosk-angular/app/",
@@ -3458,19 +3646,26 @@
     "changeLog": []
   },
   {
-    "id": "070620220",
+    "id": "070620218",
     "name": "Dark - Bootstrap Template",
-    "packageName": 18,
     "detailLink": "dark.html",
     "oneLinerDesc": "Bootstrap 4 Single Page Template",
-    "price": 8,
-    "docLink": "",
+    "price": 4,
     "mainCat": "Landing Pages",
     "catLink": "landing-pages.html",
-    "demolink": "http://preview.lettstartdesign.com/item/dark/070620220",
+    "demolink": "theme/dark.html#demos",
+    "docLink": "http://lettstartdesign.com/dark/documentation",
     "screenshot": "dark.jpg",
-    "category": ["landing", "one page", "bootstrap"],
-    "added": ["recently", "bootstrap"],
+    "packageName": "18",
+    "category": [
+      "landing",
+      "one page",
+      "bootstrap"
+    ],
+    "added": [
+      "recently",
+      "bootstrap"
+    ],
     "createDate": "2020-11-03",
     "screenshotDir": "dark",
     "liveDemoBaseStr": "https://lettstartdesign.com/dark/",

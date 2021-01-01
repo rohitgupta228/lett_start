@@ -436,8 +436,8 @@ class PaymentController extends Controller
         $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
         $data = $request->request->all();
         $attributes = [
-            'razorpay_signature' => $data['razorpay_signature'], 
-            'razorpay_payment_id' => $data['razorpay_payment_id'], 
+            'razorpay_signature' => $data['razorpay_signature'],
+            'razorpay_payment_id' => $data['razorpay_payment_id'],
             'razorpay_order_id' => $data['razorpay_order_id']
         ];
         try {
