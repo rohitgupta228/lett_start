@@ -396,8 +396,11 @@ class AuthController extends Controller
     public function downloadTheme($productId)
     {
         try {
+            $user = $this->guard()->user();
             $product = \App\Models\Product::where('productId', $productId)->first();
-            if ($product) {
+            $paymentStatus = config('settings.payment_status');
+            $transaction = \App\Models\Transaction::where('product_id', $productId)->where('user_id', $user->id)->where('payment_status', $paymentStatus[0])->first();
+            if ($product && $transaction) {
                 $headers = array(
                     'Content-Type' => 'application/octet-stream',
                 );
