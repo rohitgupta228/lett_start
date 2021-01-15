@@ -10,4 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'ProductController@homeProductsList')->name('products.list');
+Route::get('/', 'ProductController@homeProductsList')->name('home.products.list');
+
+Route::get('/product/{category?}', 'ProductController@lists')->name('product.category');
+

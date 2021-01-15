@@ -225,24 +225,46 @@ class ProductController extends Controller
         return response()->json($response, 200);
     }
 
-    public function lists(Request $request)
+    public function lists($category = null)
     {
         try {
-            $query = $request->all();
-            $category = strtolower($query['category']);
+            $category = strtolower($category);
             $result = Product::query();
             if ($category !== 'freebies') {
                 $result = $result->where('price', '!=', 0);
             }
             $result = $result->where('category', 'LIKE', "%{$category}%");
             $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
-            $response = [
-                'code' => 200,
-                'data' => [
-                    'products' => $products,
-                ],
-                'message' => 'Products fetched successfully'
-            ];
+            switch ($category) {
+                case 'admin':
+                    $title = "Admin Dashboard Templates";
+                    $description = 'Bootstrap and Angular admin templates that are ready to use, customize and publish - a perfect starting point for your next web application';
+                    break;
+                case 'bootstrap':
+                    $title = "Bootstrap Themes & Templates";
+                    $description = 'Bootstrap themes that are ready to customize and publish - a perfect starting point for your next web application';
+                    break;
+                case 'landing':
+                    $title = "Premium Bootstrap Landing Page Themes";
+                    $description = "Bootstrap landing page themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
+                    break;
+                case 'business':
+                    $title = "Business & Corporate Themes";
+                    $description = "Bootstrap business and corporate website themes that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
+                    break;
+                case 'portfolio':
+                    $title = "Bootstrap Portfolio CV/Resume Website Templates & Themes";
+                    $description = "Bootstrap portfolio & resume themes that are ready to customize and publish. It is perfect to show case your work, create resume and make your impression.";
+                    break;
+                case 'angular':
+                    $title = "Angular Admin Templates & Themes";
+                    $description = "Bootstrap angular templates & themes that are ready to use, customize and publish. Make all around planned dashboard interfaces with our Admin Templates and Themes.";
+                    break;
+                default:
+                    $title = "All Themes, Templates & Landing Pages";
+                    $description = "20+ Free and Premium Templates. Choose, combine and match the combination of components you want from the several 100 styles we provide!";
+            }
+            return view('product_category', compact('products', 'title', 'description'));
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
@@ -287,7 +309,6 @@ class ProductController extends Controller
 
     public function homeProductsList()
     {
-//        echo "coming"; die;
         try {
             $query = [
                 'added' => 'popular',
