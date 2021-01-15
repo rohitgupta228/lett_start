@@ -74,11 +74,9 @@
         </div>
     </div>
 </section>
-<!--Demo's End-->
-</div>
 
-<!-- Footer Start-->
-<!-- Modal -->
+</div>
+            
 @include('layouts.partials.modals')
 
 @endsection
