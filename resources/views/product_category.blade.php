@@ -7,7 +7,7 @@
             <div class="col-lg-8">
                 <div class="breadcrumb">
                     <ul class="list-unstyled">
-                        <li><a href="../index.html" title="Home">Home</a></li>
+                        <li><a href="{{ route('home.products.list') }}" title="Home">Home</a></li>
                         <li class="{{ $title && $title != 'All Themes, Templates & Landing Pages' ? '' : 'active' }}">All Themes</li>
                         @if ($title && $title != 'All Themes, Templates & Landing Pages')
                             <li class="active">{{ $title }}</li>

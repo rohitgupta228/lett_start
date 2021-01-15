@@ -16,3 +16,5 @@ Route::get('/products/{category?}', 'ProductController@lists')->name('product.ca
 
 Route::get('/search-result.html/{s?}', 'ProductController@search')->name('products.search');
 
+Route::get('/support', 'UserController@support')->name('support');
+

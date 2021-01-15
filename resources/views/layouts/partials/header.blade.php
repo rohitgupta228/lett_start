@@ -216,7 +216,7 @@ gtag('config', 'UA-167253243-1');
                                     </div>
                                 </li>
                                 <li><a title="Free themes" href="{{ route('product.category', ['category' => 'freebies']) }}" class="nav-link">Freebies</a></li>
-                                <li><a title="Support" href="javascript:void(0)" id="support-link" class="nav-link">Support</a></li>
+                                <li><a title="Support" href="{{ route('support') }}" id="support-link" class="nav-link">Support</a></li>
                                 <li><a title="Blogs" href="blog" class="nav-link">Blogs</a></li>
                             </ul>
                             <ul class="navbar-nav">
