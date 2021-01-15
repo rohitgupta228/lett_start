@@ -12,5 +12,7 @@
 */
 Route::get('/', 'ProductController@homeProductsList')->name('home.products.list');
 
-Route::get('/product/{category?}', 'ProductController@lists')->name('product.category');
+Route::get('/products/{category?}', 'ProductController@lists')->name('product.category');
+
+Route::get('/search-result.html/{s?}', 'ProductController@search')->name('products.search');
 

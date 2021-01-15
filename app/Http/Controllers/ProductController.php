@@ -278,10 +278,10 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         try {
-            $query = $request->all();
+            $query = $request->all()['s'];
             $result = Product::query();
-            if (isset($query['category']) && $query['category'] != '') {
-                $categoryArray = explode(' ', $query['category']);
+            if (isset($query) && $query != '') {
+                $categoryArray = explode(' ', $query);
                 $category = strtolower($categoryArray[0]);
                 $result = $result->where('category', 'LIKE', "%{$category}%")->orWhere('name', 'LIKE', '%' . $category . '%');
                 if (count($categoryArray) >= 2) {
@@ -290,13 +290,12 @@ class ProductController extends Controller
                 }
             }
             $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
-            $response = [
-                'code' => 200,
-                'data' => [
-                    'products' => $products,
-                ],
-                'message' => 'Products fetched successfully'
-            ];
+            $productCount = count($products);
+            if ($productCount == 0) {
+                $products = Product::where('added', 'LIKE', "%popular%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+                if (count($bestSelling))
+                    $products = array_slice($bestSelling, 0, 4);
+            }
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
@@ -304,7 +303,7 @@ class ProductController extends Controller
             ];
         }
 
-        return response()->json($response, 200);
+        return view('search_products', compact('products', 'query', 'productCount'));
     }
 
     public function homeProductsList()
@@ -325,15 +324,6 @@ class ProductController extends Controller
             $latest = Product::where('added', 'LIKE', "%{$query['recently']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
             if (count($latest))
                 $latest = array_slice($latest, 0, 4);
-            $response = [
-                'code' => 200,
-                'data' => [
-                    'bestSelling' => $bestSelling,
-                    'angular' => $angular,
-                    'latest' => $latest
-                ],
-                'message' => 'Products fetched successfully'
-            ];
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
