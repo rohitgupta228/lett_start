@@ -16,5 +16,17 @@ Route::get('/products/{category?}', 'ProductController@lists')->name('product.ca
 
 Route::get('/search-result.html/{s?}', 'ProductController@search')->name('products.search');
 
-Route::get('/support', 'UserController@support')->name('support');
+Route::get('/support', 'PagesController@support')->name('support');
 
+Route::get('/terms-and-conditions', 'PagesController@terms')->name('terms');
+
+Route::get('/privacy-policy', 'PagesController@privacyPolicy')->name('privacy');
+
+Route::get('/contact-us', 'PagesController@contactUs')->name('contact');
+
+Route::get('/faq', 'PagesController@faq')->name('faq');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

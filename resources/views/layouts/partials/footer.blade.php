@@ -10,21 +10,21 @@
             <div class="col-md-6 col-lg-3 px-xl-4">
                 <h5 class="text-white mb-30">Useful Links</h5>
                 <ul class="list-unstyled f-links">
-                    <li><a href="admin-dashboard.html">Admin & Dashboard</a></li>
-                    <li><a href="landing-pages.html">Landing Pages</a></li>
-                    <li><a href="business-corporate.html">Business & Corporates</a></li>
-                    <li><a href="portfolio-resumes.html">Portfolio & Resume</a></li>
-                    <li><a href="angular.html">Angular</a></li>
+                    <li><a href="{{ route('product.category', ['category' => 'admin']) }}">Admin & Dashboard</a></li>
+                    <li><a href="{{ route('product.category', ['category' => 'landing']) }}">Landing Pages</a></li>
+                    <li><a href="{{ route('product.category', ['category' => 'business']) }}">Business & Corporates</a></li>
+                    <li><a href="{{ route('product.category', ['category' => 'portfolio']) }}">Portfolio & Resume</a></li>
+                    <li><a href="{{ route('product.category', ['category' => 'angular']) }}">Angular</a></li>
                 </ul>
             </div>
             <div class="col-md-6 col-lg-2 px-xl-4">
                 <h5 class="text-white mb-30">More Links</h5>
                 <ul class="list-unstyled f-links">
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     <li><a href="license.html">License</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-use.html">Terms & Conditions</a></li>
+                    <li><a href="{{ route('faq') }}">FAQ</a></li>
+                    <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 pl-xl-4">

@@ -14,10 +14,32 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Crypt;
 
-class UserController extends Controller
+class PagesController extends Controller
 {
+
     public function support()
     {
-     return view('support');   
+        return view('support');
     }
+
+    public function terms()
+    {
+        return view('terms');
+    }
+
+    public function contactUs()
+    {
+        return view('contact_us');
+    }
+
+    public function faq()
+    {
+        return view('faq');
+    }
+    
+    public function privacyPolicy()
+    {
+        return view('privacy_policy');
+    }
+
 }
