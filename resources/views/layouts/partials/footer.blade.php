@@ -21,7 +21,7 @@
                 <h5 class="text-white mb-30">More Links</h5>
                 <ul class="list-unstyled f-links">
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                    <li><a href="license.html">License</a></li>
+                    <li><a href="{{ route('license') }}">License</a></li>
                     <li><a href="{{ route('faq') }}">FAQ</a></li>
                     <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>

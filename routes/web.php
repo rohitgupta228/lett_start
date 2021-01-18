@@ -26,6 +26,8 @@ Route::get('/contact-us', 'PagesController@contactUs')->name('contact');
 
 Route::get('/faq', 'PagesController@faq')->name('faq');
 
+Route::get('/license', 'PagesController@license')->name('license');
+
 
 Auth::routes();
 
