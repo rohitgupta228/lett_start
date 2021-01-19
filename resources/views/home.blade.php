@@ -60,7 +60,7 @@
                 <div class="col-md-6">
                     <div class="demo-item" id="1">
                         <a href="{{ $template['detailLink'] }}" class="screenshot">
-                            <img src="{{ url('images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                            <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                         </a>
                         <div class="action-btn">
                             <a href="{{ $template['demolink'] }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
@@ -99,7 +99,7 @@
                 <div class="col-md-6">
                     <div class="demo-item" id="1">
                         <a href="{{ $template['detailLink'] }}" class="screenshot">
-                            <img src="{{ url('images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                            <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                         </a>
                         <div class="action-btn">
                             <a href="{{ $template['demolink'] }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
@@ -137,7 +137,7 @@
                 <div class="col-md-6">
                     <div class="demo-item" id="1">
                         <a href="{{ $template['detailLink'] }}" class="screenshot">
-                            <img src="{{ url('images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                            <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                         </a>
                         <div class="action-btn">
                             <a href="{{ $template['demolink'] }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>

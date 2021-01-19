@@ -113,17 +113,20 @@ class ProductController extends Controller
             if ($product) {
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
-                $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
-                if (count($realtedProducts))
-                    $realtedProducts = array_slice($realtedProducts, 0, 3);
-                $response = [
-                    'code' => 200,
-                    'data' => [
-                        'product' => $product,
-                        'realtedProducts' => $realtedProducts
-                    ],
-                    'message' => 'Product details fetch successfully'
-                ];
+                $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+                if (count($relatedProducts))
+                    $relatedProducts = array_slice($relatedProducts, 0, 3);
+                    
+                return view('product_detail', compact('product', 'relatedProducts'));
+                
+        // $response = [
+        //     'code' => 200,
+        //     'data' => [
+        //         'product' => $product,
+        //         'relatedProducts' => $relatedProducts
+        //     ],
+        //     'message' => 'Product details fetch successfully'
+        // ];
             }
         } catch (\Exception $exc) {
             $response = [

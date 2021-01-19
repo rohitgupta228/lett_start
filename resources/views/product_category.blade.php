@@ -39,16 +39,16 @@
             @foreach ($products as $template)
             <div class="col-md-6">
                 <div class="demo-item" id="1">
-                    <a href="{{ $template['detailLink'] }}" class="screenshot">
-                        <img src="{{ url('images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                    <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" class="screenshot">
+                        <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                     </a>
                     <div class="action-btn">
-                        <a href="{{ $template['demolink'] }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
+                        <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]).'#demos' }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                     </div>
                     <div class="theme-desc">
                         <div class="title">
                             <h3 class="h5">
-                                <a href="theme/{{$template['detailLink']}}" title="{{$template['name']}}">{{$template['name']}}</a></h3>
+                                <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" title="{{$template['name']}}">{{$template['name']}}</a></h3>
                             <p>{{ $template['oneLinerDesc'] }}</p>
                         </div>
                         <div class="price">
@@ -60,24 +60,14 @@
             </div>
             @endforeach
         </div>
-        <div id="pagination-wrapper" class="mt-30">
-            <ul class="pagination">
-                <li class="page-item first disabled"><a href="#" class="page-link"><i class="bx bx-chevrons-left"></i></a>
-                </li>
-                <li class="page-item prev disabled"><a href="#" class="page-link"><i class="bx bx-chevron-left"></i></a>
-                </li>
-                <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item next"><a href="#" class="page-link"><i class="bx bx-chevron-right"></i></a></li>
-                <li class="page-item last"><a href="#" class="page-link"><i class="bx bx-chevrons-right"></i></a></li>
-            </ul>
-        </div>
+        @if (\Request::is('themes'))  
+            <div id="pagination-wrapper" class="mt-30"></div>
+        @endif
     </div>
 </section>
 
 </div>
             
 @include('layouts.partials.modals')
-
 @endsection
 

@@ -28,22 +28,22 @@
               content="Discover premium and free bootstrap themes & templates including multipurpose and responsive templates, angular templates, resume templates, admin templates and landing pages">
         <title>Premium and Free Bootstrap Themes &amp; Templates</title>
         <!--=== Fav Icon ===-->
-        <link rel="shortcut icon" href="{{ url('images/favicon.ico') }}" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="{{ url('images/favicon.ico') }}" />
+        <link rel="shortcut icon" href="{{ url('assets/images/favicon.ico') }}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}" />
         <link rel="manifest" href="manifest.json">
         <meta name="apple-mobile-web-app-status-bar" content="#2982de">
         <meta name="theme-color" content="#2982de">
         <!--=== Preloads ===-->
-        <link rel="preload" href="{{ url('vendors/boxicons/css/boxicons.min.css') }}" as="style"/>
-        <link rel="preload" href="{{ url('vendors/boxicons/fonts/boxicons.woff2') }}" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="{{ url('fonts/roboto/Roboto-Medium.woff2') }}" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="{{ url('fonts/roboto/Roboto-Regular.woff2') }}" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="{{ url('fonts/roboto/Roboto-Bold.woff2') }}" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="{{ url('css/plugins.min.css') }}" as="style"/>
-        <link rel="preload" href="{{ url('css/style.min.css') }}" as="style"/>
-        <link rel="preload" href="{{ url('js/plugins.min.js') }}" as="script">
-        <link rel="preload" href="{{ url('js/api.min.js') }}" as="script">
-        <link rel="preload" href="{{ url('js/app.min.js') }}" as="script">
+        <link rel="preload" href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" as="style"/>
+        <link rel="preload" href="{{ url('assets/vendors/boxicons/fonts/boxicons.woff2') }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ url('assets/fonts/roboto/Roboto-Medium.woff2') }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ url('assets/fonts/roboto/Roboto-Regular.woff2') }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ url('assets/fonts/roboto/Roboto-Bold.woff2') }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ url('assets/css/plugins.min.css') }}" as="style"/>
+        <link rel="preload" href="{{ url('assets/css/style.min.css') }}" as="style"/>
+        <link rel="preload" href="{{ url('assets/js/plugins.min.js') }}" as="script">
+        <link rel="preload" href="{{ url('assets/js/api.min.js') }}" as="script">
+        <link rel="preload" href="{{ url('assets/js/app.min.js') }}" as="script">
         <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-MRQ8XPM" as="script">
         <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
         <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script">
@@ -159,8 +159,8 @@ gtag('config', 'UA-167253243-1');
                                 <i class="bx bx-menu"></i>
                             </button>
                             <a class="navbar-brand" href="index.html">
-                                <img src="{{ url('images/logo.png') }}" alt="lettstartdesign" height="40" class="logo-white">
-                                <img src="{{ url('images/logo-dark.png') }}" alt="lettstartdesign" height="40" class="logo-dark">
+                                <img src="{{ url('assets/images/logo.png') }}" alt="lettstartdesign" height="40" class="logo-white">
+                                <img src="{{ url('assets/images/logo-dark.png') }}" alt="lettstartdesign" height="40" class="logo-dark">
                             </a>
                         </div>
                         <!--logo end-->

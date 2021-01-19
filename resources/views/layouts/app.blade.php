@@ -74,7 +74,7 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
+    <!-- laravel scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

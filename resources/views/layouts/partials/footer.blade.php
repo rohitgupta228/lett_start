@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-4 pr-xl-4">
                 <a href="index.html" class="f-logo mb-30">
-                    <img src="{{ url('images/logo.png') }}" class="img-fluid" alt="lettstart design" />
+                    <img src="{{ url('assets/images/logo.png') }}" class="img-fluid" alt="lettstart design" />
                 </a>
                 <p>Purchase premium and free landing layouts, application layouts, dashboard layouts dependent on rakish, bootstrap, scss and start your first site today.</p>
             </div>
@@ -59,56 +59,18 @@
 <script defer src="assets/vendors/bootstrap/js/src/dropdown.js"></script>
 <script defer src="assets/vendors/bootstrap/js/src/modal.js"></script>
 <script defer src="assets/vendors/bootstrap/js/src/carousel.js"></script> -->
-<script defer src="{{ url('js/plugins.min.js') }}" type="application/javascript"></script>
+<script>
+    var style = "<?= url('assets/css/style.min.css') ?>";
+    var plugin = "<?= url('assets/css/plugins.min.css') ?>";
+    var boxicon = "<?= url('assets/vendors/boxicons/css/boxicons.min.css') ?>";
+</script>
+<script src="{{ url('assets/js/plugins.min.js') }}" type="application/javascript"></script>
+
 
 <!-- Footer End-->
-<script defer src="{{ url('js/api.min.js') }}"></script>
-<script defer src="{{ url('js/app.min.js') }}"></script>
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@graph": [
-    {
-    "@type": "WebSite",
-    "@id": "https://lettstartdesign.com/#website",
-    "url": "https://lettstartdesign.com/",
-    "name": "Lettstart Design",
-    "description": "Bootstrap Themes & Templates",
-    "potentialAction": [
-    {
-    "@type": "SearchAction",
-    "target": "https://lettstartdesign.com/search-result.html?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-    }
-    ],
-    "inLanguage": "en-US"
-    },
-    {
-    "@type": "WebPage",
-    "@id": "https://lettstartdesign.com/#webpage",
-    "url": "https://lettstartdesign.com/",
-    "name": "Premium & Free Bootstrap Themes & Templates",
-    "isPartOf": {
-    "@id": "https://lettstartdesign.com/#website"
-    },
-    "datePublished": "2020-05-20T12:21:17+00:00",
-    "dateModified": "2021-01-11T17:31:19+00:00",
-    "description": "Discover premium and free bootstrap themes & templates including multipurpose and responsive templates, angular templates, resume templates, admin templates & landing pages",
-    "inLanguage": "en-US",
-    "potentialAction": [
-    {
-    "@type": "ReadAction",
-    "target": [
-    "https://lettstartdesign.com/"
-    ]
-    }
-    ]
-    }
-    ]
-    }
-</script>
+<script src="{{ url('assets/js/api.min.js') }}"></script>
+<script src="{{ url('assets/js/app.min.js') }}"></script>
 <!-- Javascript's -->
-
 </body>
 
 </html>
