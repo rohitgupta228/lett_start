@@ -26,7 +26,8 @@
         <meta property="og:title" content="Affordable Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design">
         <meta property="og:description"
               content="Discover premium and free bootstrap themes & templates including multipurpose and responsive templates, angular templates, resume templates, admin templates and landing pages">
-        <title>Premium and Free Bootstrap Themes &amp; Templates</title>
+                <title>@yield('title') | Premium and Free Bootstrap Themes &amp; Templates </title>
+        <!--<title>Premium and Free Bootstrap Themes &amp; Templates</title>-->
         <!--=== Fav Icon ===-->
         <link rel="shortcut icon" href="{{ url('assets/images/favicon.ico') }}" type="image/x-icon" />
         <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}" />

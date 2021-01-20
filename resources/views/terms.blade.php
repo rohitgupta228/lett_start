@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Terms of Use')
+
 @section('content')
 <!--Demo's Start-->
 <div class="banner-title mt-100">
