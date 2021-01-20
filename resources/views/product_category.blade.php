@@ -2,6 +2,10 @@
 
 @section('title', $title)
 
+@section('meta_title', $title)
+
+@section('meta_description', $description)
+
 @section('content')
 <div class="banner-title mt-100">
     <div class="container">
@@ -12,7 +16,7 @@
                         <li><a href="{{ route('home.products.list') }}" title="Home">Home</a></li>
                         <li class="{{ $title && $title != 'All Themes, Templates & Landing Pages' ? '' : 'active' }}">All Themes</li>
                         @if ($title && $title != 'All Themes, Templates & Landing Pages')
-                        <li class="active">{{ $title }}</li>
+                            <li class="active">{{ $title }}</li>
                         @endif
                     </ul>
                 </div>
@@ -63,7 +67,9 @@
             @endforeach
         </div>
         @if (\Request::is('themes'))  
-        <div id="pagination-wrapper" class="mt-30"></div>
+        <div id="pagination-wrapper" class="mt-30">
+            {!! $products->links() !!}
+        </div>
         @endif
     </div>
 </section>
