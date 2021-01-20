@@ -12,7 +12,7 @@
 */
 Route::get('/', 'ProductController@homeProductsList')->name('home.products.list');
 
-Route::get('/themes/{category?}', 'ProductController@lists')->name('product.category');
+Route::get('/category/{category?}', 'ProductController@lists')->name('product.category');
 
 Route::get('/search-result.html/{s?}', 'ProductController@search')->name('products.search');
 

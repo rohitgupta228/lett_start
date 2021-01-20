@@ -201,18 +201,18 @@ gtag('config', 'UA-167253243-1');
                                         Themes
                                     </a>
                                     <div class="dropdown-menu dropdown-themes border-0 py-0 shadow animate slideIn dropdown-menu-right" aria-labelledby="themesDropdown">
-                                        <a class="dropdown-item font-weight-bold" href="{{ route('product.category', ['category' => '']) }}"><i class='bx bx-grid-small text-secondary'></i> Browse All Themes</a>
-                                        <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'admin']) }}"><i
+                                        <a class="dropdown-item font-weight-bold" href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}"><i class='bx bx-grid-small text-secondary'></i> Browse All Themes</a>
+                                        <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'admin-dashboard-template']) }}"><i
                                                 class='bx bxs-bar-chart-square text-primary'></i> Admin Dashboard Templates</a>
-                                        <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'bootstrap']) }}"><i
+                                        <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}"><i
                                                 class='bx bxl-bootstrap text-bootstrap'></i>Bootstrap Templates</a>
-                                        <a class="dropdown-item" title="Landing Pages" href="{{ route('product.category', ['category' => 'landing']) }}"><i class='bx bx-file text-success'></i>Landing
+                                        <a class="dropdown-item" title="Landing Pages" href="{{ route('product.category', ['category' => 'landing-pages-templates']) }}"><i class='bx bx-file text-success'></i>Landing
                                             Pages Templates</a>
-                                        <a class="dropdown-item" title="Business & Corporate" href="{{ route('product.category', ['category' => 'business']) }}"><i
+                                        <a class="dropdown-item" title="Business & Corporate" href="{{ route('product.category', ['category' => 'business-corporate-templates']) }}"><i
                                                 class='bx bxs-business text-warning'></i>Business &amp; Corporate Templates</a>
-                                        <a class="dropdown-item" title="Portfolio & Dashboard" href="{{ route('product.category', ['category' => 'portfolio']) }}"><i
+                                        <a class="dropdown-item" title="Portfolio & Dashboard" href="{{ route('product.category', ['category' => 'portfolio-templates']) }}"><i
                                                 class='bx bx-briefcase text-info'></i> Portfolio &amp; Resume Templates</a>
-                                        <a class="dropdown-item" title="Angular Templates" href="{{ route('product.category', ['category' => 'angular']) }}"><i class='bx bxl-angular text-angular'></i>
+                                        <a class="dropdown-item" title="Angular Templates" href="{{ route('product.category', ['category' => 'angular-templates']) }}"><i class='bx bxl-angular text-angular'></i>
                                             Angular Templates</a>
                                     </div>
                                 </li>

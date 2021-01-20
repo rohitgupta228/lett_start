@@ -50,10 +50,33 @@ class ProductController extends Controller
         try {
             $category = strtolower($category);
             $result = Product::query();
+            $search = null;
             if ($category !== 'freebies') {
                 $result = $result->where('price', '!=', 0);
             }
-            $result = $result->where('category', 'LIKE', "%{$category}%");
+            switch($category) {
+                case 'admin-dashboard-template': 
+                    $search = 'admin';
+                    break;
+                case 'bootstrap-templates':
+                    $search = 'bootstrap';
+                    break;
+                case 'landing-pages-templates':
+                    $search = 'landing';
+                    break;
+                case 'business-corporate-templates':
+                    $search = 'business';
+                    break;
+                case 'portfolio-templates':
+                    $search = 'portfolio';
+                    break;
+                case 'angular-templates':
+                    $search = 'angular';
+                    break;
+                default:
+                    $search = '';
+            }
+            $result = $result->where('category', 'LIKE', "%{$search}%");
             $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
             switch ($category) {
                 case 'admin':

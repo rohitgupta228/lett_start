@@ -2,9 +2,11 @@
     <ul class="pagination">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+            <!-- <li class="page-item disabled"><span class="page-link"><i class="bx bx-chevrons-left"></i></span></li> -->
+            <li class="page-item disabled"><a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev"><i class="bx bx-chevron-left"></i></a></li>
         @else
-            <li class="page-item"><a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+            <!-- <li class="page-item"><span class="page-link"><i class="bx bx-chevrons-left"></i></span></li> -->
+            <li class="page-item"><a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev"><i class="bx bx-chevron-left"></i></a></li>
         @endif
 
         {{-- Pagination Elements --}}
@@ -28,9 +30,11 @@
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <li class="page-item"><a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">&raquo;</a></li>
+            <li class="page-item"><a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next"><i class="bx bx-chevron-right"></i></a></li>
+            <!-- <li class="page-item"><span class="page-link"><i class="bx bx-chevrons-right"></i></span></li> -->
         @else
-            <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+            <li class="page-item disabled"><a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next"><i class="bx bx-chevron-right"></i></a></li>
+            <!-- <li class="page-item disabled"><span class="page-link"><i class="bx bx-chevrons-right"></i></span></li> -->
         @endif
     </ul>
 @endif

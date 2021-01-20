@@ -22,7 +22,7 @@
                         <li>Navigate to our best selling products by using site navigation below</li>
                     </ul>
                 @endif
-                <div class="popular-products mt-50">
+                <div class="popular-products">
                     @if($productCount == 0)
                         <div class="heading">
                             <div class="heading-text">

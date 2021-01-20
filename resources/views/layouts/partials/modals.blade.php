@@ -54,7 +54,7 @@
             </div>
             <div class="modal-body">
                 <div class="font-weight-medium mb-2 font-size-13">All (*) field's are mandatory.</div>
-                <form id="signup-form" class="auth-form" method="post" action="/api/user/signup" novalidate="novalidate">
+                <form id="signup-form" class="auth-form" method="post" action="{{ route('register') }}" novalidate="novalidate">
                     <div class="alert alert-danger error-msgs" id="errorMsg">
                         <button type="button" class="close" aria-label="Close">
                             <i class="bx bx-x"></i>

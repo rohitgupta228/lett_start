@@ -66,7 +66,7 @@
             </div>
             @endforeach
         </div>
-        @if (\Request::is('themes'))  
+        @if (\Request::is('category/premium-admin-bootstrap-templates') || \Request::is('category'))  
         <div id="pagination-wrapper" class="mt-30">
             {!! $products->links('bootstrap-4') !!}
         </div>
