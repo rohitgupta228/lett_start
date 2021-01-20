@@ -68,7 +68,7 @@
         </div>
         @if (\Request::is('themes'))  
         <div id="pagination-wrapper" class="mt-30">
-            {!! $products->links() !!}
+            {!! $products->links('bootstrap-4') !!}
         </div>
         @endif
     </div>
