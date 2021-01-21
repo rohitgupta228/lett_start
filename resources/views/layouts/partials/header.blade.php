@@ -126,16 +126,15 @@ gtag('config', 'UA-167253243-1');
                                         <i class="bx bxs-download mr-2 text-primary align-middle"></i>
                                         Downloads
                                     </a>
-                                    <a href="{{ route('logout') }}" class="dropdown-item" title="logout" id="logout-btn">
+                                    <a href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item" title="logout" id="logout-btn">
                                         <i class="bx bx-log-out mr-2 text-danger align-middle"></i>
                                         Logout
                                     </a>
-                                    <div class="loader-wrap">
-                                        <i class="bx bx-loader-alt h4 content-loader spinner3"></i>
-                                    </div>
                                 </div>
                             </div>
-
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: one;">
+                                {{ csrf_field() }}
+                            </form>
                         </div>
                         @endif
 
