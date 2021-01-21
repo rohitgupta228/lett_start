@@ -65,7 +65,7 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
         <![endif] -->
         <style>
-            
+
         </style>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1"></script>
@@ -109,36 +109,36 @@ gtag('config', 'UA-167253243-1');
                         </div>
                         <!--logo end-->
                         <!--hamburg end-->
-                        @php 
-                            @if(!empty(Auth::user()))
-                            <div class="login-user-dd" id="logged-user">
-                                <div class="dropdown">
-                                    <a title="user" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-                                        <img src="" alt="" width="30" class="rounded-circle"/>
-                                        <i class="bx bx-dots-vertical-rounded mb-0 text-primary h4"></i>
+
+                        @if(!empty(Auth::user()))
+                        <div class="login-user-dd" id="logged-user">
+                            <div class="dropdown">
+                                <a title="user" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
+                                    <img src="" alt="" width="30" class="rounded-circle"/>
+                                    <i class="bx bx-dots-vertical-rounded mb-0 text-primary h4"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-themes border-0 py-0 shadow animate slideIn dropdown-menu-right">
+                                    <a href="edit-profile.html" class="dropdown-item" title="edit profile">
+                                        <i class="bx bx-edit mr-2 text-warning align-middle"></i>
+                                        Edit Profile
                                     </a>
-                                    <div class="dropdown-menu dropdown-themes border-0 py-0 shadow animate slideIn dropdown-menu-right">
-                                        <a href="edit-profile.html" class="dropdown-item" title="edit profile">
-                                            <i class="bx bx-edit mr-2 text-warning align-middle"></i>
-                                            Edit Profile
-                                        </a>
-                                        <a href="downloads.html" class="dropdown-item" title="downloads">
-                                            <i class="bx bxs-download mr-2 text-primary align-middle"></i>
-                                            Downloads
-                                        </a>
-                                        <a href="{{ route('logout') }}" class="dropdown-item" title="logout" id="logout-btn">
-                                            <i class="bx bx-log-out mr-2 text-danger align-middle"></i>
-                                            Logout
-                                        </a>
-                                        <div class="loader-wrap">
-                                            <i class="bx bx-loader-alt h4 content-loader spinner3"></i>
-                                        </div>
+                                    <a href="downloads.html" class="dropdown-item" title="downloads">
+                                        <i class="bx bxs-download mr-2 text-primary align-middle"></i>
+                                        Downloads
+                                    </a>
+                                    <a href="{{ route('logout') }}" class="dropdown-item" title="logout" id="logout-btn">
+                                        <i class="bx bx-log-out mr-2 text-danger align-middle"></i>
+                                        Logout
+                                    </a>
+                                    <div class="loader-wrap">
+                                        <i class="bx bx-loader-alt h4 content-loader spinner3"></i>
                                     </div>
                                 </div>
-
                             </div>
-                            @endif
-                        @endphp
+
+                        </div>
+                        @endif
+
                         <div class="collapse navbar-collapse" id="navbarCollapse">
                             <ul class="navbar-nav ml-auto" id="mySidenav">
                                 <li><a title="home" href="{{ route('home.products.list') }}" class="nav-link">Home</a></li>
@@ -164,27 +164,27 @@ gtag('config', 'UA-167253243-1');
                                     </div>
                                 </li>
                                 <li><a title="Free themes" href="{{ route('product.category', ['category' => 'freebies']) }}" class="nav-link">Freebies</a></li>
-                                @php 
-                                    @if(!empty(Auth::user()))
-                                        <li><a title="Support" href="{{ route('support') }}" id="support-link" class="nav-link">Support</a></li>
-                                    @endif
-                                @endphp
+
+                                @if(!empty(Auth::user()))
+                                <li><a title="Support" href="{{ route('support') }}" id="support-link" class="nav-link">Support</a></li>
+                                @endif
+
                                 <li><a title="Blogs" href="blog" class="nav-link">Blogs</a></li>
                             </ul>
-                            @php 
-                                @if(empty(Auth::user()))
-                                <ul class="navbar-nav">
-                                    <li class="position-relative">
-                                        <a title="Login/Signup" href="javascript:void(0)" id="auth-btn" class="nav-link">
-                                            <i class='bx bx-user h5 mb-0 mr-1 align-middle'></i>Login / Signup
-                                        </a>
-                                        <div class="loader-wrap">
-                                            <i class="bx bx-loader-alt h4 content-loader spinner3"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                                @endif
-                            @endphp
+
+                            @if(empty(Auth::user()))
+                            <ul class="navbar-nav">
+                                <li class="position-relative">
+                                    <a title="Login/Signup" href="javascript:void(0)" id="auth-btn" class="nav-link">
+                                        <i class='bx bx-user h5 mb-0 mr-1 align-middle'></i>Login / Signup
+                                    </a>
+                                    <div class="loader-wrap">
+                                        <i class="bx bx-loader-alt h4 content-loader spinner3"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                            @endif
+
                         </div>
                         <!--navbar collapse end-->
                     </div>
