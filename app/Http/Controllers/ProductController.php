@@ -18,9 +18,6 @@ class ProductController extends Controller
 {
     public function homeProductsList()
     {
-        // print_r(Auth::user());
-        // print_r(empty(Auth::user()));
-        // die;
         try {
             $query = [
                 'added' => 'popular',
