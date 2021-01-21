@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <div class="font-weight-medium mb-2 font-size-13">All (*) field's are mandatory.</div>
-                <form id="login-form" class="auth-form active" method="post" action="{{ route('login') }}" novalidate="novalidate">
+                <form id="login-form" class="auth-form active" method="post" novalidate="novalidate">
                     {{ csrf_field() }}
                     <div class="alert alert-danger error-msgs" id="errorMsg">
                         <button type="button" class="close" aria-label="Close">
@@ -55,12 +55,17 @@
             </div>
             <div class="modal-body">
                 <div class="font-weight-medium mb-2 font-size-13">All (*) field's are mandatory.</div>
-                <form id="signup-form" class="auth-form" method="post" action="{{ route('register') }}" novalidate="novalidate">
+                <form id="signup-form" class="auth-form" method="post" novalidate="novalidate">
                     {{ csrf_field() }}
                     <div class="alert alert-danger error-msgs" id="errorMsg">
                         <button type="button" class="close" aria-label="Close">
                             <i class="bx bx-x"></i>
                         </button>
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     <div class="alert alert-success success-msgs" id="successMsg">
                         <button type="button" class="close" aria-label="Close">
@@ -110,7 +115,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="forgot-form" class="auth-form" novalidate="novalidate">
+                <form id="forgot-form" class="auth-form" method="post" novalidate="novalidate">
+                {{ csrf_field() }}
                     <div class="alert alert-danger error-msgs" id="errorMsg">
                         <button type="button" class="close" aria-label="Close">
                             <i class="bx bx-x"></i>

@@ -54,6 +54,10 @@
         <i class="bx bx-chevron-up h5 mb-0 text-white"></i>
     </a>
 </div>
+<script>
+    var registerRoute = "<?= route('register') ?>";
+    var loginRoute = "<?= route('login') ?>";
+</script>
 <!-- Third Javascript's -->
 <script src="{{ url('assets/js/plugins.min.js') }}" type="application/javascript"></script>
 <!-- Footer End-->

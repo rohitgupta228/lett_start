@@ -172,7 +172,7 @@ gtag('config', 'UA-167253243-1');
                             </ul>
 
                             @if(empty(Auth::user()))
-                            <ul class="navbar-nav">
+                            <ul class="navbar-nav border-left">
                                 <li class="position-relative">
                                     <a title="Login/Signup" href="javascript:void(0)" id="auth-btn" class="nav-link">
                                         <i class='bx bx-user h5 mb-0 mr-1 align-middle'></i>Login / Signup
