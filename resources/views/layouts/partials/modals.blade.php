@@ -10,7 +10,8 @@
             </div>
             <div class="modal-body">
                 <div class="font-weight-medium mb-2 font-size-13">All (*) field's are mandatory.</div>
-                <form id="login-form" class="auth-form active" method="post" action="/api/user/login" novalidate="novalidate">
+                <form id="login-form" class="auth-form active" method="post" action="{{ route('login') }}" novalidate="novalidate">
+                    {{ csrf_field() }}
                     <div class="alert alert-danger error-msgs" id="errorMsg">
                         <button type="button" class="close" aria-label="Close">
                             <i class="bx bx-x"></i>
@@ -55,6 +56,7 @@
             <div class="modal-body">
                 <div class="font-weight-medium mb-2 font-size-13">All (*) field's are mandatory.</div>
                 <form id="signup-form" class="auth-form" method="post" action="{{ route('register') }}" novalidate="novalidate">
+                    {{ csrf_field() }}
                     <div class="alert alert-danger error-msgs" id="errorMsg">
                         <button type="button" class="close" aria-label="Close">
                             <i class="bx bx-x"></i>
