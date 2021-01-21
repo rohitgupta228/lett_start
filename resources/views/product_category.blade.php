@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
-@section('title', $pageTitle)
+@section('title', $title)
 
-@section('meta_title', $pageTitle)
+@section('meta_title', $title)
 
-@section('meta_description', $pageDescription)
+@section('meta_description', $description)
 
 @section('content')
 <div class="banner-title mt-100">
@@ -46,7 +46,7 @@
             <div class="col-md-6">
                 <div class="demo-item" id="1">
                     <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" class="screenshot">
-                        <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"  alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                        <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w" alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                     </a>
                     <div class="action-btn">
                         <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]).'#demos' }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>

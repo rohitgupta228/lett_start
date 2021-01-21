@@ -55,18 +55,7 @@
     </a>
 </div>
 <!-- Third Javascript's -->
-<!-- <script defer src="assets/vendors/bootstrap/js/src/popover.js"></script>
-<script defer src="assets/vendors/bootstrap/js/src/dropdown.js"></script>
-<script defer src="assets/vendors/bootstrap/js/src/modal.js"></script>
-<script defer src="assets/vendors/bootstrap/js/src/carousel.js"></script> -->
-<script>
-    var style = "<?= url('assets/css/style.min.css') ?>";
-    var plugin = "<?= url('assets/css/plugins.min.css') ?>";
-    var boxicon = "<?= url('assets/vendors/boxicons/css/boxicons.min.css') ?>";
-</script>
 <script src="{{ url('assets/js/plugins.min.js') }}" type="application/javascript"></script>
-
-
 <!-- Footer End-->
 <script src="{{ url('assets/js/api.min.js') }}"></script>
 <script src="{{ url('assets/js/app.min.js') }}"></script>

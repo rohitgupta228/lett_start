@@ -15,25 +15,21 @@
         <meta property="og:url" content="https://lettstartdesign.com/">
         <meta property="og:site_name" content="LettstartDesign">
         <meta property="article:publisher" content="https://www.facebook.com/LettstartDesign/">
-        <link rel="shortlink" href="https://lettstartdesign.com/">
-
-
+        <meta name="apple-mobile-web-app-status-bar" content="#2982de">
+        <meta name="theme-color" content="#2982de">
         <meta name="google-site-verification" content="2A15GDv2_v4MvaNqBXvSLUqtyJdfGObA2zCet6fuIVE" />
         <meta name="title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
-        <meta name="description"
-              content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
+        <meta name="description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
         <meta name="keywords" content="Affordable, Landing Pages, Angular Templates, Dashboard, One Page Templates, Themes, Bootstrap Templates, Bootstrap, Resume Templates, Admin Templates, Business Templates, Portfolio Templates, Templates, Populat, Best Selling, Multipurpose">
-        <meta property="og:title" content="Affordable Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design">
-        <meta property="og:description"
-              content="Discover premium and free bootstrap themes & templates including multipurpose and responsive templates, angular templates, resume templates, admin templates and landing pages">
-                <title>@yield('title', 'Premium and Free Bootstrap Themes &amp; Templates') </title>
+        <meta property="og:title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
+        <meta property="og:description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
+        <title>@yield('title', 'Premium and Free Bootstrap Themes &amp; Templates') </title>
         <!--<title>Premium and Free Bootstrap Themes &amp; Templates</title>-->
         <!--=== Fav Icon ===-->
+        <link rel="shortlink" href="https://lettstartdesign.com/">
         <link rel="shortcut icon" href="{{ url('assets/images/favicon.ico') }}" type="image/x-icon" />
         <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}" />
         <link rel="manifest" href="manifest.json">
-        <meta name="apple-mobile-web-app-status-bar" content="#2982de">
-        <meta name="theme-color" content="#2982de">
         <!--=== Preloads ===-->
         <link rel="preload" href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" as="style"/>
         <link rel="preload" href="{{ url('assets/vendors/boxicons/fonts/boxicons.woff2') }}" as="font" type="font/woff2" crossorigin>
@@ -48,20 +44,19 @@
         <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-MRQ8XPM" as="script">
         <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
         <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script">
-
         <link rel="preconnect" href="https://lettstartdesign.com">
         <link rel="preconnect" href="https://www.googletagmanager.com">
         <link rel="preconnect" href="https://www.google-analytics.com">
         <link rel="preconnect" href="https://stats.g.doubleclick.net">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <!--=== Icon Fonts ===-->
-        <!-- <link href="assets/vendors/boxicons/css/boxicons.min.css" rel="stylesheet" /> -->
+        <link href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" rel="stylesheet" />
 
         <!--=== Plugins CSS===-->
-        <!-- <link rel="stylesheet" href="assets/css/plugins.min.css" /> -->
+        <link rel="stylesheet" href="{{ url('assets/css/plugins.min.css') }}" />
 
         <!--=== App css ===-->
-        <!-- <link rel="stylesheet" href="assets/css/style.min.css" /> -->
+        <link rel="stylesheet" href="{{ url('assets/css/style.min.css') }}" />
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!-- Tweaks for older IEs-->
@@ -70,54 +65,7 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
         <![endif] -->
         <style>
-            .fakeLoader {
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: 0;
-                bottom: 0;
-                z-index: 99999;
-                background: #2982de;
-            }
-
-            .spinner4 {
-                position: fixed;
-                width: 35px;
-                height: 35px;
-                top: calc(50% - 35px / 2);
-                left: calc(50% - 35px / 2);
-                background-color: #fff;
-                -webkit-animation: rotateplane 1.2s infinite ease-in-out;
-                animation: rotateplane 1.2s infinite ease-in-out;
-            }
-            @-webkit-keyframes rotateplane {
-                0% {
-                    -webkit-transform: perspective(120px) rotateX(0) rotateY(0);
-                    transform: perspective(120px) rotateX(0) rotateY(0);
-                }
-                50% {
-                    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0);
-                    transform: perspective(120px) rotateX(-180.1deg) rotateY(0);
-                }
-                100% {
-                    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                }
-            }
-            @keyframes rotateplane {
-                0% {
-                    -webkit-transform: perspective(120px) rotateX(0) rotateY(0);
-                    transform: perspective(120px) rotateX(0) rotateY(0);
-                }
-                50% {
-                    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0);
-                    transform: perspective(120px) rotateX(-180.1deg) rotateY(0);
-                }
-                100% {
-                    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-                }
-            }
+            
         </style>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1"></script>
@@ -140,11 +88,6 @@ gtag('config', 'UA-167253243-1');
         <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRQ8XPM" height="0" width="0"
                 style="display:none;visibility:hidden"></iframe>
-        </noscript>
-        <noscript>
-        <link href="{{ url('vendors/boxicons/css/boxicons.min.css') }}" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ url('css/plugins.min.css') }}" />
-        <link rel="stylesheet" href="{{ url('css/style.min.css') }}" />
         </noscript>
         <div class="fakeLoader">
             <div class="fl fl-spinner spinner4"></div>

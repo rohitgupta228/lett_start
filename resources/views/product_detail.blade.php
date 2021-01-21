@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('title', $title)
+
+@section('meta_title', $title)
+
+@section('meta_description', $description)
+
 @section('content')
 
 <!--Main title-->
@@ -25,7 +31,7 @@
 				<div class="col-lg-8">
 					<div class="slider-area" id="slider-area">
 						<img src="{{ url('assets/images/slider-screenshot/'.$product['screenshot']) }}"
-							srcset="{{ url('assets/images/slider-screenshot/'.$product['screenshot']) }}"
+							srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $product['screenshot'])[0].'-sm.'.explode('.', $product['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$product['screenshot']) }} 3000w"
 							class="img-fluid border-radius-1x w-100" alt="" width="714" height="456" />
 						<div class="live-example">
 							<div class="mb-2 mb-sm-0">
@@ -312,8 +318,7 @@
 						<div class="col-md-4">
 							<div class="demo-item" id="1">
 								<a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" class="screenshot">
-									<img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"
-										alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+									<img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w" alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
 								</a>
 								<div class="action-btn">
 									<a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]).'#demos' }}"

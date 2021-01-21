@@ -18,6 +18,9 @@ class ProductController extends Controller
 {
     public function homeProductsList()
     {
+        // print_r(Auth::user());
+        // print_r(empty(Auth::user()));
+        // die;
         try {
             $query = [
                 'added' => 'popular',
@@ -95,9 +98,17 @@ class ProductController extends Controller
                     $pageTitle = "All Themes, Templates & Landing Pages";
                     $pageDescription = "20+ Free and Premium Templates. Choose, combine and match the combination of components you want from the several 100 styles we provide!";
             }
+            if($search === ''){
+                $title = "All Themes, Templates & Landing Pages | Admin Dashboard | Angular Templates";
+                $description = "Affordable 20+ Premium & Free Bootstrap Themes, Templates, Landing pages, Admin Dashboard, Potfolio Templates and Angular Dashboad & Landing Page Templates";
+            }
+            else {
+                $title = $metaData[$search]['title'];
+                $description = $metaData[$search]['description'];
+            }
             $result = $result->where('category', 'LIKE', "%{$search}%");
             $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
-            return view('product_category', compact('products', 'pageTitle', 'pageDescription'));
+            return view('product_category', compact('products', 'pageTitle', 'pageDescription', 'title', 'description'));
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
@@ -118,19 +129,22 @@ class ProductController extends Controller
     public function details($detailLink)
     {
         try {
+            $metaData = $this->getMetaData();
             $product = Product::where('detailLink', $detailLink)->first();
             $response = [
                 'code' => 404,
                 'message' => 'Product not found'
             ];
             if ($product) {
+                $title = $metaData[$product->detailLink]['title'];
+                $description = $metaData[$product->detailLink]['description'];
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
                 $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
                 if (count($relatedProducts))
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
-                    
-                return view('product_detail', compact('product', 'relatedProducts'));
+                
+                return view('product_detail', compact('product', 'relatedProducts', 'title', 'description'));
                 
         // $response = [
         //     'code' => 200,
