@@ -14,7 +14,7 @@ Route::get('/', 'ProductController@homeProductsList')->name('home.products.list'
 
 Route::get('/category/{category?}', 'ProductController@lists')->name('product.category');
 
-Route::get('/search-result.html/{s?}', 'ProductController@search')->name('products.search');
+Route::get('/search-result/{s?}', 'ProductController@search')->name('products.search');
 
 Route::get('/theme/{detailLink?}', 'ProductController@details')->name('product.theme');
 
