@@ -114,7 +114,7 @@ gtag('config', 'UA-167253243-1');
                         <div class="login-user-dd" id="logged-user">
                             <div class="dropdown">
                                 <a title="user" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-                                    <img src="" alt="" width="30" class="rounded-circle"/>
+                                    <img src="{{ Auth::user()->userDetails && Auth::user()->userDetails->image ? Auth::user()->userDetails->image : url('assets/images/client-thumb.png') }}" alt="" width="30" class="rounded-circle"/>
                                     <i class="bx bx-dots-vertical-rounded mb-0 text-primary h4"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-themes border-0 py-0 shadow animate slideIn dropdown-menu-right">
