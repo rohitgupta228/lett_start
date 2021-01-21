@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Crypt;
 
 class ProductController extends Controller
 {
-
     public function homeProductsList()
     {
         try {
@@ -45,8 +44,14 @@ class ProductController extends Controller
         return view('home', compact('bestSelling', 'angular', 'latest'));
     }
 
+    public function getMetaData() {
+        $path = storage_path() . "/meta.json";
+        return json_decode(file_get_contents($path), true);
+    }
+
     public function lists($category = null)
     {
+        $metaData = $this->getMetaData();
         try {
             $category = strtolower($category);
             $result = Product::query();
@@ -57,57 +62,42 @@ class ProductController extends Controller
             switch($category) {
                 case 'admin-dashboard-template': 
                     $search = 'admin';
+                    $pageTitle = "Admin Dashboard Templates";
+                    $pageDescription = 'Bootstrap and Angular admin templates that are ready to use, customize and publish - a perfect starting point for your next web application';
                     break;
                 case 'bootstrap-templates':
                     $search = 'bootstrap';
+                    $pageTitle = "Bootstrap Themes & Templates";
+                    $pageDescription = 'Bootstrap themes that are ready to customize and publish - a perfect starting point for your next web application';
                     break;
                 case 'landing-pages-templates':
                     $search = 'landing';
+                    $pageTitle = "Bootstrap Landing Page Templates";
+                    $pageDescription = "Bootstrap landing page themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
                     break;
                 case 'business-corporate-templates':
                     $search = 'business';
+                    $pageTitle = "Business & Corporate Templates";
+                    $pageDescription = "Bootstrap business and corporate website themes that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
                     break;
-                case 'portfolio-templates':
+                case 'portfolio-resume-templates':
                     $search = 'portfolio';
+                    $pageTitle = "Portfolio CV/Resume Website Templates";
+                    $pageDescription = "Bootstrap portfolio & resume themes that are ready to customize and publish. It is perfect to show case your work, create resume and make your impression.";
                     break;
                 case 'angular-templates':
                     $search = 'angular';
+                    $pageTitle = "Angular Admin Templates";
+                    $pageDescription = "Bootstrap angular templates & themes that are ready to use, customize and publish. Make all around planned dashboard interfaces with our Admin Templates and Themes.";
                     break;
                 default:
                     $search = '';
+                    $pageTitle = "All Themes, Templates & Landing Pages";
+                    $pageDescription = "20+ Free and Premium Templates. Choose, combine and match the combination of components you want from the several 100 styles we provide!";
             }
             $result = $result->where('category', 'LIKE', "%{$search}%");
             $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
-            switch ($category) {
-                case 'admin':
-                    $title = "Admin Dashboard Templates";
-                    $description = 'Bootstrap and Angular admin templates that are ready to use, customize and publish - a perfect starting point for your next web application';
-                    break;
-                case 'bootstrap':
-                    $title = "Bootstrap Themes & Templates";
-                    $description = 'Bootstrap themes that are ready to customize and publish - a perfect starting point for your next web application';
-                    break;
-                case 'landing':
-                    $title = "Premium Bootstrap Landing Page Themes";
-                    $description = "Bootstrap landing page themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
-                    break;
-                case 'business':
-                    $title = "Business & Corporate Themes";
-                    $description = "Bootstrap business and corporate website themes that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
-                    break;
-                case 'portfolio':
-                    $title = "Bootstrap Portfolio CV/Resume Website Templates & Themes";
-                    $description = "Bootstrap portfolio & resume themes that are ready to customize and publish. It is perfect to show case your work, create resume and make your impression.";
-                    break;
-                case 'angular':
-                    $title = "Angular Admin Templates & Themes";
-                    $description = "Bootstrap angular templates & themes that are ready to use, customize and publish. Make all around planned dashboard interfaces with our Admin Templates and Themes.";
-                    break;
-                default:
-                    $title = "All Themes, Templates & Landing Pages";
-                    $description = "20+ Free and Premium Templates. Choose, combine and match the combination of components you want from the several 100 styles we provide!";
-            }
-            return view('product_category', compact('products', 'title', 'description'));
+            return view('product_category', compact('products', 'pageTitle', 'pageDescription'));
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),

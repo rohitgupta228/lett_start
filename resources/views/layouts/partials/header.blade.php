@@ -210,7 +210,7 @@ gtag('config', 'UA-167253243-1');
                                             Pages Templates</a>
                                         <a class="dropdown-item" title="Business & Corporate" href="{{ route('product.category', ['category' => 'business-corporate-templates']) }}"><i
                                                 class='bx bxs-business text-warning'></i>Business &amp; Corporate Templates</a>
-                                        <a class="dropdown-item" title="Portfolio & Dashboard" href="{{ route('product.category', ['category' => 'portfolio-templates']) }}"><i
+                                        <a class="dropdown-item" title="Portfolio & Dashboard" href="{{ route('product.category', ['category' => 'portfolio-resume-templates']) }}"><i
                                                 class='bx bx-briefcase text-info'></i> Portfolio &amp; Resume Templates</a>
                                         <a class="dropdown-item" title="Angular Templates" href="{{ route('product.category', ['category' => 'angular-templates']) }}"><i class='bx bxl-angular text-angular'></i>
                                             Angular Templates</a>

@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
-@section('title', $title)
+@section('title', $pageTitle)
 
-@section('meta_title', $title)
+@section('meta_title', $pageTitle)
 
-@section('meta_description', $description)
+@section('meta_description', $pageDescription)
 
 @section('content')
 <div class="banner-title mt-100">
@@ -14,15 +14,15 @@
                 <div class="breadcrumb">
                     <ul class="list-unstyled">
                         <li><a href="{{ route('home.products.list') }}" title="Home">Home</a></li>
-                        <li class="{{ $title && $title != 'All Themes, Templates & Landing Pages' ? '' : 'active' }}">All Themes</li>
-                        @if ($title && $title != 'All Themes, Templates & Landing Pages')
-                            <li class="active">{{ $title }}</li>
+                        <li class="{{ $pageTitle && $pageTitle != 'All Themes, Templates & Landing Pages' ? '' : 'active' }}">All Themes</li>
+                        @if ($pageTitle && $pageTitle != 'All Themes, Templates & Landing Pages')
+                            <li class="active">{{ $pageTitle }}</li>
                         @endif
                     </ul>
                 </div>
-                <h1 id="main-title" class="h2 mb-4">{{ $title }}</h1>
+                <h1 id="main-title" class="h2 mb-4">{{ $pageTitle }}</h1>
                 <p class="subtitle">
-                    {{ $description }}</p>
+                    {{ $pageDescription }}</p>
             </div>
             <div class="col-lg-4 pl-lg-5">
                 <form id="search-form" novalidate="" action="javascript:void(0);">
