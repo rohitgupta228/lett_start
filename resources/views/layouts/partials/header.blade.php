@@ -159,7 +159,7 @@ gtag('config', 'UA-167253243-1');
                                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                                 <i class="bx bx-menu"></i>
                             </button>
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="{{ route('home.products.list') }}">
                                 <img src="{{ url('assets/images/logo.png') }}" alt="lettstartdesign" height="40" class="logo-white">
                                 <img src="{{ url('assets/images/logo-dark.png') }}" alt="lettstartdesign" height="40" class="logo-dark">
                             </a>
