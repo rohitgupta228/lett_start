@@ -44,7 +44,7 @@
         <div class="row" id="themes-list">
             @foreach ($products as $template)
             <div class="col-md-6">
-                <div class="demo-item" id="1">
+                <div class="demo-item" id="{{ $template['id'] }}">
                     <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" class="screenshot">
                         <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w" alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                     </a>
@@ -58,7 +58,7 @@
                             <p>{{ $template['oneLinerDesc'] }}</p>
                         </div>
                         <div class="price">
-                            <h4 class="font-weight-bold">$5<span class="original-price">${{$template['price']}}</span></h4>
+                            <h4 class="font-weight-bold">${{$template['price']}}</h4>
                             <a class="category" href="{{$template['catLink']}}">{{ $template['mainCat'] }}</a>
                         </div>
                     </div>

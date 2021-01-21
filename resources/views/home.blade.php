@@ -58,7 +58,7 @@
                 </div>
                 @foreach ($bestSelling as $template)
                 <div class="col-md-6">
-                    <div class="demo-item" id="1">
+                    <div class="demo-item" id="{{ $template['id'] }}">
                         <a href="{{ $template['detailLink'] }}" class="screenshot">
                             <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"
                                 srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
@@ -77,8 +77,7 @@
                                 <p>{{ $template['oneLinerDesc'] }}</p>
                             </div>
                             <div class="price">
-                                <h4 class="font-weight-bold">$5<span
-                                        class="original-price">${{$template['price']}}</span></h4>
+                                <h4 class="font-weight-bold">${{$template['price']}}</h4>
                                 <a class="category" href="{{$template['catLink']}}">{{ $template['mainCat'] }}</a>
                             </div>
                         </div>
@@ -116,14 +115,12 @@
                         <div class="theme-desc">
                             <div class="title">
                                 <h3 class="h5">
-                                    <a href="theme/{{$template['detailLink']}}"
-                                        title="{{$template['name']}}">{{$template['name']}}</a>
+                                    <a href="theme/{{$template['detailLink']}}" title="{{$template['name']}}">{{$template['name']}}</a>
                                 </h3>
                                 <p>{{ $template['oneLinerDesc'] }}</p>
                             </div>
                             <div class="price">
-                                <h4 class="font-weight-bold">$5<span
-                                        class="original-price">${{$template['price']}}</span></h4>
+                                <h4 class="font-weight-bold">${{$template['price']}}</h4>
                                 <a class="category" href="{{$template['catLink']}}">{{ $template['mainCat'] }}</a>
                             </div>
                         </div>
@@ -166,8 +163,7 @@
                                 <p>{{ $template['oneLinerDesc'] }}</p>
                             </div>
                             <div class="price">
-                                <h4 class="font-weight-bold">$5<span
-                                        class="original-price">${{$template['price']}}</span></h4>
+                                <h4 class="font-weight-bold">${{$template['price']}}</h4>
                                 <a class="category" href="{{$template['catLink']}}">{{ $template['mainCat'] }}</a>
                             </div>
                         </div>

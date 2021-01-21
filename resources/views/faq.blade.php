@@ -1,7 +1,5 @@
 @extends('layouts.main')
 
-@section('title', 'Faq')
-
 @section('content')
 <div class="banner-title mt-100">
     <div class="container">
