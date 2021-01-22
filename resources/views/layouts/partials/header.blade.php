@@ -118,7 +118,7 @@ gtag('config', 'UA-167253243-1');
                                     <i class="bx bx-dots-vertical-rounded mb-0 text-primary h4"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-themes border-0 py-0 shadow animate slideIn dropdown-menu-right">
-                                    <a href="edit-profile.html" class="dropdown-item" title="edit profile">
+                                    <a href="{{ route('user.edit.profile') }}" class="dropdown-item" title="edit profile">
                                         <i class="bx bx-edit mr-2 text-warning align-middle"></i>
                                         Edit Profile
                                     </a>

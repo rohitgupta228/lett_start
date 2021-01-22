@@ -10,6 +10,13 @@
   | contains the "web" middleware group. Now create something great!
   |
  */
+
+Route::middleware('isLogin')->group(function () {
+    Route::get('/edit-profile', 'UserController@editProfile')->name('user.edit.profile');
+    
+    Route::get('/save-profile-data', 'UserController@saveProfile')->name('save.profile');
+});
+
 Route::get('/', 'ProductController@homeProductsList')->name('home.products.list');
 
 Route::get('/category/{category?}', 'ProductController@lists')->name('product.category');
