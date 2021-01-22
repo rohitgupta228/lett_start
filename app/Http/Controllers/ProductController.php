@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Crypt;
 
 class ProductController extends Controller
 {
+
     public function homeProductsList()
     {
         try {
@@ -35,16 +36,14 @@ class ProductController extends Controller
             if (count($latest))
                 $latest = array_slice($latest, 0, 4);
         } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
-            ];
+            return response()->view('errors.500');
         }
 
         return view('home', compact('bestSelling', 'angular', 'latest'));
     }
 
-    public function getMetaData() {
+    public function getMetaData()
+    {
         $path = storage_path() . "/meta.json";
         return json_decode(file_get_contents($path), true);
     }
@@ -59,8 +58,8 @@ class ProductController extends Controller
             if ($category !== 'freebies') {
                 $result = $result->where('price', '!=', 0);
             }
-            switch($category) {
-                case 'admin-dashboard-template': 
+            switch ($category) {
+                case 'admin-dashboard-template':
                     $search = 'admin';
                     $pageTitle = "Admin Dashboard Templates";
                     $pageDescription = 'Bootstrap and Angular admin templates that are ready to use, customize and publish - a perfect starting point for your next web application';
@@ -100,11 +99,10 @@ class ProductController extends Controller
                     $pageTitle = "All Themes, Templates & Landing Pages";
                     $pageDescription = "20+ Free and Premium Templates. Choose, combine and match the combination of components you want from the several 100 styles we provide!";
             }
-            if($search === ''){
+            if ($search === '') {
                 $title = "All Themes, Templates & Landing Pages | Admin Dashboard | Angular Templates";
                 $description = "Affordable 20+ Premium & Free Bootstrap Themes, Templates, Landing pages, Admin Dashboard, Potfolio Templates and Angular Dashboad & Landing Page Templates";
-            }
-            else {
+            } else {
                 $title = $metaData[$search]['title'];
                 $description = $metaData[$search]['description'];
             }
@@ -112,10 +110,7 @@ class ProductController extends Controller
             $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
             return view('product_category', compact('products', 'pageTitle', 'pageDescription', 'title', 'description'));
         } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
-            ];
+            return response()->view('errors.500');
         }
 
         return response()->json($response, 200);
@@ -145,23 +140,11 @@ class ProductController extends Controller
                 $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
                 if (count($relatedProducts))
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
-                
+
                 return view('product_detail', compact('product', 'relatedProducts', 'title', 'description'));
-                
-        // $response = [
-        //     'code' => 200,
-        //     'data' => [
-        //         'product' => $product,
-        //         'relatedProducts' => $relatedProducts
-        //     ],
-        //     'message' => 'Product details fetch successfully'
-        // ];
             }
         } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'error' => $exc->getMessage(),
-            ];
+            return response()->view('errors.500');
         }
         return response()->json($response, 200);
     }
@@ -188,10 +171,7 @@ class ProductController extends Controller
                     $products = array_slice($bestSelling, 0, 4);
             }
         } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
-            ];
+            return response()->view('errors.500');
         }
 
         return view('search_products', compact('products', 'query', 'productCount'));

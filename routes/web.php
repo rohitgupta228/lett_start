@@ -1,15 +1,15 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register web routes for your application. These
+  | routes are loaded by the RouteServiceProvider within a group which
+  | contains the "web" middleware group. Now create something great!
+  |
+ */
 Route::get('/', 'ProductController@homeProductsList')->name('home.products.list');
 
 Route::get('/category/{category?}', 'ProductController@lists')->name('product.category');
@@ -31,6 +31,9 @@ Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/license', 'PagesController@license')->name('license');
 
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'login' => false,
+]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
