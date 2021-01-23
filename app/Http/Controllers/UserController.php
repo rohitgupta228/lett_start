@@ -50,7 +50,7 @@ class UserController extends Controller
                     ]) : $user->userDetails()->create([
                         'image' => $fileUrl,
             ]);
-            Flash::success("Your profile pic has been updated!");
+            Flash::success("Your image updated successfully!");
 
             return redirect(route('user.edit.profile'));
         }

@@ -57,12 +57,14 @@
 <script>
     var registerRoute = "<?= route('register') ?>";
     var loginRoute = "<?= route('login') ?>";
+    var userAuthenticated = "<?= Auth::check() ?>";
 </script>
 <!-- Third Javascript's -->
 <script src="{{ url('assets/js/plugins.min.js') }}" type="application/javascript"></script>
 <!-- Footer End-->
 <script src="{{ url('assets/js/api.min.js') }}"></script>
 <script src="{{ url('assets/js/app.min.js') }}"></script>
+<script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
 <!-- Javascript's -->
 </body>
 

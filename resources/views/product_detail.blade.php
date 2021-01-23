@@ -346,10 +346,10 @@
 			</div>
 		</div>
 	</div>
+	<input type="hidden" id="product-id" value="{{ $product['productId'] }}" />
 </section>
 <!--Demo's End-->
 
 </div>
 @include('layouts.partials.modals')
-
 @endsection

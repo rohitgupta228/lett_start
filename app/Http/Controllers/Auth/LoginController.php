@@ -26,7 +26,6 @@ use AuthenticatesUsers;
      * @var string
      */
     protected $redirectTo = '/';
-
     public function username()
     {
         return 'username';

@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="banner-title mt-100">
-    @include('flash')
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -15,9 +14,12 @@
 <!--Demo's Start-->
 <section class="section pt-5">
     <div class="container">
+        <div class="pb-2">
+            @include('flash')
+        </div>
         <div class="row flex-lg-row-reverse">
             <div class="col-lg-4 pl-lg-5">
-                <form method="POST" action="{{ route('save.user.image') }}" class="mb-30" enctype="multipart/form-data">
+                <form id="upload-image-form" method="POST" action="{{ route('save.user.image') }}" class="mb-30" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="alert alert-danger error-msgs">
                         <button type="button" class="close" aria-label="Close">
@@ -28,15 +30,14 @@
                         <img src="{{ $userDetails ? $userDetails->image : 'assets/images/client-thumb.png' }}" alt="" class="img-fluid rounded-circle" />
                     </div>
                     <div class="file-choose-btn">
-                        <button class="btn btn-dark btn-sm" id="choose-file">
+                        <button class="btn btn-dark btn-sm" type="button" id="choose-file">
                             <span>Upload Profile Image</span>
                             <span class="align-middle btn-loader"><i class="bx bx-loader-alt bx-spin icon-md"></i></span>
                         </button>
+                        <button id="submit-btn" class="d-none">Submit</button>
                         <input type="file" class="d-none" id="upload-image" name="photo" accept="image/*">
                     </div>
                 </form>
-                <!-- <p class="alert alert-info mb-30"><strong>Note:</strong> <br />Profile image width should not be greater
-                      than 160px.</p> -->
             </div>
             <div class="col-lg-8">
                 <div class="row">
@@ -55,11 +56,6 @@
                 </div>
                 <form id="edit-profile-form" method="POST" action="{{ route('save.profile') }}">
                     {{ csrf_field() }}
-                    <div class="alert alert-success error-msgs">
-                        <button type="button" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group app-label">
@@ -108,7 +104,5 @@
 </div>
 
 <!-- Footer Start-->
-<!-- Modal -->
-@include('layouts.partials.modals')
 
 @endsection
