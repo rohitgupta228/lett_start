@@ -14,7 +14,7 @@
 Route::middleware('isLogin')->group(function () {
     Route::get('/edit-profile', 'UserController@editProfile')->name('user.edit.profile');
     
-    Route::get('/save-profile-data', 'UserController@saveProfile')->name('save.profile');
+    Route::post('/save-profile-data', 'UserController@saveProfile')->name('save.profile');
 });
 
 Route::get('/', 'ProductController@homeProductsList')->name('home.products.list');

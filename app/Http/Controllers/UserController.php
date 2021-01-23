@@ -5,26 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use JWTAuth;
-use App\Models\Product;
-use Illuminate\Support\Facades\Hash;
-use Mail;
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Crypt;
+use Flash;
 
 class UserController extends Controller
 {
 
     public function editProfile()
     {
-        return view('edit_profile');
+        $userDetails = Auth::user()->userDetails;
+        
+        return view('edit_profile', compact('userDetails'));
     }
-    
+
     public function saveProfile(Request $request)
     {
-        print_r($request->request->all());die;
+        $data = $request->except(['_token']);
+
+        $user = Auth::user();
+
+        $userDetails = ($user->userDetails) ? $user->userDetails()->update($data) : $user->userDetails()->create($data);
+
+        Flash::success("Your profile has been updated!");
+        return redirect(route('user.edit.profile'));
     }
 
 }

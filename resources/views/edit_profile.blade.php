@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="banner-title mt-100">
+    @include('flash')
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -51,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <form id="edit-profile-form" action="{{ route('save.profile') }}">
+                <form id="edit-profile-form" method="POST" action="{{ route('save.profile') }}">
                     {{ csrf_field() }}
                     <div class="alert alert-success error-msgs">
                         <button type="button" class="close" aria-label="Close">
@@ -61,32 +62,32 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group app-label">
-                                <input name="first_name" id="fname" type="text" class="form-control">
+                                <input name="first_name" value="{{ $userDetails ? $userDetails->first_name : '' }}" id="fname" type="text" class="form-control">
                                 <label for="fname">First Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group app-label">
-                                <input name="last_name" id="lname" type="text" class="form-control">
+                                <input name="last_name" value="{{ $userDetails ? $userDetails->last_name : '' }}" id="lname" type="text" class="form-control">
                                 <label for="lname">Last Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group app-label">
-                                <input name="organization" id="organization" type="text" class="form-control">
+                                <input name="organization" value="{{ $userDetails ? $userDetails->organization : '' }}" id="organization" type="text" class="form-control">
                                 <label for="organization">Organization</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group app-label">
-                                <input name="mobile" id="mobile" type="text" class="form-control">
+                                <input name="mobile" value="{{ $userDetails ? $userDetails->mobile : '' }}" id="mobile" type="text" class="form-control">
                                 <label for="mobile">Mobile</label>
                                 <div class="validation-error d-none">Please enter valid phone number</div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group app-label">
-                                <textarea rows="3" name="address" class="form-control"></textarea>
+                                <textarea rows="3" name="address" class="form-control">{{ $userDetails ? $userDetails->address : '' }}</textarea>
                                 <label for="address">Address</label>
                             </div>
                         </div>
