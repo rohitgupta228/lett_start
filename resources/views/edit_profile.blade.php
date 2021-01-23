@@ -17,21 +17,22 @@
     <div class="container">
         <div class="row flex-lg-row-reverse">
             <div class="col-lg-4 pl-lg-5">
-                <form action="javascript:void(0)" class="mb-30" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('save.user.image') }}" class="mb-30" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="alert alert-danger error-msgs">
                         <button type="button" class="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="profile-image mb-15">
-                        <img src="assets/images/client-thumb.png" alt="" class="img-fluid rounded-circle" />
+                        <img src="{{ $userDetails ? $userDetails->image : 'assets/images/client-thumb.png' }}" alt="" class="img-fluid rounded-circle" />
                     </div>
                     <div class="file-choose-btn">
                         <button class="btn btn-dark btn-sm" id="choose-file">
                             <span>Upload Profile Image</span>
                             <span class="align-middle btn-loader"><i class="bx bx-loader-alt bx-spin icon-md"></i></span>
                         </button>
-                        <input type="file" class="d-none" id="upload-image" name="img" accept="image/*">
+                        <input type="file" class="d-none" id="upload-image" name="photo" accept="image/*">
                     </div>
                 </form>
                 <!-- <p class="alert alert-info mb-30"><strong>Note:</strong> <br />Profile image width should not be greater
