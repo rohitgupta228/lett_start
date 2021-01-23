@@ -122,7 +122,7 @@ gtag('config', 'UA-167253243-1');
                                         <i class="bx bx-edit mr-2 text-warning align-middle"></i>
                                         Edit Profile
                                     </a>
-                                    <a href="downloads.html" class="dropdown-item" title="downloads">
+                                    <a href="{{ route('user.order.history') }}" class="dropdown-item" title="downloads">
                                         <i class="bx bxs-download mr-2 text-primary align-middle"></i>
                                         Downloads
                                     </a>

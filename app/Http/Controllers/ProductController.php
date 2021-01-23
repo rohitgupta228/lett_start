@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Mail;
-use Illuminate\Support\Facades\DB;
+use App\Models\Transaction;
 
 class ProductController extends Controller
 {
@@ -170,6 +169,18 @@ class ProductController extends Controller
         }
 
         return view('search_products', compact('products', 'query', 'productCount'));
+    }
+
+    public function orderHistory(Request $request)
+    {
+        $user = Auth::user();
+        $paymentStatus = config('settings.payment_status');
+        $products = [];
+        $transactions = Transaction::where('user_id', $user->id)->where('payment_status', $paymentStatus[0])->get();
+        foreach ($transactions as $key => $transaction) {
+            $products[$key] = $transaction->product;
+        }
+        return view('order_history', compact('products'));
     }
 
 }
