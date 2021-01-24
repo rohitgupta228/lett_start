@@ -195,7 +195,7 @@ class PaymentController extends Controller
             }
             if (isset($redirect_url)) {
                 $paymentStatus = config('settings.payment_status');
-                $user = $this->guard()->user();
+                $user = \App\User::find($data['user_id']);
                 $paymentData = [
                     'user_id' => $user->id,
                     'product_id' => $data['product_id'],

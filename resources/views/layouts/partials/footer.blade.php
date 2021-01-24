@@ -64,7 +64,10 @@
 <!-- Footer End-->
 <script src="{{ url('assets/js/api.min.js') }}"></script>
 <script src="{{ url('assets/js/app.min.js') }}"></script>
+@if (\Request::route()->getName() === 'product.theme')  
 <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
+@endif
+
 <!-- Javascript's -->
 </body>
 

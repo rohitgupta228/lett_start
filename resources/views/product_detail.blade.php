@@ -346,10 +346,19 @@
 			</div>
 		</div>
 	</div>
-	<input type="hidden" id="product-id" value="{{ $product['productId'] }}" />
 </section>
 <!--Demo's End-->
-
 </div>
 @include('layouts.partials.modals')
+<script>
+	var package_details = {
+		packageName : '<?= $product->packageName ?>',
+		productId : '<?= $product->productId ?>',
+		price: '<?= $product->price ?>'
+	};
+	var logged_user_details = {
+		id:  '<?= Auth::user()->id ?>',
+		email:  '<?= Auth::user()->email ?>',
+	}
+</script>
 @endsection

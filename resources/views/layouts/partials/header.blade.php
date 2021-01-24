@@ -24,7 +24,6 @@
         <meta property="og:title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
         <meta property="og:description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
         <title>@yield('title', 'Premium and Free Bootstrap Themes &amp; Templates') </title>
-        <!--<title>Premium and Free Bootstrap Themes &amp; Templates</title>-->
         <!--=== Fav Icon ===-->
         <link rel="shortlink" href="https://lettstartdesign.com/">
         <link rel="shortcut icon" href="{{ url('assets/images/favicon.ico') }}" type="image/x-icon" />
@@ -44,6 +43,7 @@
         <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-MRQ8XPM" as="script">
         <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
         <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script">
+        <!--=== Preconnects ===-->
         <link rel="preconnect" href="https://lettstartdesign.com">
         <link rel="preconnect" href="https://www.googletagmanager.com">
         <link rel="preconnect" href="https://www.google-analytics.com">
@@ -64,23 +64,17 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" defer></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
         <![endif] -->
-        <style>
-
-        </style>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1"></script>
         <script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-gtag('config', 'UA-167253243-1');
+            gtag('config', 'UA-167253243-1');
         </script>
-
-
-
     </head>
 
     <body>
