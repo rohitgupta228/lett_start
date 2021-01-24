@@ -69,7 +69,7 @@ Route::group(['prefix' => 'payment','middleware' => 'api'], function() {
     Route::post('free', 'Api\PaymentController@save')->name('payment.free');
 });
 
-Route::group(['prefix' => 'razorpay', 'middleware' => 'api'], function() {
+Route::group(['prefix' => 'razorpay'], function() {
 
     Route::post('order/create', 'Api\PaymentController@orderCreate')->name('product.order.create');
 

@@ -47,7 +47,6 @@ class PaymentController extends Controller
     public function __construct(UrlGenerator $url)
     {
         $this->url = $url;
-        $this->middleware('auth:api', ['except' => ['downloadTheme']]);
 
         /** PayPal api context * */
         $paypal_conf = \Config::get('paypal');

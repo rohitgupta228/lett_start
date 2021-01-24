@@ -59,20 +59,20 @@
                 @foreach ($bestSelling as $template)
                 <div class="col-md-6">
                     <div class="demo-item" id="{{ $template['id'] }}">
-                        <a href="{{ $template['detailLink'] }}" class="screenshot">
+                        <a href="theme/{{$template['detailLink']}}" class="screenshot">
                             <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"
-                                srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
-                                alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                                 srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
+                                 alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                         </a>
                         <div class="action-btn">
                             <a href="{{ $template['demolink'] }}" title="Live Preview"
-                                class="btn btn-primary btn-sm">Live Preview</a>
+                               class="btn btn-primary btn-sm">Live Preview</a>
                         </div>
                         <div class="theme-desc">
                             <div class="title">
                                 <h3 class="h5">
                                     <a href="theme/{{$template['detailLink']}}"
-                                        title="{{$template['name']}}">{{$template['name']}}</a>
+                                       title="{{$template['name']}}">{{$template['name']}}</a>
                                 </h3>
                                 <p>{{ $template['oneLinerDesc'] }}</p>
                             </div>
@@ -103,14 +103,14 @@
                 @foreach ($angular as $template)
                 <div class="col-md-6">
                     <div class="demo-item" id="1">
-                        <a href="{{ $template['detailLink'] }}" class="screenshot">
+                        <a href="theme/{{$template['detailLink']}}" class="screenshot">
                             <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"
-                                srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
-                                alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                                 srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
+                                 alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                         </a>
                         <div class="action-btn">
                             <a href="{{ $template['demolink'] }}" title="Live Preview"
-                                class="btn btn-primary btn-sm">Live Preview</a>
+                               class="btn btn-primary btn-sm">Live Preview</a>
                         </div>
                         <div class="theme-desc">
                             <div class="title">
@@ -145,20 +145,19 @@
                 @foreach ($latest as $template)
                 <div class="col-md-6">
                     <div class="demo-item" id="1">
-                        <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" class="screenshot">
+                        <a href="theme/{{$template['detailLink']}}" class="screenshot">
                             <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"
-                                srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
-                                alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                                 srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
+                                 alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
                         </a>
                         <div class="action-btn">
-                            <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]).'#demos' }}" title="Live Preview"
-                                class="btn btn-primary btn-sm">Live Preview</a>
+                            <a href="{{ $template['demolink'] }}" title="Live Preview"
+                               class="btn btn-primary btn-sm">Live Preview</a>
                         </div>
                         <div class="theme-desc">
                             <div class="title">
                                 <h3 class="h5">
-                                    <a href="theme/{{$template['detailLink']}}"
-                                        title="{{$template['name']}}">{{$template['name']}}</a>
+                                    <a href="theme/{{$template['detailLink']}}" title="{{$template['name']}}">{{$template['name']}}</a>
                                 </h3>
                                 <p>{{ $template['oneLinerDesc'] }}</p>
                             </div>
@@ -174,7 +173,7 @@
         </div>
         <div class="text-center mb-50" id="explore-all-btn">
             <a href="{{ route('product.category', ['category' => '']) }}"
-                class="btn btn-primary-gred rounded-50">Explore All Products <i
+               class="btn btn-primary-gred rounded-50">Explore All Products <i
                     class="bx bx-right-arrow-alt align-middle"></i></a>
         </div>
     </div>
