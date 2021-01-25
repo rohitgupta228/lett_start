@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-4 pr-xl-4">
                 <a href="index.html" class="f-logo mb-30">
-                    <img src="{{ url('assets/images/logo.png') }}" class="img-fluid" alt="lettstart design" />
+                    <img src="{{ url('assets/images/logo.png') }}"  alt="Lettstart Design Logo" title="Lettstart Design" class="img-fluid" />
                 </a>
                 <p>Purchase premium and free landing layouts, application layouts, dashboard layouts dependent on rakish, bootstrap, scss and start your first site today.</p>
             </div>

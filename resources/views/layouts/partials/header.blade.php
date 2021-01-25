@@ -97,8 +97,8 @@
                                 <i class="bx bx-menu"></i>
                             </button>
                             <a class="navbar-brand" href="{{ route('home.products.list') }}">
-                                <img src="{{ url('assets/images/logo.png') }}" alt="lettstartdesign" height="40" class="logo-white">
-                                <img src="{{ url('assets/images/logo-dark.png') }}" alt="lettstartdesign" height="40" class="logo-dark">
+                                <img src="{{ url('assets/images/logo.png') }}" alt="Lettstart Design Logo" title="Lettstart Design" height="40" class="logo-white">
+                                <img src="{{ url('assets/images/logo-dark.png') }}" alt="Lettstart Design Logo" title="Lettstart Design" height="40" class="logo-dark">
                             </a>
                         </div>
                         <!--logo end-->
@@ -108,7 +108,7 @@
                         <div class="login-user-dd" id="logged-user">
                             <div class="dropdown">
                                 <a title="user" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">
-                                    <img src="{{ Auth::user()->userDetails && Auth::user()->userDetails->image ? Auth::user()->userDetails->image : 'assets/images/client-thumb.png' }}" alt="" width="30" class="rounded-circle"/>
+                                    <img src="{{ Auth::user()->userDetails && Auth::user()->userDetails->image ? Auth::user()->userDetails->image : 'assets/images/client-thumb.png' }}" alt="Logged in user profile image" title="User Picture" width="30" class="rounded-circle"/>
                                     <i class="bx bx-dots-vertical-rounded mb-0 text-primary h4"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-themes border-0 py-0 shadow animate slideIn dropdown-menu-right">
