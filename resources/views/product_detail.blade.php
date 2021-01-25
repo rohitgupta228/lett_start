@@ -32,7 +32,7 @@
 					<div class="slider-area" id="slider-area">
 						<img src="{{ url('assets/images/slider-screenshot/'.$product['screenshot']) }}"
 							srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $product['screenshot'])[0].'-sm.'.explode('.', $product['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$product['screenshot']) }} 3000w"
-							class="img-fluid border-radius-1x w-100" alt="" width="714" height="456" />
+							class="img-fluid border-radius-1x w-100" title="{{$product['name']}} Template" alt="Feature Image of {{$product['name']}} Template" width="714" height="456" />
 						<div class="live-example">
 							<div class="mb-2 mb-sm-0">
 								<a href="javascript:void(0)" id="preview-btn" class="btn btn-dark mr-2">Live Preview</a>
@@ -133,7 +133,7 @@
 								<h6 class="mr-3">Pay with</h6>
 								<div class="options mb-15" id="options">
 									<button class="pay-btn btn-paypal selected" button-selection='razorpay'>
-										<img src="{{ url('assets/images/razorpay-icon.png') }}" alt="razorpay" width="15" />
+										<img src="{{ url('assets/images/razorpay-icon.png') }}" title="Razorpay" alt="Razorpay Logo" width="15" />
 										Razorpay
 									</button>
 									<button class="pay-btn btn-paypal" button-selection='paypal'>
@@ -252,7 +252,7 @@
 									<div class="col-md-6 col-lg-4">
 										<div class="demo-theme-item">
 											<a href="{{ $product['liveDemoBaseStr'].$screens->link }}" target="_blank">
-												<img src="{{ url('assets/images/screenshots/'.$product['screenshotDir'].'/'.$screens->img) }}" class="img-fluid border-radius-1x" alt="index">
+												<img src="{{ url('assets/images/screenshots/'.$product['screenshotDir'].'/'.$screens->img) }}" class="img-fluid border-radius-1x" title="{{ $screens->imgTitle }}" alt="Image Preview of {{ $screens->imgTitle }} Product">
 											</a>
 											<div class="desc">
 												<h5>{{ $screens->imgTitle }}</h5>
@@ -318,7 +318,7 @@
 						<div class="col-md-4">
 							<div class="demo-item" id="1">
 								<a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" class="screenshot">
-									<img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w" alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+									<img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w" title="{{$template['name']}} Template" alt="Buy {{$template['name']}} Template at ${{ $template['price'] }}" class="img-fluid w-100" width="714" height="456">
 								</a>
 								<div class="action-btn">
 									<a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]).'#demos' }}"
@@ -357,8 +357,8 @@
 		price: '<?= $product->price ?>'
 	};
 	var logged_user_details = {
-		id:  '<?= Auth::user()->id ?>',
-		email:  '<?= Auth::user()->email ?>',
+		id:  '<?= Auth::check() ? Auth::user()->id : '' ?>',
+		email:  '<?= Auth::check() ? Auth::user()->email : '' ?>',
 	}
 </script>
 @endsection

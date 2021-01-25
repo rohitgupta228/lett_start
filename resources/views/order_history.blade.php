@@ -22,7 +22,7 @@
                         <a href="theme/{{ $template['detailLink'] }}" class="screenshot">
                             <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}"
                                  srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w"
-                                 alt="{{$template['name']}}" class="img-fluid w-100" width="714" height="456">
+                                 title="{{$template['name']}} Template" alt="Download Your {{$template['name']}} Template }}" class="img-fluid w-100" width="714" height="456">
                         </a>
                         <div class="action-btn">
                             <a href="{{ $template['demolink'] }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
