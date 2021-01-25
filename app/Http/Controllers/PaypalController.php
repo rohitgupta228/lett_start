@@ -11,7 +11,6 @@ use Mail;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Routing\UrlGenerator;
 use Carbon\Carbon;
-
 /** All Paypal Details class * */
 use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
@@ -55,9 +54,7 @@ class PaypalController extends Controller
     public function savePaypalResponse(Request $request)
     {
         $data = $request->all();
-        $data['product_id'] = $data['pid'];
         $product = Product::where('productId', $data['product_id'])->first();
-        $data['product'] = $product;
         try {
             $paymentStatus = config('settings.payment_status');
             $transaction = Transaction::where('product_id', $data['product_id'])->orderBy('id', 'desc')->first();
@@ -67,22 +64,25 @@ class PaypalController extends Controller
                 $payment = Payment::get($payment_id, $this->_api_context);
                 $execution = new PaymentExecution();
                 $execution->setPayerId($data['PayerID']);
+                logger($transaction);
                 $result = $payment->execute($execution, $this->_api_context);
                 if ($result->getState() == 'approved') {
-                    $this->sendEmailOnSuccess($data);
+                    logger($result->getState());
+                    $this->sendEmailOnSuccess($data, $product);
                     $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
-                    return redirect(route('product.theme', ['theme' => $product->detailLink]));
+                    return redirect(route('product.theme', ['theme' => $product->detailLink, 'success' => "true"]));
                 }
             }
         } catch (\Exception $exc) {
-            return redirect(route('product.theme', ['theme' => $product->detailLink]));
+            logger($exc->getMessage());
+            return redirect(route('product.theme', ['theme' => $product->detailLink, 'success' => "false"]));
         }
     }
 
-    public function sendEmailOnSuccess($data)
+    public function sendEmailOnSuccess($data, $product)
     {
+        logger($data);
         $user = Auth::user();
-        $product = $data['product'];
         $email = Crypt::encryptString($user->email);
         $token = str_random(60);
         ProductDownload::create([
@@ -94,8 +94,8 @@ class PaypalController extends Controller
         $data = [
             'license' => $data['multi'] ? 'multiple' : 'single',
             'product_name' => $product->name,
-            'price' => $licenseType ? $product->price * 5 : $product->price,
-            'txnId' => $data['txn_id'],
+            'price' => $data['multi'] ? $product->price * 5 : $product->price,
+            'txnId' => $data['txnId'],
             'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
             'subject' => 'Download Theme',
             'template' => 'emails.product_download'

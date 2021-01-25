@@ -95,7 +95,7 @@ class PaymentController extends Controller
                     ->setItemList($item_list)
                     ->setDescription("Product Name: " . $product->name . " and Product Id: " . $product->id);
             $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl('http://127.0.0.1:8000/paypal-response?product_id=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=false');
+            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . 'paypal-response?product_id=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('PAYPAL_BASE_REDIRECTION_URL') . 'theme/' . $product->detailLink . '?success=false');
             $payment = new Payment();
             $payment->setIntent('Sale')
                     ->setPayer($payer)
@@ -118,6 +118,7 @@ class PaymentController extends Controller
                     break;
                 }
             }
+            logger($redirect_url);
             if (isset($redirect_url)) {
                 $paymentStatus = config('settings.payment_status');
                 $user = \App\User::find($data['user_id']);
@@ -141,6 +142,7 @@ class PaymentController extends Controller
                 ];
             }
         } catch (\Exception $exc) {
+            logger($exc->getMessage());
             $response = [
                 'code' => $exc->getCode(),
                 'data' => [
