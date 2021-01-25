@@ -28,7 +28,7 @@
         <link rel="shortlink" href="https://lettstartdesign.com/">
         <link rel="shortcut icon" href="{{ url('assets/images/favicon.ico') }}" type="image/x-icon" />
         <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}" />
-        <link rel="manifest" href="manifest.json">
+        <link rel="manifest" href="{{ url('assets/json/manifest.json') }}">
         <!--=== Preloads ===-->
         <link rel="preload" href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" as="style"/>
         <link rel="preload" href="{{ url('assets/vendors/boxicons/fonts/boxicons.woff2') }}" as="font" type="font/woff2" crossorigin>

@@ -59,7 +59,7 @@
                     @foreach ($bestSelling as $template)
                         <div class="col-md-6">
                             <div class="demo-item" id="{{ $template['id'] }}">
-                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}" class="screenshot">
+                                <a title="Read more about this theme" href="theme/{{$template['detailLink']}}" class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                         srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
                                         title="{{ $template['name'] }} Template"
@@ -67,19 +67,19 @@
                                         class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="{{ $template['demolink'] }}" title="Click & See Live Preview"
+                                    <a href="theme/{{$template['detailLink']. '#demos'}}" title="Click & See Live Preview"
                                         class="btn btn-primary btn-sm">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
                                         <h3 class="h5">
-                                            <a href="theme/{{ $template['detailLink'] }}"
+                                            <a href="theme/{{$template['detailLink']}}"
                                                 title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
                                     <div class="price">
-                                        <h4 class="font-weight-bold">${{ $template['price'] }}</h4>
+                                        <span class="font-weight-bold h4 mb-0">${{ $template['price'] }}</span>
                                         <a class="category" href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                     @foreach ($angular as $template)
                         <div class="col-md-6">
                             <div class="demo-item" id="1">
-                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}" class="screenshot">
+                                <a title="Read more about this theme" href="theme/{{$template['detailLink']}}" class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                         srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
                                         title="{{ $template['name'] }} Template"
@@ -113,19 +113,19 @@
                                         class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="{{ $template['demolink'] }}" title="Click & See Live Preview"
+                                    <a href="theme/{{$template['detailLink']. '#demos'}}" title="Click & See Live Preview"
                                         class="btn btn-primary btn-sm">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
                                         <h3 class="h5">
-                                            <a href="theme/{{ $template['detailLink'] }}"
+                                            <a href="theme/{{$template['detailLink']}}"
                                                 title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
                                     <div class="price">
-                                        <h4 class="font-weight-bold">${{ $template['price'] }}</h4>
+                                        <span class="font-weight-bold h4 mb-0">${{ $template['price'] }}</span>
                                         <a class="category" href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                     @foreach ($latest as $template)
                         <div class="col-md-6">
                             <div class="demo-item" id="1">
-                                <a title="Read more about this templates" href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
+                                <a title="Read more about this templates" href="theme/{{$template['detailLink']}}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                         srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
@@ -159,19 +159,19 @@
                                         class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) . '#demos' }}"
+                                    <a href="theme/{{$template['detailLink']. '#demos'}}"
                                         title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
                                         <h3 class="h5">
-                                            <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
+                                            <a href="theme/{{$template['detailLink']}}"
                                                 title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
                                     <div class="price">
-                                        <h4 class="font-weight-bold">${{ $template['price'] }}</h4>
+                                        <span class="font-weight-bold h4 mb-0">${{ $template['price'] }}</span>
                                         <a class="category" href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
                                     </div>
                                 </div>
@@ -192,5 +192,4 @@
     <!-- Footer Start-->
     <!-- Modal -->
     @include('layouts.partials.modals')
-
 @endsection

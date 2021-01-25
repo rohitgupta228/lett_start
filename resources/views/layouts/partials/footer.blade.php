@@ -58,6 +58,7 @@
     var registerRoute = "<?= route('register') ?>";
     var loginRoute = "<?= route('login') ?>";
     var userAuthenticated = "<?= Auth::check() ?>";
+    var swUrl = "<?= url('assets/js/sw.min.js') ?>";
 </script>
 <!-- Third Javascript's -->
 <script src="{{ url('assets/js/plugins.min.js') }}" type="application/javascript"></script>
@@ -67,7 +68,6 @@
 @if (\Request::route()->getName() === 'product.theme')  
 <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
 @endif
-
 <!-- Javascript's -->
 </body>
 

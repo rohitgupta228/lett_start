@@ -147,6 +147,7 @@ class ProductController extends Controller
     {
         try {
             $query = $request->all()['s'];
+           
             $result = Product::query();
             if (isset($query) && $query != '') {
                 $categoryArray = explode(' ', $query);
@@ -165,7 +166,6 @@ class ProductController extends Controller
                     $products = array_slice($bestSelling, 0, 4);
             }
         } catch (\Exception $exc) {
-            return response()->view('errors.500');
         }
 
         return view('search_products', compact('products', 'query', 'productCount'));

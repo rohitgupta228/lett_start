@@ -27,7 +27,7 @@
                         </button>
                     </div>
                     <div class="profile-image mb-15">
-                        <img src="{{ $userDetails ? $userDetails->image : 'assets/images/client-thumb.png' }}"  alt="Upload user profile pic" title="User profile picture" class="img-fluid rounded-circle" />
+                        <img src="{{ $userDetails ? $userDetails->image : url('assets/images/client-thumb.png') }}"  alt="Upload user profile pic" title="User profile picture" class="img-fluid rounded-circle" />
                     </div>
                     <div class="file-choose-btn">
                         <button class="btn btn-dark btn-sm" type="button" id="choose-file">
