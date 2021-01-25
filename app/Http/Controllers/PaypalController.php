@@ -95,7 +95,7 @@ class PaypalController extends Controller
             'license' => $data['multi'] ? 'multiple' : 'single',
             'product_name' => $product->name,
             'price' => $data['multi'] ? $product->price * 5 : $product->price,
-            'txnId' => $data['txnId'],
+            'txnId' => $data['txn_id'],
             'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
             'subject' => 'Download Theme',
             'template' => 'emails.product_download'

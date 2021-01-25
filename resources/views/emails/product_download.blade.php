@@ -62,7 +62,7 @@
                           <td align="center" class="pb-40" style="padding-bottom: 40px;">
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
-                            line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">Thank you very much for puchasing <strong>{{ $data['product_name'] }} {{ $data['txnId'] }} {{$data['price']}}</strong></p>
+                            line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">Thank you very much for puchasing <strong>{{ $data['product_name'] }}</strong></p>
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                             line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">It really means a lot to us :)</p>
@@ -119,8 +119,8 @@
                               color: #ffffff !important;
                               text-decoration: none;
                               width: auto;
-                              text-align: center;">Download Your
-                                Files</a>
+                              text-align: center;"><span style="color: #ffffff !important">Download Your
+                                Files</span></a>
                             </span>
                           </td>
                         </tr>
@@ -130,10 +130,23 @@
                           </td>
                         </tr>
                         <tr>
-                          <td align="center" class="pb-40 border-bottom" style="padding-bottom: 40px; border-bottom: 1px solid #ccc;">
+                          <td class="pl-20 pb-40 border-bottom" style="padding-left:20px; padding-bottom: 40px; border-bottom: 1px solid #ccc;">
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
-                            line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">You have purchased <strong>{{ $data['product_name'] }}</strong> with <strong>{{ $data['license'] }}</strong> license. Yout transaction id is %TRANSACTION_ID%</p>
+                            line-height: 150%; margin-top: 0px; margin-bottom: 10px; margin-left: 0px; margin-right: 0px;">
+                            <b style="margin-right: 10px;">Product Name: </b> {{ $data['product_name'] }}</p>
+                            <p style="color: #666666; font-size: 14px;
+                            font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                            line-height: 150%; margin-top: 0px; margin-bottom: 10px; margin-left: 0px; margin-right: 0px;">
+                            <b style="margin-right: 10px;">Product Price: </b>${{$data['price']}}</p>
+                            <p style="color: #666666; font-size: 14px;
+                            font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                            line-height: 150%; margin-top: 0px; margin-bottom: 10px; margin-left: 0px; margin-right: 0px;">
+                            <b style="margin-right: 10px;">License Type: </b>{{ $data['license'] }}</p>
+                            <p style="color: #666666; font-size: 14px;
+                            font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
+                            line-height: 150%; margin-top: 0px; margin-bottom: 20px; margin-left: 0px; margin-right: 0px;">
+                            <b style="margin-right: 10px;">Payment Id: </b>{{ $data['txnId'] }}</p>
                             <p style="color: #666666; font-size: 14px;
                             font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                             line-height: 150%; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">To know more about the license please visit this  <a
@@ -190,14 +203,6 @@
                               font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
                               line-height: 150%; margin-bottom: 15px;">
                                 <p style="color: #666666;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">Step 2. Go to dist folder and click index.html or any other file.</p>
-                              </li>
-                              <li style="font-size: 14px;
-                              font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
-                              line-height: 150%; margin-bottom: 15px;">
-                                <p style="color: #666666;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; ">For more details visit this <a
-                                  href="#" style="font-family: helvetica, 'helvetica neue', arial, verdana, sans-serif;
-                                  font-size: 14px;
-                                  text-decoration: none;color: #2982de;">link</a></p>
                               </li>
                             </ul>
                           </td>
