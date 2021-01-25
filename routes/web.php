@@ -41,6 +41,8 @@ Route::get('/faq', 'PagesController@faq')->name('faq');
 
 Route::get('/license', 'PagesController@license')->name('license');
 
+Route::get('/paypal-response', 'PaypalController@savePaypalResponse')->name('paypal.response');
+
 
 Auth::routes([
     'register' => false,

@@ -60,7 +60,7 @@ Route::group(['prefix' => 'product', 'middleware' => 'api'], function() {
 
 Route::group(['prefix' => 'payment','middleware' => 'api'], function() {
 
-    Route::post('stripe', 'Api\PaymentController@submitPayment')->name('payment.stripe');
+//    Route::post('stripe', 'Api\PaymentController@submitPayment')->name('payment.stripe');
 
     Route::post('paypal', 'Api\PaymentController@postPaymentWithpaypal')->name('payment.paypal');
 

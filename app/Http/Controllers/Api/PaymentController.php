@@ -67,81 +67,6 @@ class PaymentController extends Controller
     }
 
     /**
-     * Function to save payment by stripe
-     *
-     * @param Request $request
-     * @return type
-     */
-    public function submitPayment(Request $request)
-    {
-        $this->setApikey();
-        $data = $request->request->all();
-        $product = \App\Models\Product::where('productId', $data['product_id'])->first();
-        $productName = '';
-        $user = $this->guard()->user();
-        try {
-            if ($product && $product->price > 0) {
-                $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
-
-                $stripe = \Stripe\Token::create([
-                            'card' => [
-                                'number' => $data['card_num'],
-                                'exp_month' => $data['exp_month'],
-                                'exp_year' => $data['exp_year'],
-                                'cvc' => $data['cvv'],
-                            ],
-                ]);
-
-                $customer = \Stripe\Customer::create(array(
-                            'name' => 'test',
-                            'description' => 'test description',
-                            'email' => $user->email,
-                            'source' => $stripe->id,
-                            'address' => [
-                                'line1' => 'test',
-                                'postal_code' => '12345',
-                                'city' => 'test',
-                                'state' => 'test',
-                                'country' => 'IN',
-                            ],
-                ));
-
-                $payment = \Stripe\Charge::create([
-                            "amount" => $amount,
-                            "currency" => 'usd',
-                            'customer' => $customer->id,
-                            "description" => "Product Name: " . $product->name . " and Product Id: " . $product->id
-                ]);
-                if ($payment->status == 'succeeded') {
-                    $data['txn_id'] = $payment->id;
-                    $data['order_id'] = $payment->id;
-                    $data['response'] = json_encode($payment);
-                    $data['product'] = $product;
-                    $data['payment_type'] = 2;
-                    $this->actionsAfterPayment($data);
-                    $productName = $product->name;
-                    $response = [
-                        'code' => 200,
-                        'message' => 'Payment done successfully',
-                        'product_name' => $productName
-                    ];
-                }
-            } else {
-                $response = [
-                    'code' => 404,
-                    'message' => 'No product found',
-                ];
-            }
-        } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage(),
-            ];
-        }
-        return response()->json($response);
-    }
-
-    /**
      * Function to submit paypal request
      *
      * @param Request $request
@@ -170,7 +95,7 @@ class PaymentController extends Controller
                     ->setItemList($item_list)
                     ->setDescription("Product Name: " . $product->name . " and Product Id: " . $product->id);
             $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . '?pid=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=false');
+            $redirect_urls->setReturnUrl('http://127.0.0.1:8000/paypal-response?product_id=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=false');
             $payment = new Payment();
             $payment->setIntent('Sale')
                     ->setPayer($payer)
@@ -227,133 +152,6 @@ class PaymentController extends Controller
         return response(json_encode($response));
     }
 
-    /**
-     * Function to save paypal response
-     *
-     * @param Request $request
-     * @return type
-     */
-    public function savePaypalResponse(Request $request)
-    {
-        $data = $request->all();
-        $product = \App\Models\Product::where('productId', $data['product_id'])->first();
-        try {
-            $paymentStatus = config('settings.payment_status');
-            $transaction = Transaction::where('product_id', $data['product_id'])->orderBy('id', 'desc')->first();
-            $payment_id = $transaction->txn_id;
-            if ($payment_id == $data['payment_id']) {
-                $payment = Payment::get($payment_id, $this->_api_context);
-                $execution = new PaymentExecution();
-                $execution->setPayerId($data['payer_id']);
-                $result = $payment->execute($execution, $this->_api_context);
-                if ($result->getState() == 'approved') {
-                    $this->sendEmailOnSuccess($product, $data['multi'], $transaction->txn_id);
-                    $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
-                    $response = [
-                        'code' => 200,
-                        'data' => [
-                            'product_name' => $product->name,
-                            'url' => env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=true',
-                            'status' => true
-                        ],
-                    ];
-                }
-            }
-        } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage(),
-                'data' => [
-                    'url' => env('FRONT_END_BASE_URL') . 'theme/' . $product->detailLink . '?success=false',
-                    'status' => false
-                ],
-            ];
-        }
-        return response(json_encode($response));
-    }
-
-    /**
-     * Function to set stripe api key
-     */
-    private function setApikey()
-    {
-        Stripe\Stripe::setApiKey(env('STRIPE_S'));
-    }
-
-    public function actionsAfterPayment($data)
-    {
-        $paymentStatus = config('settings.payment_status');
-        $user = $this->guard()->user();
-        DB::beginTransaction();
-        $paymentData = [
-            'user_id' => $user->id,
-            'product_id' => $data['product_id'],
-            'payment_status' => $paymentStatus[0],
-            'payment_type' => $data['payment_type'],
-            'txn_id' => $data['txn_id'],
-            'response' => $data['response'],
-            'amount' => $data['multi'] ? $data['product']->price * 5 : $data['product']->price,
-            'multi' => $data['multi']
-        ];
-        $transaction = Transaction::create($paymentData);
-        $this->sendEmailOnSuccess($data['product'], $data['multi'], $data['txn_id']);
-        DB::commit();
-    }
-
-    public function sendEmailOnSuccess($product, $licenseType = false, $txnId = null)
-    {
-        $user = $this->guard()->user();
-        $email = Crypt::encryptString($user->email);
-        $token = str_random(60);
-        ProductDownload::create([
-            'email' => $user->email,
-            'product_id' => $product->id,
-            'token' => $token,
-            'created_at' => Carbon::now()
-        ]);
-        $data = [
-            'license' => $licenseType ? 'multiple' : 'single',
-            'product_name' => $product->name,
-            'price' => $licenseType ? $product->price * 5 : $product->price,
-            'txnId' => $txnId,
-            'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
-            'subject' => 'Download Theme',
-            'template' => 'emails.product_download'
-        ];
-        $address = env('MAIL_FROM_ADDRESS');
-        $name = env('MAIL_FROM_NAME');
-        Mail::to($user->email)->bcc($address, $name)->send(new \App\Mail\Mailer($data));
-    }
-
-    public function downloadTheme(Request $request)
-    {
-        try {
-            $data = $request->all();
-            $email = Crypt::decryptString($data['email']);
-            $productId = Crypt::decryptString($data['productId']);
-            $product = ProductDownload::where('token', $data['token'])
-                    ->where('email', $email)
-                    ->where('product_id', $productId)
-                    ->first();
-            if ($product) {
-                $createdDate = $product->created_at;
-                $dateAfter24Hours = Carbon::parse($product->created_at)->addHour(24)->toDateTimeString();
-                if (Carbon::now()->toDateTimeString() > $dateAfter24Hours) {
-                    $product->delete();
-                    return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
-                }
-                $headers = array(
-                    'Content-Type' => 'application/octet-stream',
-                );
-
-                return response()->download(public_path() . '/packages/' . $product->packageName . '.zip', $product->name . '.zip', $headers);
-            }
-        } catch (\Exception $exc) {
-            logger($exc->getMessage());
-        }
-        return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
-    }
-
     public function save(Request $request)
     {
         $data = $request->all();
@@ -373,7 +171,6 @@ class PaymentController extends Controller
                     'multi' => false
                 ];
                 $transaction = Transaction::create($paymentData);
-//                $this->sendEmailOnSuccess($product);
                 $response = [
                     'code' => 200,
                     'message' => 'Payment done successfully',
@@ -465,6 +262,82 @@ class PaymentController extends Controller
             ];
         }
         return response()->json($response);
+    }
+
+    public function actionsAfterPayment($data)
+    {
+        $paymentStatus = config('settings.payment_status');
+        $user = \App\User::find($data['user_id']);
+        $data['user'] = $user;
+        DB::beginTransaction();
+        $paymentData = [
+            'user_id' => $user->id,
+            'product_id' => $data['product_id'],
+            'payment_status' => $paymentStatus[0],
+            'payment_type' => $data['payment_type'],
+            'txn_id' => $data['txn_id'],
+            'response' => $data['response'],
+            'amount' => $data['multi'] ? $data['product']->price * 5 : $data['product']->price,
+            'multi' => $data['multi']
+        ];
+        $transaction = Transaction::create($paymentData);
+        $this->sendEmailOnSuccess($data);
+        DB::commit();
+    }
+
+    public function sendEmailOnSuccess($data)
+    {
+        $user = $data['user'];
+        $product = $data['product'];
+        $email = Crypt::encryptString($user->email);
+        $token = str_random(60);
+        ProductDownload::create([
+            'email' => $user->email,
+            'product_id' => $product->id,
+            'token' => $token,
+            'created_at' => Carbon::now()
+        ]);
+        $data = [
+            'license' => $data['multi'] ? 'multiple' : 'single',
+            'product_name' => $product->name,
+            'price' => $licenseType ? $product->price * 5 : $product->price,
+            'txnId' => $data['txn_id'],
+            'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
+            'subject' => 'Download Theme',
+            'template' => 'emails.product_download'
+        ];
+        $address = env('MAIL_FROM_ADDRESS');
+        $name = env('MAIL_FROM_NAME');
+        Mail::to($user->email)->bcc($address, $name)->send(new \App\Mail\Mailer($data));
+    }
+
+    public function downloadTheme(Request $request)
+    {
+        try {
+            $data = $request->all();
+            $email = Crypt::decryptString($data['email']);
+            $productId = Crypt::decryptString($data['productId']);
+            $product = ProductDownload::where('token', $data['token'])
+                    ->where('email', $email)
+                    ->where('product_id', $productId)
+                    ->first();
+            if ($product) {
+                $createdDate = $product->created_at;
+                $dateAfter24Hours = Carbon::parse($product->created_at)->addHour(24)->toDateTimeString();
+                if (Carbon::now()->toDateTimeString() > $dateAfter24Hours) {
+                    $product->delete();
+                    return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
+                }
+                $headers = array(
+                    'Content-Type' => 'application/octet-stream',
+                );
+
+                return response()->download(public_path() . '/packages/' . $product->packageName . '.zip', $product->name . '.zip', $headers);
+            }
+        } catch (\Exception $exc) {
+            logger($exc->getMessage());
+        }
+        return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
     }
 
 }
