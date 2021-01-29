@@ -31,6 +31,8 @@ Route::get('/theme/{detailLink?}', 'ProductController@details')->name('product.t
 
 Route::get('/support', 'PagesController@support')->name('support');
 
+Route::post('/submit-support', 'PagesController@submitSupport')->name('submit.support');
+
 Route::get('/terms-and-conditions', 'PagesController@terms')->name('terms');
 
 Route::get('/privacy-policy', 'PagesController@privacyPolicy')->name('privacy');
