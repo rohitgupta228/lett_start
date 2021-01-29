@@ -239,7 +239,7 @@ class PaymentController extends Controller
             'razorpay_order_id' => $data['razorpay_order_id']
         ];
         try {
-            $order = $api->utility->verifyPaymentSignature($attributes);
+            $api->utility->verifyPaymentSignature($attributes);
             $data['txn_id'] = $data['razorpay_payment_id'];
             $data['response'] = json_encode([
                 'razorpay_signature' => $data['razorpay_signature'],
@@ -302,7 +302,7 @@ class PaymentController extends Controller
         $data = [
             'license' => $data['multi'] ? 'multiple' : 'single',
             'product_name' => $product->name,
-            'price' => $licenseType ? $product->price * 5 : $product->price,
+            'price' => $data['multi'] ? $product->price * 5 : $product->price,
             'txnId' => $data['txn_id'],
             'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
             'subject' => 'Download Theme',
