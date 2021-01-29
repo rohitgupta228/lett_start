@@ -37,6 +37,8 @@ Route::get('/privacy-policy', 'PagesController@privacyPolicy')->name('privacy');
 
 Route::get('/contact-us', 'PagesController@contactUs')->name('contact');
 
+Route::post('/submit-contact-us', 'PagesController@submitContactUs')->name('submit.contact.us');
+
 Route::get('/faq', 'PagesController@faq')->name('faq');
 
 Route::get('/license', 'PagesController@license')->name('license');
