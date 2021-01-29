@@ -24,6 +24,9 @@
                 24 / 72 hours Monday to Sunday. Please be patient when posting an issue as we work (IST+05:30) time zone.
             </h6>
         </div>
+        <div class="pb-2">
+            @include('flash')
+        </div>
         <div class="contact-form">
             <div class="row">
                 <div class="col-md-7 col-xl-8 pr-md-5">
