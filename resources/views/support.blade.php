@@ -32,7 +32,7 @@
                 <div class="col-md-7 col-xl-8 pr-md-5">
                     <div id="message" class="alert alert-success d-none"></div>
                     <div class="font-weight-medium mb-2 font-size-13">All (*) field's are mandatory.</div>
-                    <form novalidate="novalidate" method="POST" action="{{ route('submit.support') }}">
+                    <form id="support-form" novalidate="novalidate" method="POST" action="{{ route('submit.support') }}">
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col-md-6">
@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <input name="validation-lname" id="lname" type="text" class="form-control"
                                            placeholder="Last Name *" value="{{ old('validation-lname') }}">
-                                    @include('error', ['type' => 'validation-fname'])
+                                    @include('error', ['type' => 'validation-lname'])
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="clearfix">
-                            <button class="btn btn-primary-gred" type="submit">
+                            <button id="support-submit" class="btn btn-primary-gred" type="button">
                                 <span>Submit</span>
                                 <span class="align-middle btn-loader"><i class="bx bx-loader-alt bx-spin icon-md"></i></span>
                             </button>
@@ -193,31 +193,39 @@
                     $parent.removeClass("invalid-field");
                     $(element).siblings(".validation-error").addClass("d-none");
                 },
-                submitHandler: function (form) {
-                    $(form).find("[type = 'submit']").addClass("disable-events");
-                    var url = "assets/php/support.php";
-                    $.ajax({
-                        type: "POST",
-                        url: url,
-                        data: $(form).serialize(),
-                        success: function (data) {
-                            $("#message").html(data);
-                            $("#message").fadeIn();
-                            $("#message").removeClass('d-none');
-                            $(form).find(".app-label").removeClass("up");
-                            $(form)[0].reset();
-                            setTimeout(function () {
-                                $("#message").fadeOut();
-                                $("#message").addClass('d-none');
-                            }, 4000)
-                        },
-                        complete: function () {
-                            $(form).find("[type = 'submit']").removeClass("disable-events");
-                        }
-                    });
-                }
+//                submitHandler: function (form) {
+//                    $(form).find("[type = 'submit']").addClass("disable-events");
+//                    var url = "assets/php/support.php";
+//                    $.ajax({
+//                        type: "POST",
+//                        url: url,
+//                        data: $(form).serialize(),
+//                        success: function (data) {
+//                            $("#message").html(data);
+//                            $("#message").fadeIn();
+//                            $("#message").removeClass('d-none');
+//                            $(form).find(".app-label").removeClass("up");
+//                            $(form)[0].reset();
+//                            setTimeout(function () {
+//                                $("#message").fadeOut();
+//                                $("#message").addClass('d-none');
+//                            }, 4000)
+//                        },
+//                        complete: function () {
+//                            $(form).find("[type = 'submit']").removeClass("disable-events");
+//                        }
+//                    });
+//                }
             });
         }
+        $('#support-submit').click(function () {
+            var details = $('#support-form').valid();
+            if (details) {
+                $('#support-form').submit();
+            } else {
+                return false;
+            }
+        });
     }
 </script>
 
