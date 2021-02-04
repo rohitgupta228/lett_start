@@ -193,3 +193,11 @@
     <!-- Modal -->
     @include('layouts.partials.modals')
 @endsection
+@section('footer_script')
+    <script>
+        var el = document.createElement('script');
+        el.type = 'application/ld+json';
+        el.text = JSON.stringify({ "@context": "http://schema.org",  "@type": "Recipe", "name": "My recipe name" });
+       document.querySelector('head').appendChild(el);
+    </script>
+@endsection
