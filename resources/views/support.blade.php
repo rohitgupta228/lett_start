@@ -128,13 +128,14 @@
 <!--Demo's End-->
 </div>
 
+@endsection
+
+@section('footer_script')
 <script>
-    document.addEventListener('DOMContentLoaded', function (event) {
-        document.getElementById("support-link").classList.add("active");
-        if ($.App) {
-            supportForm();
-        }
-    })
+    if ($.App) {
+        supportForm();
+    }
+
     function supportForm() {
         var instance = $.App;
         if ($('#support-form').length) {
@@ -193,29 +194,6 @@
                     $parent.removeClass("invalid-field");
                     $(element).siblings(".validation-error").addClass("d-none");
                 },
-//                submitHandler: function (form) {
-//                    $(form).find("[type = 'submit']").addClass("disable-events");
-//                    var url = "assets/php/support.php";
-//                    $.ajax({
-//                        type: "POST",
-//                        url: url,
-//                        data: $(form).serialize(),
-//                        success: function (data) {
-//                            $("#message").html(data);
-//                            $("#message").fadeIn();
-//                            $("#message").removeClass('d-none');
-//                            $(form).find(".app-label").removeClass("up");
-//                            $(form)[0].reset();
-//                            setTimeout(function () {
-//                                $("#message").fadeOut();
-//                                $("#message").addClass('d-none');
-//                            }, 4000)
-//                        },
-//                        complete: function () {
-//                            $(form).find("[type = 'submit']").removeClass("disable-events");
-//                        }
-//                    });
-//                }
             });
         }
         $('#support-submit').click(function () {
@@ -228,5 +206,4 @@
         });
     }
 </script>
-
 @endsection
