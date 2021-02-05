@@ -239,7 +239,7 @@ class PaymentController extends Controller
             'razorpay_order_id' => $data['razorpay_order_id']
         ];
         try {
-            $order = $api->utility->verifyPaymentSignature($attributes);
+            $api->utility->verifyPaymentSignature($attributes);
             $data['txn_id'] = $data['razorpay_payment_id'];
             $data['response'] = json_encode([
                 'razorpay_signature' => $data['razorpay_signature'],
