@@ -28,17 +28,14 @@
                                 </a>
                                 <div class="theme-desc">
                                     <div class="title">
-                                        <h3 class="h5">
+                                        <h3 class="h5 mb-0">
                                             <a href="theme/{{ $template['detailLink'] }}"
                                                 title="{{ $template['name'] }}">{{ $template['name'] }}</a>
                                         </h3>
-                                        <p>{{ $template['oneLinerDesc'] }}</p>
-                                    </div>
-                                    <div class="price">
-                                        <h4 class="font-weight-bold">${{ $template['price'] }}</h4>
-                                        <a href="https://lettstartdesign.com/laravel-backend/api/user/download-theme/{{ $template['productId'] }}/{{ Auth::user()->userDetails && Auth::user()->userDetails->user_id ? Auth::user()->userDetails->user_id : '' }}" target="_blank" class="btn btn-sm btn-primary-gred">
-                                            Download
-																				</a>
+                                        <a href="http://127.0.0.1:8000/api/user/download-theme/{{ $template['productId'] }}/{{ Auth::user()->userDetails && Auth::user()->userDetails->user_id ? Auth::user()->userDetails->user_id : '' }}"
+																					target="_blank" class="btn btn-sm btn-primary-gred">
+																					Download
+																			</a>
                                     </div>
                                 </div>
                             </div>
