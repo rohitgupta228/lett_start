@@ -293,7 +293,7 @@
 						</a>
 					</div>
 					<div class="col-md-5">
-						<img src="assets/images/Working late-cuate.svg" alt="" />
+						<img src="assets/images/home-work.svg" alt="Showcase your work image" title="To showcase your work our portfolio and resume templates is a perfect fit." />
 					</div>
 				</div>
 			</div>
