@@ -157,13 +157,12 @@ class PaymentController extends Controller
     public function save(Request $request)
     {
         $data = $request->all();
-        $user = $this->guard()->user();
         $product = \App\Models\Product::where('productId', $data['product_id'])->first();
         $paymentStatus = config('settings.payment_status');
         try {
             if ($product->price == 0) {
                 $paymentData = [
-                    'user_id' => $user->id,
+                    'user_id' => $data['user_id'],
                     'product_id' => $data['product_id'],
                     'payment_status' => $paymentStatus[0],
                     'payment_type' => 2,
