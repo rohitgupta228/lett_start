@@ -183,3 +183,6 @@
 .bxs-badge-check:before {
   content: "\ec70";
 }
+.bxs-x-circle:before {
+  content: "\eeb0";
+}
