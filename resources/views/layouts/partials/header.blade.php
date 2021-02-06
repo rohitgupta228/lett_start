@@ -19,10 +19,10 @@
         <meta name="theme-color" content="#2982de">
         <meta name="google-site-verification" content="2A15GDv2_v4MvaNqBXvSLUqtyJdfGObA2zCet6fuIVE" />
         <meta name="title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
-        <meta name="description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
+        <meta name="description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including admin templates, angular templates, portfolio &amp; resume templates &amp; landing pages')">
         <meta name="keywords" content="Affordable, Cheap, Landing Pages, Angular Templates, Dashboard, One Page Templates, Themes, Bootstrap Templates, Bootstrap, Resume Templates, Admin Templates, Business Templates, Portfolio Templates, Templates, Populat, Best Selling, Multipurpose">
         <meta property="og:title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
-        <meta property="og:description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
+        <meta property="og:description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including admin templates, angular templates, portfolio &amp; resume templates &amp; landing pages')">
         <title>@yield('title', 'Premium and Free Bootstrap Themes &amp; Templates') </title>
         <!--=== Fav Icon ===-->
         <link rel="shortlink" href="https://lettstartdesign.com/">
