@@ -171,9 +171,6 @@
                                     <a title="Login/Signup" href="javascript:void(0)" id="auth-btn" class="nav-link">
                                         <i class='bx bx-user h5 mb-0 mr-1 align-middle'></i>Login / Signup
                                     </a>
-                                    <div class="loader-wrap">
-                                        <i class="bx bx-loader-alt h4 content-loader spinner3"></i>
-                                    </div>
                                 </li>
                             </ul>
                             @endif

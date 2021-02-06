@@ -232,11 +232,6 @@
                     @endforeach
                 </div>
             </div>
-            {{-- <div class="text-center mb-50" id="explore-all-btn">
-                <a href="{{ route('product.category', ['category' => '']) }}"
-                    class="btn btn-primary-gred rounded-50">Explore All Products <i
-                        class="bx bx-right-arrow-alt align-middle"></i></a>
-            </div> --}}
         </div>
     </section>
     <section class="section bg-light">
