@@ -58,32 +58,32 @@
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group app-label">
+                            <div class="form-group app-label {{ $userDetails && $userDetails->first_name ? 'up' : '' }}">
                                 <input name="first_name" value="{{ $userDetails ? $userDetails->first_name : '' }}" id="fname" type="text" class="form-control">
                                 <label for="fname">First Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group app-label">
+                            <div class="form-group app-label {{ $userDetails && $userDetails->last_name ? 'up' : '' }}">
                                 <input name="last_name" value="{{ $userDetails ? $userDetails->last_name : '' }}" id="lname" type="text" class="form-control">
                                 <label for="lname">Last Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group app-label">
+                            <div class="form-group app-label {{ $userDetails && $userDetails->organization ? 'up' : '' }}">
                                 <input name="organization" value="{{ $userDetails ? $userDetails->organization : '' }}" id="organization" type="text" class="form-control">
                                 <label for="organization">Organization</label>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group app-label">
+                            <div class="form-group app-label {{ $userDetails && $userDetails->mobile ? 'up' : '' }}">
                                 <input name="mobile" value="{{ $userDetails ? $userDetails->mobile : '' }}" id="mobile" type="text" class="form-control">
                                 <label for="mobile">Mobile</label>
                                 <div class="validation-error d-none">Please enter valid phone number</div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="form-group app-label">
+                            <div class="form-group app-label {{ $userDetails && $userDetails->address ? 'up' : '' }}">
                                 <textarea rows="3" name="address" class="form-control">{{ $userDetails ? $userDetails->address : '' }}</textarea>
                                 <label for="address">Address</label>
                             </div>
