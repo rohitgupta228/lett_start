@@ -103,6 +103,17 @@
 <!--Demo's End-->
 </div>
 
-<!-- Footer Start-->
-
+@endsection
+@section('footer_script')
+<script>
+    $(".app-label .form-control").on("change", function () {
+        if ($(this).val() === "" || $(this).val() === null || $(this).val() === undefined) {
+          $(this).parent(".app-label").removeClass("up");
+        }
+        else {
+          $(this).parent(".app-label").addClass("up");
+        }
+    })
+</script>
+<script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
 @endsection
