@@ -172,3 +172,14 @@
                 transform: rotate(359deg);
     }
 }
+
+/*new added*/
+.bx-support:before {
+  content: "\ebf8";
+}
+.bx-code:before {
+  content: "\ea35";
+}
+.bxs-badge-check:before {
+  content: "\ec70";
+}

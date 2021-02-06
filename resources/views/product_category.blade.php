@@ -45,9 +45,9 @@
     <!--Demo's Start-->
     <section class="demos section" id="themes">
         <div class="container">
-            <div class="row" id="themes-list">
+            <div class="row gutter-size-25" id="themes-list">
                 @foreach ($products as $template)
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xl-4">
                         <div class="demo-item" id="{{ $template['id'] }}">
                             <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                 class="screenshot">

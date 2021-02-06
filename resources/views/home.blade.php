@@ -48,109 +48,12 @@
                     <div class="heading-text">
                         <h2 class="h3">Best Selling Templates</h2>
                     </div>
-                    <!-- <a href="all-themes.html" class="btn btn-outline-primary rounded-50 btn-sm">
-                                View More
-                        </a> -->
                 </div>
                 <div class="row gutter-size-25" id="popular-list">
-                    <div class="loader-wrap static-loader p-5 bg-transparent">
-                        <i class="bx bx-loader-alt h1 content-loader spinner3"></i>
-                    </div>
                     @foreach ($bestSelling as $template)
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xl-4">
                             <div class="demo-item" id="{{ $template['id'] }}">
-                                <a title="Read more about this theme" href="theme/{{$template['detailLink']}}" class="screenshot">
-                                    <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                        title="{{ $template['name'] }} Template"
-                                        alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
-                                        class="img-fluid w-100" width="714" height="456">
-                                </a>
-                                <div class="action-btn">
-                                    <a href="theme/{{$template['detailLink']. '#demos'}}" title="Click & See Live Preview"
-                                        class="btn btn-primary btn-sm">Live Preview</a>
-                                </div>
-                                <div class="theme-desc">
-                                    <div class="title">
-                                        <h3 class="h5">
-                                            <a href="theme/{{$template['detailLink']}}"
-                                                title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
-                                        </h3>
-                                        <p>{{ $template['oneLinerDesc'] }}</p>
-                                    </div>
-                                    <div class="price">
-                                        <span class="font-weight-bold h4 mb-0">${{ $template['price'] }}</span>
-                                        <a class="category" href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-            </div>
-            <div class="section-categories mb-50">
-                <div class="heading">
-                    <div class="heading-text">
-                        <h2 class="h3">Angular Templates</h2>
-                    </div>
-                    <!-- <a href="all-themes.html" class="btn btn-outline-primary rounded-50 btn-sm">
-                                View More
-                        </a> -->
-                </div>
-                <div class="row" id="angular-list">
-                    <div class="loader-wrap static-loader p-5 bg-transparent">
-                        <i class="bx bx-loader-alt h1 content-loader spinner3"></i>
-                    </div>
-                    @foreach ($angular as $template)
-                        <div class="col-md-6">
-                            <div class="demo-item" id="1">
-                                <a title="Read more about this theme" href="theme/{{$template['detailLink']}}" class="screenshot">
-                                    <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                        title="{{ $template['name'] }} Template"
-                                        alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
-                                        class="img-fluid w-100" width="714" height="456">
-                                </a>
-                                <div class="action-btn">
-                                    <a href="theme/{{$template['detailLink']. '#demos'}}" title="Click & See Live Preview"
-                                        class="btn btn-primary btn-sm">Live Preview</a>
-                                </div>
-                                <div class="theme-desc">
-                                    <div class="title">
-                                        <h3 class="h5">
-                                            <a href="theme/{{$template['detailLink']}}"
-                                                title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
-                                        </h3>
-                                        <p>{{ $template['oneLinerDesc'] }}</p>
-                                    </div>
-                                    <div class="price">
-                                        <span class="font-weight-bold h4 mb-0">${{ $template['price'] }}</span>
-                                        <a class="category" href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="section-categories mb-30">
-                <div class="heading">
-                    <div class="heading-text">
-                        <h2 class="h3">Latest Templates</h2>
-                    </div>
-                    <!-- <a href="all-themes.html" class="btn btn-outline-primary rounded-50 btn-sm">
-                                View More
-                        </a> -->
-                </div>
-                <div class="row" id="recent-list">
-                    <div class="loader-wrap static-loader p-5 bg-transparent">
-                        <i class="bx bx-loader-alt h1 content-loader spinner3"></i>
-                    </div>
-                    @foreach ($latest as $template)
-                        <div class="col-md-6">
-                            <div class="demo-item" id="1">
-                                <a title="Read more about this templates" href="theme/{{$template['detailLink']}}"
+                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                         srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
@@ -159,20 +62,124 @@
                                         class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="theme/{{$template['detailLink']. '#demos'}}"
+                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}"
                                         title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
                                         <h3 class="h5">
-                                            <a href="theme/{{$template['detailLink']}}"
+                                            <a href="theme/{{ $template['detailLink'] }}"
                                                 title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
                                     <div class="price">
-                                        <span class="font-weight-bold h4 mb-0">${{ $template['price'] }}</span>
-                                        <a class="category" href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
+                                        <a class="category"
+                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+            <div class="section-categories">
+                <div class="heading">
+                    <div class="heading-text">
+                        <h2 class="h3">Bootstrap HTML Templates & Themes</h2>
+                    </div>
+                </div>
+                <div class="row gutter-size-25" id="recent-list">
+                    @foreach ($bootstrap as $template)
+                        <div class="col-md-6 col-xl-4">
+                            <div class="demo-item" id="1">
+                                <a title="Read more about this templates" href="theme/{{ $template['detailLink'] }}"
+                                    class="screenshot">
+                                    <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
+                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                        title="{{ $template['name'] }} Template"
+                                        alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
+                                        class="img-fluid w-100" width="714" height="456">
+                                </a>
+                                <div class="action-btn">
+                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}"
+                                        title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
+                                </div>
+                                <div class="theme-desc">
+                                    <div class="title">
+                                        <h3 class="h5">
+                                            <a href="theme/{{ $template['detailLink'] }}"
+                                                title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
+                                        </h3>
+                                        <p>{{ $template['oneLinerDesc'] }}</p>
+                                    </div>
+                                    <div class="price">
+                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
+                                        <a class="category"
+                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="highlight-section">
+                    <div class="media">
+                        <div class="dotted-wrap">
+                            <div class="image">
+                                <img src="assets/images/boot-collage.png" width="350"
+                                    title="bootstrap all themes and templates" alt="bootstrap themes collage" />
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <p class="mb-30">Bootstrap is a CSS based framework used to build responsive UI's. All Our layouts are built with the Bootstrap framework including Angular, Landing Pages, Portfolio, Business & Corporates, etc. followed by best coding practices. All themes and templates at a very cheap price and unique for every project. Get your best template for your business.</p>
+                            <a href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}"
+                                title="View All Bootstrap Themes and Templates" class="btn btn-primary-gred">View All Bootstrap
+                                Templates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-categories mb-50">
+                <div class="heading">
+                    <div class="heading-text">
+                        <h2 class="h3">Angular Templates</h2>
+                    </div>
+                    <a href="{{ route('product.category', ['category' => 'angular-templates']) }}"
+                        title="View All Angular Themes and Templates" class="btn btn-primary-gred btn-sm">
+												View All
+                    </a>
+                </div>
+                <div class="row gutter-size-25" id="angular-list">
+                    @foreach ($angular as $template)
+                        <div class="col-md-6 col-xl-4">
+                            <div class="demo-item" id="1">
+                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
+                                    class="screenshot">
+                                    <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
+                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                        title="{{ $template['name'] }} Template"
+                                        alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
+                                        class="img-fluid w-100" width="714" height="456">
+                                </a>
+                                <div class="action-btn">
+                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}"
+                                        title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
+                                </div>
+                                <div class="theme-desc">
+                                    <div class="title">
+                                        <h3 class="h5">
+                                            <a href="theme/{{ $template['detailLink'] }}"
+                                                title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
+                                        </h3>
+                                        <p>{{ $template['oneLinerDesc'] }}</p>
+                                    </div>
+                                    <div class="price">
+                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
+                                        <a class="category"
+                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -180,13 +187,122 @@
                     @endforeach
                 </div>
             </div>
-            <div class="text-center mb-50" id="explore-all-btn">
+            <div class="section-categories">
+                <div class="heading">
+                    <div class="heading-text">
+                        <h2 class="h3">Free Templates</h2>
+                    </div>
+                    <a href="{{ route('product.category', ['category' => 'freebies']) }}"
+                        title="View All Free Themes and Templates" class="btn btn-primary-gred btn-sm">
+                        View All
+                    </a>
+                </div>
+                <div class="row gutter-size-25" id="angular-list">
+                    @foreach ($freebies as $template)
+                        <div class="col-md-6 col-xl-4">
+                            <div class="demo-item" id="1">
+                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
+                                    class="screenshot">
+                                    <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
+                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                        title="{{ $template['name'] }} Template"
+                                        alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
+                                        class="img-fluid w-100" width="714" height="456">
+                                </a>
+                                <div class="action-btn">
+                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}"
+                                        title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
+                                </div>
+                                <div class="theme-desc">
+                                    <div class="title">
+                                        <h3 class="h5">
+                                            <a href="theme/{{ $template['detailLink'] }}"
+                                                title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
+                                        </h3>
+                                        <p>{{ $template['oneLinerDesc'] }}</p>
+                                    </div>
+                                    <div class="price">
+                                        <span class="h4 mb-0">Free</span>
+                                        <a class="category"
+                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            {{-- <div class="text-center mb-50" id="explore-all-btn">
                 <a href="{{ route('product.category', ['category' => '']) }}"
                     class="btn btn-primary-gred rounded-50">Explore All Products <i
                         class="bx bx-right-arrow-alt align-middle"></i></a>
+            </div> --}}
+        </div>
+    </section>
+    <section class="section bg-light">
+        <div class="container">
+            <div class="heading justify-content-center">
+                <div class="heading-text text-center">
+                    <h2 class="h3">Lettstart Design - Digital Marketplace</h2>
+                </div>
+            </div>
+            <div class="text-center mb-50 pb-15">
+                <p>LettstartDesign is a growing marketplace where you can discover top-notch digital products that follow the latest web standards. The collection of products includes a wide decision of site layouts reasonable for a wide range of specialty explicit ventures, small or large organizations, new companies, and some other sort of business that you end up running. There are superior quality and free website templates that you can download for your inventive web project. The marketplace incorporates Bootstrap-based site layouts, HTML5 and CSS3 instant arrangements, site formats stacked with a web designer, and that's only the tip of the iceberg.</p>
+            </div>
+            <div class="features">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3 mb-30">
+                        <div class="feature bg-white">
+                            <div class="icon">
+                                <i class="bx bx-support"></i>
+                            </div>
+														<h5 class="h6">24/7 Theme Support</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mb-30">
+                        <div class="feature bg-white">
+                            <div class="icon">
+                                <i class="bx bx-file"></i>
+                            </div>
+														<h5 class="h6">Clear Documentation</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mb-30">
+                        <div class="feature bg-white">
+                            <div class="icon">
+                                <i class="bx bx-code"></i>
+                            </div>
+														<h5 class="h6">Clean and Customize Code</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mb-30">
+                        <div class="feature bg-white">
+                            <div class="icon">
+																<i class='bx bxs-badge-check'></i>
+                            </div>
+														<h5 class="h6">Quality Themes</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+		<section class="section">
+			<div class="container">
+				<div class="row flex-md-row-reverse">
+					<div class="col-md-6 offset-md-1 mb-30">
+						<h3 class="mb-30">Showcase Your Work</h3>
+						<p>If you need a ready-made solution to showcase your work, <a href="{{ route('product.category', ['category' => 'portfolio-resume-templates']) }}">Portfolio and Resume Templates</a> are the best. We include a template that is customer concentric and fulfills the need for every type of project. Each portfolio and resume layout is made with the most recent web advancement strategies follow best coding rehearses. The instant portfolio and resume designs represent proficient blends of plans and usefulness. They highlight all the fundamental components expected to exhibit your work.</p>
+						<a href="{{ route('product.category', ['category' => '']) }}"
+							class="mt-15 btn btn-primary-gred rounded-50 browse-all">Browse All Products
+						</a>
+					</div>
+					<div class="col-md-5">
+						<img src="assets/images/Working late-cuate.svg" alt="" />
+					</div>
+				</div>
+			</div>
+		</section>
     </div>
 
     <!-- Footer Start-->
@@ -200,5 +316,6 @@
         el.type = 'application/ld+json';
         el.text = JSON.stringify(bestSelling);
         document.querySelector('head').appendChild(el);
+
     </script>
 @endsection

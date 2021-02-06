@@ -20,7 +20,7 @@
         <meta name="google-site-verification" content="2A15GDv2_v4MvaNqBXvSLUqtyJdfGObA2zCet6fuIVE" />
         <meta name="title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
         <meta name="description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
-        <meta name="keywords" content="Affordable, Landing Pages, Angular Templates, Dashboard, One Page Templates, Themes, Bootstrap Templates, Bootstrap, Resume Templates, Admin Templates, Business Templates, Portfolio Templates, Templates, Populat, Best Selling, Multipurpose">
+        <meta name="keywords" content="Affordable, Cheap, Landing Pages, Angular Templates, Dashboard, One Page Templates, Themes, Bootstrap Templates, Bootstrap, Resume Templates, Admin Templates, Business Templates, Portfolio Templates, Templates, Populat, Best Selling, Multipurpose">
         <meta property="og:title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
         <meta property="og:description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including multipurpose and responsive templates, angular templates, resume templates, admin templates &amp; landing pages')">
         <title>@yield('title', 'Premium and Free Bootstrap Themes &amp; Templates') </title>
@@ -166,7 +166,7 @@
                             </ul>
 
                             @if(empty(Auth::user()))
-                            <ul class="navbar-nav border-left login-nav">
+                            <ul class="navbar-nav login-nav">
                                 <li class="position-relative">
                                     <a title="Login/Signup" href="javascript:void(0)" id="auth-btn" class="nav-link">
                                         <i class='bx bx-user h5 mb-0 mr-1 align-middle'></i>Login / Signup
