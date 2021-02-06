@@ -309,13 +309,3 @@
     <!-- Modal -->
     @include('layouts.partials.modals')
 @endsection
-@section('footer_script')
-    <script>
-        var el = document.createElement('script');
-        var bestSelling = '<?= json_encode($bestSelling) ?>';
-        el.type = 'application/ld+json';
-        el.text = JSON.stringify(bestSelling);
-        document.querySelector('head').appendChild(el);
-
-    </script>
-@endsection
