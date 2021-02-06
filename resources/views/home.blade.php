@@ -5,7 +5,7 @@
     <section class="home-banner" id="home" data-scroll-index="1">
         <div class="container">
             <div class="banner-content text-center">
-                <h1 class="mb-3">Affordable Themes and Templates</h1>
+                <h1 class="mb-3">Bootstrap Themes and Templates</h1>
                 <p class="mb-30 text-white font-weight-normal font-size-18">Create applications quicker with our free and
                     premium templates built <br /> using Bootstrap, Angular, Vue.js, React and SASS</p>
                 <div class="row justify-content-center">
