@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; Copyright 2020. <span class="text-white">LettStartDesign</span>
+            &copy; Copyright 2020-21. <span class="text-white">LettStartDesign</span>
         </div>
     </div>
 </footer>
