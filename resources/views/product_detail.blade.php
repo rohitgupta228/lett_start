@@ -396,7 +396,7 @@
                     <p>Please send us an <a href="mailto:info@lettstartdesign.com" class="text-primary">email</a> and share
                         your experience with our product that will give us more motivation.</p>
                     <div class="mt-30">
-                        <a href="../downloads.html" class="btn btn-primary-gred" title="go to downloads">Go to Downloads</a>
+                        <a href="{{ route('user.order.history') }}" class="btn btn-primary-gred" title="go to downloads">Go to Downloads</a>
                     </div>
                 </div>
             </div>

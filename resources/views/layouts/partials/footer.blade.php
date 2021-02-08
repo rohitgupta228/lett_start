@@ -59,6 +59,8 @@
     var loginRoute = "<?= route('login') ?>";
     var userAuthenticated = "<?= Auth::check() ?>";
     var swUrl = "<?= url('assets/js/sw.min.js') ?>";
+    var baseURL = "<?= env('BASE_URL').'api/' ?>";
+    
 </script>
 <!-- Third Javascript's -->
 <script src="{{ url('assets/js/plugins.min.js') }}" type="application/javascript"></script>

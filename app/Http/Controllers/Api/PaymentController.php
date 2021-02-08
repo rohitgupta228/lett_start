@@ -95,7 +95,7 @@ class PaymentController extends Controller
                     ->setItemList($item_list)
                     ->setDescription("Product Name: " . $product->name . " and Product Id: " . $product->id);
             $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl(env('PAYPAL_BASE_REDIRECTION_URL') . 'paypal-response?product_id=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('PAYPAL_BASE_REDIRECTION_URL') . 'theme/' . $product->detailLink . '?success=false');
+            $redirect_urls->setReturnUrl(env('BASE_URL') . 'paypal-response?product_id=' . $data['product_id'] . '&multi=' . $data['multi'])->setCancelUrl(env('BASE_URL') . 'theme/' . $product->detailLink . '?success=false');
             $payment = new Payment();
             $payment->setIntent('Sale')
                     ->setPayer($payer)
