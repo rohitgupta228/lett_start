@@ -31,14 +31,14 @@
         <p>LettStart Design doesn't handle any payment request through the website. All payments are handled safely through Paypal and Razorpay, outsider/third party online payment providers. We does not save your payment information like card number, expiry date, cvc etc. it's used by payment service providers. Don't hesitate to reach us about our security arrangements.</p>
         <h5 class="mt-30 mb-15">Refund</h5>
         <p>LettStart Design remains behind the entirety of our items and we will settle any shortcomings or defects found in any of our items. </p>
-        <p>In the event that you have any inquiries regarding configuring the product please get in touch with us by means of <a href="https://lettstartdesign.com/support.html">Contact Us</a> or <a href="mailto:support@lettstartdesign.com">Email Us</a> whenever.</p>
+        <p>In the event that you have any inquiries regarding configuring the product please get in touch with us by means of <a href="{{ route('support') }}">Contact Us</a> or <a href="mailto:support@lettstartdesign.com">Email Us</a> whenever.</p>
         <p>You can get a refund inside 7 days after the buy date if:</p>
         <ul>
             <li>Item is "not as portrayed"</li>
             <li>Item doesn't work the manner in which it ought to </li>
             <li>Item  support is guaranteed but not provided</li>
         </ul>
-        <p>If you don't mind reach us at <a href="https://lettstartdesign.com/support.html">Contact Us</a> or <a href="mailto:support@lettstartdesign.com">Email Us</a> with your refund requests.</p>
+        <p>If you don't mind reach us at <a href="{{ route('support') }}">Contact Us</a> or <a href="mailto:support@lettstartdesign.com">Email Us</a> with your refund requests.</p>
         <p><strong>We will refund amount after the deduction of currency conversion and payment fees charged by payment provider</strong></p>
         <p>By no means will a refund be given 7 days after your buy date.</p>
         <h5 class="mt-30 mb-15">Support does include</h5>

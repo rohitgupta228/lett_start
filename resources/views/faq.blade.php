@@ -36,7 +36,7 @@
 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
-                        If you already purchase the theme. When your download it from downloads you will always get the updated package. If not, you can <a href="contact.html" class="text-primary">contact us</a>. We will provide you the latest package.
+                        If you already purchase the theme. When your download it from downloads you will always get the updated package. If not, you can <a href="{{ route('contact') }}" class="text-primary">contact us</a>. We will provide you the latest package.
                     </div>
                 </div>
             </div>

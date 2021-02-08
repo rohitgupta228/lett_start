@@ -391,7 +391,7 @@
                     </div>
                     <h5 class="mb-15">Thank you for purchasing our product.</h5>
                     <p> We've sent an email with all the necessary details along with product download link. If you have any
-                        trouble to download your files. Please <a href="../contact.html">contact us</a> or <a
+                        trouble to download your files. Please <a href="{{ route('contact') }}">contact us</a> or <a
                             href="mailto:support@lettstartdesign.com" class="text-primary">email us</a>.</p>
                     <p>Please send us an <a href="mailto:info@lettstartdesign.com" class="text-primary">email</a> and share
                         your experience with our product that will give us more motivation.</p>
@@ -418,7 +418,7 @@
                     <h5 class="mb-15">Payment Failed</h5>
                     <p class="mb-15">Something went wrong. Please try after some time or send us mail <a
                             href="mailto:support@lettstartdesign.com" class="text-primary">support@lettstartdesign.com</a>
-                        or <a href="../contact.html" class="text-primary">contact us</a></p>
+                        or <a href="{{ route('contact') }}" class="text-primary">contact us</a></p>
                 </div>
             </div>
         </div>
