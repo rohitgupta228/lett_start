@@ -32,7 +32,7 @@
                                             <a href="theme/{{ $template['detailLink'] }}"
                                                 title="{{ $template['name'] }}">{{ $template['name'] }}</a>
                                         </h3>
-                                        <a href="http://127.0.0.1:8000/api/user/download-theme/{{ $template['productId'] }}/{{ Auth::user()->userDetails && Auth::user()->userDetails->user_id ? Auth::user()->userDetails->user_id : '' }}"
+                                        <a href="{{ env('BASE_URL').'api/' }}user/download-theme/{{ $template['productId'] }}/{{ Auth::user()->userDetails && Auth::user()->userDetails->user_id ? Auth::user()->userDetails->user_id : '' }}"
 																					target="_blank" class="btn btn-sm btn-primary-gred">
 																					Download
 																			</a>
