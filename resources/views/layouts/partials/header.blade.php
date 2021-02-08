@@ -141,7 +141,7 @@
                                         Themes
                                     </a>
                                     <div class="dropdown-menu dropdown-themes border-0 py-0 shadow animate slideIn dropdown-menu-right" aria-labelledby="themesDropdown">
-                                        <a class="dropdown-item font-weight-bold" href="{{ route('product.category', ['category' => 'all-themes-templates']) }}"><i class='bx bx-grid-small text-secondary'></i> Browse All Themes</a>
+                                        <a class="dropdown-item font-weight-bold" href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}"><i class='bx bx-grid-small text-secondary'></i> Browse All Themes</a>
                                         <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'admin-dashboard-template']) }}"><i
                                                 class='bx bxs-bar-chart-square text-primary'></i> Admin Dashboard Templates</a>
                                         <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}"><i
