@@ -436,10 +436,8 @@
             price: '<?= $product->price ?>'
         };
         var logged_user_details = {
-            id: '<?= Auth::check() ? Auth::user()->id : '
-            ' ?>',
-            email: '<?= Auth::check() ? Auth::user()->email : '
-            ' ?>',
+            id: '<?= Auth::check() ? Auth::user()->id : '' ?>',
+            email: '<?= Auth::check() ? Auth::user()->email : '' ?>',
         }
 
     </script>
