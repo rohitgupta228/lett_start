@@ -331,10 +331,7 @@
                             <div class="heading-text">
                                 <h4 class="mb-0">Related Products</h4>
                             </div>
-                            <a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}"
-                                class="btn btn-outline-primary rounded-50 btn-sm">
-                                View More
-                            </a>
+                            <a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}" title="View All Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
                         </div>
                         <div class="row" id="related-products">
                             @foreach ($relatedProducts as $template)
