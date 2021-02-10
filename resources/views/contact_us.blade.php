@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="clearfix">
-                            <button class="btn btn-primary-gred" type="submit">
+                            <button id="contact-submit" class="btn btn-primary-gred" type="submit">
                                 <span>Submit</span>
                                 <span class="align-middle btn-loader"><i class="bx bx-loader-alt bx-spin icon-md"></i></span>
                             </button>
@@ -120,4 +120,66 @@
 <!-- Modal -->
 @include('layouts.partials.modals')
 
+@endsection
+@section('footer_script')
+<script>
+    if ($.App) {
+        contactForm();
+    }
+    function contactForm() {
+      var instance = $.App;
+      if ($('#contactus-form').length) {
+        $('#contactus-form').validate({
+          focusInvalid: false,
+          rules: {
+            'validation-email': {
+              required: true,
+              email: true
+            },
+            'validation-fname': {
+              required: true,
+            },
+            'validation-lname': {
+              required: true,
+            },
+            'validation-comments': {
+              required: true
+            },
+            'validation-required': {
+              required: true
+            }
+          },
+
+          errorPlacement: function errorPlacement(error, element) {
+            if (error[0].innerText === 'Please enter a valid email address.') {
+              $(element).siblings(".validation-error").text(error[0].innerText).removeClass("d-none");
+            }
+            else {
+              $(element).siblings(".validation-error").addClass("d-none");
+            }
+            return true
+          },
+          highlight: function (element) {
+            var $el = $(element);
+            var $parent = $el.parents('.form-group');
+            $parent.addClass("invalid-field")
+          },
+          unhighlight: function (element) {
+            var $el = $(element);
+            var $parent = $el.parents('.form-group');
+            $parent.removeClass("invalid-field");
+            $(element).siblings(".validation-error").addClass("d-none");
+          }
+        });
+      }
+    }
+    $('#contact-submit').click(function () {
+        var details = $('#contactus-form').valid();
+        if (details) {
+            $('#contactus-form').submit();
+        } else {
+            return false;
+        }
+    });
+</script>
 @endsection
