@@ -22,7 +22,7 @@
                                 <a href="theme/{{ $template['detailLink'] }}" class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                     srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                    sizes="(min-width:767px) 3000w, 767w"
+                                    sizes="100vw"
                                         title="{{ $template['name'] }} Template"
                                         alt="Download Your {{ $template['name'] }} Template }}" class="img-fluid w-100"
                                         width="714" height="456">
