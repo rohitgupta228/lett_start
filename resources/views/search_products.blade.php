@@ -22,7 +22,7 @@
                         <li>Navigate to our best selling products by using site navigation below</li>
                     </ul>
                 @endif
-                <div class="popular-products">
+                <div class="popular-products mt-50">
                     @if($productCount == 0)
                         <div class="heading">
                             <div class="heading-text">
@@ -32,7 +32,7 @@
                     @endif
                     <div class="row" id="popular-list">
                         @foreach ($products as $template)
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xl-4">
                             <div class="demo-item" id="1">
                                 <a href="theme/{{ $template['detailLink'] }}" class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
