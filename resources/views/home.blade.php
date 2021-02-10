@@ -48,6 +48,7 @@
                     <div class="heading-text">
                         <h2 class="h3">Best Selling Templates</h2>
                     </div>
+                    <a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}" title="View All Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
                 </div>
                 <div class="row gutter-size-25" id="popular-list">
                     @foreach ($bestSelling as $template)
@@ -91,6 +92,7 @@
                     <div class="heading-text">
                         <h2 class="h3">Bootstrap HTML Templates & Themes</h2>
                     </div>
+                    <a href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}" title="View All Bootstrap HTML Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
                 </div>
                 <div class="row gutter-size-25" id="recent-list">
                     @foreach ($bootstrap as $template)

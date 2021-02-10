@@ -28,6 +28,7 @@
                             <div class="heading-text">
                                 <h4 class="mb-0">Best Selling Products</h4>
                             </div>
+                            <a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}" title="View All Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
                         </div>
                     @endif
                     <div class="row" id="popular-list">
