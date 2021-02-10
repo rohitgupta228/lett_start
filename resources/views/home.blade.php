@@ -286,22 +286,22 @@
             </div>
         </div>
     </section>
-		<section class="section">
-			<div class="container">
-				<div class="row flex-md-row-reverse">
-					<div class="col-md-6 offset-md-1 mb-30">
-						<h3 class="mb-30">Showcase Your Work</h3>
-						<p>If you need a ready-made solution to showcase your work, <a href="{{ route('product.category', ['category' => 'portfolio-resume-templates']) }}">Portfolio and Resume Templates</a> are the best. We include a template that is customer concentric and fulfills the need for every type of project. Each portfolio and resume layout is made with the most recent web advancement strategies follow best coding rehearses. The instant portfolio and resume designs represent proficient blends of plans and usefulness. They highlight all the fundamental components expected to exhibit your work.</p>
-						<a href="{{ route('product.category', ['category' => '']) }}"
-							class="mt-15 btn btn-primary-gred rounded-50 browse-all">Browse All Products
-						</a>
-					</div>
-					<div class="col-md-5">
-						<img src="assets/images/home-work.svg" alt="Showcase your work image" title="To showcase your work our portfolio and resume templates is a perfect fit." />
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="section">
+        <div class="container">
+            <div class="row flex-md-row-reverse">
+                <div class="col-md-6 offset-md-1 mb-30">
+                    <h3 class="mb-30">Showcase Your Work</h3>
+                    <p>If you need a ready-made solution to showcase your work, <a href="{{ route('product.category', ['category' => 'portfolio-resume-templates']) }}">Portfolio and Resume Templates</a> are the best. We include a template that is customer concentric and fulfills the need for every type of project. Each portfolio and resume layout is made with the most recent web advancement strategies follow best coding rehearses. The instant portfolio and resume designs represent proficient blends of plans and usefulness. They highlight all the fundamental components expected to exhibit your work.</p>
+                    <a href="{{ route('product.category', ['category' => '']) }}"
+                        class="mt-15 btn btn-primary-gred rounded-50 browse-all">Browse All Products
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <img src="assets/images/home-work.svg" alt="Showcase your work image" title="To showcase your work our portfolio and resume templates is a perfect fit." />
+                </div>
+            </div>
+        </div>
+    </section>
     </div>
 
     <!-- Footer Start-->

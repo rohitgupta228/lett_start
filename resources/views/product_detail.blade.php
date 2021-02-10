@@ -139,25 +139,25 @@
                                     <div class="pay-options">
                                         <h6 class="mr-3">Pay with</h6>
                                         <div class="options mb-15" id="options">
-                                            <button class="pay-btn btn-paypal selected" button-selection='razorpay'>
+                                            <button class="pay-btn btn-paypal selected" data-selection='razorpay'>
                                                 <img src="{{ url('assets/images/razorpay-icon.png') }}" title="Razorpay"
                                                     alt="Razorpay Logo" width="15" />
                                                 Razorpay
                                             </button>
-                                            <button class="pay-btn btn-paypal" button-selection='paypal'>
+                                            <button class="pay-btn btn-paypal" data-selection='paypal'>
                                                 <i class="bx bxl-paypal text-paypal"></i> Paypal
                                             </button>
                                         </div>
                                     </div>
                                     <div class="tab-content pt-2" id="option-data">
-                                        <div data-id="razorpay" payment-type="razorpay" class="tab-pane active fade show">
+                                        <div data-id="razorpay" data-type="razorpay" class="tab-pane active fade show">
                                             <button class="btn btn-primary-gred btn-block" id="razorpay-btn" disabled>
                                                 <span>Purchase</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
                                             </button>
                                         </div>
-                                        <div data-id="paypal" payment-type="paypal" class="tab-pane fade">
+                                        <div data-id="paypal" data-type="paypal" class="tab-pane fade">
                                             <button class="btn btn-primary-gred btn-block" id="paypal-btn">
                                                 <span>Purchase</span>
                                                 <span class="align-middle btn-loader"><i
@@ -337,7 +337,7 @@
                         <div class="row" id="related-products">
                             @foreach ($relatedProducts as $template)
                                 <div class="col-md-4">
-                                    <div class="demo-item" id="1">
+                                    <div class="demo-item" id="{{ $template['id'] }}">
                                         <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                             class="screenshot">
                                             <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
@@ -376,59 +376,56 @@
     </section>
     <!--Demo's End-->
     </div>
-
-    @include('layouts.partials.modals')
-    <div class="modal fade thankyou-modal" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
-                    </button>
-                </div>
-                <div class="modal-body p-30 text-center">
-                    <div class="mb-15">
-                        <i class="bx bx-check-circle text-success font-weight-normal mb-0"></i>
-                    </div>
-                    <h5 class="mb-15">Thank you for purchasing our product.</h5>
-                    <p> We've sent an email with all the necessary details along with product download link. If you have any
-                        trouble to download your files. Please <a href="{{ route('contact') }}">contact us</a> or <a
-                            href="mailto:support@lettstartdesign.com" class="text-primary">email us</a>.</p>
-                    <p>Please send us an <a href="mailto:info@lettstartdesign.com" class="text-primary">email</a> and share
-                        your experience with our product that will give us more motivation.</p>
-                    <div class="mt-30">
-                        <a href="{{ route('user.order.history') }}" class="btn btn-primary-gred" title="go to downloads">Go to Downloads</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade thankyou-modal" id="failureModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
-                    </button>
-                </div>
-                <div class="modal-body p-30 text-center">
-                    <div class="mb-15 cancel-icon">
-                        <i>&#33;</i>
-                    </div>
-                    <h5 class="mb-15">Payment Failed</h5>
-                    <p class="mb-15">Something went wrong. Please try after some time or send us mail <a
-                            href="mailto:support@lettstartdesign.com" class="text-primary">support@lettstartdesign.com</a>
-                        or <a href="{{ route('contact') }}" class="text-primary">contact us</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!--Demo's End-->
 </div>
 @include('layouts.partials.modals')
+<div class="modal fade thankyou-modal" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
+                </button>
+            </div>
+            <div class="modal-body p-30 text-center">
+                <div class="mb-15">
+                    <i class="bx bx-check-circle text-success font-weight-normal mb-0"></i>
+                </div>
+                <h5 class="mb-15">Thank you for purchasing our product.</h5>
+                <p> We've sent an email with all the necessary details along with product download link. If you have any
+                    trouble to download your files. Please <a href="{{ route('contact') }}">contact us</a> or <a
+                        href="mailto:support@lettstartdesign.com" class="text-primary">email us</a>.</p>
+                <p>Please send us an <a href="mailto:info@lettstartdesign.com" class="text-primary">email</a> and share
+                    your experience with our product that will give us more motivation.</p>
+                <div class="mt-30">
+                    <a href="{{ route('user.order.history') }}" class="btn btn-primary-gred" title="go to downloads">Go to Downloads</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade thankyou-modal" id="failureModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
+                </button>
+            </div>
+            <div class="modal-body p-30 text-center">
+                <div class="mb-15 cancel-icon">
+                    <i>&#33;</i>
+                </div>
+                <h5 class="mb-15">Payment Failed</h5>
+                <p class="mb-15">Something went wrong. Please try after some time or send us mail <a
+                        href="mailto:support@lettstartdesign.com" class="text-primary">support@lettstartdesign.com</a>
+                    or <a href="{{ route('contact') }}" class="text-primary">contact us</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('footer_script')
