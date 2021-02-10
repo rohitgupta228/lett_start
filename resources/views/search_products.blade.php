@@ -49,7 +49,7 @@
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
                                     <div class="price">
-                                        <h4 class="font-weight-bold">$5<span class="original-price">${{$template['price']}}</span></h4>
+                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
                                         <a class="category" href="{{$template['catLink']}}">{{ $template['mainCat'] }}</a>
                                     </div>
                                 </div>

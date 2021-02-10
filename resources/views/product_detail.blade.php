@@ -361,7 +361,7 @@
                                                 <p>{{ $template['oneLinerDesc'] }}</p>
                                             </div>
                                             <div class="price">
-                                                <span class="font-weight-bold h4 mb-0">$5</span>
+                                                <span class="h4 mb-0">${{ $template['price'] }}</span>
                                                 <a class="category"
                                                     href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
                                             </div>
