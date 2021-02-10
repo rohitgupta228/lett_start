@@ -13,7 +13,8 @@
             <div class="breadcrumb">
                 <ul class="list-unstyled">
                     <li><a href="{{ route('home.products.list') }}" title="Home">Home</a></li>
-                    <li><a href="{{ route('product.category', ['category' => '']) }}" title="All themes">All Themes</a></li>
+                    <li><a href="{{ route('product.category', ['category' => '']) }}" title="All themes">All Themes</a>
+                    </li>
                     <li><a class="active" href="{{ route('product.category', ['category' => $product['catLink']]) }}"
                             title="Landing Pages">Landing Pages</a></li>
                 </ul>
@@ -31,8 +32,8 @@
                         <div class="slider-area" id="slider-area">
                             <img src="{{ url('assets/images/slider-screenshot/' . $product['screenshot']) }}"
                                 srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $product['screenshot'])[0] . '-sm.' . explode('.', $product['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $product['screenshot']) }} 3000w"
-                                sizes="100vw"
-                                class="img-fluid border-radius-1x w-100" title="{{ $product['name'] }} Template"
+                                sizes="100vw" class="img-fluid border-radius-1x w-100"
+                                title="{{ $product['name'] }} Template"
                                 alt="Feature Image of {{ $product['name'] }} Template" width="714" height="456" />
                             <div class="live-example">
                                 <div class="mb-2 mb-sm-0">
@@ -68,7 +69,8 @@
                                             </div>
                                         </div>
                                         <div class="licence-value ml-auto text-right">
-                                            <h6 class="price mb-0 font-weight-bold" id="single-use">${{ $product['price'] }}
+                                            <h6 class="price mb-0 font-weight-bold" id="single-use">
+                                                ${{ $product['price'] }}
                                             </h6>
                                             <span class="subtext">One time pay</span>
                                         </div>
@@ -179,25 +181,25 @@
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#details" role="tab"
-                                aria-controls="Details" aria-selected="true"><i
+                                aria-controls="details" aria-selected="true"><i
                                     class="bx bx-detail mr-1 icon-sm align-middle"></i> <span
                                     class="align-middle">Details</span></a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="demo-tab" data-toggle="tab" href="#demos" role="tab"
-                                aria-controls="Demo" aria-selected="true"><i
+                                aria-controls="demos" aria-selected="true"><i
                                     class="bx bx-screenshot mr-1 icon-sm align-middle"></i> <span
                                     class="align-middle">Demos</span></a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="Change-tab" data-toggle="tab" href="#change-log" role="tab"
-                                aria-controls="Change" aria-selected="false"><i
+                                aria-controls="change-log" aria-selected="false"><i
                                     class="bx bx-message-square-edit mr-1 icon-sm align-middle"></i> <span
                                     class="align-middle">Change Log</span></a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="Details-tab">
+                        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details">
                             <div class="row pb-5 border-bottom">
                                 <div class="col-md-3">
                                     <h2 class="mb-30 h3">Overview</h2>
@@ -256,7 +258,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="demos" role="tabpanel" aria-labelledby="demo-tab">
+                        <div class="tab-pane fade" id="demos" role="tabpanel" aria-labelledby="demos">
                             @foreach (json_decode($product['screenshots']) as $screenshots)
                                 <div class="theme-demos mb-3">
                                     <div class="head-text">
@@ -301,7 +303,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="change-log" role="tabpanel" aria-labelledby="Change-tab">
+                        <div class="tab-pane fade" id="change-log" role="tabpanel" aria-labelledby="change-log">
                             <div class="initial-logs border-radius-2x">
                                 @foreach (json_decode($product['initialLog']) as $logs)
                                     @if ($logs->text == 'Created:')
@@ -341,9 +343,8 @@
                                         <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                             class="screenshot">
                                             <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                            srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                            sizes="100vw"
-                                                title="{{ $template['name'] }} Template"
+                                                srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                                sizes="100vw" title="{{ $template['name'] }} Template"
                                                 alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                                 class="img-fluid w-100" width="714" height="456">
                                         </a>
@@ -376,69 +377,71 @@
     </section>
     <!--Demo's End-->
     </div>
-<!--Demo's End-->
-</div>
-@include('layouts.partials.modals')
-<div class="modal fade thankyou-modal" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
-                </button>
-            </div>
-            <div class="modal-body p-30 text-center">
-                <div class="mb-15">
-                    <i class="bx bx-check-circle text-success font-weight-normal mb-0"></i>
+    @include('layouts.partials.modals')
+    <div class="modal fade thankyou-modal" id="successModal" tabindex="-1" aria-labelledby="successModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
+                    </button>
                 </div>
-                <h5 class="mb-15">Thank you for purchasing our product.</h5>
-                <p> We've sent an email with all the necessary details along with product download link. If you have any
-                    trouble to download your files. Please <a href="{{ route('contact') }}">contact us</a> or <a
-                        href="mailto:support@lettstartdesign.com" class="text-primary">email us</a>.</p>
-                <p>Please send us an <a href="mailto:info@lettstartdesign.com" class="text-primary">email</a> and share
-                    your experience with our product that will give us more motivation.</p>
-                <div class="mt-30">
-                    <a href="{{ route('user.order.history') }}" class="btn btn-primary-gred" title="go to downloads">Go to Downloads</a>
+                <div class="modal-body p-30 text-center">
+                    <div class="mb-15">
+                        <i class="bx bx-check-circle text-success font-weight-normal mb-0"></i>
+                    </div>
+                    <h5 class="mb-15">Thank you for purchasing our product.</h5>
+                    <p> We've sent an email with all the necessary details along with product download link. If you have any
+                        trouble to download your files. Please <a href="{{ route('contact') }}">contact us</a> or <a
+                            href="mailto:support@lettstartdesign.com" class="text-primary">email us</a>.</p>
+                    <p>Please send us an <a href="mailto:info@lettstartdesign.com" class="text-primary">email</a> and share
+                        your experience with our product that will give us more motivation.</p>
+                    <div class="mt-30">
+                        <a href="{{ route('user.order.history') }}" class="btn btn-primary-gred"
+                            title="go to downloads">Go to Downloads</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="modal fade thankyou-modal" id="failureModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
-                </button>
-            </div>
-            <div class="modal-body p-30 text-center">
-                <div class="mb-15 cancel-icon">
-                    <i>&#33;</i>
+    <div class="modal fade thankyou-modal" id="failureModal" tabindex="-1" aria-labelledby="failureModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
+                    </button>
                 </div>
-                <h5 class="mb-15">Payment Failed</h5>
-                <p class="mb-15">Something went wrong. Please try after some time or send us mail <a
-                        href="mailto:support@lettstartdesign.com" class="text-primary">support@lettstartdesign.com</a>
-                    or <a href="{{ route('contact') }}" class="text-primary">contact us</a></p>
+                <div class="modal-body p-30 text-center">
+                    <div class="mb-15 cancel-icon">
+                        <i>&#33;</i>
+                    </div>
+                    <h5 class="mb-15">Payment Failed</h5>
+                    <p class="mb-15">Something went wrong. Please try after some time or send us mail <a
+                            href="mailto:support@lettstartdesign.com" class="text-primary">support@lettstartdesign.com</a>
+                        or <a href="{{ route('contact') }}" class="text-primary">contact us</a></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('footer_script')
-<script>
-    var package_details = {
-        packageName: '<?= $product->packageName ?>',
-        productId: '<?= $product->productId ?>',
-        price: '<?= $product->price ?>'
-    };
-    var logged_user_details = {
-        id: '<?= Auth::check() ? Auth::user()->id : '' ?>',
-        email: '<?= Auth::check() ? Auth::user()->email : '' ?>',
-    }
-</script>
-<script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
+    <script>
+        var package_details = {
+            packageName: '<?= $product->packageName ?>',
+            productId: '<?= $product->productId ?>',
+            price: '<?= $product->price ?>'
+        };
+        var logged_user_details = {
+            id: '<?= Auth::check() ? Auth::user()->id : '
+            ' ?>',
+            email: '<?= Auth::check() ? Auth::user()->email : '
+            ' ?>',
+        }
+
+    </script>
+    <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
 @endsection
