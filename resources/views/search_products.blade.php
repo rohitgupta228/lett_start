@@ -15,14 +15,14 @@
                 @if($productCount == 0)
                     <p>We are sorry! We couldn't find result.</p>
                     <h5 class="h4 mb-3">Search Hints:</h5>
-                    <ul class="list-arrow">
+                    <ul class="list-arrow mb-50">
                         <li>Please double check your spelling.</li>
                         <li>Use more generic search term like angular, landing, business, resume etc..</li>
                         <li>Product search may have been discontinued, remove or is not yet on our website</li>
                         <li>Navigate to our best selling products by using site navigation below</li>
                     </ul>
                 @endif
-                <div class="popular-products mt-50">
+                <div class="popular-products">
                     @if($productCount == 0)
                         <div class="heading">
                             <div class="heading-text">
