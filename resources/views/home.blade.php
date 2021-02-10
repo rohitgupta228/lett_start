@@ -57,7 +57,7 @@
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                         srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                        sizes="(min-width:767px) 100vw, 767px"
+                                        sizes="100vw"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">
@@ -100,7 +100,7 @@
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                     srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                    sizes="(min-width:767px) 100vw, 767px"
+                                    sizes="100vw"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">
@@ -162,7 +162,7 @@
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                     srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                    sizes="(min-width:767px) 100vw, 767px"
+                                    sizes="100vw"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">
@@ -200,7 +200,7 @@
                         View All
                     </a>
                 </div>
-                <div class="row gutter-size-25" id="angular-list">
+                <div class="row gutter-size-25" id="free-list">
                     @foreach ($freebies as $template)
                         <div class="col-md-6 col-xl-4">
                             <div class="demo-item" id="{{ $template['id'] }}">
@@ -208,7 +208,7 @@
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                     srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
-                                    sizes="(min-width:767px) 100vw, 767px"
+                                    sizes="100vw"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">
