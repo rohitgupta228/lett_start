@@ -24,7 +24,7 @@
     </div>
     <!--Demo's Start-->
     <!--Don't remove inner content wrapper-->
-    <section class="section pt-0">
+    <div class="section pt-0">
         <div class="container">
             <div class="inner-content">
                 <div class="row">
@@ -374,7 +374,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <!--Demo's End-->
     </div>
     @include('layouts.partials.modals')
