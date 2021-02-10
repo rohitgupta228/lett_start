@@ -58,11 +58,6 @@
                         </div>
                         @endforeach
                     </div>
-                    @if($productCount == 0)
-                        <div class="text-center my-30">
-                            <a href="{{ route('product.category', ['category' => '']) }}" class="btn btn-primary-gred rounded-50">Explore All Products <i class="bx bx-right-arrow-alt align-middle"></i></a>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
