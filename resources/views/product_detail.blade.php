@@ -153,7 +153,7 @@
                                     </div>
                                     <div class="tab-content pt-2" id="option-data">
                                         <div data-id="razorpay" data-type="razorpay" class="tab-pane active fade show">
-                                            <button class="btn btn-primary-gred btn-block" id="razorpay-btn" disabled>
+                                            <button class="btn btn-primary-gred btn-block disable-events" id="razorpay-btn">
                                                 <span>Purchase</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
