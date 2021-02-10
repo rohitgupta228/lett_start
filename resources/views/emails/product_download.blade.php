@@ -235,7 +235,7 @@
                       <tbody>
                         <tr>
                           <td class="pt-40 pl-20 pr-20 pb-20" style="padding-bottom: 20px; padding-top: 40px; padding-left: 20px; padding-right: 20px;" align="center">
-                            <p class="text-white" style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">Copyright &copy; 2020 Lettstart Design, All
+                            <p class="text-white" style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">Copyright &copy; 2020-21 Lettstart Design, All
                               right reserved.</p>
                           </td>
                         </tr>

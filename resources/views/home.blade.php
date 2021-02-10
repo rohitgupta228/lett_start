@@ -310,3 +310,12 @@
     <!-- Modal -->
     @include('layouts.partials.modals')
 @endsection
+@section('footer_script')
+    <script>
+        var params = new URLSearchParams(window.location.search);
+        var success = params.get('forgot');
+        if (success === 'true') {
+            $("#resetModal").modal('show')
+        }
+    </script>
+@endsection
