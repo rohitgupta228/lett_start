@@ -20,16 +20,16 @@ class ProductController extends Controller
                 'angular' => 'angular',
                 'freebies' => 'freebies'
             ];
-            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
             if (count($bestSelling))
                 $bestSelling = array_slice($bestSelling, 0, 3);
-            $bootstrap = Product::where('added', 'LIKE', "%{$query['bootstrap']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            $bootstrap = Product::where('added', 'LIKE', "%{$query['bootstrap']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
             if (count($bootstrap))
                 $bootstrap = array_slice($bootstrap, 0, 3);
-            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
             if (count($angular))
                 $angular = array_slice($angular, 0, 3);
-            $freebies = Product::where('added', 'LIKE', "%{$query['freebies']}%")->where('price', '=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+            $freebies = Product::where('added', 'LIKE', "%{$query['freebies']}%")->where('price', '=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
             if (count($freebies))
                 $freebies = array_slice($freebies, 0, 3);
         } catch (\Exception $exc) {
@@ -104,7 +104,7 @@ class ProductController extends Controller
                 $description = $metaData[$search]['description'];
             }
             $result = $result->where('category', 'LIKE', "%{$search}%");
-            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(12);
+            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->paginate(12);
             return view('product_category', compact('products', 'pageTitle', 'pageDescription', 'title', 'description'));
         } catch (\Exception $exc) {
             return response()->view('errors.500');
