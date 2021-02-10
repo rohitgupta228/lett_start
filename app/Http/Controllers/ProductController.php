@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Transaction;
-
+use Illuminate\Support\Facades\Crypt;
+//echo Crypt::encryptString(19);die;
 class ProductController extends Controller
 {
 

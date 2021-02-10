@@ -98,5 +98,9 @@
   "dark": {
     "title": "Dark - Single Page Templates | App Landing Page | Portfolio Landing Page Template",
     "description": "Dark is single page web template. Specially design to showcase your work, portfolio and app page."
+  },
+  "hoskon-hosting-template": {
+    "title": "HOSKON - Hosting Templates | Boostrap Hosting Template | Shared Hosting Template",
+    "description": "HOSKON is a HTML5 bootstrap hosting  template specially design for hosting, servers, cloud & business companies."
   }
 }
