@@ -35,7 +35,9 @@
                         <div class="col-md-6">
                             <div class="demo-item" id="1">
                                 <a href="theme/{{ $template['detailLink'] }}" class="screenshot">
-                                    <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/'.explode('.', $template['screenshot'])[0].'-sm.'.explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/'.$template['screenshot']) }} 3000w" title="{{$template['name']}} Template" alt="Buy {{$template['name']}} Template at ${{ $template['price'] }}" class="img-fluid w-100" width="714" height="456">
+                                    <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                    sizes="(min-width:767px) 3000w, 767w" 
+                                    title="{{$template['name']}} Template" alt="Buy {{$template['name']}} Template at ${{ $template['price'] }}" class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
                                     <a href="theme/{{ $template['detailLink'].'#demos' }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>

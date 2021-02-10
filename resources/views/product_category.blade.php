@@ -52,7 +52,8 @@
                             <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                 class="screenshot">
                                 <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                    srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                sizes="(min-width:767px) 3000w, 767w"
                                     title="{{ $template['name'] }} Template"
                                     alt="Buy {{ $template['name'] }} Template at {{ $template['price'] }}"
                                     class="img-fluid w-100" width="714" height="456">

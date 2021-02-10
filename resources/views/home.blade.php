@@ -56,7 +56,8 @@
                                 <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                        sizes="(min-width:767px) 3000w, 767w"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">
@@ -94,11 +95,12 @@
                 <div class="row gutter-size-25" id="recent-list">
                     @foreach ($bootstrap as $template)
                         <div class="col-md-6 col-xl-4">
-                            <div class="demo-item" id="1">
+                            <div class="demo-item" id="{{ $template['id'] }}">
                                 <a title="Read more about this templates" href="theme/{{ $template['detailLink'] }}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                    srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                    sizes="(min-width:767px) 3000w, 767w"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">
@@ -155,11 +157,12 @@
                 <div class="row gutter-size-25" id="angular-list">
                     @foreach ($angular as $template)
                         <div class="col-md-6 col-xl-4">
-                            <div class="demo-item" id="1">
+                            <div class="demo-item" id="{{ $template['id'] }}">
                                 <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                    srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                    sizes="(min-width:767px) 3000w, 767w"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">
@@ -200,11 +203,12 @@
                 <div class="row gutter-size-25" id="angular-list">
                     @foreach ($freebies as $template)
                         <div class="col-md-6 col-xl-4">
-                            <div class="demo-item" id="1">
+                            <div class="demo-item" id="{{ $template['id'] }}">
                                 <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                        srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                    srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                    sizes="(min-width:767px) 3000w, 767w"
                                         title="{{ $template['name'] }} Template"
                                         alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                         class="img-fluid w-100" width="714" height="456">

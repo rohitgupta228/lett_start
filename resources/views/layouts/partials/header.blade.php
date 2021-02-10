@@ -5,7 +5,7 @@
         <!--=== meta ===-->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
         <meta name="author" content="LettStartDesign">
@@ -30,13 +30,13 @@
         <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}" />
         <link rel="manifest" href="{{ url('assets/json/manifest.json') }}">
         <!--=== Preloads ===-->
-        <link rel="preload" href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" as="style"/>
+        <link rel="preload" href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" as="style">
         <link rel="preload" href="{{ url('assets/vendors/boxicons/fonts/boxicons.woff2') }}" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="{{ url('assets/fonts/roboto/Roboto-Medium.woff2') }}" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="{{ url('assets/fonts/roboto/Roboto-Regular.woff2') }}" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="{{ url('assets/fonts/roboto/Roboto-Bold.woff2') }}" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="{{ url('assets/css/plugins.min.css') }}" as="style"/>
-        <link rel="preload" href="{{ url('assets/css/style.min.css') }}" as="style"/>
+        <link rel="preload" href="{{ url('assets/css/plugins.min.css') }}" as="style">
+        <link rel="preload" href="{{ url('assets/css/style.min.css') }}" as="style">
         <link rel="preload" href="{{ url('assets/js/plugins.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/api.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/app.min.js') }}" as="script">

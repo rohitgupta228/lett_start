@@ -30,7 +30,8 @@
                     <div class="col-lg-8">
                         <div class="slider-area" id="slider-area">
                             <img src="{{ url('assets/images/slider-screenshot/' . $product['screenshot']) }}"
-                                srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $product['screenshot'])[0] . '-sm.' . explode('.', $product['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $product['screenshot']) }} 3000w"
+                                srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $product['screenshot'])[0] . '-sm.' . explode('.', $product['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $product['screenshot']) }} 3000w"
+                                sizes="(min-width:767px) 3000w, 767w"
                                 class="img-fluid border-radius-1x w-100" title="{{ $product['name'] }} Template"
                                 alt="Feature Image of {{ $product['name'] }} Template" width="714" height="456" />
                             <div class="live-example">
@@ -340,7 +341,8 @@
                                         <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                             class="screenshot">
                                             <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
-                                                srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 766w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                            srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
+                                            sizes="(min-width:767px) 3000w, 767w"
                                                 title="{{ $template['name'] }} Template"
                                                 alt="Buy {{ $template['name'] }} Template at ${{ $template['price'] }}"
                                                 class="img-fluid w-100" width="714" height="456">
