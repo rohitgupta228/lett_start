@@ -167,7 +167,6 @@
     products = JSON.parse(products); 
     var itemList = addProduct(products.data);
     ldSchema["@graph"].push(itemList);
-    console.log(ldSchema)
 	var el = document.createElement('script');
 	el.type = 'application/ld+json';
 	el.text = JSON.stringify(ldSchema);
