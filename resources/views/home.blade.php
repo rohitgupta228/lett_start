@@ -355,7 +355,7 @@
 				"inLanguage": "en-US"
 			}
 		]
-	}
+	};
 	addArticle("Best Selling Templates", null, ldSchema);
 	bestSelling = JSON.parse(bestSelling);
 	var itemList = addProduct(bestSelling, ldSchema);

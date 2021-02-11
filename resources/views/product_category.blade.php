@@ -115,7 +115,7 @@
             "name": 'All Themes',
             "item": "https://lettstartdesign.com/category/premium-admin-bootstrap-templates"
         }]
-    }
+    };
     if(pageTitle && pageTitle != 'All Themes, Templates & Landing Pages') {
         breadcrumb['itemListElement'].push({
             "@type": "ListItem", 
