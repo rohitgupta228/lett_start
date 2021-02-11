@@ -317,7 +317,7 @@
 	var success = params.get('forgot');
 	if (success === 'true') {
 			$("#resetModal").modal('show')
-	}
+	};
 	var bestSelling = `<?= json_encode($bestSelling) ?>`;
 	var bootstrap = `<?= json_encode($bootstrap) ?>`;
 	var angular = `<?= json_encode($angular) ?>`;
@@ -354,7 +354,7 @@
 				"inLanguage": "en-US"
 			}
 		]
-	}
+	};
 	addArticle("Best Selling Templates", null, ldSchema);
 	addSchema(bestSelling, ldSchema);
 	addArticle("Bootstrap HTML Templates & Themes", null, ldSchema);
@@ -366,7 +366,7 @@
 	var article = {
 		name: "Lettstart Design - Digital Marketplace",
 		desc: "LettstartDesign is a growing marketplace where you can discover top-notch digital products that follow the latest web standards. The collection of products includes a wide decision of site layouts reasonable for a wide range of specialty explicit ventures, small or large organizations, new companies, and some other sort of business that you end up running. There are superior quality and free website templates that you can download for your inventive web project. The marketplace incorporates Bootstrap-based site layouts, HTML5 and CSS3 instant arrangements, site formats stacked with a web designer, and that's only the tip of the iceberg."
-	}
+	};
 	addArticle(article.name, article.desc, ldSchema);
 	addArticle("24/7 Theme Support", null, ldSchema, true);
 	addArticle("Clear Documentation", null, ldSchema, true);
@@ -375,7 +375,7 @@
 	article = {
 		name: "Showcase Your Work",
 		desc: "If you need a ready-made solution to showcase your work, Portfolio and Resume Templates are the best. We include a template that is customer concentric and fulfills the need for every type of project. Each portfolio and resume layout is made with the most recent web advancement strategies follow best coding rehearses. The instant portfolio and resume designs represent proficient blends of plans and usefulness. They highlight all the fundamental components expected to exhibit your work."
-	}
+	};
 	addArticle(article.name, article.desc, ldSchema);
 	var obj = {
 		"title": "Browse All Products",
@@ -386,7 +386,7 @@
 				"href": "/category"
 			}
 		]
-	}
+	};
 	ldSchema["@graph"].push(obj);
 	var el = document.createElement('script');
 	el.type = 'application/ld+json';
