@@ -311,11 +311,89 @@
     @include('layouts.partials.modals')
 @endsection
 @section('footer_script')
-    <script>
-        var params = new URLSearchParams(window.location.search);
-        var success = params.get('forgot');
-        if (success === 'true') {
-            $("#resetModal").modal('show')
-        }
-    </script>
+<script src="{{ url('assets/js/schema.min.js') }}"></script>
+<script>
+	var params = new URLSearchParams(window.location.search);
+	var success = params.get('forgot');
+	if (success === 'true') {
+			$("#resetModal").modal('show')
+	}
+	var bestSelling = `<?= json_encode($bestSelling) ?>`;
+	var bootstrap = `<?= json_encode($bootstrap) ?>`;
+	var angular = `<?= json_encode($angular) ?>`;
+	var freebies = `<?= json_encode($freebies) ?>`;
+	var ldSchema = {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": "https://lettstartdesign.com/#organization",
+				"name": "Lettstart Design",
+				"url": "https://lettstartdesign.com"
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://lettstartdesign.com/#website",
+				"url": "https://lettstartdesign.com",
+				"name": "Lettstart Design",
+				"publisher": {
+					"@id": "https://lettstartdesign.com/#organization"
+				},
+				"inLanguage": "en-US"
+			},
+			{
+				"@type": "WebPage",
+				"@id": "https://lettstartdesign.com/#webpage",
+				"url": "https://lettstartdesign.com/",
+				"name": "Best Responsive HTML5 Bootstrap and Angular Website Templates",
+				"datePublished": "2021-02-11",
+				"dateModified": "2021-02-11",
+				"isPartOf": {
+					"@id": "https://lettstartdesign.com/#website"
+				},
+				"inLanguage": "en-US"
+			}
+		]
+	}
+	addArticle("Best Selling Templates", null, ldSchema);
+	addSchema(bestSelling, ldSchema);
+	addArticle("Bootstrap HTML Templates & Themes", null, ldSchema);
+	addSchema(bootstrap, ldSchema);
+	addArticle("Angular Templates", null, ldSchema);
+	addSchema(angular, ldSchema);
+	addArticle("Free Templates", null, ldSchema);
+	addSchema(freebies, ldSchema);
+	var article = {
+		name: "Lettstart Design - Digital Marketplace",
+		desc: "LettstartDesign is a growing marketplace where you can discover top-notch digital products that follow the latest web standards. The collection of products includes a wide decision of site layouts reasonable for a wide range of specialty explicit ventures, small or large organizations, new companies, and some other sort of business that you end up running. There are superior quality and free website templates that you can download for your inventive web project. The marketplace incorporates Bootstrap-based site layouts, HTML5 and CSS3 instant arrangements, site formats stacked with a web designer, and that's only the tip of the iceberg."
+	}
+	addArticle(article.name, article.desc, ldSchema);
+	addArticle("24/7 Theme Support", null, ldSchema, true);
+	addArticle("Clear Documentation", null, ldSchema, true);
+	addArticle("Clean and Customize Code", null, ldSchema, true);
+	addArticle("Quality Themes", null, ldSchema, true);
+	article = {
+		name: "Showcase Your Work",
+		desc: "If you need a ready-made solution to showcase your work, Portfolio and Resume Templates are the best. We include a template that is customer concentric and fulfills the need for every type of project. Each portfolio and resume layout is made with the most recent web advancement strategies follow best coding rehearses. The instant portfolio and resume designs represent proficient blends of plans and usefulness. They highlight all the fundamental components expected to exhibit your work."
+	}
+	addArticle(article.name, article.desc, ldSchema);
+	var obj = {
+		"title": "Browse All Products",
+		"type": "object",
+		"links": [
+			{
+				"rel": "self",
+				"href": "/category"
+			}
+		]
+	}
+	ldSchema["@graph"].push(obj);
+	var el = document.createElement('script');
+	el.type = 'application/ld+json';
+	el.text = JSON.stringify(ldSchema);
+	document.querySelector('head').appendChild(el);
+</script>
+<script>
+	
+</script>
 @endsection
