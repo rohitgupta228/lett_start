@@ -440,3 +440,4 @@
     </script>
     <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
 @endsection
+

@@ -16,9 +16,13 @@
                             <li><a href="{{ route('home.products.list') }}" title="Home">Home</a></li>
                             <li
                                 class="{{ $pageTitle && $pageTitle != 'All Themes, Templates & Landing Pages' ? '' : 'active' }}">
-                                All Themes</li>
+                                @if ($pageTitle && $pageTitle != 'All Themes, Templates & Landing Pages')
+                                <a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}" title="All themes">All Themes</a>
+                                @else All Themes
+                                @endif
+                            </li>
                             @if ($pageTitle && $pageTitle != 'All Themes, Templates & Landing Pages')
-                                <li class="active">{{ $pageTitle }}</li>
+                                <li class="active" title="{{ $pageTitle }}">{{ $pageTitle }}</li>
                             @endif
                         </ul>
                     </div>
@@ -89,4 +93,84 @@
 
     </div>
     @include('layouts.partials.modals')
+@endsection
+@section('footer_script')
+<script>
+    var pageTitle = '<?= $pageTitle ?>';
+    var pageDescription = '<?= $pageDescription ?>';
+    var products = `<?= json_encode($products) ?>`;
+    var route = '<?=  Request::getRequestUri() ?>';
+    var title = '<?=  $title ?>';
+    var description = '<?=  $description ?>';
+    var breadcrumb = {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem", 
+            "position": 1, 
+            "name": "Home",
+            "item": "https://lettstartdesign.com"  
+        },{
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": 'All Themes',
+            "item": "https://lettstartdesign.com/category/premium-admin-bootstrap-templates"
+        }]
+    }
+    if(pageTitle && pageTitle != 'All Themes, Templates & Landing Pages') {
+        breadcrumb['itemListElement'].push({
+            "@type": "ListItem", 
+            "position": 3, 
+            "name": pageTitle
+        })
+    };
+	var ldSchema = {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": "https://lettstartdesign.com/#organization",
+				"name": "Lettstart Design",
+				"url": "https://lettstartdesign.com",
+				"logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://lettstartdesign.com/#website",
+				"url": "https://lettstartdesign.com",
+				"name": "Lettstart Design",
+				"publisher": {
+					"@id": "https://lettstartdesign.com/#organization"
+				},
+				"inLanguage": "en-US",
+				"logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+			},
+			{
+				"@type": "WebPage",
+				"@id": "https://lettstartdesign.com"+route+"#webpage",
+				"url": "https://lettstartdesign.com"+route,
+				"name": title,
+                "description": description,
+				"datePublished": "2021-02-11",
+				"isPartOf": {
+					"@id": "https://lettstartdesign.com/#website"
+				},
+				"inLanguage": "en-US"
+			},
+            breadcrumb,
+            {
+                "@type": "WebPage",
+                "name": pageTitle,
+                "description": pageDescription,
+            }
+		]
+	};
+    products = JSON.parse(products); 
+    var itemList = addProduct(products.data);
+    ldSchema["@graph"].push(itemList);
+    console.log(ldSchema)
+	var el = document.createElement('script');
+	el.type = 'application/ld+json';
+	el.text = JSON.stringify(ldSchema);
+	document.querySelector('head').appendChild(el);
+</script>
 @endsection

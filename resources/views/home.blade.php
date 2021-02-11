@@ -311,7 +311,6 @@
     @include('layouts.partials.modals')
 @endsection
 @section('footer_script')
-<script src="{{ url('assets/js/schema.min.js') }}"></script>
 <script>
 	var params = new URLSearchParams(window.location.search);
 	var success = params.get('forgot');
@@ -329,7 +328,8 @@
 				"@type": "Organization",
 				"@id": "https://lettstartdesign.com/#organization",
 				"name": "Lettstart Design",
-				"url": "https://lettstartdesign.com"
+				"url": "https://lettstartdesign.com",
+				"logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
 			},
 			{
 				"@type": "WebSite",
@@ -339,7 +339,8 @@
 				"publisher": {
 					"@id": "https://lettstartdesign.com/#organization"
 				},
-				"inLanguage": "en-US"
+				"inLanguage": "en-US",
+				"logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
 			},
 			{
 				"@type": "WebPage",
@@ -354,15 +355,29 @@
 				"inLanguage": "en-US"
 			}
 		]
-	};
+	}
 	addArticle("Best Selling Templates", null, ldSchema);
-	addSchema(bestSelling, ldSchema);
+	bestSelling = JSON.parse(bestSelling);
+	var itemList = addProduct(bestSelling, ldSchema);
+    ldSchema["@graph"].push(itemList)
 	addArticle("Bootstrap HTML Templates & Themes", null, ldSchema);
-	addSchema(bootstrap, ldSchema);
+
+	bootstrap = JSON.parse(bootstrap);
+	itemList = addProduct(bootstrap);
+    ldSchema["@graph"].push(itemList);
+
 	addArticle("Angular Templates", null, ldSchema);
-	addSchema(angular, ldSchema);
+
+	angular = JSON.parse(angular);
+	itemList = addProduct(angular);
+    ldSchema["@graph"].push(itemList)
+
 	addArticle("Free Templates", null, ldSchema);
-	addSchema(freebies, ldSchema);
+
+	freebies = JSON.parse(freebies);
+	itemList = addProduct(freebies);
+    ldSchema["@graph"].push(itemList);
+
 	var article = {
 		name: "Lettstart Design - Digital Marketplace",
 		desc: "LettstartDesign is a growing marketplace where you can discover top-notch digital products that follow the latest web standards. The collection of products includes a wide decision of site layouts reasonable for a wide range of specialty explicit ventures, small or large organizations, new companies, and some other sort of business that you end up running. There are superior quality and free website templates that you can download for your inventive web project. The marketplace incorporates Bootstrap-based site layouts, HTML5 and CSS3 instant arrangements, site formats stacked with a web designer, and that's only the tip of the iceberg."
@@ -392,8 +407,5 @@
 	el.type = 'application/ld+json';
 	el.text = JSON.stringify(ldSchema);
 	document.querySelector('head').appendChild(el);
-</script>
-<script>
-	
 </script>
 @endsection
