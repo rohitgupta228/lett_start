@@ -515,9 +515,9 @@
                     "url": product.liveDemoBaseStr,
                     "name": screen.imgTitle,
                     "image": "https://lettstartdesign.com/assets/images/screenshots/"+product.screenshotDir+"/"+screen.img
-                }
-                demos["itemListElement"].push(obj)
-            })
+                };
+                demos["itemListElement"].push(obj);
+            });
         });
         ldSchema["@graph"].push(demos);
         var itemList = addProduct(relatedProducts);
