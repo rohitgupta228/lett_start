@@ -458,7 +458,7 @@
                 "name": product['mainCat'],
                 "item": product['catLink']
             }]
-        }
+        };
         var hightlight1 = JSON.parse(product.highlight1), hightlight2 = JSON.parse(product.highlight2), themefacts = JSON.parse(product.themeFacts);
         var ldSchema = {
             "@context": "https://schema.org",
