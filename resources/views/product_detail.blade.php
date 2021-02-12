@@ -13,10 +13,10 @@
             <div class="breadcrumb">
                 <ul class="list-unstyled">
                     <li><a href="{{ route('home.products.list') }}" title="Home">Home</a></li>
-                    <li><a href="{{ route('product.category', ['category' => '']) }}" title="All themes">All Themes</a>
+                    <li><a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}" title="All themes">All Themes</a>
                     </li>
                     <li><a class="active" href="{{ route('product.category', ['category' => $product['catLink']]) }}"
-                            title="Landing Pages">Landing Pages</a></li>
+                            title="{{ $product['mainCat'] }}">{{ $product['mainCat'] }}</a></li>
                 </ul>
             </div>
             <h1 id="main-title" class="h2 font-weight-bold">{{ $product['name'] }}</h1>
@@ -436,8 +436,97 @@
             id: '<?= Auth::check() ? Auth::user()->id : '' ?>',
             email: '<?= Auth::check() ? Auth::user()->email : '' ?>',
         }
-
     </script>
     <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
+    <script>
+        var product= <?= $product ?>, relatedProducts = <?= json_encode($relatedProducts) ?>, route = '<?=  Request::getRequestUri() ?>', title = '<?=  $title ?>', description = '<?=  $description ?>';
+        var breadcrumb = {
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem", 
+                "position": 1, 
+                "name": "Home",
+                "item": "https://lettstartdesign.com"  
+            },{
+                "@type": "ListItem", 
+                "position": 2, 
+                "name": 'All Themes',
+                "item": "https://lettstartdesign.com/category/premium-admin-bootstrap-templates"
+            },{
+                "@type": "ListItem", 
+                "position": 3,
+                "name": product['mainCat'],
+                "item": product['catLink']
+            }]
+        }
+        var hightlight1 = JSON.parse(product.highlight1), hightlight2 = JSON.parse(product.highlight2), themefacts = JSON.parse(product.themeFacts);
+        var ldSchema = {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://lettstartdesign.com/#organization",
+                    "name": "Lettstart Design",
+                    "url": "https://lettstartdesign.com",
+                    "logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://lettstartdesign.com/#website",
+                    "url": "https://lettstartdesign.com",
+                    "name": "Lettstart Design",
+                    "publisher": {
+                        "@id": "https://lettstartdesign.com/#organization"
+                    },
+                    "inLanguage": "en-US",
+                    "logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+                },
+                breadcrumb,
+                {
+                    "@type": "Article",
+                    "headline": product['name'],
+                    "description": ($("#overview-html").text()).trim()+" "+hightlight1.join(", ")+" "+hightlight2.join(", "),
+                    "image": "https://lettstartdesign.com/assets/images/slider-screenshot/"+product.screenshot,  
+                    "author": {
+                        "@type": "Organization",
+                        "name": "Lettstart Design"
+                    },  
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Lettstart Design",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://lettstartdesign.com/assets/images/logo-dark.png"
+                        }
+                    },
+                    "datePublished": "2020-05-30"
+                }
+            ]
+        };
+        var demos = {
+            "@type": "ItemList",
+            "itemListElement": []
+        }
+        var count = 0;
+        JSON.parse(product.screenshots).forEach(function(demo, index) {
+            demo.screens.forEach(function(screen, sindex){
+                var obj = {
+                    "@type": "ListItem",
+                    "position": ++count,
+                    "url": product.liveDemoBaseStr,
+                    "name": screen.imgTitle,
+                    "image": "https://lettstartdesign.com/assets/images/screenshots/"+product.screenshotDir+"/"+screen.img
+                }
+                demos["itemListElement"].push(obj)
+            })
+        });
+        ldSchema["@graph"].push(demos);
+        var itemList = addProduct(relatedProducts);
+        ldSchema["@graph"].push(itemList);  
+        var el = document.createElement('script');
+        el.type = 'application/ld+json';
+        el.text = JSON.stringify(ldSchema);
+        document.querySelector('head').appendChild(el);
+    </script>
 @endsection
 

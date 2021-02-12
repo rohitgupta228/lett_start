@@ -317,10 +317,7 @@
 	if (success === 'true') {
 			$("#resetModal").modal('show')
 	};
-	var bestSelling = `<?= json_encode($bestSelling) ?>`;
-	var bootstrap = `<?= json_encode($bootstrap) ?>`;
-	var angular = `<?= json_encode($angular) ?>`;
-	var freebies = `<?= json_encode($freebies) ?>`;
+	var bestSelling = <?= json_encode($bestSelling) ?>, bootstrap = <?= json_encode($bootstrap) ?>, angular = <?= json_encode($angular) ?>, freebies = <?= json_encode($freebies) ?>;
 	var ldSchema = {
 		"@context": "https://schema.org",
 		"@graph": [
@@ -357,24 +354,20 @@
 		]
 	};
 	addArticle("Best Selling Templates", null, ldSchema);
-	bestSelling = JSON.parse(bestSelling);
 	var itemList = addProduct(bestSelling, ldSchema);
     ldSchema["@graph"].push(itemList)
 	addArticle("Bootstrap HTML Templates & Themes", null, ldSchema);
 
-	bootstrap = JSON.parse(bootstrap);
 	itemList = addProduct(bootstrap);
     ldSchema["@graph"].push(itemList);
 
 	addArticle("Angular Templates", null, ldSchema);
 
-	angular = JSON.parse(angular);
 	itemList = addProduct(angular);
     ldSchema["@graph"].push(itemList)
 
 	addArticle("Free Templates", null, ldSchema);
 
-	freebies = JSON.parse(freebies);
 	itemList = addProduct(freebies);
     ldSchema["@graph"].push(itemList);
 

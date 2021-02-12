@@ -96,12 +96,7 @@
 @endsection
 @section('footer_script')
 <script>
-    var pageTitle = '<?= $pageTitle ?>';
-    var pageDescription = '<?= $pageDescription ?>';
-    var products = `<?= json_encode($products) ?>`;
-    var route = '<?=  Request::getRequestUri() ?>';
-    var title = '<?=  $title ?>';
-    var description = '<?=  $description ?>';
+    var pageTitle = '<?= $pageTitle ?>', pageDescription = '<?= $pageDescription ?>', products = <?= json_encode($products) ?>, route = '<?=  Request::getRequestUri() ?>', title = '<?=  $title ?>', description = '<?=  $description ?>';
     var breadcrumb = {
         "@type": "BreadcrumbList",
         "itemListElement": [{
@@ -164,7 +159,6 @@
             }
 		]
 	};
-    products = JSON.parse(products); 
     var itemList = addProduct(products.data);
     ldSchema["@graph"].push(itemList);
 	var el = document.createElement('script');
