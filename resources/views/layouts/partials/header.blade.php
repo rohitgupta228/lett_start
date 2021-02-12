@@ -143,7 +143,7 @@
                                         <a class="dropdown-item font-weight-bold" href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}"><i class='bx bx-grid-small text-secondary'></i> Browse All Themes</a>
                                         <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'admin-dashboard-template']) }}"><i
                                                 class='bx bxs-bar-chart-square text-primary'></i> Admin Dashboard Templates</a>
-                                        <a class="dropdown-item" title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}"><i
+                                        <a class="dropdown-item" title="Bootstrap Templates" href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}"><i
                                                 class='bx bxl-bootstrap text-bootstrap'></i>Bootstrap Templates</a>
                                         <a class="dropdown-item" title="Landing Pages" href="{{ route('product.category', ['category' => 'landing-pages-templates']) }}"><i class='bx bx-file text-success'></i>Landing
                                             Pages Templates</a>

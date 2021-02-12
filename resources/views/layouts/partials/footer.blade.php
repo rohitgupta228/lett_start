@@ -10,11 +10,11 @@
             <div class="col-md-6 col-lg-3 px-xl-4">
                 <h5 class="text-white mb-30">Useful Links</h5>
                 <ul class="list-unstyled f-links">
-                    <li><a href="{{ route('product.category', ['category' => 'admin']) }}">Admin & Dashboard</a></li>
-                    <li><a href="{{ route('product.category', ['category' => 'landing']) }}">Landing Pages</a></li>
-                    <li><a href="{{ route('product.category', ['category' => 'business']) }}">Business & Corporates</a></li>
-                    <li><a href="{{ route('product.category', ['category' => 'portfolio']) }}">Portfolio & Resume</a></li>
-                    <li><a href="{{ route('product.category', ['category' => 'angular']) }}">Angular</a></li>
+                    <li><a title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'admin-dashboard-template']) }}">Admin & Dashboard</a></li>
+                    <li> <a title="Bootstrap Templates" href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}">Bootstrap Templates</a>
+                    <li><a title="Landing Pages" href="{{ route('product.category', ['category' => 'landing-pages-templates']) }}">Landing Pages</a></li>
+                    <li><a title="Business & Corporate" href="{{ route('product.category', ['category' => 'business-corporate-templates']) }}">Business & Corporates</a></li>
+                    <li><a title="Portfolio & Dashboard" href="{{ route('product.category', ['category' => 'portfolio-resume-templates']) }}">Portfolio & Resume</a></li>
                 </ul>
             </div>
             <div class="col-md-6 col-lg-2 px-xl-4">
