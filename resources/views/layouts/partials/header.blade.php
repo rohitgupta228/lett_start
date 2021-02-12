@@ -161,7 +161,7 @@
                                 <li><a title="Support" href="{{ route('support') }}" id="support-link" class="nav-link">Support</a></li>
                                 @endif
 
-                                <li><a title="Blogs" href="blog" class="nav-link">Blogs</a></li>
+                                <li><a title="Blogs" href="https://lettstartdesign.com/blog" class="nav-link">Blogs</a></li>
                             </ul>
 
                             @if(empty(Auth::user()))
