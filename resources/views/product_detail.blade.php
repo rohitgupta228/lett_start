@@ -459,7 +459,7 @@
                 "item": product['catLink']
             }]
         };
-        var hightlight1 = JSON.parse(product.highlight1), hightlight2 = JSON.parse(product.highlight2), themefacts = JSON.parse(product.themeFacts);
+        var hightlight1 = JSON.parse(product.highlight1), hightlight2 = JSON.parse(product.highlight2), themefacts = JSON.parse(product.themeFacts), count = 0;
         var ldSchema = {
             "@context": "https://schema.org",
             "@graph": [
@@ -506,8 +506,7 @@
         var demos = {
             "@type": "ItemList",
             "itemListElement": []
-        }
-        var count = 0;
+        };
         JSON.parse(product.screenshots).forEach(function(demo, index) {
             demo.screens.forEach(function(screen, sindex){
                 var obj = {
