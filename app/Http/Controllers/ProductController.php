@@ -195,7 +195,7 @@ class ProductController extends Controller
     {
         $userId = Auth::user()->id;
         $data = $request->except(['_token']);
-        if ($data > 5 || !$data['product_id'] || !$data['user_id']) {
+        if ($data['rating'] > 5 || !$data['product_id']) {
             Flash::error("Something went wrong");
             return redirect()->back();
         }

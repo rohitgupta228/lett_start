@@ -33,6 +33,12 @@
                                             <a href="theme/{{ $template['detailLink'] }}"
                                                 title="{{ $template['name'] }}">{{ $template['name'] }}</a>
                                         </h3>
+                                        <form id="rating" method="POST" action="{{ route('product.rating') }}">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="product_id" value="1">
+                                            <input type="hidden" name="rating" value="4">
+                                            <button type="submit" id="rating-btn">Submit</button>
+</form>
                                         <a href="{{ env('BASE_URL').'api/' }}user/download-theme/{{ $template['productId'] }}/{{ Auth::user()->userDetails && Auth::user()->userDetails->user_id ? Auth::user()->userDetails->user_id : '' }}"
 																					target="_blank" class="btn btn-sm btn-primary-gred">
 																					Download
@@ -52,5 +58,16 @@
     <!-- Footer Start-->
     <!-- Modal -->
     @include('layouts.partials.modals')
+
+    <script>
+        ('#rating-btn').click(function () {
+        var details = $('#rating').valid();
+        if (details) {
+            $('#rating').submit();
+        } else {
+            return false;
+        }
+    });
+            </script>
 
 @endsection
