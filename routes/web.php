@@ -19,6 +19,8 @@ Route::middleware('isLogin')->group(function () {
     Route::post('/save-user-image', 'UserController@updateProfileImage')->name('save.user.image');
     
     Route::get('/order-history', 'ProductController@orderHistory')->name('user.order.history');
+    
+    Route::post('/rating', 'ProductController@rating')->name('product.rating');
 });
 
 Route::get('/', 'ProductController@homeProductsList')->name('home.products.list');

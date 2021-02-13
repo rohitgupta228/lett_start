@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductRating;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Crypt;
+use Flash;
+
 //echo Crypt::encryptString(19);die;
 class ProductController extends Controller
 {
@@ -21,16 +24,16 @@ class ProductController extends Controller
                 'angular' => 'angular',
                 'freebies' => 'freebies'
             ];
-            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
+            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
             if (count($bestSelling))
                 $bestSelling = array_slice($bestSelling, 0, 3);
-            $bootstrap = Product::where('added', 'LIKE', "%{$query['bootstrap']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
+            $bootstrap = Product::where('added', 'LIKE', "%{$query['bootstrap']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
             if (count($bootstrap))
                 $bootstrap = array_slice($bootstrap, 0, 3);
-            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
+            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
             if (count($angular))
                 $angular = array_slice($angular, 0, 3);
-            $freebies = Product::where('added', 'LIKE', "%{$query['freebies']}%")->where('price', '=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->get()->toArray();
+            $freebies = Product::where('added', 'LIKE', "%{$query['freebies']}%")->where('price', '=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
             if (count($freebies))
                 $freebies = array_slice($freebies, 0, 3);
         } catch (\Exception $exc) {
@@ -135,7 +138,7 @@ class ProductController extends Controller
                 $description = $metaData[$product->detailLink]['description'];
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
-                $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
+                $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->get()->toArray();
                 if (count($relatedProducts))
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
 
@@ -151,7 +154,7 @@ class ProductController extends Controller
     {
         try {
             $query = $request->all()['s'];
-           
+
             $result = Product::query();
             if (isset($query) && $query != '') {
                 $categoryArray = explode(' ', $query);
@@ -162,7 +165,7 @@ class ProductController extends Controller
                     $result = $result->orWhere('category', 'LIKE', "%{$category}%")->orWhere('name', 'LIKE', '%' . $category . '%');
                 }
             }
-            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
+            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->paginate(10);
             $productCount = count($products);
             if ($productCount == 0) {
                 $products = Product::where('added', 'LIKE', "%popular%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
@@ -170,6 +173,7 @@ class ProductController extends Controller
                     $products = array_slice($bestSelling, 0, 4);
             }
         } catch (\Exception $exc) {
+            
         }
 
         return view('search_products', compact('products', 'query', 'productCount'));
@@ -185,6 +189,26 @@ class ProductController extends Controller
             $products[$key] = $transaction->product;
         }
         return view('order_history', compact('products'));
+    }
+
+    public function rating(Request $request)
+    {
+        $userId = Auth::user()->id;
+        $data = $request->except(['_token']);
+        if ($data > 5 || !$data['product_id'] || !$data['user_id']) {
+            Flash::error("Something went wrong");
+            return redirect()->back();
+        }
+        $data['user_id'] = $userId;
+        $rating = ProductRating::where('user_id', $userId)->where('product_id', $data['product_id'])->first();
+        $rating = $rating ? $rating->update(['rating' => $data['rating']]) : ProductRating::create($data);
+        $productRating = ProductRating::where('product_id', $data['product_id'])->avg('rating');
+        $productRating = round($productRating, 1);
+        $product = Product::find($data['product_id']);
+        $product->update(['rating' => $productRating]);
+        Flash::success("Feedback saved successfully");
+        return redirect()->back();
+        
     }
 
 }
