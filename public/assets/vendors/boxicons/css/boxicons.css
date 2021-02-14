@@ -186,3 +186,11 @@
 .bxs-x-circle:before {
   content: "\eeb0";
 }
+
+.bxs-star:before {
+  content: "\ee67";
+}
+
+.bx-star:before {
+  content: "\ebea";
+}
