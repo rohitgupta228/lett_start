@@ -36,7 +36,7 @@
 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
-                        If you already purchase the theme. When your download it from downloads you will always get the updated package. If not, you can <a href="{{ route('contact') }}" class="text-primary">contact us</a>. We will provide you the latest package.
+                        If you already purchase the theme. When you download it from downloads you will always get the updated package. If not, you can <a href="{{ route('contact') }}" class="text-primary">contact us</a>. We will provide you the latest package.
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                             <li>Item doesn't work the manner in which it ought to </li>
                             <li>Item  support is guaranteed but not provided</li>
                         </ul>
-                        <p><strong>We will refund amount after the deduction of currency conversion and payment fees charged by payment provider.</strong></p>
+                        <p><strong>We will refund the amount after the deduction of currency conversion and payment fees charged by the payment provider.</strong></p>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                     <div class="card-body">
-                        The hours of support are monday - saturday between 9.00AM - 6.00PM(GMT) india.
+                        The hours of support are Monday - Saturday between 9.00 AM - 6.00 PM (GMT) India.
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 </div>
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                     <div class="card-body">
-                        You have to send mail an <a href="info@lettstartdesign.com">email</a> with your transaction id or just reply on email that had sent when you have purchase the product. We'll revert on that.
+                        You have to send mail an <a href="info@lettstartdesign.com">email</a> with your transaction id or just reply to the email that had sent when you have purchased the product. We'll revert to that.
                     </div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                     <div class="card-body">
-                        No. You can not sell the product at any platform. You can use our products for your client or your personal use.
+                        No. You can not sell the product on any platform. You can use our products for your client or your personal use.
                     </div>
                 </div>
             </div>
