@@ -165,10 +165,7 @@
                     "name": "How I will get refund?",
                     "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Item is \"not as portrayed\"\n
-                        Item doesn't work the manner in which it ought to\n
-                        Item  support is guaranteed but not provided\n
-                        We will refund the amount after the deduction of currency conversion and payment fees charged by the payment provider."
+                    "text": "You can get a refund inside 7 days after the buy date if:\n Item is \"not as portrayed\"\n Item doesn't work the manner in which it ought to\n Item  support is guaranteed but not provided\n We will refund the amount after the deduction of currency conversion and payment fees charged by the payment provider."
                     }
                 },{
                     "@type": "Question",
