@@ -58,8 +58,23 @@
                     </div>
                     <div class="col-lg-4 pl-xl-5">
                         <aside class="theme-actions">
-                            <div class="package-type mb-15 position-relative">
-                                <ul class="list-unstyled" id="licence-types">
+                            <div class="reviews mb-15">
+                                <div class="total-downloads">
+                                    <div class="media">
+                                        <i class="bx bxs-download h3 mb-0 mr-2"></i>
+                                        <div class="media-body">
+                                            <span class="h5 d-block mb-0">{{ $downloads }}</span>
+                                            <span class="d-block font-size-14">Downloads</span>
+                                        </div>
+                                    </div>
+                                    <div class="pl-15 text-center">
+                                        <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="{{ $product['rating'] }}" data-readonly data-fractions="2"/>
+                                        <span class="d-block font-size-14">Based on {{ $reviews }} reviews</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="package-type position-relative">
+                                <ul class="list-unstyled mb-2" id="licence-types">
                                     <li class="selected" data-tab="single">
                                         <div class="licence-type">
                                             <span class="radio"></span>
@@ -91,7 +106,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="checklist-tabs">
+                            <div class="checklist-tabs d-none">
                                 <div class="checklist" data-id="single">
                                     <ul class="list-unstyled mb-0">
                                         <li class="py-1 font-size-14"><i
@@ -438,6 +453,7 @@
         }
     </script>
     <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
+    <script src="{{ url('assets/vendors/rating/bootstrap-rating.min.js') }}"></script>
     <script>
         var product= <?= $product ?>, relatedProducts = <?= json_encode($relatedProducts) ?>, route = '<?=  Request::getRequestUri() ?>', title = '<?=  $title ?>', description = '<?=  $description ?>';
         var breadcrumb = {

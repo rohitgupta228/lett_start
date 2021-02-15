@@ -136,13 +136,15 @@ class ProductController extends Controller
             if ($product) {
                 $title = $metaData[$product->detailLink]['title'];
                 $description = $metaData[$product->detailLink]['description'];
+                $downloads = $metaData[$product->detailLink]['downloads'];
+                $reviews = $metaData[$product->detailLink]['reviews'];
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
                 $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->get()->toArray();
                 if (count($relatedProducts))
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
 
-                return view('product_detail', compact('product', 'relatedProducts', 'title', 'description'));
+                return view('product_detail', compact('product', 'relatedProducts', 'title', 'description' , 'downloads', 'reviews'));
             }
         } catch (\Exception $exc) {
             return response()->view('errors.500');

@@ -27,10 +27,10 @@
 								height="456">
 						</a>
 						<div class="theme-desc">
-							<form id="rating-form" method="POST" action="{{ route('product.rating') }}">
+							<form method="POST" action="{{ route('product.rating') }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="product_id" value="{{ $template['id'] }}">
-								<input type="hidden" class="rating" id="rating-input" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-muted" />
+								<input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="{{ $template['rating'] }}" data-fractions="2"/>
 							</form>
 							<div class="title">
 								<h3 class="h5 mb-0 pr-2">
@@ -60,9 +60,10 @@
 @section('footer_script')
 <script src="{{ url('assets/vendors/rating/bootstrap-rating.min.js') }}"></script>
 <script>
-	$("#rating-input").on("change", function() {
+	$(".rating").on("change", function() {
 		if($(this).val() > 0 && $(this).val() < 6) {
-			$('#rating-form').submit();
+			
+			$(this).parents('form').submit();
 		}
 	})
 </script>

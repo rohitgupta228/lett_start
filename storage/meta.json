@@ -29,78 +29,116 @@
   },
   "letstart-wb": {
     "title": "Letstart WB | Letstart WB Multipurpose Landing Pages & Templates from LetStart",
-    "description": "Letstart WB is a multi purpose templates with 30+ UI langing pages and templates. It is an ideal layout for Business Startups, SAAS, Agencies, Digital Marketing, Portfolio, Resume etc. with integrated contact form."
+    "description": "Letstart WB is a multi purpose templates with 30+ UI langing pages and templates. It is an ideal layout for Business Startups, SAAS, Agencies, Digital Marketing, Portfolio, Resume etc. with integrated contact form.",
+    "downloads": 250,
+    "reviews": 25
   },
   "oryo-angular-landing-pages": {
     "title": "Oryo Angular 9 Multipurpose Template | Oryo Angular 9 Multipurpose Landing Pages",
-    "description": "Oryo Angular Landing Page Templates built with angular and bootstrap. It is an ideal for any type of portfolio, digital agency, digital marketing, agency, SAAS etc with integrated contact form."
+    "description": "Oryo Angular Landing Page Templates built with angular and bootstrap. It is an ideal for any type of portfolio, digital agency, digital marketing, agency, SAAS etc with integrated contact form.",
+    "downloads": 80,
+    "reviews": 7
   },
   "creative-landing-page-templates": {
     "title": "Creative Landing Page Designs | Creative Agency Landing Page Templates | Creative Bootstrap Landing Pages",
-    "description": "Are you looking for Landing Page? We built the most advanced landing page templates that suits for any type of business, portfolio with great great effect and promising UI with integrated contact form."
+    "description": "Are you looking for Landing Page? We built the most advanced landing page templates that suits for any type of business, portfolio with great great effect and promising UI with integrated contact form.",
+    "downloads": 10,
+    "reviews": 2
   },
   "oryo-single-page-template": {
     "title": "ORYO - One Page HTML5 Template | ORYO - One Page HTML5 Bootstrap",
-    "description": "ORYO is free One Page Bootstrap Template that are pre-designed and ready to publish, perfect for creating marketing pages and one page websites."
+    "description": "ORYO is free One Page Bootstrap Template that are pre-designed and ready to publish, perfect for creating marketing pages and one page websites.",
+    "downloads": 100,
+    "reviews": 1
   },
   "letstart-cv-templates": {
     "title": "Buy Affordable & Creative  LetStart Resume/CV Template | Personal Landing Page Templates",
-    "description": "LetStart Resume is a Bootstrap resume or CV landing page templates to help you beautifully create easy to use, stylish resume websites. Letstart resume comes with 4 different layout with integrated contact form."
+    "description": "LetStart Resume is a Bootstrap resume or CV landing page templates to help you beautifully create easy to use, stylish resume websites. Letstart resume comes with 4 different layout with integrated contact form.",
+    "downloads": 30,
+    "reviews": 5
   },
   "letstart-app-templates": {
     "title": "LetStart - App and Product Landing Pages | App Landing Page | Bootstrap Landing Page Templates",
-    "description": "LetStart - App and Product Landing Pages is a free Bootstrap Landing pages templates helps you to showcase your works, services, portfolio. It is also useful for design agency, app showcase, saas products."
+    "description": "LetStart - App and Product Landing Pages is a free Bootstrap Landing pages templates helps you to showcase your works, services, portfolio. It is also useful for design agency, app showcase, saas products.",
+    "downloads": 250,
+    "reviews": 10
   },
   "agency-landing-pages": {
     "title": "Landing Page Designs | Agency Landing Page Templates | Bootstrap HTML5 Landing Pages",
-    "description": "Letstart agency landing pages is high customisable, fully responsive and flexible template built with Bootstrap 4, HTML5, SaSS, jQuery and Gulp. It helps you to create well designed Portfolio and Agency landing pages."
+    "description": "Letstart agency landing pages is high customisable, fully responsive and flexible template built with Bootstrap 4, HTML5, SaSS, jQuery and Gulp. It helps you to create well designed Portfolio and Agency landing pages.",
+    "downloads": 20,
+    "reviews": 3
   },
   "letstart-admin-theme": {
     "title": "LetStart Bootstrap Admin Dashbord Theme & Template | LetStart HTML5 Bootstrap Dashboard Admin Theme",
-    "description": "LetStart HTML5 Bootstrap dashboard templates comes with a huge collection of reusable UI components & plugins. This dashboard UI can be utilized for building all types of Web applications like custom admin panel or admin dashboard, web application backend, eCommerce backends, CMS, CRM or SAAS."
+    "description": "LetStart HTML5 Bootstrap dashboard templates comes with a huge collection of reusable UI components & plugins. This dashboard UI can be utilized for building all types of Web applications like custom admin panel or admin dashboard, web application backend, eCommerce backends, CMS, CRM or SAAS.",
+    "downloads": 100,
+    "reviews": 10
   },
   "marvel-admin-theme": {
     "title": "Marvel - Bootstrap Admin Dashboard Theme | Marvel Bootstrap HTML5 Admin Dashbord/Panel Templates",
-    "description": "Marvel is premium administrator UI dashboard comes with 135+ pages and 350+ components. It can be used for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce, ecommerce UI etc."
+    "description": "Marvel is premium administrator UI dashboard comes with 135+ pages and 350+ components. It can be used for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce, ecommerce UI etc.",
+    "downloads": 120,
+    "reviews": 15
   },
   "hugo-cv": {
     "title": "Hugo Portfolio/Resume/CV HTML Landing Page Template | Hugo Portfolio/Resume/CV Bootstrap Landing Page Template",
-    "description": "Hugo Resume is a Bootstrap resume or CV landing page templates to help you beautifully create easy to use, stylish resume websites with integrated contact form. It helps you to showcase your works and services."
+    "description": "Hugo Resume is a Bootstrap resume or CV landing page templates to help you beautifully create easy to use, stylish resume websites with integrated contact form. It helps you to showcase your works and services.",
+    "downloads": 150,
+    "reviews": 20
   },
   "busiplus-multipages-theme": {
     "title": "Busiplus Multi-page Website by LetStart | Busiplus Multi-page Website",
-    "description": "Download Affordale Busiplus Multi-page Website from LetStart to use them for your own custom websites. It helps you create business and corporate websites with very ease."
+    "description": "Download Affordale Busiplus Multi-page Website from LetStart to use them for your own custom websites. It helps you create business and corporate websites with very ease.",
+    "downloads": 80,
+    "reviews": 8
   },
   "adminator-angular-admin-theme": {
     "title": "Adminator - Angular Admin Dashboard Template | Adminator Dashboard Admin Theme",
-    "description": "Adminator is premium administrator UI dashboard built using angular with bootstrap framework. It can be used for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce, ecommerce UI etc."
+    "description": "Adminator is premium administrator UI dashboard built using angular with bootstrap framework. It can be used for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce, ecommerce UI etc.",
+    "downloads": 40,
+    "reviews": 5
   },
   "business-plus-multipages": {
     "title": "Letstart - Business Multipages website | Business Multipages website",
-    "description": "Download free Businessplus Multi-page Website from LetStart to use them for your own custom websites. It helps you create business and corporate websites with very ease."
+    "description": "Download free Businessplus Multi-page Website from LetStart to use them for your own custom websites. It helps you create business and corporate websites with very ease.",
+    "downloads": 100,
+    "reviews": 4
   },
   "creative-ppc": {
     "title": "Creative PPC - Single Page Template",
-    "description": "Creative PPC is free One Page Bootstrap Template that are pre-designed and ready to publish, perfect for PPC compaign, promotion pages, PPC and one page websites."
+    "description": "Creative PPC is free One Page Bootstrap Template that are pre-designed and ready to publish, perfect for PPC compaign, promotion pages, PPC and one page websites.",
+    "downloads": 70,
+    "reviews": 1
   },
   "creative-single-page-template": {
     "title": "Creative - Single Page Templates",
-    "description": "Creative One or Single Page Templates is free One Page Bootstrap Templates that are pre-designed and ready to publish, perfect for portfolio, resume, promotion pages, PPC and one page websites."
+    "description": "Creative One or Single Page Templates is free One Page Bootstrap Templates that are pre-designed and ready to publish, perfect for portfolio, resume, promotion pages, PPC and one page websites.",
+    "downloads": 60,
+    "reviews": 3
   },
   "kiosk-app-templates": {
     "title": "KIOSK - App and Product Landing Pages | KIOSK - Bootstrap Landing Pages",
-    "description": "Kiosk app landing pages comes with 10+ unique landing pages and 20+ other pages. It helps to showcase your application in universe with stunning effects and great UI/UX. It can also useful for portfolio, startup, digital marketing etc."
+    "description": "Kiosk app landing pages comes with 10+ unique landing pages and 20+ other pages. It helps to showcase your application in universe with stunning effects and great UI/UX. It can also useful for portfolio, startup, digital marketing etc.",
+    "downloads": 90,
+    "reviews": 6
   },
   "kiosk-angular-app-templates": {
     "title": "KIOSK - App and Product Angular Landing Pages | KIOSK - Angular Landing Pages",
-    "description": "Kiosk app landing pages comes with 10+ unique landing pages and 20+ other pages. It helps to showcase your application in universe with stunning effects and great UI/UX. It can also useful for portfolio, startup, digital marketing etc."
+    "description": "Kiosk app landing pages comes with 10+ unique landing pages and 20+ other pages. It helps to showcase your application in universe with stunning effects and great UI/UX. It can also useful for portfolio, startup, digital marketing etc.",
+    "downloads": 100,
+    "reviews": 7
   },
   "dark": {
     "title": "Dark - Single Page Templates | App Landing Page | Portfolio Landing Page Template",
-    "description": "Dark is single page web template. Specially design to showcase your work, portfolio and app page."
+    "description": "Dark is single page web template. Specially design to showcase your work, portfolio and app page.",
+    "downloads": 20,
+    "reviews": 2
   },
   "hoskon-hosting-template": {
     "title": "HOSKON - Hosting Templates | Boostrap Hosting Template | Shared Hosting Template",
-    "description": "HOSKON is a HTML5 bootstrap hosting  template specially design for hosting, servers, cloud & business companies."
+    "description": "HOSKON is a HTML5 bootstrap hosting  template specially design for hosting, servers, cloud & business companies.",
+    "downloads": 10,
+    "reviews": 1
   }
 }
