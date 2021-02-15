@@ -105,3 +105,100 @@
 @include('layouts.partials.modals')
 
 @endsection
+@section('footer_script')
+<script>
+    
+    var breadcrumb = {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem", 
+            "position": 1, 
+            "name": "Home",
+            "item": "https://lettstartdesign.com"  
+        },{
+            "@type": "ListItem", 
+            "position": 2, 
+            "name": 'FAQs',
+        }]
+    };
+    var hightlight1 = JSON.parse(product.highlight1), hightlight2 = JSON.parse(product.highlight2), themefacts = JSON.parse(product.themeFacts), count = 0;
+    var ldSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://lettstartdesign.com/#organization",
+                "name": "Lettstart Design",
+                "url": "https://lettstartdesign.com",
+                "logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://lettstartdesign.com/#website",
+                "url": "https://lettstartdesign.com",
+                "name": "Lettstart Design",
+                "publisher": {
+                    "@id": "https://lettstartdesign.com/#organization"
+                },
+                "inLanguage": "en-US",
+                "logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+            },
+            breadcrumb,
+            {
+                "@type": "FAQPage",
+                "mainEntity": [{
+                    "@type": "Question",
+                    "name": "How I can download my theme?",
+                    "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can download your files any time in downloads."
+                    }
+                },{
+                    "@type": "Question",
+                    "name": "How I will get the updated theme?",
+                    "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you already purchase the theme. When you download it from downloads you will always get the updated package. If not, you can contact us. We will provide you the latest package."
+                    }
+                },{
+                    "@type": "Question",
+                    "name": "How I will get refund?",
+                    "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can get a refund inside 7 days after the buy date if:\n
+                        Item is \"not as portrayed\"\n
+                        Item doesn't work the manner in which it ought to\n
+                        Item  support is guaranteed but not provided\n
+                        We will refund the amount after the deduction of currency conversion and payment fees charged by the payment provider."
+                    }
+                },{
+                    "@type": "Question",
+                    "name": "What is your's support timing?",
+                    "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The hours of support are Monday - Saturday between 9.00 AM - 6.00 PM (GMT) India."
+                    }
+                },{
+                    "@type": "Question",
+                    "name": "How I will get the invoice?",
+                    "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You have to send mail an email with your transaction id or just reply to the email that had sent when you have purchased the product. We'll revert to that."
+                    }
+                },{
+                    "@type": "Question",
+                    "name": "Can I sell your product any where else?",
+                    "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. You can not sell the product on any platform. You can use our products for your client or your personal use."
+                    }
+                }]
+            }
+        ]
+    };
+    var el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.text = JSON.stringify(ldSchema);
+    document.querySelector('head').appendChild(el);
+</script>
+@endsection
