@@ -20,6 +20,12 @@ class PagesController extends Controller
         return view('terms');
     }
 
+    
+    public function affiliate()
+    {
+        return view('affiliates');
+    }
+
     public function contactUs()
     {
         return view('contact_us');

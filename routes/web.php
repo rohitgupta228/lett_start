@@ -37,6 +37,8 @@ Route::post('/submit-support', 'PagesController@submitSupport')->name('submit.su
 
 Route::get('/terms-and-conditions', 'PagesController@terms')->name('terms');
 
+Route::get('/affiliate', 'PagesController@affiliate')->name('affiliate');
+
 Route::get('/privacy-policy', 'PagesController@privacyPolicy')->name('privacy');
 
 Route::get('/contact-us', 'PagesController@contactUs')->name('contact');

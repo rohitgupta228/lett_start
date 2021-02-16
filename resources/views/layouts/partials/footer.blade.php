@@ -10,6 +10,7 @@
             <div class="col-md-6 col-lg-3 px-xl-4">
                 <h5 class="text-white mb-30">Useful Links</h5>
                 <ul class="list-unstyled f-links">
+                    <li><a title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'angular-templates']) }}">Angular Templates</a></li>
                     <li><a title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'admin-dashboard-template']) }}">Admin & Dashboard</a></li>
                     <li> <a title="Bootstrap Templates" href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}">Bootstrap Templates</a>
                     <li><a title="Landing Pages" href="{{ route('product.category', ['category' => 'landing-pages-templates']) }}">Landing Pages</a></li>
@@ -25,6 +26,7 @@
                     <li><a href="{{ route('faq') }}">FAQ</a></li>
                     <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ route('affiliate') }}">Become an Affiliate</a></li>
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 pl-xl-4">
