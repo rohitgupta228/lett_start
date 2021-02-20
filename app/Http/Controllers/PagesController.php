@@ -20,7 +20,6 @@ class PagesController extends Controller
         return view('terms');
     }
 
-    
     public function affiliate()
     {
         return view('affiliates');
@@ -129,6 +128,45 @@ class PagesController extends Controller
         });
         Flash::success("We have received your query. Our contact person will get back to you soon.");
         return redirect(route('support'));
+    }
+
+    public function submitAffiliate(Request $request)
+    {
+        $data = $request->except(['_token']);
+        $data = $request->except(['_token']);
+        $messages = [
+            'required' => 'This field is required',
+            'email' => 'Please enter valid email',
+        ];
+        $rules = [
+            'validation-fname' => 'required|string|max:255',
+            'validation-lname' => 'required|string|max:255',
+            'validation-email' => 'required|string|email|max:255',
+            'validation-promote' => 'required|string|max:255',
+            'validation-url' => 'required|string|max:255',
+        ];
+        Validator::make($data, $rules, $messages)->validate();
+        $firstname = $data['validation-fname'];
+        $lastname = $data['validation-lname'];
+        $email = $data['validation-email'];
+        $e_body = "<p style='margin-bottom: 15px'>You have been contacted by <b>" . $data['validation-fname'] . $data['validation-lname'] . "</b> via email, subject is <b>affiliate</b> and email is <b>" . $data['validation-email'] . "</b>. Please find the below details:-</p>";
+
+        $e_body .= "<p><b>Name</b>: " . $data['validation-fname'] . $data['validation-lname'] . "</p>";
+        $e_body .= "<p><b>Subject</b>: affiliate</p>";
+        $e_body .= "<p><b>Email</b>: " . $data['validation-email'] . "</p>";
+        $e_body .= "<p><b>Website</b>: " . $data['validation-url'] . "</p>";
+        $e_body .= "<p><b>Promote Us</b>: " . $data['validation-promote'] . "</p>";
+        $bcc = "support@lettstartdesign.com";
+        $body = wordwrap($e_body, 70);
+
+        $body = htmlspecialchars_decode($body);
+        Mail::send([], [], function ($message) use ($data, $body) {
+            $message->to('support@lettstartdesign.com')
+                    ->subject('affiliate')
+                    ->setBody($body, 'text/html');
+        });
+        Flash::success("Thanks for referal.");
+        return redirect(route('affiliate'));
     }
 
 }
