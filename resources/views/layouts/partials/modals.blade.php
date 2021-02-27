@@ -73,10 +73,10 @@
                         </button>
                     </div>
                     <div class="form-group mb-3">
-                        <input name="username_register" id="username_register" type="text" class="form-control" placeholder="Username *">
+                        <input name="username" id="username_register" type="text" class="form-control" placeholder="Username *">
                     </div>
                     <div class="form-group mb-3">
-                        <input name="email_register" id="email_register" type="email" class="form-control" placeholder="Email Address *">
+                        <input name="email" id="email_register" type="email" class="form-control" placeholder="Email Address *">
                         <div class="validation-error d-none"></div>
                     </div>
                     <div class="form-group mb-3">
