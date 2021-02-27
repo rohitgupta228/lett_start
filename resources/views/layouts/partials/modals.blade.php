@@ -173,7 +173,7 @@
                         <div class="validation-error d-none"></div>
                     </div>
                     <div class="form-group mb-30">
-                        <input name="password_confirmation_reset" type="password" class="form-control" id="password_confirmation_reset" placeholder="Confirm Password *">
+                        <input name="password_confirmation" type="password" class="form-control" id="password_confirmation_reset" placeholder="Confirm Password *">
                         <div class="validation-error d-none"></div>
                     </div>
                     <div class="text-center mb-2">
