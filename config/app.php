@@ -164,6 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         App\Core\Notifications\FlashServiceProvider::class,
+        Yajra\Disqus\DisqusServiceProvider::class,
 
         /*
          * Package Service Providers...
