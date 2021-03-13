@@ -90,7 +90,6 @@
             @endif
         </div>
     </section>
-
     </div>
     @include('layouts.partials.modals')
 @endsection
