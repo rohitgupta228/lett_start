@@ -93,7 +93,7 @@
     "downloads": 80,
     "reviews": 8
   },
-  "adminator-angular-admin-theme": {
+  "adminator-angular-admin-template": {
     "title": "Adminator - Angular Admin Dashboard Template | Adminator Dashboard Admin Theme",
     "description": "Adminator is premium administrator UI dashboard built using angular with bootstrap framework. It can be used for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce, ecommerce UI etc.",
     "downloads": 40,
@@ -141,10 +141,10 @@
     "downloads": 10,
     "reviews": 1
   },
-  "marvel-angular-admin-theme": {
-    "title": "Marvel - Angular Admin Web App | Marvel Angular Admin Dashbord/Panel Templates",
-    "description": "Marvel Angular is premium administrator web app comes with 135+ pages and functional UI Components. It is ideal for saas based interface, custom admin panels, CRM, CMS, e-commerce etc. It can be utilize for any web application",
-    "downloads": 0,
-    "reviews": 0
-  }
+  "adminator-bootstrap-admin-template": {
+    "title": "Adminator - Bootstrap Admin Dashboard Template | Adminator Dashboard Admin Web App",
+    "description": "Adminator Bootstrap is premium administrator UI dashboard built using jquery with bootstrap framework. It can be used for any type of web application including a saas based interface, custom admin panels, CRM, CMS, etc.",
+    "downloads": 40,
+    "reviews": 3
+  },
 }
