@@ -75,7 +75,7 @@
     "downloads": 100,
     "reviews": 10
   },
-  "marvel-admin-theme": {
+  "marvel-admin-dashboard": {
     "title": "Marvel - Bootstrap Admin Dashboard Theme | Marvel Bootstrap HTML5 Admin Dashbord/Panel Templates",
     "description": "Marvel is premium administrator UI dashboard comes with 135+ pages and 350+ components. It can be used for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce, ecommerce UI etc.",
     "downloads": 120,
@@ -147,4 +147,22 @@
     "downloads": 40,
     "reviews": 3
   },
+  "marvel-angular-admin-dashboard": {
+    "title": "Marvel - Bootstrap Admin Dashboard Theme | Marvel Bootstrap HTML5 Admin Dashbord/Panel Templates",
+    "description": "Marvel is premium administrator UI dashboard comes with 135+ pages and 350+ components. It can be used for any type of web application including a saas based interface, custom admin panels, dashboard, CRM, CMS, e-commerce, ecommerce UI etc.",
+    "downloads": 120,
+    "reviews": 15
+  },
+  "dominac": {
+    "title": "Dominac - Bootstrap Admin Dashboard Template | Adminator Dashboard Admin Web App",
+    "description": "Adminator Bootstrap is premium administrator UI dashboard built using jquery with bootstrap framework. It can be used for any type of web application including a saas based interface, custom admin panels, CRM, CMS, etc.",
+    "downloads": 40,
+    "reviews": 3
+  },
+  "marvel-free-admin-dashboard": {
+    "title": "Marvel Free - Bootstrap Admin Dashboard Template | Adminator Dashboard Admin Web App",
+    "description": "Adminator Bootstrap is premium administrator UI dashboard built using jquery with bootstrap framework. It can be used for any type of web application including a saas based interface, custom admin panels, CRM, CMS, etc.",
+    "downloads": 40,
+    "reviews": 3
+  }
 }

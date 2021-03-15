@@ -9,8 +9,9 @@
         <meta name="title" content="404 page not found">
         <meta name="description" content="404 page not found">
         <meta name="keywords" content="404, not found, error, wrong url">
-        <title>Buy Premium Bootstrap Angular Template |  LettStartDesign</title>
-        <link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <title>404 Page Not Found |  LettStartDesign</title>
+        
+        <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet"/>
         <style>
             .page-wrapper {
                 display: flex;

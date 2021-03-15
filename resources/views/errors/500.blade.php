@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="index, follow">
         <meta name="author" content="LettStartDesign">
-        <meta name="title" content="404 page not found">
-        <meta name="description" content="404 page not found">
-        <meta name="keywords" content="404, not found, error, wrong url">
-        <title>Buy Premium Bootstrap Angular Template |  LettStartDesign</title>
-        <link href="assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <meta name="title" content="500 internal server error">
+        <meta name="description" content="500 internal server error">
+        <meta name="keywords" content="500, not found, error, wrong url">
+        <title>500 Internal Server Error |  LettStartDesign</title>
+        <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet"/>
         <style>
             .page-wrapper {
                 display: flex;

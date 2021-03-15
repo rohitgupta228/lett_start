@@ -149,7 +149,7 @@ class ProductController extends Controller
         } catch (\Exception $exc) {
             return response()->view('errors.500');
         }
-        return response()->json($response, 200);
+        return response()->view('errors.500');
     }
 
     public function search(Request $request)
