@@ -59,109 +59,93 @@
                     </div>
                     <div class="col-lg-4 pl-xl-5">
                         <aside class="theme-actions">
-                            <div class="reviews mb-15">
+                            <div class="reviews mb-30">
                                 <div class="total-downloads">
-                                    <div class="media">
-                                        <i class="bx bxs-download h3 mb-0 mr-2"></i>
+                                    <div class="media text-center">
                                         <div class="media-body">
-                                            <span class="h5 d-block mb-0">{{ $downloads }}</span>
-                                            <span class="d-block font-size-14">Downloads</span>
+                                            <div class="h3 d-block mb-0">
+                                                <i class="bx bxs-cart-download align-middle"></i>
+                                                <span class="align-middle">{{ $downloads }}</span> 
+                                            </div>
+                                            <span class="d-block font-size-14 text-muted">Downloads</span>
                                         </div>
                                     </div>
-                                    <div class="pl-15 text-center">
-                                        <input type="hidden" class="rating" name="rating"
-                                            data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning"
-                                            value="{{ $product['rating'] }}" data-readonly data-fractions="2" />
-                                        <span class="d-block font-size-14">Based on {{ $reviews }} reviews</span>
+                                    <div class="media text-center">
+                                        <div class="media-body">
+                                            <input type="hidden" class="rating" name="rating"
+                                                data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning"
+                                                value="{{ $product['rating'] }}" data-readonly data-fractions="2" />
+                                            <span class="d-block font-size-14">({{ $reviews }} reviews)</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            @if ($product['price'] != 0)
-															<div class="package-type position-relative">
-																	<ul class="list-unstyled mb-2" id="licence-types">
-																			<li class="selected" data-tab="single">
-																					<div class="licence-type">
-																							<span class="radio"></span>
-																							<div>
-																									<h6 class="mb-0">Single Use</h6>
-																									<span class="subtext"> For One Project </span>
-																							</div>
-																					</div>
-																					<div class="licence-value ml-auto text-right">
-																							<h6 class="price mb-0 font-weight-bold" id="single-use">
-																									${{ $product['price'] }}
-																							</h6>
-																							<span class="subtext">One time pay</span>
-																					</div>
-																			</li>
-																			<li data-tab="multiple">
-																					<div class="licence-type">
-																							<span class="radio"></span>
-																							<div>
-																									<h6 class="mb-0">Multiple Use</h6>
-																									<span class="subtext"> For Unlimited Project </span>
-																							</div>
-																					</div>
-																					<div class="licence-value ml-auto text-right">
-																							<h6 class="price mb-0 font-weight-bold" id="multi-use">
-																									${{ $product['price'] * 5 }}</h6>
-																							<span class="subtext">One time pay</span>
-																					</div>
-																			</li>
-																	</ul>
-															</div>
-                            @endif
-
-                            <div class="checklist-tabs d-none">
-                                <div class="checklist" data-id="single">
-                                    <ul class="list-unstyled mb-0">
+                            @if ($product['price'] == 0)
+                            <div class="checklist-tabs">
+                                <div class="checklist">
+                                    <ul class="list-unstyled mb-30">
                                         <li class="py-1 font-size-14"><i
-                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>Use
-                                            for Single Project</li>
+                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>Free Download</li>
                                         <li class="py-1 font-size-14"><i
-                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>1
-                                            Year Premium Support </li>
+                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>No Documentation</li>
                                         <li class="py-1 font-size-14"><i
-                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>Free
-                                            Lifetime Updates</li>
+                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>No Support</li>
                                         <li class="py-1 font-size-14"><i
-                                                class="bx bxs-x-circle text-danger h5 mb-0 mr-2"></i> Item may
-                                            not be Redistributed or Resale
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="checklist" data-id="multiple">
-                                    <ul class="list-unstyled mb-0">
-                                        <li class="py-1 font-size-14"><i
-                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>Use
-                                            for Multiple Website</li>
-                                        <li class="py-1 font-size-14"><i
-                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>1
-                                            Year Premium Support </li>
-                                        <li class="py-1 font-size-14"><i
-                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2 font-weight-normal"></i>Free
-                                            Lifetime Updates</li>
-                                        <li class="py-1 font-size-14"><i
-                                                class="bx bxs-x-circle text-danger h5 mb-0 mr-2"></i>
-                                            Redistributed or Resale of Template
+                                                class="bx bxs-check-circle text-success h5 mb-0 mr-2"></i> Limited Pages
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-
+                            @endif
+                            @if ($product['price'] != 0)
+                                <div class="package-type position-relative">
+                                        <ul class="list-unstyled mb-2" id="licence-types">
+                                                <li class="selected" data-tab="single">
+                                                        <div class="licence-type">
+                                                                <span class="radio"></span>
+                                                                <div>
+                                                                        <h6 class="mb-0">Single Use</h6>
+                                                                        <span class="subtext"> For One Project </span>
+                                                                </div>
+                                                        </div>
+                                                        <div class="licence-value ml-auto text-right">
+                                                                <h6 class="price mb-0 font-weight-bold" id="single-use">
+                                                                        ${{ $product['price'] }}
+                                                                </h6>
+                                                                <span class="subtext">One time pay</span>
+                                                        </div>
+                                                </li>
+                                                <li data-tab="multiple">
+                                                        <div class="licence-type">
+                                                                <span class="radio"></span>
+                                                                <div>
+                                                                        <h6 class="mb-0">Multiple Use</h6>
+                                                                        <span class="subtext"> For Unlimited Project </span>
+                                                                </div>
+                                                        </div>
+                                                        <div class="licence-value ml-auto text-right">
+                                                                <h6 class="price mb-0 font-weight-bold" id="multi-use">
+                                                                        ${{ $product['price'] * 5 }}</h6>
+                                                                <span class="subtext">One time pay</span>
+                                                        </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                            @endif
+                            @if ($product['price'] != 0)
                             <div class="licence-link mb-15">
                                 <a href="{{ route('license') }}">Licence Details</a>
                             </div>
-
+                            @endif
                             <div class="payment-options" id="payment-options">
                                 @if ($product['price'] == 0)
-																@if($product['internalLink'])
-																<a href="{{ $product['internalLink'] }}" class="btn btn-success mr-2">
-																	Go Pro
-																</a>
-																@endif
-                                    <button class="btn btn-primary-gred mt-30" id="free-purchase">
-                                        <span>Free Download</span>
+                                    @if($product['internalLink'])
+                                        <a href="{{ $product['internalLink'] }}" class="btn btn-success mr-2">
+                                            Go Pro
+                                        </a>
+                                    @endif
+                                    <button class="btn btn-primary-gred" id="free-purchase">
+                                        <span>Download</span>
                                         <span class="align-middle btn-loader"><i
                                                 class="bx bx-loader-alt bx-spin icon-md"></i></span>
                                     </button>
@@ -182,14 +166,14 @@
                                     <div class="tab-content pt-2" id="option-data">
                                         <div data-id="razorpay" data-type="razorpay" class="tab-pane active fade show">
                                             <button class="btn btn-primary-gred btn-block disable-events" id="razorpay-btn">
-                                                <span>Purchase</span>
+                                                <span>Buy Now</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
                                             </button>
                                         </div>
                                         <div data-id="paypal" data-type="paypal" class="tab-pane fade">
                                             <button class="btn btn-primary-gred btn-block" id="paypal-btn">
-                                                <span>Purchase</span>
+                                                <span>Buy Now</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
                                             </button>
@@ -465,12 +449,13 @@
             id: '<?= Auth::check() ? Auth::user()->id : '' ?>',
             email: '<?= Auth::check() ? Auth::user()->email : '' ?>',
         }
+				
     </script>
     <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
     <script src="{{ url('assets/vendors/rating/bootstrap-rating.min.js') }}"></script>
     <script>
         var product = <?= json_encode($product) ?> ,
-            relatedProducts = <?= json_encode($relatedProducts) ?> ,
+            relatedProducts = <?= json_encode($relatedProducts) ?>,
             route = '<?= Request::getRequestUri() ?>',
             title = '<?= $title ?>',
             description = '<?= $description ?>';
@@ -552,7 +537,12 @@
                     "url": product.liveDemoBaseStr,
                     "name": screen.imgTitle,
                     "image": "https://lettstartdesign.com/assets/images/screenshots/" + product
-                        .screenshotDir + "/" + screen.img
+                        .screenshotDir + "/" + screen.img,
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": <?= $reviews ?>,
+                        "ratingCount": <?= $downloads ?>
+                    }
                 };
                 demos["itemListElement"].push(obj);
             });

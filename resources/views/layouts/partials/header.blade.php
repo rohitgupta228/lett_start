@@ -39,12 +39,22 @@
         <link rel="preload" href="{{ url('assets/js/plugins.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/api.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/app.min.js') }}" as="script">
-        <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-MRQ8XPM" as="script">
-        <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
+        {{-- <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
+        <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script"> --}}
+        {{-- <link rel="preconnect" href="https://www.googletagmanager.com"> --}}
+        {{-- <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-167253243-1');
+        </script> --}}
         <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script">
         <!--=== Preconnects ===-->
         <link rel="preconnect" href="https://lettstartdesign.com">
-        <link rel="preconnect" href="https://www.googletagmanager.com">
         <link rel="preconnect" href="https://www.google-analytics.com">
         <link rel="preconnect" href="https://stats.g.doubleclick.net">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,15 +74,15 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" defer></script>
         <![endif] -->
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1"></script>
+        
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', 'UA-167253243-1');
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-167253243-1', 'auto');
+            ga('send', 'pageview');
         </script>
     </head>
 

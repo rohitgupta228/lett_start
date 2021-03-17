@@ -11,7 +11,8 @@ use App\Models\Transaction;
 use Illuminate\Support\Facades\Crypt;
 use Flash;
 
-//echo Crypt::encryptString(19);die;
+// echo Crypt::decryptString('eyJpdiI6IkdRRk9yU1Z2V2oxNFlrd0pmQjZBOEE9PSIsInZhbHVlIjoiaGhLallcL2NvTFRjdUhHSHVRM3YzTlE9PSIsIm1hYyI6ImM0YTEwZjM0NjUzMjg1NWIwYWM1YWE2YWQ2NjNkMTI3OGFiY2NmNjhiM2VmM2M4MjA5N2U2NmM5OWVjODkwODUifQ');die;
+// echo Crypt::encryptString(24);die;
 class ProductController extends Controller
 {
 

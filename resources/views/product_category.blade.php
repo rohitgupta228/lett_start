@@ -75,7 +75,13 @@
                                     <p>{{ $template['oneLinerDesc'] }}</p>
                                 </div>
                                 <div class="price">
-                                    <span class="h4 mb-0">${{ $template['price'] }}</span>
+                                    @if($template['price'] != 0)
+                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
+                                    
+                                    @else 
+                                        <span class="h4 mb-0">Free</span>
+                                    
+                                    @endif
                                     <a class="category" href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
                                 </div>
                             </div>

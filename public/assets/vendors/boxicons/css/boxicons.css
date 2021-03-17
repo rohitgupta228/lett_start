@@ -194,3 +194,10 @@
 .bx-star:before {
   content: "\ebea";
 }
+
+.bxl-jquery:before {
+  content: "\e936";
+}
+.bxs-cart-download:before {
+  content: "\ecdb";
+}
