@@ -53,7 +53,7 @@
                 @foreach ($products as $template)
                     <div class="col-md-6 col-xl-4">
                         <div class="demo-item" id="{{ $template['id'] }}">
-                            <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
+                            <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}"
                                 class="screenshot">
                                 <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                 srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
@@ -63,7 +63,7 @@
                                     class="img-fluid w-100" width="714" height="456">
                             </a>
                             <div class="action-btn">
-                                <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) . '#demos' }}"
+                                <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) . '#demos' }}" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}"
                                     title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                             </div>
                             <div class="theme-desc">

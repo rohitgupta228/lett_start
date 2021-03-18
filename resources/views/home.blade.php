@@ -64,8 +64,7 @@
                                         class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}"
-                                        title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
+                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}" title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
