@@ -48,7 +48,7 @@
                     <div class="heading-text">
                         <h2 class="h3">Best Selling Templates</h2>
                     </div>
-                    <a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}" title="View All Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
+                    <a data-track-elem event-category="View All"  event-action="click" event-label="Best Selling Templates" href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}" title="View All Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
                 </div>
                 <div class="row gutter-size-25" id="popular-list">
                     @foreach ($bestSelling as $template)
@@ -91,7 +91,7 @@
                     <div class="heading-text">
                         <h2 class="h3">Bootstrap HTML Templates & Themes</h2>
                     </div>
-                    <a href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}" title="View All Bootstrap HTML Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
+                    <a data-track-elem event-category="View All"  event-action="click" event-label="Bootstrap HTML Templates & Themes" href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}" title="View All Bootstrap HTML Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
                 </div>
                 <div class="row gutter-size-25" id="recent-list">
                     @foreach ($bootstrap as $template)
@@ -138,7 +138,7 @@
                         </div>
                         <div class="media-body">
                             <p class="mb-30">Bootstrap is a CSS based framework used to build responsive UI's. All Our layouts are built with the Bootstrap framework including Angular, Landing Pages, Portfolio, Business & Corporates, etc. followed by best coding practices. All themes and templates at a very cheap price and unique for every project. Get your best template for your business.</p>
-                            <a href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}"
+                            <a href="{{ route('product.category', ['category' => 'bootstrap-templates']) }}" data-track-elem event-category="View All"  event-action="click" event-label="View All Bootstrap Templates"
                                 title="View All Bootstrap Themes and Templates" class="btn btn-primary-gred">View All Bootstrap
                                 Templates</a>
                         </div>
@@ -150,7 +150,7 @@
                     <div class="heading-text">
                         <h2 class="h3">Angular Templates</h2>
                     </div>
-                    <a href="{{ route('product.category', ['category' => 'angular-templates']) }}"
+                    <a href="{{ route('product.category', ['category' => 'angular-templates']) }}" data-track-elem event-category="View All"  event-action="click" event-label="Angular Templates"
                         title="View All Angular Themes and Templates" class="btn btn-primary-gred btn-sm">
 												View All
                     </a>
@@ -159,7 +159,7 @@
                     @foreach ($angular as $template)
                         <div class="col-md-6 col-xl-4">
                             <div class="demo-item" id="{{ $template['id'] }}">
-                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
+                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}" data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                     srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
@@ -169,13 +169,13 @@
                                         class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}"
+                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}"
                                         title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
                                         <h3 class="h5">
-                                            <a href="theme/{{ $template['detailLink'] }}"
+                                            <a href="theme/{{ $template['detailLink'] }}" data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}"
                                                 title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
@@ -196,7 +196,7 @@
                     <div class="heading-text">
                         <h2 class="h3">Free Templates</h2>
                     </div>
-                    <a href="{{ route('product.category', ['category' => 'freebies']) }}"
+                    <a href="{{ route('product.category', ['category' => 'freebies']) }}" data-track-elem event-category="View All"  event-action="click" event-label="Free Themes and Templates"
                         title="View All Free Themes and Templates" class="btn btn-primary-gred btn-sm">
                         View All
                     </a>
@@ -205,7 +205,7 @@
                     @foreach ($freebies as $template)
                         <div class="col-md-6 col-xl-4">
                             <div class="demo-item" id="{{ $template['id'] }}">
-                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
+                                <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}" data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}"
                                     class="screenshot">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                     srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
@@ -215,13 +215,13 @@
                                         class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}"
+                                    <a href="theme/{{ $template['detailLink'] . '#demos' }}" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}"
                                         title="Click & See Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
                                         <h3 class="h5">
-                                            <a href="theme/{{ $template['detailLink'] }}"
+                                            <a href="theme/{{ $template['detailLink'] }}" data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}"
                                                 title="Read more about this {{ $template['name'] }} template">{{ $template['name'] }}</a>
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
@@ -293,7 +293,7 @@
                 <div class="col-md-6 offset-md-1 mb-30">
                     <h3 class="mb-30">Showcase Your Work</h3>
                     <p>If you need a ready-made solution to showcase your work, <a href="{{ route('product.category', ['category' => 'portfolio-resume-templates']) }}">Portfolio and Resume Templates</a> are the best. We include a template that is customer concentric and fulfills the need for every type of project. Each portfolio and resume layout is made with the most recent web advancement strategies follow best coding rehearses. The instant portfolio and resume designs represent proficient blends of plans and usefulness. They highlight all the fundamental components expected to exhibit your work.</p>
-                    <a href="{{ route('product.category', ['category' => '']) }}"
+                    <a href="{{ route('product.category', ['category' => '']) }}" data-track-elem event-category="Browse All"  event-action="click" event-label="browse all click on home page"
                         class="mt-15 btn btn-primary-gred rounded-50 browse-all">Browse All Products
                     </a>
                 </div>
