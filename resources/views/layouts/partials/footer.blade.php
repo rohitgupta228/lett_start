@@ -79,7 +79,7 @@
 
     ga('create', 'UA-167253243-1', 'auto');
     ga('send', 'pageview');
-    $(".gaTrack").on("click", function(){
+    $("[data-track-elem]").on("click", function(){
       var eventCategory = $(this).attr("event-category");
       var eventAction = $(this).attr("event-action");
       var eventLabel = $(this).attr("event-label");
