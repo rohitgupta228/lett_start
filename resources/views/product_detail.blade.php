@@ -38,8 +38,8 @@
                                 alt="Feature Image of {{ $product['name'] }} Template" width="714" height="456" />
                             <div class="live-example">
                                 <div class="mb-2 mb-sm-0">
-                                    <a href="javascript:void(0)" id="preview-btn" class="btn btn-dark mr-2">Live Preview</a>
-                                    <a href="{{ url($product['docLink']) }}" target="_blank" id="doc-btn"
+                                    <a href="javascript:void(0)" id="preview-btn" class="btn btn-dark mr-2" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $product['name'] }}">Live Preview</a>
+                                    <a href="{{ url($product['docLink']) }}" target="_blank" id="doc-btn" data-track-elem event-category="Docs View"  event-action="click" event-label="{{ $product['name'] }}"
                                         class="btn btn-outline-secondary">Docs</a>
                                 </div>
                                 <div class="tech-details">
@@ -140,7 +140,7 @@
                             <div class="payment-options" id="payment-options">
                                 @if ($product['price'] == 0)
                                     @if($product['internalLink'])
-                                        <a href="{{ $product['internalLink'] }}" class="btn btn-success mr-2">
+                                        <a href="{{ $product['internalLink'] }}" class="btn btn-success mr-2" data-track-elem event-category="Premium Product Click"  event-action="click" event-label="{{ $product['name'] }}">
                                             Go Pro
                                         </a>
                                     @endif
@@ -165,14 +165,14 @@
                                     </div>
                                     <div class="tab-content pt-2" id="option-data">
                                         <div data-id="razorpay" data-type="razorpay" class="tab-pane active fade show">
-                                            <button class="btn btn-primary-gred btn-block disable-events" id="razorpay-btn">
+                                            <button class="btn btn-primary-gred btn-block disable-events" id="razorpay-btn" data-track-elem event-category="Buy Now"  event-action="click" event-label="Razorpay">
                                                 <span>Buy Now</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
                                             </button>
                                         </div>
                                         <div data-id="paypal" data-type="paypal" class="tab-pane fade">
-                                            <button class="btn btn-primary-gred btn-block" id="paypal-btn">
+                                            <button class="btn btn-primary-gred btn-block" id="paypal-btn" data-track-elem event-category="Buy Now"  event-action="click" event-label="Paypal">
                                                 <span>Buy Now</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
@@ -350,7 +350,7 @@
                             @foreach ($relatedProducts as $template)
                                 <div class="col-md-4">
                                     <div class="demo-item" id="{{ $template['id'] }}">
-                                        <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
+                                        <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}" data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}"
                                             class="screenshot">
                                             <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                                 srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
@@ -359,13 +359,13 @@
                                                 class="img-fluid w-100" width="714" height="456">
                                         </a>
                                         <div class="action-btn">
-                                            <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) . '#demos' }}"
+                                            <a data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}" href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) . '#demos' }}"
                                                 title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
                                         </div>
                                         <div class="theme-desc">
                                             <div class="title">
                                                 <h3 class="h5">
-                                                    <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
+                                                    <a data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}" href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                                         title="{{ $template['name'] }}">{{ $template['name'] }}</a>
                                                 </h3>
                                                 <p>{{ $template['oneLinerDesc'] }}</p>

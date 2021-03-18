@@ -69,7 +69,7 @@
                             <div class="theme-desc">
                                 <div class="title">
                                     <h3 class="h5">
-                                        <a href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
+                                        <a data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}" href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                             title="{{ $template['name'] }}">{{ $template['name'] }}</a>
                                     </h3>
                                     <p>{{ $template['oneLinerDesc'] }}</p>
