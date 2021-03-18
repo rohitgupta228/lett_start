@@ -35,18 +35,18 @@
                         @foreach ($products as $template)
                         <div class="col-md-6 col-xl-4">
                             <div class="demo-item" id="1">
-                                <a href="theme/{{ $template['detailLink'] }}" class="screenshot">
+                                <a href="theme/{{ $template['detailLink'] }}" class="screenshot"  data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}">
                                     <img src="{{ url('assets/images/slider-screenshot/'.$template['screenshot']) }}" srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
                                     sizes="100vw" 
                                     title="{{$template['name']}} Template" alt="Buy {{$template['name']}} Template at ${{ $template['price'] }}" class="img-fluid w-100" width="714" height="456">
                                 </a>
                                 <div class="action-btn">
-                                    <a href="theme/{{ $template['detailLink'].'#demos' }}" title="Live Preview" class="btn btn-primary btn-sm">Live Preview</a>
+                                    <a href="theme/{{ $template['detailLink'].'#demos' }}" title="Live Preview" class="btn btn-primary btn-sm" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}">Live Preview</a>
                                 </div>
                                 <div class="theme-desc">
                                     <div class="title">
                                         <h3 class="h5">
-                                            <a href="theme/{{$template['detailLink']}}" title="{{$template['name']}}">{{$template['name']}}</a></h3>
+                                            <a href="theme/{{$template['detailLink']}}" title="{{$template['name']}}"  data-track-elem event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}">{{$template['name']}}</a></h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
                                     <div class="price">
