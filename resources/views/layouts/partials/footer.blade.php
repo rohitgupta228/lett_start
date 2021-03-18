@@ -71,6 +71,25 @@
 <script src="{{ url('assets/js/app.min.js') }}"></script>
 @yield('footer_script')
 <!-- Javascript's -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-167253243-1', 'auto');
+    ga('send', 'pageview');
+    $(".gaTrack").on("click", function(){
+      var eventCategory = $(this).attr("event-category");
+      var eventAction = $(this).attr("event-action");
+      var eventLabel = $(this).attr("event-label");
+      ga('send', 'event', {
+          eventCategory: eventCategory,
+          eventAction: eventAction,
+          eventLabel: eventLabel
+      });
+    })
+</script>
 </body>
 
 </html>

@@ -55,7 +55,7 @@
                         <div class="col-md-6 col-xl-4">
                             <div class="demo-item" id="{{ $template['id'] }}">
                                 <a title="Read more about this theme" href="theme/{{ $template['detailLink'] }}"
-                                    class="screenshot">
+                                    class="screenshot gaTrack" event-category="View Product"  event-action="click" event-label="{{ $template['name'] }}">
                                     <img src="{{ url('assets/images/slider-screenshot/' . $template['screenshot']) }}"
                                         srcset="{{ url('assets/images/slider-screenshot/' . explode('.', $template['screenshot'])[0] . '-sm.' . explode('.', $template['screenshot'])[1]) }} 767w, {{ url('assets/images/slider-screenshot/' . $template['screenshot']) }} 3000w"
                                         sizes="100vw"

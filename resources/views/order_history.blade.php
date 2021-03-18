@@ -78,7 +78,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="mb-1">Your Comments</label>
+								<label class="mb-1">Your Reviews</label>
 								<textarea class="form-control" rows="2" cols="3"></textarea>
 							</div>
 							<div class="clearfix">
