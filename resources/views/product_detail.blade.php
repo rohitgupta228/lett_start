@@ -344,7 +344,7 @@
                                 <h4 class="mb-0">Related Products</h4>
                             </div>
                             <a href="{{ route('product.category', ['category' => 'premium-admin-bootstrap-templates']) }}"
-                                title="View All Templates & Themes" class="btn btn-primary-gred btn-sm"> View All </a>
+                                title="View All Templates & Themes" class="btn btn-primary-gred btn-sm" data-track-elem event-category="View All"  event-action="click" event-label="View All Templates"> View All </a>
                         </div>
                         <div class="row" id="related-products">
                             @foreach ($relatedProducts as $template)
