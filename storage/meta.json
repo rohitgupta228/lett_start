@@ -170,5 +170,11 @@
     "description": "Adminator Free is a free admin dashboard web app built using Bootstrap and jQuery. It is ideal for the initial project to start.",
     "downloads": 0,
     "reviews": 0
+  },
+  "peso-app-landing-pages": {
+    "title": "PESO - App and Payment Landing Pages | PESO - Bootstrap App Landing Pages",
+    "description": "PESO is a bootstrap 5 app and payment landing pages built using SCSS, Gulp and jQuery. It is specially design for app landing pages, payment landing pages and mobile landing pages. It can be used for any kind of landing pages.",
+    "downloads": 0,
+    "reviews": 0
   }
 }
