@@ -120,7 +120,7 @@
         breadcrumb['itemListElement'].push({
             "@type": "ListItem", 
             "position": 3, 
-            "name": pageTitle
+            "name": "https://lettstartdesign.com/category/"+pageTitle
         })
     };
 	var ldSchema = {
