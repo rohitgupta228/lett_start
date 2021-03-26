@@ -477,7 +477,7 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": product['mainCat'],
-                "item": product['catLink']
+                "item": "https://lettstartdesign.com/category/"+product['catLink']
             }]
         };
         var hightlight1 = JSON.parse(product.highlight1),
