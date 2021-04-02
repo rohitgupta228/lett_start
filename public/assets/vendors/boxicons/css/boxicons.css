@@ -100,6 +100,9 @@
 .bx-user:before {
   content: "\ec24";
 }
+.bx-comment:before {
+  content: "\ea43";
+}
 .bx-x:before {
   content: "\ec4e";
 }
@@ -124,6 +127,10 @@
 .bxl-sass:before {
   content: "\e953";
 }
+.bxl-css3:before {
+  content: "\ee72"
+}
+
 .bxl-html5:before {
   content: "\e92e";
 }

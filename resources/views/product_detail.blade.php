@@ -72,9 +72,8 @@
                                     </div>
                                     <div class="media text-center">
                                         <div class="media-body">
-                                            <input type="hidden" class="rating" name="rating"
-                                                data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning"
-                                                value="{{ $product['rating'] }}" data-readonly data-fractions="2" />
+                                            <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value={{ $product->rating }} data-readonly data-fractions=2 />
+                                            <span class="d-block font-size-14">({{ $reviews }} reviews)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -203,6 +202,12 @@
                                     class="align-middle">Demos</span></a>
                         </li>
                         <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="review-tab" data-toggle="tab" href="#reviews" role="tab"
+                                aria-controls="reviews" aria-selected="true"><i
+                                    class="bx bx-comment mr-1 icon-sm align-middle"></i> <span
+                                    class="align-middle">Reviews</span></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
                             <a class="nav-link" id="Change-tab" data-toggle="tab" href="#change-log" role="tab"
                                 aria-controls="change-log" aria-selected="false"><i
                                     class="bx bx-message-square-edit mr-1 icon-sm align-middle"></i> <span
@@ -312,6 +317,26 @@
                                         @endforeach
                                     </div>
                                 @endforeach
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
+                            <div class="review-list">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-4 mb-30">
+                                        <div class="review border-radius-1x">
+                                            <div class="media align-items-center">
+                                                <img src="{{ url('assets/images/anonymous-thumb.png') }}" alt="user anonymous image" class="rounded-circle mr-15" />
+                                                <div class="media-body">
+                                                    <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="4" data-readonly data-fractions=2 />
+                                                    <h6 class="mb-0">USer Name</h6>
+                                                </div>
+                                            </div>
+                                            <div class="comments">
+                                                <p class="mb-0">No Comment</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="change-log" role="tabpanel" aria-labelledby="change-log">

@@ -176,5 +176,17 @@
     "description": "PESO is a bootstrap 5 app and payment landing pages built using SCSS, Gulp and jQuery. It is specially design for app landing pages, payment landing pages and mobile landing pages. It can be used for any kind of landing pages.",
     "downloads": 5,
     "reviews": 3
+  },
+  "evolve-one-page-template": {
+    "title": "Evolve - Single Page Portfolio Template",
+    "description": "Evolve is a Single Page Free Templates that are pre-designed and ready to publish, perfect for portfolio, resume, saas templates, app templates, and personal one page website.",
+    "downloads": 0,
+    "reviews": 0
+  },
+  "consult-agency-landing-pages": {
+    "title": "CONSULT - App and Agency Landing Page Templates ",
+    "description": "CONSULT is a responsive, powerful, and creative single-page template based on the bootstrap 5 frameworks specially designed for app and agency landing pages.",
+    "downloads": 0,
+    "reviews": 0
   }
 }
