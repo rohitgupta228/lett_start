@@ -135,10 +135,11 @@ class ProductController extends Controller
                 'message' => 'Product not found'
             ];
             if ($product) {
+                $paymentStatus = config('settings.payment_status');
                 $title = $metaData[$product->detailLink]['title'];
                 $description = $metaData[$product->detailLink]['description'];
-                $downloads = $metaData[$product->detailLink]['downloads'];
-                $reviews = $metaData[$product->detailLink]['reviews'];
+                $reviews = ProductRating::where('product_id', $product->id)->select('username', 'rating', 'comments')->orderBy('id', 'desc')->get();
+                $downloads = Transaction::where('payment_status', $paymentStatus[0])->count();
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
                 $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->get()->toArray();
@@ -198,6 +199,7 @@ class ProductController extends Controller
     {
         $userId = Auth::user()->id;
         $data = $request->except(['_token']);
+        $data['username'] = Auth::user()->username;
         if ($data['rating'] > 5 || !$data['product_id']) {
             Flash::error("Something went wrong");
             return redirect()->back();

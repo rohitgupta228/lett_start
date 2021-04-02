@@ -79,7 +79,7 @@
 							</div>
 							<div class="form-group">
 								<label class="mb-1">Your Reviews</label>
-								<textarea class="form-control" rows="2" cols="3"></textarea>
+								<textarea class="form-control" name="comments" rows="2" cols="3"></textarea>
 							</div>
 							<div class="clearfix">
 								<button type="submit" class="btn btn-primary">Submit</button>

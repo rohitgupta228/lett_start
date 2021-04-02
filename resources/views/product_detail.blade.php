@@ -73,7 +73,7 @@
                                     <div class="media text-center">
                                         <div class="media-body">
                                             <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value={{ $product->rating }} data-readonly data-fractions=2 />
-                                            <span class="d-block font-size-14">({{ $reviews }} reviews)</span>
+                                            <span class="d-block font-size-14">({{ $product['rating'] }} reviews)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -322,20 +322,22 @@
                         <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
                             <div class="review-list">
                                 <div class="row">
-                                    <div class="col-md-6 col-lg-4 mb-30">
-                                        <div class="review border-radius-1x">
-                                            <div class="media align-items-center">
-                                                <img src="{{ url('assets/images/anonymous-thumb.png') }}" alt="user anonymous image" class="rounded-circle mr-15" />
-                                                <div class="media-body">
-                                                    <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="4" data-readonly data-fractions=2 />
-                                                    <h6 class="mb-0">USer Name</h6>
+                                   @foreach($reviews as $review)
+                                        <div class="col-md-6 col-lg-4 mb-30">
+                                            <div class="review border-radius-1x">
+                                                <div class="media align-items-center">
+                                                    <img src="{{ url('assets/images/anonymous-thumb.png') }}" alt="user anonymous image" class="rounded-circle mr-15" />
+                                                    <div class="media-body">
+                                                        <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="{{ $review->rating }}" data-readonly data-fractions=2 />
+                                                        <h6 class="mb-0">{{ $review->username }}</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="comments">
+                                                    <p class="mb-0">{{ $review->comments }}</p>
                                                 </div>
                                             </div>
-                                            <div class="comments">
-                                                <p class="mb-0">No Comment</p>
-                                            </div>
                                         </div>
-                                    </div>
+                                   @endforeach
                                 </div>
                             </div>
                         </div>

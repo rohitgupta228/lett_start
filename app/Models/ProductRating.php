@@ -13,7 +13,7 @@ class ProductRating extends Model
      * @var array
      */
     protected $fillable = [
-        'product_id', 'user_id', 'rating', 'comments'
+        'product_id', 'user_id', 'username', 'rating', 'comments'
     ];
 
 }
