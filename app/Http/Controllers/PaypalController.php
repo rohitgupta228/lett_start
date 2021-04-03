@@ -70,6 +70,8 @@ class PaypalController extends Controller
                     logger($result->getState());
                     $this->sendEmailOnSuccess($data, $product);
                     $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
+                    $downloads = \App\Models\Download::where('product_id', $product->id)->first();
+                    $downloads = $downloads ? $downloads->update(['num_downloads' => $downloads->num_downloads + 1]) : \App\Models\Download::create(['product_id' => $product->id, 'num_downloads' => 1]);
                     return redirect(route('product.theme', ['theme' => $product->detailLink, 'success' => "true"]));
                 }
             }

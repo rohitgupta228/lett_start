@@ -172,6 +172,8 @@ class PaymentController extends Controller
                     'multi' => false
                 ];
                 $transaction = Transaction::create($paymentData);
+                $downloads = \App\Models\Download::where('product_id', $product->id)->first();
+                $downloads = $downloads ? $downloads->update(['num_downloads' => $downloads->num_downloads + 1]) : \App\Models\Download::create(['product_id' => $product->id, 'num_downloads' => 1]);
                 $response = [
                     'code' => 200,
                     'message' => 'Payment done successfully',
@@ -282,6 +284,8 @@ class PaymentController extends Controller
             'multi' => $data['multi']
         ];
         $transaction = Transaction::create($paymentData);
+        $downloads = \App\Models\Download::where('product_id', $data['product']->id)->first();
+        $downloads = $downloads ? $downloads->update(['num_downloads' => $downloads->num_downloads + 1]) : \App\Models\Download::create(['product_id' => $data['product']->id, 'num_downloads' => 1]);
         $this->sendEmailOnSuccess($data);
         DB::commit();
     }
