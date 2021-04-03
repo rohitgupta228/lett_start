@@ -73,7 +73,7 @@
                                     <div class="media text-center">
                                         <div class="media-body">
                                             <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value={{ $product->rating }} data-readonly data-fractions=2 />
-                                            <span class="d-block font-size-14">({{ $product['rating'] }} reviews)</span>
+                                            <span class="d-block font-size-14">({{ count($reviews) }} reviews)</span>
                                         </div>
                                     </div>
                                 </div>

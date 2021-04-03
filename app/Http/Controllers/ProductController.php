@@ -139,7 +139,8 @@ class ProductController extends Controller
                 $title = $metaData[$product->detailLink]['title'];
                 $description = $metaData[$product->detailLink]['description'];
                 $reviews = ProductRating::where('product_id', $product->id)->select('username', 'rating', 'comments')->orderBy('id', 'desc')->get();
-                $downloads = Transaction::where('payment_status', $paymentStatus[0])->count();
+                // $downloads = Transaction::where('product_id', $product->productId)->where('payment_status', $paymentStatus[0])->count();
+                $downloads = $metaData[$product->detailLink]['downloads'];
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
                 $relatedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->get()->toArray();
