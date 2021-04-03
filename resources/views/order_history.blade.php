@@ -34,7 +34,7 @@
 										@if($template['rating'])
 										<input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="{{ $template['rating'] }}" data-readonly data-fractions="2"/>
 										@else 
-										<a href="javascript:void(0)" class="text-primary font-weight-normal" id="add-review-btn" data-id="{{ $template['id'] }}"><u>Add Reviews</u></a>
+										<a href="javascript:void(0)" class="text-primary font-weight-normal add-review-btn" data-id="{{ $template['id'] }}"><u>Add Reviews</u></a>
 										@endif
 									</div>
 								</h3>
@@ -93,7 +93,7 @@
 @section('footer_script')
 <script src="{{ url('assets/vendors/rating/bootstrap-rating.min.js') }}"></script>
 <script>
-	$("#add-review-btn").on("click", function() {
+	$(".add-review-btn").on("click", function() {
 		$("#add-review").modal('show');
 		$("#product-id").val($(this).attr("data-id"))
 	})
