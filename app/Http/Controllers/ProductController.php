@@ -194,8 +194,9 @@ class ProductController extends Controller
         $transactions = Transaction::where('user_id', $user->id)->where('payment_status', $paymentStatus[0])->get();
         foreach ($transactions as $key => $transaction) {
             $products[$key] = $transaction->product;
+            $rating[$transaction->product->id] = ProductRating::where('user_id', Auth::user()->id)->where('product_id', $transaction->product->id)->first();
         }
-        return view('order_history', compact('products'));
+        return view('order_history', compact('products', 'rating'));
     }
 
     public function rating(Request $request)

@@ -31,8 +31,8 @@
 								<h3 class="h5 mb-0 pr-2">
 									<a href="theme/{{ $template['detailLink'] }}" title="{{ $template['name'] }}">{{ $template['name'] }}</a>
 									<div class="font-size-14 mt-2">
-										@if($template['rating'])
-										<input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="{{ $template['rating'] }}" data-readonly data-fractions="2"/>
+										@if($rating[$template['id']])
+										<input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="{{ $rating[$template['id']] }}" data-readonly data-fractions="2"/>
 										@else 
 										<a href="javascript:void(0)" class="text-primary font-weight-normal add-review-btn" data-id="{{ $template['id'] }}"><u>Add Reviews</u></a>
 										@endif
