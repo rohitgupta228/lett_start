@@ -480,7 +480,6 @@
 				
     </script>
     <script src="{{ url('assets/js/inner-theme.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/rating/bootstrap-rating.min.js') }}"></script>
     <script>
         var product = <?= json_encode($product) ?> ,
             relatedProducts = <?= json_encode($relatedProducts) ?>,

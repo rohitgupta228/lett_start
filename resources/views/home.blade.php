@@ -74,10 +74,14 @@
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
-                                    <div class="price">
-                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
-                                        <a class="category"
-                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                    <div class="demo-footer">
+                                        <span class="h4 mb-0 price">${{ $template['price'] }}</span>
+                                        <div class="rating-info">
+                                            @if($template['rating'])
+                                            <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value={{ $template['rating'] }} data-readonly data-fractions=2 />
+                                            @endif
+                                            <span class="sale-count">{{ $template['num_downloads'] }} sales</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -118,10 +122,15 @@
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
-                                    <div class="price">
-                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
-                                        <a class="category"
-                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                    
+                                    <div class="demo-footer">
+                                        <span class="h4 mb-0 price">${{ $template['price'] }}</span>
+                                        <div class="rating-info">
+                                            @if($template['rating'])
+                                            <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value={{ $template['rating'] }} data-readonly data-fractions=2 />
+                                            @endif
+                                            <span class="sale-count">{{ $template['num_downloads'] }} sales</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -180,10 +189,15 @@
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
-                                    <div class="price">
-                                        <span class="h4 mb-0">${{ $template['price'] }}</span>
-                                        <a class="category"
-                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                    
+                                    <div class="demo-footer">
+                                        <span class="h4 mb-0 price">${{ $template['price'] }}</span>
+                                        <div class="rating-info">
+                                            @if($template['rating'])
+                                            <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value={{ $template['rating'] }} data-readonly data-fractions=2 />
+                                            @endif
+                                            <span class="sale-count">{{ $template['num_downloads'] }} sales</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -226,10 +240,14 @@
                                         </h3>
                                         <p>{{ $template['oneLinerDesc'] }}</p>
                                     </div>
-                                    <div class="price">
-                                        <span class="h4 mb-0">Free</span>
-                                        <a class="category"
-                                            href="{{ $template['catLink'] }}">{{ $template['mainCat'] }}</a>
+                                    <div class="demo-footer">
+                                        <span class="h4 mb-0 price">Free</span>
+                                        <div class="rating-info">
+                                            @if($template['rating'])
+                                            <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value={{ $template['rating'] }} data-readonly data-fractions=2 />
+                                            @endif
+                                            <span class="sale-count">{{ $template['num_downloads'] }} sales</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

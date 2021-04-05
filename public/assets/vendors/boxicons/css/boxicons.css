@@ -130,7 +130,9 @@
 .bxl-css3:before {
   content: "\ee72"
 }
-
+.bxl-paypal:before {
+  content: "\e947";
+}
 .bxl-html5:before {
   content: "\e92e";
 }

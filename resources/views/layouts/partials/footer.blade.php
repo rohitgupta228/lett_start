@@ -66,6 +66,7 @@
 </script>
 <!-- Third Javascript's -->
 <script src="{{ url('assets/js/plugins.min.js') }}"></script>
+<script src="{{ url('assets/vendors/rating/bootstrap-rating.min.js') }}"></script>
 <!-- Footer End-->
 <script src="{{ url('assets/js/api.min.js') }}"></script>
 <script src="{{ url('assets/js/app.min.js') }}"></script>
