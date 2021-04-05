@@ -25,16 +25,19 @@ class ProductController extends Controller
                 'angular' => 'angular',
                 'freebies' => 'freebies'
             ];
-            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
+            $bestSelling = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->orderBy('id', 'desc')->get()->toArray();
             if (count($bestSelling))
                 $bestSelling = array_slice($bestSelling, 0, 3);
-            $bootstrap = Product::where('added', 'LIKE', "%{$query['bootstrap']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
+
+            $bootstrap = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('added', 'LIKE', "%{$query['bootstrap']}%")->where('price', '!=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->orderBy('id', 'desc')->get()->toArray();
             if (count($bootstrap))
                 $bootstrap = array_slice($bootstrap, 0, 3);
-            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
+
+            $angular = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->orderBy('id', 'desc')->get()->toArray();
             if (count($angular))
                 $angular = array_slice($angular, 0, 3);
-            $freebies = Product::where('added', 'LIKE', "%{$query['freebies']}%")->where('price', '=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat', 'rating')->orderBy('id', 'desc')->get()->toArray();
+            
+            $freebies = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('added', 'LIKE', "%{$query['freebies']}%")->where('price', '=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->orderBy('id', 'desc')->get()->toArray();
             if (count($freebies))
                 $freebies = array_slice($freebies, 0, 3);
         } catch (\Exception $exc) {
@@ -108,8 +111,8 @@ class ProductController extends Controller
                 $title = $metaData[$search]['title'];
                 $description = $metaData[$search]['description'];
             }
-            $result = $result->where('category', 'LIKE', "%{$search}%");
-            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->orderBy('id', 'desc')->paginate(12);
+            $result = $result->leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('category', 'LIKE', "%{$search}%");
+            $products = $result->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'downloads.num_downloads')->orderBy('id', 'desc')->paginate(12);
             return view('product_category', compact('products', 'pageTitle', 'pageDescription', 'title', 'description'));
         } catch (\Exception $exc) {
             return response()->view('errors.500');
