@@ -367,7 +367,7 @@
         "@context": "http://schema.org",
         "@type": "ItemList",
         "itemListElement":[]
-    }
+    };
 	var itemList = addProduct(bestSelling, ldSchema);
     addProductSchema["itemListElement"].push(itemList);
 	addArticle("Bootstrap HTML Templates & Themes", null, ldSchema);
@@ -384,6 +384,7 @@
 
 	itemList = addProduct(freebies);
     addProductSchema["itemListElement"].push(itemList);
+    console.log(addProductSchema)
     ldSchema["@graph"].push(addProductSchema);
 
 	var article = {
