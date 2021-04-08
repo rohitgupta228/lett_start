@@ -384,7 +384,6 @@
 
 	itemList = addProduct(freebies);
     addProductSchema["itemListElement"].push(itemList);
-    console.log(addProductSchema)
     ldSchema["@graph"].push(addProductSchema);
 
 	var article = {
