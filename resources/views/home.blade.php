@@ -363,22 +363,28 @@
 		]
 	};
 	addArticle("Best Selling Templates", null, ldSchema);
+    var addProductSchema = {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+        "itemListElement":[]
+    }
 	var itemList = addProduct(bestSelling, ldSchema);
-    ldSchema["@graph"].push(itemList)
+    addProductSchema["itemListElement"].push(itemList);
 	addArticle("Bootstrap HTML Templates & Themes", null, ldSchema);
 
 	itemList = addProduct(bootstrap);
-    ldSchema["@graph"].push(itemList);
+    addProductSchema["itemListElement"].push(itemList);
 
 	addArticle("Angular Templates", null, ldSchema);
 
 	itemList = addProduct(angular);
-    ldSchema["@graph"].push(itemList)
+    addProductSchema["itemListElement"].push(itemList);
 
 	addArticle("Free Templates", null, ldSchema);
 
 	itemList = addProduct(freebies);
-    ldSchema["@graph"].push(itemList);
+    addProductSchema["itemListElement"].push(itemList);
+    ldSchema["@graph"].push(addProductSchema);
 
 	var article = {
 		name: "Lettstart Design - Digital Marketplace",
