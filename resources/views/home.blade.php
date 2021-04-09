@@ -401,14 +401,9 @@
 	};
 	addArticle(article.name, article.desc, ldSchema);
 	var obj = {
+        "@type": "CreateAction",
 		"title": "Browse All Products",
-		"type": "object",
-		"links": [
-			{
-				"rel": "self",
-				"href": "/category"
-			}
-		]
+        "url": "https://lettstartdesign.com/category/premium-admin-bootstrap-templates"
 	};
 	ldSchema["@graph"].push(obj);
 	var el = document.createElement('script');
