@@ -531,7 +531,7 @@
                 breadcrumb
             ]
         };
-        var reviewSchema = []
+        var reviewSchema = [];
         reviews.forEach(function(review) {
             console.log(review)
             var obj = {
@@ -544,9 +544,9 @@
                     "ratingValue": review.rating,
                     "worstRating": "1"
                 }
-            }
+            };
             reviewSchema.push(obj)
-        })
+        });
         var demos = {
             "@type": "ItemList",
             "itemListElement": [{
