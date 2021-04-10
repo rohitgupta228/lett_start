@@ -533,7 +533,6 @@
         };
         var reviewSchema = [];
         reviews.forEach(function(review) {
-            console.log(review)
             var obj = {
                 "@type": "Review",
                 "author": review.username,
