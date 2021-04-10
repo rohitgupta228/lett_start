@@ -148,13 +148,16 @@ class ProductController extends Controller
                 $downloads = $downloads ? $downloads->num_downloads : 0;
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
-                $relatedProducts = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->get()->toArray();
+                $relatedProducts = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('category', 'LIKE', "%{$category}%")->where('products.id', '!=', $product->id)->where('price', '!=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->get()->toArray();
+               
                 if (count($relatedProducts))
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
 
                 return view('product_detail', compact('product', 'relatedProducts', 'title', 'description' , 'downloads', 'reviews'));
             }
         } catch (\Exception $exc) {
+            print_r($exc->getMessage());
+            die;
             return response()->view('errors.500');
         }
         return response()->view('errors.500');
