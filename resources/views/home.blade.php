@@ -345,8 +345,7 @@
 				"publisher": {
 					"@id": "https://lettstartdesign.com/#organization"
 				},
-				"inLanguage": "en-US",
-				"logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+				"inLanguage": "en-US"
 			},
 			{
 				"@type": "WebPage",
@@ -402,7 +401,6 @@
 	addArticle(article.name, article.desc, ldSchema);
 	var obj = {
         "@type": "CreateAction",
-		"title": "Browse All Products",
         "url": "https://lettstartdesign.com/category/premium-admin-bootstrap-templates"
 	};
 	ldSchema["@graph"].push(obj);

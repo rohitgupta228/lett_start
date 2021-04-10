@@ -485,7 +485,7 @@
             relatedProducts = <?= json_encode($relatedProducts) ?>,
             route = '<?= Request::getRequestUri() ?>',
             title = '<?= $title ?>',
-            description = '<?= $description ?>';
+            description = '<?= $description ?>', downloads = '<?= $downloads ?>', reviews = <?= json_encode($reviews) ?>;
         var breadcrumb = {
             "@type": "BreadcrumbList",
             "itemListElement": [{
@@ -526,54 +526,59 @@
                     "publisher": {
                         "@id": "https://lettstartdesign.com/#organization"
                     },
-                    "inLanguage": "en-US",
-                    "logo": "https://lettstartdesign.com/assets/images/logo-dark.png"
+                    "inLanguage": "en-US"
                 },
-                breadcrumb,
-                {
-                    "@type": "Article",
-                    "headline": product['name'],
-                    "description": ($("#overview-html").text()).trim() + " " + hightlight1.join(", ") + " " +
-                        hightlight2.join(", "),
-                    "image": "https://lettstartdesign.com/assets/images/slider-screenshot/" + product.screenshot,
-                    "author": {
-                        "@type": "Organization",
-                        "name": "Lettstart Design"
-                    },
-                    "publisher": {
-                        "@type": "Organization",
-                        "name": "Lettstart Design",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://lettstartdesign.com/assets/images/logo-dark.png"
-                        }
-                    },
-                    "datePublished": "2020-05-30"
-                }
+                breadcrumb
             ]
         };
+        var reviewSchema = []
+        reviews.forEach(function(review) {
+            console.log(review)
+            var obj = {
+                "@type": "Review",
+                "author": review.username,
+                "reviewBody": review.comments,
+                "reviewRating": {
+                    "@type": "Rating",
+                    "bestRating": "5",
+                    "ratingValue": review.rating,
+                    "worstRating": "1"
+                }
+            }
+            reviewSchema.push(obj)
+        })
         var demos = {
             "@type": "ItemList",
-            "itemListElement": []
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": ++pCount,
+                "item": {
+                "@type": "Product",
+                "name": product.name,
+                "image": "https://lettstartdesign.com/assets/images/screenshots/" + product
+                .screenshotDir + "/" + screen.img,
+                "description": ($("#overview-html").text()).trim() + " " + hightlight1.join(", ") + " " +
+                hightlight2.join(", "),
+                "url": "https://lettstartdesign.com/theme/" + product['detailLink']+"#demos",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://lettstartdesign.com/InStock",
+                    "priceCurrency": "USD",
+                    "price": product.price,
+                    "priceValidUntil": "01-12-2050",
+                    "url": "https://lettstartdesign.com/theme/" + product['detailLink']
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": product.rating ? product.rating : 5,
+                    "reviewCount": reviews.length ? reviews.length : 1
+                },
+                "brand": "Lett Start Design",
+                "review": reviewSchema
+                }
+            }]
         };
-        JSON.parse(product.screenshots).forEach(function(demo, index) {
-            demo.screens.forEach(function(screen, sindex) {
-                var obj = {
-                    "@type": "ListItem",
-                    "position": ++count,
-                    "url": product.liveDemoBaseStr,
-                    "name": screen.imgTitle,
-                    "image": "https://lettstartdesign.com/assets/images/screenshots/" + product
-                        .screenshotDir + "/" + screen.img,
-                    "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": <?= $reviews ?>,
-                        "ratingCount": <?= $downloads ?>
-                    }
-                };
-                demos["itemListElement"].push(obj);
-            });
-        });
+        
         ldSchema["@graph"].push(demos);
         var itemList = addProduct(relatedProducts);
         ldSchema["@graph"].push(itemList);
@@ -581,6 +586,5 @@
         el.type = 'application/ld+json';
         el.text = JSON.stringify(ldSchema);
         document.querySelector('head').appendChild(el);
-
     </script>
 @endsection
