@@ -5,13 +5,8 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use JWTAuth;
 use App\Models\Product;
 use Illuminate\Support\Facades\Hash;
-use Mail;
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Crypt;
 
 class ProductController extends Controller
@@ -24,7 +19,7 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['details', 'lists', 'homeProductsList', 'search']]);
+        $this->middleware('auth:api');
     }
 
     public function checkAdmin()
@@ -93,11 +88,11 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
+        $product = Product::orderBy('id', 'desc')->first();
         try {
             if ($this->checkAdmin()) {
-                $data = $request->request->all();
-                $data['product_id'] = str_random(50);
-                $data['demo_link'] = env('DEMO_LINK');
+                $data = $this->mapData($request);
+                $data['productId'] = Crypt::encryptString($product->id + 1);
                 $product = Product::create($data);
                 $response = [
                     'code' => 200,
@@ -127,13 +122,14 @@ class ProductController extends Controller
     {
         try {
             if ($this->checkAdmin()) {
-                $product = Product::where('product_id', $request->product_id)->first();
+                $product = Product::find($request->product_id);
                 $response = [
                     'code' => 404,
                     'message' => 'Product not found'
                 ];
                 if ($product) {
-                    $updatedProduct = $product->update($request->request->all());
+                    $updatedData = $this->mapData($request);
+                    $updatedProduct = $product->update($updatedData);
                     $response = [
                         'code' => 200,
                         'data' => [
@@ -153,6 +149,39 @@ class ProductController extends Controller
         return response()->json($response, 200);
     }
 
+    public function mapData($request)
+    {
+        $data = [
+            'name' => $request->product_name,
+            'packageName' => $request->package_name,
+            'rating' => 4,
+            'oneLinerDesc' => $request->one_line_desc,
+            'detailLink' => $request->detail_link,
+            'internalLink' => $request->internal_link,
+            'externalLink' => $request->external_link,
+            'gumroadLink' => $request->gumroad_link,
+            'price' => $request->product_price,
+            'mainCat' => $request->main_category,
+            'catLink' => $request->category_link,
+            'demolink' => $request->demo_link,
+            'docLink' => $request->doc_link,
+            'screenshot' => $request->screenshot_name,
+            'category' => json_encode($request->categories),
+            'added' => json_encode($request->added),
+            'screenshotDir' => $request->screenshot_dir,
+            'liveDemoBaseStr' => $request->live_demo_base_str,
+            'overviewHTML' => $request->overview_html,
+            'highlight1' => json_encode($request->highlight1),
+            'highlight2' => json_encode($request->highlight2),
+            'techUsed' => json_encode($request->tech_used),
+            'themeFacts' => json_encode($request->theme_facts),
+            'screenshots' => json_encode($request->screenshots),
+            'initialLog' => json_encode($request->initial_log),
+            'changeLog' => json_encode($request->change_log),
+        ];
+        return $data;
+    }
+
     /**
      * Delete Product
      *
@@ -164,7 +193,7 @@ class ProductController extends Controller
     {
         try {
             if ($this->checkAdmin()) {
-                $product = Product::where('product_id', $request->product_id)->first()->delete();
+                $product = Product::find($request->product_id)->delete();
                 $response = [
                     'code' => 404,
                     'message' => 'Product not found'
@@ -180,142 +209,6 @@ class ProductController extends Controller
             $response = [
                 'code' => $exc->getCode(),
                 'error' => $exc->getMessage(),
-            ];
-        }
-
-        return response()->json($response, 200);
-    }
-
-    /**
-     * Update Product
-     *
-     * @param  \Illuminate\Http\Request  $request
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function details($detailLink)
-    {
-        try {
-            $product = Product::where('detailLink', $detailLink)->first();
-            $response = [
-                'code' => 404,
-                'message' => 'Product not found'
-            ];
-            if ($product) {
-                $categoryArray = explode(' ', $product->mainCat);
-                $category = strtolower($categoryArray[0]);
-                $realtedProducts = Product::where('category', 'LIKE', "%{$category}%")->where('id', '!=', $product->id)->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
-                if (count($realtedProducts))
-                    $realtedProducts = array_slice($realtedProducts, 0, 3);
-                $response = [
-                    'code' => 200,
-                    'data' => [
-                        'product' => $product,
-                        'realtedProducts' => $realtedProducts
-                    ],
-                    'message' => 'Product details fetch successfully'
-                ];
-            }
-        } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'error' => $exc->getMessage(),
-            ];
-        }
-        return response()->json($response, 200);
-    }
-
-    public function lists(Request $request)
-    {
-        try {
-            $query = $request->all();
-            $category = strtolower($query['category']);
-            $result = Product::query();
-            if ($category !== 'freebies') {
-                $result = $result->where('price', '!=', 0);
-            }
-            $result = $result->where('category', 'LIKE', "%{$category}%");
-            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
-            $response = [
-                'code' => 200,
-                'data' => [
-                    'products' => $products,
-                ],
-                'message' => 'Products fetched successfully'
-            ];
-        } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
-            ];
-        }
-
-        return response()->json($response, 200);
-    }
-
-    public function search(Request $request)
-    {
-        try {
-            $query = $request->all();
-            $result = Product::query();
-            if (isset($query['category']) && $query['category'] != '') {
-                $categoryArray = explode(' ', $query['category']);
-                $category = strtolower($categoryArray[0]);
-                $result = $result->where('category', 'LIKE', "%{$category}%")->orWhere('name', 'LIKE', '%' . $category . '%');
-                if (count($categoryArray) >= 2) {
-                    $category = strtolower($categoryArray[1]);
-                    $result = $result->orWhere('category', 'LIKE', "%{$category}%")->orWhere('name', 'LIKE', '%' . $category . '%');
-                }
-            }
-            $products = $result->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->paginate(10);
-            $response = [
-                'code' => 200,
-                'data' => [
-                    'products' => $products,
-                ],
-                'message' => 'Products fetched successfully'
-            ];
-        } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
-            ];
-        }
-
-        return response()->json($response, 200);
-    }
-
-    public function homeProductsList()
-    {
-        try {
-            $query = [
-                'added' => 'popular',
-                'angular' => 'angular',
-                'recently' => 'recently'
-            ];
-            $bestSelling = Product::where('added', 'LIKE', "%{$query['added']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
-            if (count($bestSelling))
-                $bestSelling = array_slice($bestSelling, 0, 4);
-            $angular = Product::where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
-            if (count($angular))
-                $angular = array_slice($angular, 0, 4);
-
-            $latest = Product::where('added', 'LIKE', "%{$query['recently']}%")->where('price', '!=', 0)->select('id', 'name', 'price', 'detailLink', 'screenshot', 'demolink', 'oneLinerDesc', 'catLink', 'mainCat')->get()->toArray();
-            if (count($latest))
-                $latest = array_slice($latest, 0, 4);
-            $response = [
-                'code' => 200,
-                'data' => [
-                    'bestSelling' => $bestSelling,
-                    'angular' => $angular,
-                    'latest' => $latest
-                ],
-                'message' => 'Products fetched successfully'
-            ];
-        } catch (\Exception $exc) {
-            $response = [
-                'code' => $exc->getCode(),
-                'message' => $exc->getMessage()
             ];
         }
 
