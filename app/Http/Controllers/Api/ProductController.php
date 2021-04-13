@@ -149,11 +149,11 @@ class ProductController extends Controller
         return response()->json($response, 200);
     }
 
-    public function edit(Request $request)
+    public function edit($productId)
     {
         try {
             if ($this->checkAdmin()) {
-                $product = Product::find($request->product_id);
+                $product = Product::find($productId);
                 $response = [
                     'code' => 404,
                     'message' => 'Product not found'
