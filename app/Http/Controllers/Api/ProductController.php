@@ -215,4 +215,27 @@ class ProductController extends Controller
         return response()->json($response, 200);
     }
 
+    public function productsList()
+    {
+        try {
+            if ($this->checkAdmin()) {
+                $products = Product::paginate(10);
+                $response = [
+                    'code' => 200,
+                    'data' => [
+                        'product' => $products,
+                    ],
+                    'message' => 'Product fetched successfully'
+                ];
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'error' => $exc->getMessage(),
+            ];
+        }
+
+        return response()->json($response, 200);
+    }
+
 }

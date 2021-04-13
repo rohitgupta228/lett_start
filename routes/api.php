@@ -50,15 +50,9 @@ Route::group(['prefix' => 'product', 'middleware' => 'api'], function() {
 
     Route::delete('delete', 'Api\ProductController@delete')->name('product.delete');
 
-    Route::get('details/{detailLink}', 'Api\ProductController@details')->name('product.details');
-
     Route::get('bulk-upload', 'Api\ProductController@bulkUpload')->name('product.bulk.upload');
 
-    Route::get('lists', 'Api\ProductController@lists')->name('product.lists');
-
-    Route::get('search', 'Api\ProductController@search')->name('product.search');
-
-    Route::get('home', 'Api\ProductController@homeProductsList')->name('product.home');
+    Route::get('lists', 'Api\ProductController@productsList')->name('product.lists');
 });
 
 Route::group(['prefix' => 'payment','middleware' => 'api'], function() {
