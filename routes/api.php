@@ -47,6 +47,8 @@ Route::group(['prefix' => 'product', 'middleware' => 'api'], function() {
     Route::post('create', 'Api\ProductController@create')->name('product.create');
 
     Route::put('update', 'Api\ProductController@update')->name('product.update');
+    
+    Route::get('edit', 'Api\ProductController@edit')->name('product.edit');
 
     Route::delete('delete', 'Api\ProductController@delete')->name('product.delete');
 

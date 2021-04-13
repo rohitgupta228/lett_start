@@ -149,6 +149,35 @@ class ProductController extends Controller
         return response()->json($response, 200);
     }
 
+    public function edit(Request $request)
+    {
+        try {
+            if ($this->checkAdmin()) {
+                $product = Product::find($request->product_id);
+                $response = [
+                    'code' => 404,
+                    'message' => 'Product not found'
+                ];
+                if ($product) {
+                    $response = [
+                        'code' => 200,
+                        'data' => [
+                            'product' => $product,
+                        ],
+                        'message' => 'Product fetched successfully'
+                    ];
+                }
+            }
+        } catch (\Exception $exc) {
+            $response = [
+                'code' => $exc->getCode(),
+                'error' => $exc->getMessage(),
+            ];
+        }
+
+        return response()->json($response, 200);
+    }
+
     public function mapData($request)
     {
         $data = [
