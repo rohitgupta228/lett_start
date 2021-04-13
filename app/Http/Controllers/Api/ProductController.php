@@ -219,7 +219,7 @@ class ProductController extends Controller
     {
         try {
             if ($this->checkAdmin()) {
-                $products = Product::paginate(10);
+                $products = Product::select('id', 'name', 'packageName')->paginate(10);
                 $response = [
                     'code' => 200,
                     'data' => [
