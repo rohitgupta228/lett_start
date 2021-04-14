@@ -221,18 +221,19 @@ class ProductController extends Controller
     public function delete(Request $request)
     {
         try {
+            $productIds = $request->product_id;
             if ($this->checkAdmin()) {
-                $product = Product::find($request->product_id)->delete();
-                $response = [
-                    'code' => 404,
-                    'message' => 'Product not found'
-                ];
-                if ($product) {
-                    $response = [
-                        'code' => 200,
-                        'message' => 'Product deleted successfully'
-                    ];
+                if (count($productIds)) {
+                    foreach ($productIds as $id) {
+                        $product = Product::find($id);
+                        if ($product)
+                            $product->delete();
+                    }
                 }
+                $response = [
+                    'code' => 200,
+                    'message' => 'Product deleted successfully'
+                ];
             }
         } catch (\Exception $exc) {
             $response = [
@@ -248,7 +249,7 @@ class ProductController extends Controller
     {
         try {
             if ($this->checkAdmin()) {
-                $products = Product::select('id', 'name', 'packageName')->paginate(10);
+                $products = Product::select('id', 'name', 'packageName')->orderBy('id', 'desc')->paginate(10);
                 $response = [
                     'code' => 200,
                     'data' => [
