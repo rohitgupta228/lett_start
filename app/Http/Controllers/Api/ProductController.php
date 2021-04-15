@@ -122,7 +122,7 @@ class ProductController extends Controller
     {
         try {
             if ($this->checkAdmin()) {
-                $product = Product::find($request->product_id);
+                $product = Product::find($request->id);
                 $response = [
                     'code' => 404,
                     'message' => 'Product not found'
@@ -181,32 +181,32 @@ class ProductController extends Controller
     public function mapData($request)
     {
         $data = [
-            'name' => $request->product_name,
-            'packageName' => $request->package_name,
-            'rating' => 4,
-            'oneLinerDesc' => $request->one_line_desc,
-            'detailLink' => $request->detail_link,
-            'internalLink' => $request->internal_link,
-            'externalLink' => $request->external_link,
-            'gumroadLink' => $request->gumroad_link,
-            'price' => $request->product_price,
-            'mainCat' => $request->main_category,
-            'catLink' => $request->category_link,
-            'demolink' => $request->demo_link,
-            'docLink' => $request->doc_link,
-            'screenshot' => $request->screenshot_name,
-            'category' => json_encode($request->categories),
+            'name' => $request->name,
+            'packageName' => $request->packageName,
+            'rating' => $request->rating,
+            'oneLinerDesc' => $request->oneLinerDesc,
+            'detailLink' => $request->detailLink,
+            'internalLink' => $request->internalLink,
+            'externalLink' => $request->externalLink,
+            'gumroadLink' => $request->gumroadLink,
+            'price' => $request->price,
+            'mainCat' => $request->mainCat,
+            'catLink' => $request->catLink,
+            'demolink' => $request->demolink,
+            'docLink' => $request->docLink,
+            'screenshot' => $request->screenshot,
+            'category' => json_encode($request->category),
             'added' => json_encode($request->added),
-            'screenshotDir' => $request->screenshot_dir,
-            'liveDemoBaseStr' => $request->live_demo_base_str,
-            'overviewHTML' => $request->overview_html,
+            'screenshotDir' => $request->screenshotDir,
+            'liveDemoBaseStr' => $request->liveDemoBaseStr,
+            'overviewHTML' => $request->overviewHTML,
             'highlight1' => json_encode($request->highlight1),
             'highlight2' => json_encode($request->highlight2),
-            'techUsed' => json_encode($request->tech_used),
-            'themeFacts' => json_encode($request->theme_facts),
+            'techUsed' => json_encode($request->techUsed),
+            'themeFacts' => json_encode($request->themeFacts),
             'screenshots' => json_encode($request->screenshots),
-            'initialLog' => json_encode($request->initial_log),
-            'changeLog' => json_encode($request->change_log),
+            'initialLog' => json_encode($request->initialLog),
+            'changeLog' => json_encode($request->changeLog),
         ];
         return $data;
     }
