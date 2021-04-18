@@ -128,7 +128,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function details($detailLink)
+    public function details($detailLink=null)
     {
         try {
             $metaData = $this->getMetaData();
