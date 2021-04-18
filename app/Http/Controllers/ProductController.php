@@ -156,8 +156,6 @@ class ProductController extends Controller
                 return view('product_detail', compact('product', 'relatedProducts', 'title', 'description' , 'downloads', 'reviews'));
             }
         } catch (\Exception $exc) {
-            print_r($exc->getMessage());
-            die;
             return response()->view('errors.500');
         }
         return response()->view('errors.500');
