@@ -11,7 +11,7 @@
         <meta name="keywords" content="404, not found, error, wrong url">
         <title>404 Page Not Found |  LettStartDesign</title>
         
-        <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet"/>
+        <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
         <style>
             .page-wrapper {
                 display: flex;

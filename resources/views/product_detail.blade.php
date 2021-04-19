@@ -163,14 +163,14 @@
                                     </div>
                                     <div class="tab-content pt-2" id="option-data">
                                         <div data-id="razorpay" data-type="razorpay" class="tab-pane active fade show">
-                                            <button class="btn btn-primary-gred btn-block disable-events" id="razorpay-btn" data-track-elem event-category="Buy Now"  event-action="click" event-label="Razorpay">
+                                            <button class="btn btn-primary-gred btn-block disable-events" id="razorpay-btn" data-track-elem event-category="Razorpay - Buy Now"  event-action="click" event-label="{{ $product['name'] }}">
                                                 <span>Buy Now</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
                                             </button>
                                         </div>
                                         <div data-id="paypal" data-type="paypal" class="tab-pane fade">
-                                            <button class="btn btn-primary-gred btn-block" id="paypal-btn" data-track-elem event-category="Buy Now"  event-action="click" event-label="Paypal">
+                                            <button class="btn btn-primary-gred btn-block" id="paypal-btn" data-track-elem event-category="Paypal - Buy Now"  event-action="click" event-label="{{ $product['name'] }}">
                                                 <span>Buy Now</span>
                                                 <span class="align-middle btn-loader"><i
                                                         class="bx bx-loader-alt bx-spin icon-md"></i></span>
