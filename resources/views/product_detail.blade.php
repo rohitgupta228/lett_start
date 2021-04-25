@@ -142,7 +142,7 @@
                                             Go Pro
                                         </a>
                                     @endif
-                                    <button class="btn btn-primary-gred" id="free-purchase">
+                                    <button class="btn btn-primary-gred" id="free-purchase" data-track-elem event-category="Freebies - Buy Now"  event-action="click" event-label="{{ $product['name'] }}">
                                         <span>Download</span>
                                         <span class="align-middle btn-loader"><i
                                                 class="bx bx-loader-alt bx-spin icon-md"></i></span>
