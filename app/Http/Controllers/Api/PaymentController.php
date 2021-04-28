@@ -161,6 +161,18 @@ class PaymentController extends Controller
         $paymentStatus = config('settings.payment_status');
         try {
             if ($product->price == 0) {
+
+                $transactionData = Transaction::where('product_id', $product->productId)->first();
+                if ($transactionData) {
+                    $response = [
+                        'code' => 200,
+                        'message' => 'Already downloaded',
+                        'product_name' => $product->name,
+                        'already_downloaded' => 1
+                    ];
+                    return $response;
+                }
+
                 $paymentData = [
                     'user_id' => $data['user_id'],
                     'product_id' => $data['product_id'],
@@ -177,18 +189,21 @@ class PaymentController extends Controller
                 $response = [
                     'code' => 200,
                     'message' => 'Payment done successfully',
-                    'product_name' => $product->name
+                    'product_name' => $product->name,
+                    'already_downloaded' => 0
                 ];
             } else {
                 $response = [
                     'code' => 404,
                     'message' => 'Please choose payment method',
+                    'already_downloaded' => 0
                 ];
             }
         } catch (\Exception $exc) {
             $response = [
                 'code' => $exc->getCode(),
                 'message' => $exc->getMessage(),
+                'already_downloaded' => 0
             ];
         }
         return response(json_encode($response));
