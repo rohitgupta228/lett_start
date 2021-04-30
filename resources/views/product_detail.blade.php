@@ -451,6 +451,28 @@
             </div>
         </div>
     </div>
+    <div class="modal fade thankyou-modal" id="alreadyDownloadedModal" tabindex="-1" aria-labelledby="successModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
+                    </button>
+                </div>
+                <div class="modal-body p-30 text-center">
+                    <div class="mb-15">
+                        <i class="bx bx-check-circle text-success font-weight-normal mb-0"></i>
+                    </div>
+                    <p>This product has already been added to your downloads. Please visit the download page to again download the package.</p>
+                    <div class="mt-30">
+                        <a href="{{ route('user.order.history') }}" class="btn btn-primary-gred"
+                            title="go to downloads">Go to Downloads</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade thankyou-modal" id="failureModal" tabindex="-1" aria-labelledby="failureModal"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

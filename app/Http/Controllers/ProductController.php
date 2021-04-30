@@ -113,7 +113,7 @@ class ProductController extends Controller
             }
             $result = $result->leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('category', 'LIKE', "%{$search}%");
             $products = $result->select('products.id', 'products.name', 'products.price','products.rating', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'downloads.num_downloads')->orderBy('id', 'desc')->paginate(12);
-            return view('product_category', compact('products', 'pageTitle', 'pageDescription', 'title', 'description'));
+            return view('product_category', compact('products', 'category', 'pageTitle', 'pageDescription', 'title', 'description'));
         } catch (\Exception $exc) {
             return response()->view('errors.500');
         }
