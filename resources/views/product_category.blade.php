@@ -6,6 +6,7 @@
 
 @section('meta_description', $description)
 
+
 @section('content')
     <div class="banner-title mt-100">
         <div class="container">
@@ -68,10 +69,10 @@
                             </div>
                             <div class="theme-desc">
                                 <div class="title">
-                                    <h3 class="h5">
+                                    <div class="h5">
                                         <a data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $template['name'] }}" href="{{ route('product.theme', ['detailLink' => $template['detailLink']]) }}"
                                             title="{{ $template['name'] }}">{{ $template['name'] }}</a>
-                                    </h3>
+                                    </div>
                                     <p>{{ $template['oneLinerDesc'] }}</p>
                                 </div>
                                 
@@ -100,10 +101,24 @@
         </div>
     </section>
     </div>
+    @include('layouts.partials.'.$category)
     @include('layouts.partials.modals')
 @endsection
 @section('footer_script')
 <script>
+    $(".read-more-link").on("click", function() {
+        var self = this;
+        var href = $(this).attr("data-href");
+        $(href).slideToggle(300, 'linear', function(){
+            var txt = $(self).text();
+            if(txt.toLowerCase() === 'read less'){
+                $(self).text("Read More")
+            }
+            else {
+                $(self).text("Read Less")
+            }
+        });
+    })
     var pageTitle = '<?= $pageTitle ?>', pageDescription = "<?= $pageDescription ?>", products = <?= json_encode($products) ?>, route = '<?=  Request::getRequestUri() ?>', title = '<?=  $title ?>', description = '<?=  $description ?>';
     var breadcrumb = {
         "@type": "BreadcrumbList",
