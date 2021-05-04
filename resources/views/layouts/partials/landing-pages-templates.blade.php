@@ -1,3 +1,7 @@
+<?php
+  $path = storage_path() . "/faq.json";
+  $faqList = json_decode(file_get_contents($path), true);
+?>
 <section class="section bg-light">
   <div class="container">
     <h2 class="mb-30">Why Use the Bootstrap Landing Page for a Website?</h2>

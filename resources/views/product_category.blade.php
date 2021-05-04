@@ -102,7 +102,7 @@
         </div>
     </section>
     </div>
-    @include('layouts.partials.'.$category)
+    @include('layouts.partials.'.$category, ['category' => $category])
     @include('layouts.partials.modals')
 @endsection
 @section('footer_script')

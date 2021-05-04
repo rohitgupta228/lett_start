@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="loginModalLabel">Login to Lettstart Design</h4>
+                <div class="h4 modal-title" id="loginModalLabel">Login to Lettstart Design</div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="bx bx-x"></i>
                 </button>
@@ -48,7 +48,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content pb-0">
             <div class="modal-header">
-                <h4 class="modal-title" id="registerModalLabel">Register to Lettstart Design</h4>
+                <div class="h4 modal-title" id="registerModalLabel">Register to Lettstart Design</div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="bx bx-x"></i>
                 </button>
@@ -109,7 +109,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="forgotModalLabel">Forgot Password</h4>
+                <div class="h4 modal-title" id="forgotModalLabel">Forgot Password</div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="bx bx-x"></i>
                 </button>
@@ -150,7 +150,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="resetModalLabel">Reset Password</h4>
+                <div class="h4 modal-title" id="resetModalLabel">Reset Password</div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="bx bx-x"></i>
                 </button>

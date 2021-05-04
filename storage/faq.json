@@ -1,0 +1,8 @@
+{
+  "landing-pages-templates": [
+    {
+      "question": "Does the landing page is mobile responsive?",
+      "answer": "<p>Yes. All the landing page designs are crafted with the use of bootstrap technology. Each element use in the landing page design is 100% mobile responsive.</p>"
+    }
+  ]
+}

@@ -8,7 +8,7 @@
                 <p>Purchase premium and free landing layouts, application layouts, dashboard layouts dependent on rakish, bootstrap, scss and start your first site today.</p>
             </div>
             <div class="col-md-6 col-lg-3 px-xl-4">
-                <h5 class="text-white mb-30">Useful Links</h5>
+                <div class="h5 text-white mb-30">Useful Links</div>
                 <ul class="list-unstyled f-links">
                     <li><a title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'angular-templates']) }}">Angular Templates</a></li>
                     <li><a title="Admin & Dashboard" href="{{ route('product.category', ['category' => 'admin-dashboard-template']) }}">Admin & Dashboard</a></li>
@@ -19,7 +19,7 @@
                 </ul>
             </div>
             <div class="col-md-6 col-lg-2 px-xl-4">
-                <h5 class="text-white mb-30">More Links</h5>
+                <div class="h5 text-white mb-30">More Links</div>
                 <ul class="list-unstyled f-links">
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     <li><a href="{{ route('license') }}">License</a></li>
@@ -30,14 +30,14 @@
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 pl-xl-4">
-                <h5 class="text-white mb-30">Follow Us</h5>
+                <div class="h5 text-white mb-30">Follow Us</div>
                 <div class="social-icons social-white">
                     <a href="https://www.facebook.com/LettstartDesign/" title="facebook" target="_blank"><i
                             class='bx bxl-facebook icon-sm'></i></a>
                     <a href="https://dribbble.com/lettstartdesign" title="dribble" target="_blank"><i
                             class='bx bxl-dribbble icon-sm'></i></a>
                 </div>
-                <h5 class="text-white mt-30 mb-1">Email Us</h5>
+                <div class="h5 text-white mt-30 mb-1">Email Us</div>
                 <ul class="list-unstyled f-links">
                     <li><a title="support@letttstartdesign.com"
                            href="mailto:support@letttstartdesign.com">support@lettstartdesign.com</a></li>
