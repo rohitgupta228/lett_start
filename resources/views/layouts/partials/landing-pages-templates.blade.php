@@ -1,6 +1,6 @@
 <section class="section bg-light">
   <div class="container">
-    <h2 class="mb-30">Why use the Bootstrap landing page for a website?</h2>
+    <h2 class="mb-30">Why Use the Bootstrap Landing Page for a Website?</h2>
     <p>In mobile-first technology, the web is moving towards serving the mass user base who access the web from mobile devices. When it comes to responsive web design, Bootstrap is the pioneer in technology. Since the beginning of the bootstrap development & bootstrap landing page template, several upgrades and modification have been done in the core technology to enhance the user's experience. Bootstrap is now one of the leading web programming standards in the world of web development. Bootstrap is inspiring people to move from traditional practices to the responsive web.</p>
     <div id="read-more-1" style="display: none;">
       <p>Designing a landing page is a daunting task. You have to ensure that each call to action is prominent on the page, including the Signup, register, act now, buy now, refer, fill the form, etc. A landing page with perfectly align elements could contribute to increasing the conversion rate.</p>
