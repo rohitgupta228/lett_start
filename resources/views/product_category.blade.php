@@ -1,3 +1,8 @@
+<?php
+    $path = storage_path() . "/faq.json";
+    $faqList = json_decode(file_get_contents($path), true);
+?>
+
 @extends('layouts.main')
 
 @section('title', $title)
@@ -9,6 +14,7 @@
 @section('keywords', $keywords)
 
 @section('content')
+
     <div class="banner-title mt-100">
         <div class="container">
             <div class="row align-items-center">
@@ -107,6 +113,7 @@
 @endsection
 @section('footer_script')
 <script>
+    var faqData = '<?php if (array_key_exists($category, $faqList)) echo json_encode($faqList[$category]) ?>'
     $(".read-more-link").on("click", function() {
         var self = this;
         var href = $(this).attr("data-href");
