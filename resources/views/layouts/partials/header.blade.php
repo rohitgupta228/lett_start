@@ -20,7 +20,7 @@
         <meta name="title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
         <meta name="description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including admin templates, angular templates, portfolio &amp; resume templates &amp; landing pages')">
         @if (trim($__env->yieldContent('keywords')))
-            <meta name="keywords" content="@yield('keywords')">
+        <meta name="keywords" content="@yield('keywords')">
         @endif
 
         <meta property="og:title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
