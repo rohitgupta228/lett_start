@@ -99,7 +99,7 @@
 </section>
 <section class="section">
   <div class="container">
-    <h3 class="mb-30">Why Choose Lettstat Design?</h3>
+    <h3 class="mb-30">Why Choose Lettstart Design?</h3>
     <p>We are following modern technology with the state of the art design to offer a pleasant experience to the user. We understand that it is essential if you want to win the heart of your customer. The bootstrap landing page template developed by Lettstart Design offers many benefits to the user.</p>
     <div id="read-more-2" style="display: none;">
       <p>Several features are geared into the single page to reduce the efforts and time spent accessing the landing page. The conversion rate of your marketing campaign would skyrocket when you start using the landing page template bootstrap.</p>
