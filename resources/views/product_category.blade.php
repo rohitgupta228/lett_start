@@ -113,7 +113,7 @@
 @endsection
 @section('footer_script')
 <script>
-    var faqData = '<?php if (array_key_exists($category, $faqList)) echo json_encode($faqList[$category]) ?>'
+    var faqData = '<?php if (array_key_exists($category, $faqList)) echo json_encode($faqList[$category]) ?>';
     $(".read-more-link").on("click", function() {
         var self = this;
         var href = $(this).attr("data-href");
@@ -193,6 +193,13 @@
 	};
     var itemList = addProduct(products.data);
     ldSchema["@graph"].push(itemList);
+    if(faqData.length){
+        var faq = {
+            "@type": "FAQPage",
+            "mainEntity": faqSchema(JSON.parse(faqData))
+        }
+        ldSchema["@graph"].push(faq);
+    }
 	var el = document.createElement('script');
 	el.type = 'application/ld+json';
 	el.text = JSON.stringify(ldSchema);

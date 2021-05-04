@@ -119,78 +119,22 @@
         <h3 class="mb-30">Frequently Asked Questions</h3>
         <div class="accordion" id="accordionExample">
             @foreach($faqList[$category] as $faq)
+            
                 <div class="card active">
-                    <div class="card-header" id="headingOne">
+                    <div class="card-header" id="heading{{ $loop->index }}">
                         <a href="javascript:void(0)" class="accordion-toggle text-left" data-toggle="collapse"
-                           data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                           data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
                             {!! $faq['question'] !!}
                         </a>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+                    <div id="collapse{{ $loop->index }}" class="collapse show" aria-labelledby="heading{{ $loop->index }}">
                         <div class="card-body">
                             {!! $faq['answer'] !!}
                         </div>
                     </div>
                 </div>
             @endforeach
-            <div class="card active">
-                <div class="card-header" id="headingTwo">
-                    <a href="javascript:void(0)" class="accordion-toggle text-left" data-toggle="collapse"
-                       data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        Are these landing page designs considering emotional marketing?
-                    </a>
-                </div>
-
-                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo">
-                    <div class="card-body">
-                        Yes. We are using emotional factors while designing the landing page. The ultimate goal of the landing page is to guide the user to the call to action button and make them fill the form. The page will benefit you to trigger the emotion of the user and make them become your loyal customer.
-                    </div>
-                </div>
-            </div>
-            <div class="card active">
-                <div class="card-header" id="headingThree">
-                    <a href="javascript:void(0)" class="accordion-toggle" data-toggle="collapse" data-target="#collapseThree"
-                       aria-expanded="false" aria-controls="collapseThree">
-                        Are these bootstrap landing pages are free to download?
-                    </a>
-                </div>
-                <div id="collapseThree" class="collapse show" aria-labelledby="headingThree">
-                    <div class="card-body">
-                        <p>There are a few bootstrap landing page download available for free of cost. You can download them as many times over without needing to pay. However, we do not offer customer support and documentation with the free template. You only receive technical support with the premium themes.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card active">
-                <div class="card-header" id="headingFour">
-                    <a href="javascript:void(0)" class="accordion-toggle" data-toggle="collapse" data-target="#collapseFour"
-                       aria-expanded="false" aria-controls="collapseFour">
-                        Do I allow to modify the design of the template once purchase?
-                    </a>
-                </div>
-                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour">
-                    <div class="card-body">
-                        <p>Paid users have complete freedom to make any changes to the purchased <a href="https://lettstartdesign.com/category/bootstrap-templates">bootstrap themes</a>. You can add, remove, or customize the complete template without any limitation.</p>
-                        <p>However, we would not be able to serve you if the technology you use in making the changes to the theme is not part of the contract. Therefore, it is advisable to consult with our support team before making any changes to keep your 1-year support service valid.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card active">
-                <div class="card-header" id="headingFive">
-                    <a href="javascript:void(0)" class="accordion-toggle" data-toggle="collapse" data-target="#collapseFive"
-                       aria-expanded="false" aria-controls="headingFive">
-                        How to contact the customer support team of the Lettstart Design?
-                    </a>
-                </div>
-                <div id="collapseFive" class="collapse show" aria-labelledby="headingFive" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>You can visit our website www.lettstartdesign.com and fill the contact us form. Or drop us an email at <a
-                                href="mailto:support@lettstartdesign.com">support@lettstartdesign.com</a> and <a
-                                href="mailto:info@lettstartdesign.com">info@lettstartdesign.com</a> Our customer support team will get
-                            in touch with you as soon as we receive your message.</p>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="mt-50">
             <p><b>Other Bootstrap Templates : </b> <a href="https://lettstartdesign.com/category/admin-dashboard-template"> Admin Dashboard Templates </a> | <a href="https://lettstartdesign.com/category/portfolio-resume-templates">Bootstrap Portfolio Template</a> | <a href="https://lettstartdesign.com/category/angular-templates">Angular Template</a></p>
