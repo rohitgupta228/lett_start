@@ -6,6 +6,7 @@
 
 @section('meta_description', $description)
 
+@section('keywords', $keywords)
 
 @section('content')
     <div class="banner-title mt-100">

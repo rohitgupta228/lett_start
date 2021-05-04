@@ -6,6 +6,8 @@
 
 @section('meta_description', $description)
 
+@section('keywords', $keywords)
+
 @section('content')
     <!--Main title-->
     <div class="theme-title mt-100">

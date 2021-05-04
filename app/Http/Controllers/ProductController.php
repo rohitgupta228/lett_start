@@ -36,7 +36,7 @@ class ProductController extends Controller
             $angular = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('added', 'LIKE', "%{$query['angular']}%")->where('price', '!=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->orderBy('id', 'desc')->get()->toArray();
             if (count($angular))
                 $angular = array_slice($angular, 0, 3);
-            
+
             $freebies = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('added', 'LIKE', "%{$query['freebies']}%")->where('price', '=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->orderBy('id', 'desc')->get()->toArray();
             if (count($freebies))
                 $freebies = array_slice($freebies, 0, 3);
@@ -104,16 +104,19 @@ class ProductController extends Controller
                     $pageTitle = "All Themes, Templates & Landing Pages";
                     $pageDescription = "20+ Free and Premium Templates. Choose, combine and match the combination of components you want from the several 100 styles we provide!";
             }
+            $keywords = '';
             if ($search === '') {
                 $title = "All Themes, Templates & Landing Pages | Admin Dashboard | Angular Templates";
                 $description = "Affordable 20+ Premium & Free Bootstrap Themes, Templates, Landing pages, Admin Dashboard, Potfolio Templates and Angular Dashboad & Landing Page Templates";
             } else {
                 $title = $metaData[$search]['title'];
                 $description = $metaData[$search]['description'];
+                if (array_key_exists('keywords', $metaData[$search]))
+                    $keywords = $metaData[$search]['keywords'];
             }
             $result = $result->leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('category', 'LIKE', "%{$search}%");
-            $products = $result->select('products.id', 'products.name', 'products.price','products.rating', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'downloads.num_downloads')->orderBy('id', 'desc')->paginate(12);
-            return view('product_category', compact('products', 'category', 'pageTitle', 'pageDescription', 'title', 'description'));
+            $products = $result->select('products.id', 'products.name', 'products.price', 'products.rating', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'downloads.num_downloads')->orderBy('id', 'desc')->paginate(12);
+            return view('product_category', compact('products', 'category', 'pageTitle', 'pageDescription', 'title', 'description', 'keywords'));
         } catch (\Exception $exc) {
             return response()->view('errors.500');
         }
@@ -128,7 +131,7 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function details($detailLink=null)
+    public function details($detailLink = null)
     {
         try {
             $metaData = $this->getMetaData();
@@ -141,6 +144,9 @@ class ProductController extends Controller
                 $paymentStatus = config('settings.payment_status');
                 $title = $metaData[$product->detailLink]['title'];
                 $description = $metaData[$product->detailLink]['description'];
+                $keywords = '';
+                if (array_key_exists('keywords', $metaData[$product->detailLink]))
+                    $keywords = $metaData[$product->detailLink]['keywords'];
                 $reviews = ProductRating::where('product_id', $product->id)->select('username', 'rating', 'comments')->orderBy('id', 'desc')->get();
                 // $downloads = Transaction::where('product_id', $product->productId)->where('payment_status', $paymentStatus[0])->count();
 //                $downloads = $metaData[$product->detailLink]['downloads'];
@@ -149,11 +155,11 @@ class ProductController extends Controller
                 $categoryArray = explode(' ', $product->mainCat);
                 $category = strtolower($categoryArray[0]);
                 $relatedProducts = Product::leftJoin('downloads', 'products.id', '=', 'downloads.product_id')->where('category', 'LIKE', "%{$category}%")->where('products.id', '!=', $product->id)->where('price', '!=', 0)->select('products.id', 'products.name', 'products.price', 'products.detailLink', 'products.screenshot', 'products.demolink', 'products.oneLinerDesc', 'products.catLink', 'products.mainCat', 'products.rating', 'downloads.num_downloads')->get()->toArray();
-               
+
                 if (count($relatedProducts))
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
 
-                return view('product_detail', compact('product', 'relatedProducts', 'title', 'description' , 'downloads', 'reviews'));
+                return view('product_detail', compact('product', 'relatedProducts', 'title', 'description', 'downloads', 'reviews', 'keywords'));
             }
         } catch (\Exception $exc) {
             return response()->view('errors.500');
@@ -221,7 +227,6 @@ class ProductController extends Controller
         $product->update(['rating' => $productRating]);
         Flash::success("Feedback saved successfully");
         return redirect()->back();
-        
     }
 
 }
