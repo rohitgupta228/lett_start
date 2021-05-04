@@ -197,9 +197,9 @@
         var faq = {
             "@type": "FAQPage",
             "mainEntity": faqSchema(JSON.parse(faqData))
-        }
+        };
         ldSchema["@graph"].push(faq);
-    }
+    };
 	var el = document.createElement('script');
 	el.type = 'application/ld+json';
 	el.text = JSON.stringify(ldSchema);
