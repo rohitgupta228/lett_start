@@ -20,5 +20,27 @@
       "question": "How to contact the customer support team of the Lettstart Design?",
       "answer": "<p>You can visit our website www.lettstartdesign.com and fill the contact us form. Or drop us an email at <a href=`mailto:support@lettstartdesign.com`>support@lettstartdesign.com</a> and <a href=`mailto:info@lettstartdesign.com`>info@lettstartdesign.com</a> Our customer support team will get in touch with you as soon as we receive your message.</p>"
     }
+  ],
+  "bootstrap-templates": [
+    {
+      "question": "Do I allow you to create unlimited websites or applications using these templates?",
+      "answer": "<p>Yes. Users who have purchased the premium template receive the license to use the template on unlimited websites and applications without restriction.</p>"
+    },
+    {
+      "question": "Can I use the free and premium bootstrap templates for commercial use?",
+      "answer": "<p>Yes. You can use the free and premium types of bootstrap templates for commercial use.</p>"
+    },
+    {
+      "question": "Do I allow to resale the premium template in the market?",
+      "answer": "<p>No. We have restricted the users from reselling the downloaded premium themes. Any users who are found guilty would be charged with the copyrights issue by Lettstart Design. Talk to the team of the Lettstart Design before you decide to resell any of the templates in the market and take the required permission.</p>"
+    },
+    {
+      "question": "What kind of support can I expect from the LettStart Design after buying the premium bootstrap templates?",
+      "answer": "<p>All the templates come with dedicated 1-year customer support for bug fixing, implementation guide, and error fixing. You can drop an email to us to determine whether the part of the changes you are willing to make on the purchased theme is eligible under the one-year contract. Our team is happy to address all your queries and solve template-related problems.</p>"
+    },
+    {
+      "question": "Do I get all the files when I download the premium themes from the LettStart Design website?",
+      "answer": "<p>Yes. All the essential files are combined in the zip folder for easy download. Once you have purchased the theme, you will be given the download link, which you can use to download the template resources. Upload the given files on your server, and your site will be live.</p>"
+    }
   ]
 }
