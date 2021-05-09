@@ -196,5 +196,17 @@
     "description": "Bob is a multipurpose resume and portfolio bootstrap template specially designed for freelancers, designers, and photographers.",
     "downloads": 0,
     "reviews": 0
+  },
+  "apic-admin-dashboard": {
+    "title": "APIC Admin Dashboard",
+    "description": "APIC is a simple admin dashboard with functional apps and UI's. It can be used for any type of dashboards.",
+    "downloads": 0,
+    "reviews": 0
+  },
+  "apic-angular-admin-dashboard": {
+    "title": "APIC Angular Admin Dashboard",
+    "description": "APIC angular is a simple admin dashboard with functional apps and UI's. It can be used for any type of dashboards.",
+    "downloads": 0,
+    "reviews": 0
   }
 }
