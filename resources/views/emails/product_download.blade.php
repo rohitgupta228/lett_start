@@ -230,39 +230,85 @@
                 </tr>
                 <tr>
                   <td align="center" class="pt-20" style="padding-top: 10px;">
-                    <table style="background-color: #2982de;" class="footer" width="100%" cellspacing="0"
+                    <table style="background-color: #343a40;" class="footer" width="100%" cellspacing="0"
                       cellpadding="0" bgcolor="#3d5ca3">
                       <tbody>
                         <tr>
-                          <td class="pt-40 pl-20 pr-20 pb-20" style="padding-bottom: 20px; padding-top: 40px; padding-left: 20px; padding-right: 20px;" align="center">
-                            <p class="text-white" style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">Copyright &copy; 2020-21 Lettstart Design, All
+                          <td class="pt-40 pl-20 pr-20"
+                            style="padding-bottom: 15px; padding-top: 30px; padding-left: 20px; padding-right: 20px;"
+                            align="center">
+                            <a class="text-white" target="_blank" href="https://lettstartdesign.com/category/admin-dashboard-template"
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">
+                              Admin Dashboard Templates
+                            </a>
+                            <span
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif;padding-left: 10px;padding-right: 10px;">|</span>
+                            <a class="text-white" target="_blank" href="https://lettstartdesign.com/category/bootstrap-templates"
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">
+                              Bootstrap Templates
+                            </a>
+                            <span
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif;padding-left: 10px;padding-right: 10px;">|</span>
+                            <a class="text-white" target="_blank" href="https://lettstartdesign.com/category/landing-pages-templates"
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">
+                              Landing Pages Templates
+                            </a>
+                            <span
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif;padding-left: 10px;padding-right: 10px;">|</span>
+                            <a class="text-white" target="_blank" href="https://lettstartdesign.com/category/business-corporate-templates"
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">
+                              Business &amp; Corporate Templates
+                            </a>
+                            <span
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif;padding-left: 10px;padding-right: 10px;">|</span>
+                            <a class="text-white" target="_blank" href="https://lettstartdesign.com/category/portfolio-resume-templates"
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">
+                              Portfolio &amp; Resume Templates
+                            </a>
+                            <span
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif;padding-left: 10px;padding-right: 10px;">|</span>
+                            <a class="text-white" target="_blank" href="https://lettstartdesign.com/category/angular-templates"
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">
+                              Angular Templates
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="pl-20 pr-15 pb-10"
+                            style="padding-bottom: 10px; padding-top: 15px; padding-left: 20px; padding-right: 20px;"
+                            align="center">
+                            <p class="text-white"
+                              style="color: #ffffff; font-family: arial, 'helvetica neue', helvetica, sans-serif; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; line-height: 150%; font-size: 14px;">
+                              Copyright &copy; 2020-21 Lettstart Design, All
                               right reserved.</p>
                           </td>
                         </tr>
                         <tr>
-                          <td class="pl-20 pr-20 pb-40" style="padding-bottom: 40px; padding-left: 20px; padding-right: 20px;" align="center">
+                          <td class="pl-20 pr-20 pb-40"
+                            style="padding-bottom: 30px; padding-top: 15px; padding-left: 20px; padding-right: 20px;"
+                            align="center">
                             <table>
                               <tbody>
                                 <tr>
                                   <td class="pr-10" style="padding-right: 10px;">
-                                    <a href="https://www.facebook.com/LettstartDesign/">
-                                      <img
-                                        src="https://lettstartdesign.com/assets/images/fb-icon.png"
-                                        alt="Fb" title="Facebook" width="32">
+                                    <a href="https://www.facebook.com/LettstartDesign/" style="padding: 3px;
+                                    background: #fff;border-radius: 100%;display: block;">
+                                      <img src="https://lettstartdesign.com/assets/images/fb-icon.png" style="vertical-align: middle;" alt="Fb"
+                                        title="Facebook" width="24">
                                     </a>
                                   </td>
                                   <td class="pr-10" style="padding-right: 10px;">
-                                    <a href="https://dribbble.com/lettstartdesign">
-                                      <img
-                                        src="https://lettstartdesign.com/assets/images/dribble-icon.png"
-                                        alt="Dribble" title="Dribble" width="32">
+                                    <a href="https://dribbble.com/lettstartdesign" style="padding: 3px;
+                                    background: #fff;border-radius: 100%;display: block;">
+                                      <img src="https://lettstartdesign.com/assets/images/dribble-icon.png"
+                                        alt="Dribble" style="vertical-align: middle;" title="Dribble" width="24">
                                     </a>
                                   </td>
                                   <td>
-                                    <a href="https://gumroad.com/letstartdesign">
-                                      <img
-                                        src="https://lettstartdesign.com/assets/images/gumroad-icon.png"
-                                        alt="Gumroad" title="Gumroad" width="32">
+                                    <a href="https://gumroad.com/letstartdesign" style="padding: 3px;
+                                    background: #fff;border-radius: 100%;display: block;">
+                                      <img src="https://lettstartdesign.com/assets/images/gumroad-icon.png"
+                                        alt="Gumroad" style="vertical-align: middle;" title="Gumroad" width="24">
                                     </a>
                                   </td>
                                 </tr>

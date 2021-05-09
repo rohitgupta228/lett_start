@@ -51,7 +51,7 @@ class SubscribeTemplateNotification extends Command
                 ];
                 foreach ($emails as $email) {
                     Mail::to($email)
-                            ->queue(new \App\Mail\Mailer($data));
+                            ->send(new \App\Mail\Mailer($data));
                 }
                 $this->info('Mail send successfully');
                 return;

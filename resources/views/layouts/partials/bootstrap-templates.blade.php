@@ -38,7 +38,7 @@
           of pages or features without needing to change the site's core functionality.</p>
       </div>
       <div class="col-lg-4">
-        <img src="{{ url('assets/images/bootstrap-main.png') }}" class="img-fluid" alt="" />
+        <img src="{{ url('assets/images/bootstrap-main.png') }}" class="img-fluid" alt="premium bootstrap templates" />
       </div>
     </div>
   </div>

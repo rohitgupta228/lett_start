@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <img src="{{ url('assets/images/lp-main.jpg') }}" class="img-fluid" alt=""/>
+                    <img src="{{ url('assets/images/lp-main.jpg') }}" class="img-fluid" alt="bootstrap landing page template"/>
                 </div>
             </div>
         </div>
