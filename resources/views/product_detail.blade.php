@@ -408,7 +408,7 @@
                                                 @endif
                                                 <div class="rating-info">
                                                     <input type="hidden" class="rating" name="rating" data-filled="bx bxs-star text-warning" data-empty="bx bx-star text-warning" value="{{ $template['rating'] }}" data-readonly data-fractions=2 />
-                                                    <span class="sale-count">{{ $template['num_downloads'] }} sales</span>
+                                                    <span class="sale-count">{{ $template['num_downloads'] ? $template['num_downloads'] : 0 }} sales</span>
                                                 </div>
                                             </div>
                                         </div>
