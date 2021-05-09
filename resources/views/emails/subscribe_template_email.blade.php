@@ -53,7 +53,7 @@
                 <tr>
                   <td align="middle" style="padding-top:50px;padding-bottom: 10px;">
                     <span
-                      style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;line-height: 120%; font-size: 11px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; color: #ffffff;background: #f06543;padding:10px 15px;border-radius: 50px;">
+                      style="line-height: 120%; font-size: 11px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; color: #ffffff;background: #f06543;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:15px;border-radius: 50px;">
                       New Product</span>
                   </td>
                 </tr>
@@ -72,7 +72,7 @@
                           <td style="width:40%">
                             <img
                               src="http://lettstartdesign.com/assets/images/slider-screenshot/{{ $data['product']->screenshot }}"
-                              alt="{{ $data['product']->name }}" style="width: 240px;" />
+                              alt="{{ $data['product']->name }}" width="240" style="width: 240px;" />
                           </td>
                           <td style="padding-left: 15px;">
                             
