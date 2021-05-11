@@ -45,7 +45,7 @@ class SubscribeTemplateNotification extends Command
             if ($product) {
                 $emails = \App\User::pluck('email')->toArray();
                 $data = [
-                    'subject' => 'New Template added',
+                    'subject' => 'New Product added',
                     'template' => 'emails.subscribe_template_email',
                     'product' => $product
                 ];

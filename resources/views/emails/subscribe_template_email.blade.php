@@ -53,7 +53,7 @@
                 <tr>
                   <td align="middle" style="padding-top:50px;padding-bottom: 10px;">
                     <span
-                      style="line-height: 120%; font-size: 11px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; color: #ffffff;background: #f06543;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:15px;border-radius: 50px;">
+                      style="line-height: 120%; font-size: 11px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; color: #ffffff;background: #f06543;padding-left:15px;padding-right:15px;padding-top:8px;padding-bottom:8px;border-radius: 50px;">
                       New Product</span>
                   </td>
                 </tr>
@@ -76,9 +76,9 @@
                           </td>
                           <td style="padding-left: 15px;">
                             
-                            <p style="line-height: 120%; font-size: 16px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; font-weight: normal;color: #666666;">{{ $data['product']->oneLinerDesc }}</p>
+                            <p style="line-height: 150%; font-size: 16px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; font-weight: normal;color: #666666;">{{ $data['product']->oneLinerDesc }}</p>
                             <span class="button-border">
-                              <a href="https://lettstartdesign.com/category/premium-admin-bootstrap-templates"
+                              <a href="https://lettstartdesign.com/theme/{{ $data['product']->detailLink }}"
                                 class="button" target="_blank" style="    border-style: solid;
                           border-color: #2982de;
                           border-width: 1px;
@@ -92,7 +92,7 @@
                           color: #2982de !important;
                           text-decoration: none;
                           width: auto;
-                          text-align: center;"><span style="color: #2982de !important">Explore</span></a>
+                          text-align: center;"><span style="color: #2982de !important">Explore Now</span></a>
                             </span>
                           </td>
                         </tr>
@@ -103,6 +103,11 @@
                 <tr>
                   <td align="center" class="pt-40 pb-20" style="padding-top: 40px; padding-bottom: 20px;">
                     <h4 style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;line-height: 120%;  font-size: 24px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; font-weight: normal; color: #333333;">Checkout All Products</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" class="pt-40 pb-20" style="padding-right: 30px; padding-bottom:20px;padding-left: 30px; color: #666666;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; font-size:16px;">
+                    The selection of the bootstrap template for a website is so easy that you can check out all the products listed on the Lettstartdesign. We have wide range of niche templates to serve the need of the customers. It will fulfill the requirement of the business and allow you go live and acquire the new customers instantly.
                   </td>
                 </tr>
                 <tr>
