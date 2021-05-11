@@ -42,5 +42,19 @@
       "question": "Do I get all the files when I download the premium themes from the LettStart Design website?",
       "answer": "<p>Yes. All the essential files are combined in the zip folder for easy download. Once you have purchased the theme, you will be given the download link, which you can use to download the template resources. Upload the given files on your server, and your site will be live.</p>"
     }
+  ],
+  "business-corporate-templates": [
+    {
+      "question": "Are the bootstrap corporate templates come with a content management system?",
+      "answer": "<p>No. The bootstrap corporate templates are made to serve the front end of the website. For the backend, you have to install the content management system such as WordPress, Joomla, etc.</p>"
+    },
+    {
+      "question": "Do I get the permanent license of the bootstrap corporate theme once download?",
+      "answer": "<p>Yes. All the premium bootstrap corporate theme comes with permanent license. Once you have downloaded the premium themes, you can use them as per your need.</p>"
+    },
+    {
+      "question": "Do I allow selling the bootstrap template for business website on other portals once I pay for it?",
+      "answer": "<p>No. Users cannot sell the downloaded themes to the other portals without consultation with the Lettstart Design support team.</p>"
+    }
   ]
 }
