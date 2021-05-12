@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                  <img src="{{ url('assets/images/business-corporate.jpg') }}" class="img-fluid" alt="premium bootstrap templates" />
+                  <img src="{{ url('assets/images/business-corporate.jpg') }}" class="img-fluid" alt="Bootstrap Business Templates" />
                 </div>
             </div>
         </div>
