@@ -23,6 +23,9 @@
     </o:OfficeDocumentSettings>
 </xml>
 <![endif]-->
+  <style>
+    
+  </style>
 </head>
 
 <body style="padding:0; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;">
@@ -69,7 +72,7 @@
                     <table width="100%" cellspacing="0" cellpadding="0">
                       <tbody>
                         <tr>
-                          <td style="width:40%">
+                          <td class="mb-img" style="width:40%">
                             <img
                               src="http://lettstartdesign.com/assets/images/slider-screenshot/{{ $data['product']->screenshot }}"
                               alt="{{ $data['product']->name }}" width="240" style="width: 240px;" />
@@ -107,7 +110,17 @@
                 </tr>
                 <tr>
                   <td align="center" class="pt-40 pb-20" style="padding-right: 30px; padding-bottom:20px;padding-left: 30px; color: #666666;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; font-size:16px;">
-                    The selection of the bootstrap template for a website is so easy that you can check out all the products listed on the Lettstartdesign. We have wide range of niche templates to serve the need of the customers. It will fulfill the requirement of the business and allow you go live and acquire the new customers instantly.
+                    Find the complete collection of the Premium and Free bootstrap templates. Click below to check
+                    out all the products and choose a suitable theme for your requirements. Templates are
+                    categorized in a nice order to make the selection process easy.
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" class="pt-40 pb-20" style="padding-right: 30px; padding-bottom:20px;padding-left: 30px; color: #666666;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; font-size:16px;">
+                    Premium and Free templates are made of fully functional layouts, dynamic design, widgets, plug-in. Great UI/UX of the dashboard and frontend enhances the readability of the content and encourages users to spend
+                    more time browsing the website. Interactive elements provide the heartbeat to the theme and
+                    make people feel the aliveness on the website when they start using the features. It is a one-stop
+                    solution to your website development.
                   </td>
                 </tr>
                 <tr>
