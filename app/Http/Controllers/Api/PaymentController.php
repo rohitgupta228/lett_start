@@ -30,6 +30,7 @@ use Session;
 use Redirect;
 use Input;
 use Razorpay\Api\Api;
+use App\Models\Product;
 
 class PaymentController extends Controller
 {
@@ -344,6 +345,7 @@ class PaymentController extends Controller
             if ($product) {
                 $createdDate = $product->created_at;
                 $dateAfter24Hours = Carbon::parse($product->created_at)->addHour(24)->toDateTimeString();
+                
                 if (Carbon::now()->toDateTimeString() > $dateAfter24Hours) {
                     $product->delete();
                     return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
@@ -351,8 +353,8 @@ class PaymentController extends Controller
                 $headers = array(
                     'Content-Type' => 'application/octet-stream',
                 );
-
-                return response()->download(public_path() . '/packages/' . $product->packageName . '.zip', $product->name . '.zip', $headers);
+                $productDetails = Product::find($productId);
+                return response()->download(public_path() . '/packages/' . $productDetails->packageName . '.zip', $productDetails->name . '.zip', $headers);
             }
         } catch (\Exception $exc) {
             logger($exc->getMessage());
