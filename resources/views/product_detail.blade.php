@@ -517,7 +517,7 @@
             relatedProducts = <?= json_encode($relatedProducts) ?>,
             route = '<?= Request::getRequestUri() ?>',
             title = '<?= $title ?>',
-            description = '<?= $description ?>', downloads = '<?= $downloads ?>', reviews = <?= json_encode($reviews) ?>;
+            description = `<?= $description ?>`, downloads = '<?= $downloads ?>', reviews = <?= json_encode($reviews) ?>;
         var breadcrumb = {
             "@type": "BreadcrumbList",
             "itemListElement": [{
