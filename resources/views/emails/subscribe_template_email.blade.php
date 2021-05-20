@@ -82,7 +82,7 @@
                             <p style="line-height: 150%; font-size: 16px; font-family: arial, 'helvetica neue', helvetica, sans-serif; font-style: normal; font-weight: normal;color: #666666;">{{ $data['product']->oneLinerDesc }}</p>
                             <span class="button-border">
                               <a href="https://lettstartdesign.com/theme/{{ $data['product']->detailLink }}"
-                                class="button" target="_blank" style="    border-style: solid;
+                                class="button" target="_blank" style="border-style: solid;
                           border-color: #2982de;
                           border-width: 1px;
                           padding: 8px 15px;

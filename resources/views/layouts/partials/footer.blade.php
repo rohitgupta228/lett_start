@@ -47,15 +47,21 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; Copyright 2020-21. <span class="text-white">LettStartDesign</span>
+            <div class="row">
+                <div class="col-md-9">
+                    &copy; Copyright 2020-21. <span class="text-white">LettStartDesign</span>
+                </div>
+                <div class="col-md-3">
+                    <div class="back-top">
+                        <a href="javascript:void(0)">
+                            <i class="bx bx-chevron-up h5 mb-0 text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
-<div class="back-top">
-    <a href="javascript:void(0)">
-        <i class="bx bx-chevron-up h5 mb-0 text-white"></i>
-    </a>
-</div>
 <script>
     var registerRoute = "<?= route('register') ?>";
     var loginRoute = "<?= route('login') ?>";

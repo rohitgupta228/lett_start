@@ -56,5 +56,27 @@
       "question": "Do I allow selling the bootstrap template for business website on other portals once I pay for it?",
       "answer": "<p>No. Users cannot sell the downloaded themes to the other portals without consultation with the Lettstart Design support team.</p>"
     }
+  ],
+  "portfolio-resume-templates": [
+    {
+      "question": "Do I have the right to make the changes to the design after I purchase the bootstrap portfolio theme?",
+      "answer": "<p>Yes. You have complete rights to make any required changes to the site once you have obtained the license from the Lettstart Design.</p>"
+    },
+    {
+      "question": "What will be included in the download package?",
+      "answer": "<p>You will receive the source code files combined in the zip folder. There will be separate pages, CSS files, documentation, and essential files that are needed to make your website live in the folder.</p>"
+    },
+    {
+      "question": "Do the theme require a link back to the Lettstart Design website?",
+      "answer": "<p>No. The premium theme doesn&#39;t require the link back to the Lettstart Design website. You can remove the link from the footer whenever you want.</p>"
+    },
+    {
+      "question": "Can I change the theme color?",
+      "answer": "<p>Yes. Changing the default theme color is possible on the Lettstart Design website. Add a preferred theme when you make your website live. However, you may require the help of the bootstrap developer to make the changes safely.</p>"
+    },
+    {
+      "question": "Are these bootstrap resume websites are responsive?",
+      "answer": "<p>Yes. All the bootstrap themes are 100% responsive. They are compatible with all types of modern devices. The theme automatically gets adjusted to the screen size. You will never have trouble accessing the website on desktop, mobile, and tablet.</p>"
+    }
   ]
 }

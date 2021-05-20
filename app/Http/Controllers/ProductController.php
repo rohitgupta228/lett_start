@@ -96,8 +96,8 @@ class ProductController extends Controller
                     break;
                 case 'freebies':
                     $search = 'freebies';
-                    $pageTitle = "Free Templates & Themes";
-                    $pageDescription = "Bootstrap free themes that are ready to customize and publish - a perfect starting point for your next web application";
+                    $pageTitle = " Free Bootstrap Templates";
+                    $pageDescription = "Free Bootstrap templates that are ready to customize and publish - a perfect starting point for your next web application";
                     break;
                 default:
                     $search = '';
