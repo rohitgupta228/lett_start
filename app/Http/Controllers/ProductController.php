@@ -67,27 +67,27 @@ class ProductController extends Controller
                 case 'admin-dashboard-template':
                     $search = 'admin';
                     $pageTitle = "Admin Dashboard Templates";
-                    $pageDescription = 'Bootstrap and Angular admin templates that are ready to use, customize and publish - a perfect starting point for your next web application';
+                    $pageDescription = 'Admin dashboard template for Bootstrap and Angular that are ready to use, customize and publish. Make all around planned dashboard interfaces with our Admin Templates and Themes.';
                     break;
                 case 'bootstrap-templates':
                     $search = 'bootstrap';
-                    $pageTitle = "Bootstrap Themes & Templates";
-                    $pageDescription = 'Bootstrap themes that are ready to customize and publish - a perfect starting point for your next web application';
+                    $pageTitle = "Bootstrap Templates & Themes";
+                    $pageDescription = 'Bootstrap templates and themes that are ready to customize and publish - a perfect starting point for your next web application.';
                     break;
                 case 'landing-pages-templates':
                     $search = 'landing';
                     $pageTitle = "Bootstrap Landing Page Templates";
-                    $pageDescription = "Bootstrap landing page themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
+                    $pageDescription = "Bootstrap landing page templates and themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
                     break;
                 case 'business-corporate-templates':
                     $search = 'business';
-                    $pageTitle = "Business & Corporate Templates";
-                    $pageDescription = "Bootstrap business and corporate website themes that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
+                    $pageTitle = "Bootstrap Business Templates and Corporate Themes";
+                    $pageDescription = "Bootstrap business templates and corporate themes that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
                     break;
                 case 'portfolio-resume-templates':
                     $search = 'portfolio';
-                    $pageTitle = "Portfolio CV/Resume Website Templates";
-                    $pageDescription = "Bootstrap portfolio & resume themes that are ready to customize and publish. It is perfect to show case your work, create resume and make your impression.";
+                    $pageTitle = "Bootstrap Portfolio Templates and Resume Themes";
+                    $pageDescription = "Bootstrap portfolio templates & resume themes that are ready to customize and publish. It is perfect to show case your work, create resume and make your impression.";
                     break;
                 case 'angular-templates':
                     $search = 'angular';

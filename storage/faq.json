@@ -78,5 +78,28 @@
       "question": "Are these bootstrap resume websites are responsive?",
       "answer": "<p>Yes. All the bootstrap themes are 100% responsive. They are compatible with all types of modern devices. The theme automatically gets adjusted to the screen size. You will never have trouble accessing the website on desktop, mobile, and tablet.</p>"
     }
-  ]
+  ],
+  "admin-dashboard-template": [
+    {
+      "question": "What is the use of Admin Dashboard Templates?",
+      "answer": "<p>It can be called the control panel of your website and helps create and manage content, the addition of functionalities through plug-ins, change theme styles, etc.</p>"
+    },
+    {
+      "question": "What is a Bootstrap Admin Dashboard?",
+      "answer": "<p>It is a set of design elements for an admin panel interface offering a myriad of benefits to increase the feel and look of your template on devices.</p>"
+    },
+    {
+      "question": "What is the importance of the Admin Panel?",
+      "answer": "<p>An Admin Panel, apart from giving insights into data, helps to increase productivity and revenue for one’s business. </p>"
+    },
+    {
+      "question": "What is present within an Admin Panel?",
+      "answer": "<p>An Admin Panel constitutes all the models with their APIs one has created, the information about users such as registration and login and reset details, etc. </p>"
+    },
+    {
+      "question": "Which is the best Open-source Bootstrap Template? ",
+      "answer": "<p>Design blocks, Agency, Star admin, Start bootstrap are a few of the best Open-source Bootstrap Templates. </p>"
+    }
+  ],
+  "freebies": []
 }
