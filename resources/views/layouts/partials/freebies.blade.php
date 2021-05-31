@@ -144,7 +144,7 @@
 </section>
 <section class="section">
   <div class="container">
-    <h3 class="mb-30">Bottom Line:</h3>
+    <h3 class="mb-30">Conclusion</h3>
     <p>Free bootstrap website templates are the best choice for launching your business website in the shortest period. Bootstrap has widespread uses and comes with the documentation to perform the editing work. </p>
     <p>Moreover, there is a huge community of bootstrap developers who are available all over the world. If you get errors or get stuck in the development of the bootstrap design, you can seek help from the online communities. Several active developer communities are available online where you can find expert advice on your problem.</p>
     <div id="read-more-4" style="display: none;">
