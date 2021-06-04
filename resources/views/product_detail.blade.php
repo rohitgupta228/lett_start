@@ -8,6 +8,8 @@
 
 @section('keywords', $keywords)
 
+@section('canonicalLink', $canonicalLink)
+
 @section('content')
     <!--Main title-->
     <div class="theme-title mt-100">

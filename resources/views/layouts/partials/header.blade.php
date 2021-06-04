@@ -42,6 +42,9 @@
         <link rel="preload" href="{{ url('assets/js/plugins.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/api.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/app.min.js') }}" as="script">
+        @if (trim($__env->yieldContent('canonicalLink')))
+            <link rel="canonical" href="@yield('canonicalLink')" />
+        @endif
         {{-- <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
         <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script"> --}}
         {{-- <link rel="preconnect" href="https://www.googletagmanager.com"> --}}
