@@ -101,5 +101,23 @@
       "answer": "<p>Design blocks, Agency, Star admin, Start bootstrap are a few of the best Open-source Bootstrap Templates. </p>"
     }
   ],
+  "angular-templates": [
+    {
+      "question": "What is the use of Angular?",
+      "answer": "<p>Angular is a component-based framework used to create single page application. An angular framework is embedded with the original MVC but it is more of an MVVM software architectural setup.</p>"
+    },
+    {
+      "question": "What are the advantages of angular?",
+      "answer": "<p>Easy to understand, Command-line interface, Inbuilt routing library, SEO support, Great application performance, Lazy load of modules, etc.</p>"
+    },
+    {
+      "question": "What is an Angular CLI?",
+      "answer": "<p>Angular CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications directly from a command shell.</p>"
+    },
+    {
+      "question": "How I can install angular templates locally?",
+      "answer": "<p>After a successful purchase of angular source files and documentation files. Follow the document guidelines to install the angular templates locally.</p>"
+    }
+  ],
   "freebies": []
 }
