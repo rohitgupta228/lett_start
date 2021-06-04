@@ -141,6 +141,7 @@ class ProductController extends Controller
                 'message' => 'Product not found'
             ];
             if ($product) {
+                $canonicalLink = $this->getCanonicalLink($product->mainCat);
                 $paymentStatus = config('settings.payment_status');
                 $title = $metaData[$product->detailLink]['title'];
                 $description = $metaData[$product->detailLink]['description'];
@@ -159,12 +160,31 @@ class ProductController extends Controller
                 if (count($relatedProducts))
                     $relatedProducts = array_slice($relatedProducts, 0, 3);
 
-                return view('product_detail', compact('product', 'relatedProducts', 'title', 'description', 'downloads', 'reviews', 'keywords'));
+                return view('product_detail', compact('product', 'relatedProducts', 'title', 'description', 'downloads', 'reviews', 'keywords', 'canonicalLink'));
             }
         } catch (\Exception $exc) {
             return response()->view('errors.500');
         }
         return response()->view('errors.500');
+    }
+
+    public function getCanonicalLink($mainCategory)
+    {
+        switch ($mainCategory) {
+            case 'Admin':
+                return url('theme/marvel-admin-dashboard');
+            case 'Landing Pages':
+                return url('theme/letstart-wb');
+            case 'Bootstrap':
+                return url('theme/kiosk-app-templates');
+            case 'Business & Corporates':
+                return url('theme/hoskon-hosting-template');
+            case 'Portfolio & Resumes':
+                return url('theme/hugo-cv');
+            case 'Angular':
+                return url('theme/marvel-angular-admin-dashboard');
+        }
+        return null;
     }
 
     public function search(Request $request)
