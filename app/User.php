@@ -30,11 +30,19 @@ class User extends Authenticatable implements JWTSubject
     ];
 
     /**
-     * Get the phone record associated with the user.
+     * Get the details associated with the user.
      */
     public function userDetails()
     {
         return $this->hasOne('App\Models\UserDetail');
+    }
+
+    /**
+     * Get the affiliate record associated with the user.
+     */
+    public function affiliate()
+    {
+        return $this->hasOne('App\Models\Affiliate');
     }
 
     // Rest omitted for brevity

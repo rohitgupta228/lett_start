@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Affiliate;
 use Mail;
 use Flash;
 
@@ -22,7 +24,8 @@ class PagesController extends Controller
 
     public function affiliate()
     {
-        return view('affiliates');
+        $user = Auth::user();
+        return view('affiliates', compact('user'));
     }
 
     public function contactUs()
@@ -132,8 +135,8 @@ class PagesController extends Controller
 
     public function submitAffiliate(Request $request)
     {
-        $data = $request->except(['_token']);
-        $data = $request->except(['_token']);
+        $requestData = $request->except(['_token']);
+        $user = Auth::user();
         $messages = [
             'required' => 'This field is required',
             'email' => 'Please enter valid email',
@@ -145,26 +148,22 @@ class PagesController extends Controller
             'validation-promote' => 'required|string|max:255',
             'validation-url' => 'required|string|max:255',
         ];
-        Validator::make($data, $rules, $messages)->validate();
-        $firstname = $data['validation-fname'];
-        $lastname = $data['validation-lname'];
-        $email = $data['validation-email'];
-        $e_body = "<p style='margin-bottom: 15px'>You have been contacted by <b>" . $data['validation-fname'] . $data['validation-lname'] . "</b> via email, subject is <b>affiliate</b> and email is <b>" . $data['validation-email'] . "</b>. Please find the below details:-</p>";
+        Validator::make($requestData, $rules, $messages)->validate();
+        $userDetails = $user->userDetails()->update(['first_name' => $requestData['validation-fname'], 'last_name' => $requestData['validation-lname']]);
+        $data = [
+            'user_id' => $user->id,
+            'payment_email' => $requestData['validation-email'],
+            'promote_us' => $requestData['validation-promote'],
+            'website_url' => $requestData['validation-url'],
+        ];
+        $affiliateData = Affiliate::where('user_id', $user->id)->first();
+        if ($affiliateData)
+            $affiliateData->update($data);
+        else {
+            $data['affiliate_code'] = str_random(15);
+            Affiliate::create($data);
+        }
 
-        $e_body .= "<p><b>Name</b>: " . $data['validation-fname'] . $data['validation-lname'] . "</p>";
-        $e_body .= "<p><b>Subject</b>: affiliate</p>";
-        $e_body .= "<p><b>Email</b>: " . $data['validation-email'] . "</p>";
-        $e_body .= "<p><b>Website</b>: " . $data['validation-url'] . "</p>";
-        $e_body .= "<p><b>Promote Us</b>: " . $data['validation-promote'] . "</p>";
-        $bcc = "support@lettstartdesign.com";
-        $body = wordwrap($e_body, 70);
-
-        $body = htmlspecialchars_decode($body);
-        Mail::send([], [], function ($message) use ($data, $body) {
-            $message->to('support@lettstartdesign.com')
-                    ->subject('affiliate')
-                    ->setBody($body, 'text/html');
-        });
         Flash::success("Thanks for referal.");
         return redirect(route('affiliate'));
     }

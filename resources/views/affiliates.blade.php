@@ -40,13 +40,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input name="validation-fname" id="fname" type="text" class="form-control" placeholder="First Name *" value="{{ old('validation-fname') }}">
+                                            <input name="validation-fname" id="fname" type="text" class="form-control" placeholder="First Name *" value="{{ old('validation-fname') ?? $user->userDetails->first_name }}">
                                             @include('error', ['type' => 'validation-fname'])
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input name="validation-lname" id="lname" type="text" class="form-control" placeholder="Last Name *" value="{{ old('validation-lname') }}">
+                                            <input name="validation-lname" id="lname" type="text" class="form-control" placeholder="Last Name *" value="{{ old('validation-lname') ?? $user->userDetails->last_name }}">
                                             @include('error', ['type' => 'validation-lname'])
                                             
                                         </div>
@@ -54,16 +54,16 @@
                                 </div>
                                 <div class="form-group">
                                     <input name="validation-email" id="email" type="email" class="form-control"
-                                           placeholder="Enter your Email Address *" value="{{ old('validation-email') }}">
+                                           placeholder="Enter your Email Address *" value="{{ old('validation-email') ?? $user->affiliate->payment_email }}">
                                     @include('error', ['type' => 'validation-email'])
                                 </div>
                                 <div class="form-group">
                                     <input name="validation-url" id="url" type="url" class="form-control"
-                                           placeholder="Enter your Website URL *" value="{{ old('validation-url') }}">
+                                           placeholder="Enter your Website URL *" value="{{ old('validation-url') ?? $user->affiliate->website_url }}">
                                     @include('error', ['type' => 'validation-url'])
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="validation-promote" id="promote" cols="4" class="form-control" placeholder="How will you promote us *">{{ old('validation-promote') }}</textarea>
+                                    <textarea name="validation-promote" id="promote" cols="4" class="form-control" placeholder="How will you promote us *">{{ old('validation-promote') ?? $user->affiliate->promote_us }}</textarea>
                                     @include('error', ['type' => 'validation-promote'])
                                 </div>
                                 <div class="clearfix">
