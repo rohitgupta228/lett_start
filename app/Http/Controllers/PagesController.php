@@ -135,37 +135,41 @@ class PagesController extends Controller
 
     public function submitAffiliate(Request $request)
     {
-        $requestData = $request->except(['_token']);
-        $user = Auth::user();
-        $messages = [
-            'required' => 'This field is required',
-            'email' => 'Please enter valid email',
-        ];
-        $rules = [
-            'validation-fname' => 'required|string|max:255',
-            'validation-lname' => 'required|string|max:255',
-            'validation-email' => 'required|string|email|max:255',
-            'validation-promote' => 'required|string|max:255',
-            'validation-url' => 'required|string|max:255',
-        ];
-        Validator::make($requestData, $rules, $messages)->validate();
-        $userDetails = $user->userDetails()->update(['first_name' => $requestData['validation-fname'], 'last_name' => $requestData['validation-lname']]);
-        $data = [
-            'user_id' => $user->id,
-            'payment_email' => $requestData['validation-email'],
-            'promote_us' => $requestData['validation-promote'],
-            'website_url' => $requestData['validation-url'],
-        ];
-        $affiliateData = Affiliate::where('user_id', $user->id)->first();
-        if ($affiliateData)
-            $affiliateData->update($data);
-        else {
-            $data['affiliate_code'] = str_random(15);
-            Affiliate::create($data);
+        try {
+            $requestData = $request->except(['_token']);
+            $user = Auth::user();
+            $messages = [
+                'required' => 'This field is required',
+                'email' => 'Please enter valid email',
+            ];
+            $rules = [
+                'validation-fname' => 'required|string|max:255',
+                'validation-lname' => 'required|string|max:255',
+                'validation-email' => 'required|string|email|max:255',
+                'validation-promote' => 'required|string|max:255',
+                'validation-url' => 'required|string|max:255',
+            ];
+            Validator::make($requestData, $rules, $messages)->validate();
+            $data = [
+                'user_id' => $user->id,
+                'payment_email' => $requestData['validation-email'],
+                'promote_us' => $requestData['validation-promote'],
+                'website_url' => $requestData['validation-url'],
+            ];
+            $affiliateData = Affiliate::where('user_id', $user->id)->first();
+            if ($affiliateData)
+                $affiliateData->update($data);
+            else {
+                $data['affiliate_code'] = str_random(15);
+                Affiliate::create($data);
+            }
+            $userDetails = $user->userDetails()->update(['first_name' => $requestData['validation-fname'], 'last_name' => $requestData['validation-lname']]);
+            Flash::success("Your referal link will be shared on your email once it will be approved by admin");
+        } catch (\Exception $exc) {
+            if ($exc->getCode() == 23000)
+                Flash::danger("This email has already been taken. Please enter unique email");
         }
-
-        Flash::success("Thanks for referal.");
-        return redirect(route('affiliate'));
+        return redirect()->back()->withInput($request->all());
     }
 
 }
