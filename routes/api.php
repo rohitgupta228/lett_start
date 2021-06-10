@@ -1,7 +1,7 @@
 <?php
 
 header('Access-Control-Allow-Origin: *');
-header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
+header('Access-Control-Allow-Headers: Authorization, Content-Type');
 
 use Illuminate\Http\Request;
 
@@ -43,11 +43,11 @@ Route::group(['prefix' => 'user', 'middleware' => 'api'], function() {
     Route::get('download-theme/{productId}/{userId}', 'Api\AuthController@downloadTheme')->name('api.user.download.theme');
 });
 
-Route::group(['prefix' => 'product', 'middleware' => 'api'], function() {
+Route::group(['prefix' => 'product', 'middleware' => ['auth:api', 'IsAdmin']], function() {
     Route::post('create', 'Api\ProductController@create')->name('product.create');
 
     Route::put('update', 'Api\ProductController@update')->name('product.update');
-    
+
     Route::get('edit/{productId}', 'Api\ProductController@edit')->name('product.edit');
 
     Route::delete('delete', 'Api\ProductController@delete')->name('product.delete');
@@ -57,7 +57,11 @@ Route::group(['prefix' => 'product', 'middleware' => 'api'], function() {
     Route::get('lists', 'Api\ProductController@productsList')->name('product.lists');
 });
 
-Route::group(['prefix' => 'payment','middleware' => 'api'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'IsAdmin']], function() {
+    Route::get('get-affiliate-users', 'Api\AdminController@getAffiliateUsers')->name('admin.affiliate.users');
+});
+
+Route::group(['prefix' => 'payment', 'middleware' => 'api'], function() {
 
 //    Route::post('stripe', 'Api\PaymentController@submitPayment')->name('payment.stripe');
 
