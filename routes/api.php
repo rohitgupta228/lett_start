@@ -59,6 +59,7 @@ Route::group(['prefix' => 'product', 'middleware' => ['auth:api', 'IsAdmin']], f
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'IsAdmin']], function() {
     Route::get('get-affiliate-users', 'Api\AdminController@getAffiliateUsers')->name('admin.affiliate.users');
+    Route::post('update-affiliate-status', 'Api\AdminController@updateAffiliateStatus')->name('admin.affiliate.status');
 });
 
 Route::group(['prefix' => 'payment', 'middleware' => 'api'], function() {
