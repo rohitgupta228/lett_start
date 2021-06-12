@@ -36,6 +36,12 @@ class PagesController extends Controller
         return view('affiliates');
     }
 
+    
+    public function aboutUs()
+    {
+        return view('about_us');
+    }
+
     public function contactUs()
     {
         $metaData = $this->getMetaData();

@@ -39,6 +39,8 @@ Route::get('/terms-and-conditions', 'PagesController@terms')->name('terms');
 
 Route::get('/affiliate', 'PagesController@affiliate')->name('affiliate');
 
+Route::get('/about-us', 'PagesController@aboutUs')->name('about-us');
+
 Route::post('/submit-affiliate', 'PagesController@submitAffiliate')->name('submit.affiliate');
 
 Route::get('/privacy-policy', 'PagesController@privacyPolicy')->name('privacy');
