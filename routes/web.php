@@ -43,7 +43,7 @@ Route::post('/submit-affiliate', 'PagesController@submitAffiliate')->name('submi
 
 Route::get('/privacy-policy', 'PagesController@privacyPolicy')->name('privacy');
 
-Route::get('/contact-us', 'PagesController@contactUs')->name('contact');
+Route::get('/contact-us', 'PagesController@contactUs')->name('contact-us');
 
 Route::post('/submit-contact-us', 'PagesController@submitContactUs')->name('submit.contact.us');
 

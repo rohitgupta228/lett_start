@@ -36,7 +36,7 @@
 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
-                        If you already purchase the theme. When you download it from downloads you will always get the updated package. If not, you can <a href="{{ route('contact') }}" class="text-primary">contact us</a>. We will provide you the latest package.
+                        If you already purchase the theme. When you download it from downloads you will always get the updated package. If not, you can <a href="{{ route('contact-us') }}" class="text-primary">contact us</a>. We will provide you the latest package.
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 </div>
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                     <div class="card-body">
-                        You have to send mail an <a href="info@lettstartdesign.com">email</a> with your transaction id or just reply to the email that had sent when you have purchased the product. We'll revert to that.
+                        You have to send mail an <a href="mailto:info@lettstartdesign.com">email</a> with your transaction id or just reply to the email that had sent when you have purchased the product. We'll revert to that.
                     </div>
                 </div>
             </div>

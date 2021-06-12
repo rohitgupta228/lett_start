@@ -21,7 +21,7 @@
             <div class="col-md-6 col-lg-2 px-xl-4">
                 <div class="h5 text-white mb-30">More Links</div>
                 <ul class="list-unstyled f-links">
-                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                    <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                     <li><a href="{{ route('license') }}">License</a></li>
                     <li><a href="{{ route('faq') }}">FAQ</a></li>
                     <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>

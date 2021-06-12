@@ -4,6 +4,21 @@
     "description": "Free Bootstrap Templates: Download the best and easy to use responsive free bootstrap website templates like eCommerce, Multi page, admin dashboard and more.",
     "keywords": "free bootstrap templates, bootstrap templates free download, free bootstrap website templates, bootstrap ecommerce template free, bootstrap website templates free download"
   },
+  "affiliate":{
+    "title": "Affiliate | Lettstart Design",
+    "description": "Affiliate marketing entails recommending a product or service via a blog, social media platforms, or a website.",
+    "keywords": "affiliate marketing, social marketing, website promotion"
+  },
+  "contact-us":{
+    "title": "Contact Us | Lettstart Design",
+    "description": "Please contact us if you require any assistance with our templates, as well as if you have any questions or just say hello.",
+    "keywords": "query, queries, contact us, assistance, questions"
+  },
+  "faq":{
+    "title": "FAQ | Lettstart Design",
+    "description": "Get quick answers to most common questions.",
+    "keywords": "frequently asked questions, questions, purchase, FAQ"
+  },
   "admin": {
     "title": "Admin Dashboard Templates (Bootstrap and Angular) Download | Lettstart Design",
     "description": "Looking for a perfect bootstrap admin dashboard template for building your web admin portal. Check out here and download the best bootstrap or angular admin dashboard of 2021.",

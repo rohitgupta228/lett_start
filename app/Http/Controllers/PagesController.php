@@ -4,11 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Route;
 use Mail;
 use Flash;
 
 class PagesController extends Controller
 {
+    public function getMetaData()
+    {
+        $path = storage_path() . "/meta.json";
+        $metaData =  json_decode(file_get_contents($path), true);
+        $key =  \Request::route()->getName();
+        $title = $metaData[$key]['title'];
+        $description = $metaData[$key]['description'];
+        return [$title, $description];
+    }
+
 
     public function support()
     {
@@ -27,7 +38,8 @@ class PagesController extends Controller
 
     public function contactUs()
     {
-        return view('contact_us');
+        $metaData = $this->getMetaData();
+        return view('contact_us', compact('metaData'));
     }
 
     public function faq()
