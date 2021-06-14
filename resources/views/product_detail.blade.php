@@ -43,7 +43,7 @@
                             <div class="live-example">
                                 <div class="mb-2 mb-sm-0">
                                     <a href="javascript:void(0)" id="preview-btn" class="btn btn-dark mr-2" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $product['name'] }}">Live Preview</a>
-                                    @if ($product['docLink'] != '')
+                                    @if ($product['docLink'] != "")
                                     <a href="{{ url($product['docLink']) }}" target="_blank" id="doc-btn" data-track-elem event-category="Docs View"  event-action="click" event-label="{{ $product['name'] }}"
                                         class="btn btn-outline-secondary">Docs</a>
                                     @endif
