@@ -19,6 +19,31 @@
     "description": "Get quick answers to most common questions.",
     "keywords": "frequently asked questions, questions, purchase, FAQ"
   },
+  "about-us":{
+    "title": "About US | Lettstart Design",
+    "description": "In Lettstart Design, you will uncover top-of-the-board digital goods that follow contemporary online benchmarks",
+    "keywords": "lettstart design, lettstartdesign, about us"
+  },
+  "license":{
+    "title": "Licence | Lettstart Design",
+    "description": "You can take a look at our license web page to get concept approximately all our license for our products.",
+    "keywords": "licence"
+  },
+  "privacy-policy":{
+    "title": "Privacy Policy | Lettstart Design",
+    "description": "Please take a look at all privacy policies mentioned, whilst the usage of Lettstart Design website.",
+    "keywords": "privacy policy, policies, privacy"
+  },
+  "support":{
+    "title": "Support | Lettstart Design",
+    "description": "If you have any query or questions regarding our templates? Just create support ticket and our support team will help you to fix your issues.",
+    "keywords": "support, tickets, bugs, queries"
+  },
+  "terms-and-conditions":{
+    "title": "Terms & Conditions | Lettstart Design",
+    "description": "Please take a look at all terms and conditions mentioned, whilst the usage of Lettstart Design website.",
+    "keywords": "terms, conditions, terms and conditions, T & C"
+  },
   "admin": {
     "title": "Admin Dashboard Templates (Bootstrap and Angular) Download | Lettstart Design",
     "description": "Looking for a perfect bootstrap admin dashboard template for building your web admin portal. Check out here and download the best bootstrap or angular admin dashboard of 2021.",

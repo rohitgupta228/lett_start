@@ -23,23 +23,26 @@ class PagesController extends Controller
 
     public function support()
     {
-        return view('support');
+        $metaData = $this->getMetaData();
+        return view('support', compact('metaData'));
     }
 
     public function terms()
     {
-        return view('terms');
+        $metaData = $this->getMetaData();
+        return view('terms', compact('metaData'));
     }
 
     public function affiliate()
     {
-        return view('affiliates');
+        $metaData = $this->getMetaData();
+        return view('affiliates', compact('metaData'));
     }
 
     
     public function aboutUs()
     {
-        return view('about_us');
+        return view('about_us', compact('metaData'));
     }
 
     public function contactUs()
@@ -50,17 +53,20 @@ class PagesController extends Controller
 
     public function faq()
     {
-        return view('faq');
+        $metaData = $this->getMetaData();
+        return view('faq', compact('metaData'));
     }
 
     public function privacyPolicy()
     {
-        return view('privacy_policy');
+        $metaData = $this->getMetaData();
+        return view('privacy_policy', compact('metaData'));
     }
 
     public function license()
     {
-        return view('license');
+        $metaData = $this->getMetaData();
+        return view('license', compact('metaData'));
     }
 
     public function submitContactUs(Request $request)
