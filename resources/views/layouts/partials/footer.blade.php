@@ -25,8 +25,8 @@
                     <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                     <li><a href="{{ route('license') }}">License</a></li>
                     <li><a href="{{ route('faq') }}">FAQ</a></li>
-                    <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
-                    <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
+                    <li><a href="{{ route('terms-and-conditions') }}">Terms & Conditions</a></li>
                     {{-- <li><a href="{{ route('affiliate') }}">Become an Affiliate</a></li> --}}
                 </ul>
             </div>

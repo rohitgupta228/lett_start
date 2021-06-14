@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="modal-footer text-center">
-                <p class="mb-0">By Register to lettstartdesign.com, You are agree to our <a href="{{ route('terms') }}" class="text-primary">Terms of Use</a> and <a href="{{ route('privacy') }}" class="text-primary">Privacy Policy</a></p>
+                <p class="mb-0">By Register to lettstartdesign.com, You are agree to our <a href="{{ route('terms-and-conditions') }}" class="text-primary">Terms of Use</a> and <a href="{{ route('privacy-policy') }}" class="text-primary">Privacy Policy</a></p>
             </div>
         </div>
     </div>

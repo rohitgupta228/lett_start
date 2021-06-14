@@ -42,6 +42,7 @@ class PagesController extends Controller
     
     public function aboutUs()
     {
+        $metaData = $this->getMetaData();
         return view('about_us', compact('metaData'));
     }
 

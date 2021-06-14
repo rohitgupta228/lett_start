@@ -2,6 +2,10 @@
 
 @section('title', 'About US')
 
+@section('meta_title', $metaData[0])
+
+@section('meta_description', $metaData[1])
+
 @section('content')
 <!--Demo's Start-->
  <!--Main title-->

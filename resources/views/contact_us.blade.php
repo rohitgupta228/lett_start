@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('title', 'Contact Us')
+
 @section('meta_title', $metaData[0])
 
 @section('meta_description', $metaData[1])

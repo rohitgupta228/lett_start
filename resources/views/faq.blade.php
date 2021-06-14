@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('title', 'Frequently Asked Questions')
+
+@section('meta_title', $metaData[0])
+
+@section('meta_description', $metaData[1])
+
 @section('content')
 <div class="banner-title mt-100">
     <div class="container">

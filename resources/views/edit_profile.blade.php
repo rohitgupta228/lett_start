@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('title', 'User Profile')
+
+@section('meta_title', "User Profile")
+
+@section('meta_description', "Complete and update your profile on our portal.")
+
 @section('content')
 <div class="banner-title mt-100">
     <div class="container">

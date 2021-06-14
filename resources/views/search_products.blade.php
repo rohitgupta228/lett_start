@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('title', 'Search Results'.<?= ucfirst($query) ?>)
+
+@section('meta_title', 'Search Results for')
+
+@section('meta_description', $metaData[1])
+
 @section('content')
 
 <section class="py-50 mt-100">
