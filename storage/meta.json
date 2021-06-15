@@ -193,5 +193,9 @@
   "apic-angular-admin-dashboard": {
     "title": "APIC Angular Admin Dashboard",
     "description": "APIC angular is a simple admin dashboard with functional apps and UI's. It can be used for any type of dashboards."
+  },
+  "proctu-admin-dashboard": {
+    "title": "PROCTU - Bootstrap 5 Admin Dashboard Theme | PROCTU Bootstrap HTML5 Admin Dashbord/Panel Templates",
+    "description": "Proctu is a simple and powerful admin template built with Bootstrap 5 and Sass framework. It is specially designed to manage hospitals back panel."
   }
 }
