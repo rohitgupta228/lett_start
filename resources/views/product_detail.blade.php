@@ -368,6 +368,7 @@
                                     @endif
                                 @endforeach
                             </div>
+                            @if(count(json_decode($product['changeLog'])) > 0)
                             <div class="changlog-list border-radius-2x">
                                 @foreach (json_decode($product['changeLog']) as $logs)
                                 <h5>{{ $logs->text }}</h5>
@@ -378,6 +379,7 @@
                                 </ul>
                                 @endforeach
                             </div>
+                            @endif
                         </div>
                     </div>
                     <div class="mt-100">
