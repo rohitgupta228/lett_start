@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
-@section('title', 'Search Results'.<?= ucfirst($query) ?>)
+@section('title', 'Search Results')
 
 @section('meta_title', 'Search Results for')
 
-@section('meta_description', $metaData[1])
+@section('meta_description', 'Search your theme and templates.')
 
 @section('content')
 
