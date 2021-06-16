@@ -368,6 +368,16 @@
                                     @endif
                                 @endforeach
                             </div>
+                            <div class="changlog-list border-radius-2x">
+                                @foreach (json_decode($product['changeLog']) as $logs)
+                                <h5>{{ $logs->text }}</h5>
+                                <ul>
+                                    @foreach ($logs->list as $list)
+                                        <li>{{ $list }}</li>
+                                    @endforeach
+                                </ul>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <div class="mt-100">
