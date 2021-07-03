@@ -31,6 +31,7 @@
         <link rel="shortcut icon" href="{{ url('assets/images/favicon.ico') }}" type="image/x-icon" />
         <link rel="apple-touch-icon" href="{{ url('assets/images/favicon.ico') }}" />
         <link rel="manifest" href="{{ url('assets/json/manifest.json') }}">
+        
         <!--=== Preloads ===-->
         <link rel="preload" href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" as="style">
         <link rel="preload" href="{{ url('assets/vendors/boxicons/fonts/boxicons.woff2') }}" as="font" type="font/woff2" crossorigin>
@@ -42,9 +43,6 @@
         <link rel="preload" href="{{ url('assets/js/plugins.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/api.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/app.min.js') }}" as="script">
-        @if (trim($__env->yieldContent('canonicalLink')))
-            <link rel="canonical" href="@yield('canonicalLink')" />
-        @endif
         {{-- <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
         <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script"> --}}
         {{-- <link rel="preconnect" href="https://www.googletagmanager.com"> --}}
@@ -67,6 +65,9 @@
         <!--=== Icon Fonts ===-->
         <link href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" rel="stylesheet" />
 
+        @if (trim($__env->yieldContent('canonicalLink')))
+        <link rel="canonical" href="@yield('canonicalLink')" />
+        @endif
         <!--=== Plugins CSS===-->
         <link rel="stylesheet" href="{{ url('assets/css/plugins.min.css') }}" />
 

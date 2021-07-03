@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('title', 'Search Results')
+
+@section('meta_title', 'Search Results for')
+
+@section('meta_description', 'Search your theme and templates.')
+
 @section('content')
 
 <section class="py-50 mt-100">

@@ -6,46 +6,71 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Affiliate;
+use Illuminate\Support\Facades\Route;
 use Mail;
 use Flash;
 
 class PagesController extends Controller
 {
+    public function getMetaData()
+    {
+        $path = storage_path() . "/meta.json";
+        $metaData =  json_decode(file_get_contents($path), true);
+        $key =  \Request::route()->getName();
+        $title = $metaData[$key]['title'];
+        $description = $metaData[$key]['description'];
+        return [$title, $description];
+    }
+
 
     public function support()
     {
-        return view('support');
+        $metaData = $this->getMetaData();
+        return view('support', compact('metaData'));
     }
 
     public function terms()
     {
-        return view('terms');
+        $metaData = $this->getMetaData();
+        return view('terms', compact('metaData'));
     }
 
     public function affiliate()
     {
         $user = Auth::user();
-        return view('affiliates', compact('user'));
+        $metaData = $this->getMetaData();
+        return view('affiliates', compact('metaData', 'user'));
+    }
+
+    
+    public function aboutUs()
+    {
+        $metaData = $this->getMetaData();
+        return view('about_us', compact('metaData'));
     }
 
     public function contactUs()
     {
-        return view('contact_us');
+        $metaData = $this->getMetaData();
+        return view('contact_us', compact('metaData'));
     }
 
     public function faq()
     {
-        return view('faq');
+        $metaData = $this->getMetaData();
+        return view('faq', compact('metaData'));
     }
 
     public function privacyPolicy()
     {
-        return view('privacy_policy');
+        $metaData = $this->getMetaData();
+        return view('privacy_policy', compact('metaData'));
     }
 
     public function license()
     {
-        return view('license');
+        $metaData = $this->getMetaData();
+        return view('license', compact('metaData'));
     }
 
     public function submitContactUs(Request $request)

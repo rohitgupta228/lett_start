@@ -43,8 +43,10 @@
                             <div class="live-example">
                                 <div class="mb-2 mb-sm-0">
                                     <a href="javascript:void(0)" id="preview-btn" class="btn btn-dark mr-2" data-track-elem event-category="Live Preview"  event-action="click" event-label="{{ $product['name'] }}">Live Preview</a>
+                                    @if ($product['docLink'] != "")
                                     <a href="{{ url($product['docLink']) }}" target="_blank" id="doc-btn" data-track-elem event-category="Docs View"  event-action="click" event-label="{{ $product['name'] }}"
                                         class="btn btn-outline-secondary">Docs</a>
+                                    @endif
                                 </div>
                                 <div class="tech-details">
                                     @foreach (json_decode($product['techUsed']) as $techUsed)
@@ -366,6 +368,18 @@
                                     @endif
                                 @endforeach
                             </div>
+                            @if(count(json_decode($product['changeLog'])) > 0)
+                            <div class="changlog-list border-radius-2x">
+                                @foreach (json_decode($product['changeLog']) as $logs)
+                                <h5>{{ $logs->text }}</h5>
+                                <ul>
+                                    @foreach ($logs->list as $list)
+                                        <li>{{ $list }}</li>
+                                    @endforeach
+                                </ul>
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
                     </div>
                     <div class="mt-100">
@@ -442,7 +456,7 @@
                     @if ($product['price'] != 0)
                     <h5 class="mb-15">Thank you for purchasing our product.</h5>
                     <p> We've sent an email with all the necessary details along with product download link. If you have any
-                        trouble to download your files. Please <a href="{{ route('contact') }}">contact us</a> or <a
+                        trouble to download your files. Please <a href="{{ route('contact-us') }}">contact us</a> or <a
                             href="mailto:support@lettstartdesign.com" class="text-primary">email us</a>.</p>
                     @endif
                     <p>Please send us an <a href="mailto:info@lettstartdesign.com" class="text-primary">email</a> and share
@@ -493,7 +507,7 @@
                     <h5 class="mb-15">Payment Failed</h5>
                     <p class="mb-15">Something went wrong. Please try after some time or send us mail <a
                             href="mailto:support@lettstartdesign.com" class="text-primary">support@lettstartdesign.com</a>
-                        or <a href="{{ route('contact') }}" class="text-primary">contact us</a></p>
+                        or <a href="{{ route('contact-us') }}" class="text-primary">contact us</a></p>
                 </div>
             </div>
         </div>

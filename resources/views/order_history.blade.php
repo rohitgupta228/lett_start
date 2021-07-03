@@ -1,5 +1,11 @@
 @extends('layouts.main')
 
+@section('title', 'Order History')
+
+@section('meta_title', "Order History")
+
+@section('meta_description', "See your downloaded themes and templates.")
+
 @section('content')
 <div class="banner-title mt-100">
 	<div class="container">

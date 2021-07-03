@@ -2,6 +2,10 @@
 
 @section('title', 'How to Become an Affiliate')
 
+@section('meta_title', $metaData[0])
+
+@section('meta_description', $metaData[1])
+
 @section('content')
 <!--Demo's Start-->
 <div class="banner-title mt-100">

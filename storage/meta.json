@@ -4,6 +4,46 @@
     "description": "Free Bootstrap Templates: Download the best and easy to use responsive free bootstrap website templates like eCommerce, Multi page, admin dashboard and more.",
     "keywords": "free bootstrap templates, bootstrap templates free download, free bootstrap website templates, bootstrap ecommerce template free, bootstrap website templates free download"
   },
+  "affiliate":{
+    "title": "Affiliate | Lettstart Design",
+    "description": "Affiliate marketing entails recommending a product or service via a blog, social media platforms, or a website.",
+    "keywords": "affiliate marketing, social marketing, website promotion"
+  },
+  "contact-us":{
+    "title": "Contact Us | Lettstart Design",
+    "description": "Please contact us if you require any assistance with our templates, as well as if you have any questions or just say hello.",
+    "keywords": "query, queries, contact us, assistance, questions"
+  },
+  "faq":{
+    "title": "FAQ | Lettstart Design",
+    "description": "Get quick answers to most common questions.",
+    "keywords": "frequently asked questions, questions, purchase, FAQ"
+  },
+  "about-us":{
+    "title": "About US | Lettstart Design",
+    "description": "In Lettstart Design, you will uncover top-of-the-board digital goods that follow contemporary online benchmarks",
+    "keywords": "lettstart design, lettstartdesign, about us"
+  },
+  "license":{
+    "title": "Licence | Lettstart Design",
+    "description": "You can take a look at our license web page to get concept approximately all our license for our products.",
+    "keywords": "licence"
+  },
+  "privacy-policy":{
+    "title": "Privacy Policy | Lettstart Design",
+    "description": "Please take a look at all privacy policies mentioned, whilst the usage of Lettstart Design website.",
+    "keywords": "privacy policy, policies, privacy"
+  },
+  "support":{
+    "title": "Support | Lettstart Design",
+    "description": "If you have any query or questions regarding our templates? Just create support ticket and our support team will help you to fix your issues.",
+    "keywords": "support, tickets, bugs, queries"
+  },
+  "terms-and-conditions":{
+    "title": "Terms & Conditions | Lettstart Design",
+    "description": "Please take a look at all terms and conditions mentioned, whilst the usage of Lettstart Design website.",
+    "keywords": "terms, conditions, terms and conditions, T & C"
+  },
   "admin": {
     "title": "Admin Dashboard Templates (Bootstrap and Angular) Download | Lettstart Design",
     "description": "Looking for a perfect bootstrap admin dashboard template for building your web admin portal. Check out here and download the best bootstrap or angular admin dashboard of 2021.",
@@ -153,5 +193,9 @@
   "apic-angular-admin-dashboard": {
     "title": "APIC Angular Admin Dashboard",
     "description": "APIC angular is a simple admin dashboard with functional apps and UI's. It can be used for any type of dashboards."
+  },
+  "proctu-admin-dashboard": {
+    "title": "PROCTU - Bootstrap 5 Admin Dashboard Theme | PROCTU Bootstrap HTML5 Admin Dashbord/Panel Templates",
+    "description": "Proctu is a simple and powerful admin template built with Bootstrap 5 and Sass framework. It is specially designed to manage hospitals back panel."
   }
 }
