@@ -13,7 +13,7 @@ class Affiliate extends Model
      * @var array
      */
     protected $fillable = [
-        'payment_email', 'website_url', 'promote_us', 'affiliate_code', 'user_id'
+        'payment_email', 'website_url', 'promote_us', 'affiliate_code', 'user_id', 'status'
     ];
 
     /**
