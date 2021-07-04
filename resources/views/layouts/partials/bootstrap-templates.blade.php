@@ -123,10 +123,10 @@
       @endforeach
     </div>
     <div class="mt-50">
-      <p><b>Other Bootstrap Templates : </b> <a href="https://lettstartdesign.com/category/landing-pages-templates">
+      <p><b>Other Bootstrap Templates : </b> <a href="{{ route('product.category', ['category' => 'landing-pages-templates']) }}">
           Landing Page Templates </a> | <a
-          href="https://lettstartdesign.com/category/business-corporate-templates">Bootstrap Business Templates</a> | <a
-          href="https://lettstartdesign.com/category/angular-templates">Angular Template</a></p>
+          href="{{ route('product.category', ['category' => 'business-corporate-templates']) }}">Bootstrap Business Templates</a> | <a
+          href="{{ route('product.category', ['category' => 'angular-templates']) }}">Angular Template</a></p>
     </div>
   </div>
 </section>

@@ -1,8 +1,8 @@
 {
   "landing-pages-templates": [
     {
-      "question": "Does the landing page is mobile responsive?",
-      "answer": "<p>Yes. All the landing page designs are crafted with the use of bootstrap technology. Each element use in the landing page design is 100% mobile responsive.</p>"
+      "question": "Is the landing page mobile responsive?",
+      "answer": "<p>Yes. All the landing page design templates are crafted with the use of bootstrap technology. Each element used in the landing page design is 100% mobile responsive.</p>"
     },
     {
       "question": "Are these landing page designs considering emotional marketing?",
@@ -45,15 +45,15 @@
   ],
   "business-corporate-templates": [
     {
-      "question": "Are the bootstrap corporate templates come with a content management system?",
-      "answer": "<p>No. The bootstrap corporate templates are made to serve the front end of the website. For the backend, you have to install the content management system such as WordPress, Joomla, etc.</p>"
+      "question": "Are the bootstrap corporate design templates come with a content management system?",
+      "answer": "<p>No. The bootstrap corporate templates are made to serve the front end of the website. For the backend, you have to install content management systems such as WordPress, Joomla, etc.</p>"
     },
     {
       "question": "Do I get the permanent license of the bootstrap corporate theme once download?",
-      "answer": "<p>Yes. All the premium bootstrap corporate theme comes with permanent license. Once you have downloaded the premium themes, you can use them as per your need.</p>"
+      "answer": "<p>Yes. All the premium bootstrap corporate theme comes with permanent license. So once you have downloaded the premium themes, you can use them as per your need.</p>"
     },
     {
-      "question": "Do I allow selling the bootstrap template for business website on other portals once I pay for it?",
+      "question": "Do I allow selling the bootstrap business website templates on other portals once I pay for it?",
       "answer": "<p>No. Users cannot sell the downloaded themes to the other portals without consultation with the Lettstart Design support team.</p>"
     }
   ],
