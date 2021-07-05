@@ -35,23 +35,23 @@
   <div class="container">
     <h3 class="mb-30">Business & Corporate Templates Benefits</h3>
     <div>
-      <div class="h5 mt-30">Responsive</div>
+      <h4 class="h5 mt-30">Responsive</h4>
       <p>One of the great deals with the modern website template is the responsiveness of the design. It should be device-friendly and easily adaptable to the screen sizes. The bootstrap corporate theme comes with responsive technology. All the bootstrap <a href="{{ route('product.category', ['category' => 'angular-templates']) }}" title="Angular Templates">angular templates</a> are built using mobile and device responsive technology. So you do not have to make changes separately. Download the template and make it live. It will automatically adjust itself according to the screen size.</p>
     </div>
     <div class="mt-30">
       <div class="mb-30">
-        <div class="h5 mt-30">No Need for Coding Experience</div>
+        <h4 class="h5 mt-30">No Need for Coding Experience</h4>
         <p>All the bootstrap corporate templates are made of fully functional features. The necessary elements are placed in the right order to offer a great experience while using the website. A user-friendly interface and a simple to use control panel make the bootstrap the developer's first choice. Anyone can make the bootstrap business templates live and start generating revenue. No coding is needed. Change the content of the site according to your business requirements, and you are ready to go.</p>
       </div>
       <div id="read-more-3" style="display: none;">
         <div class="mb-30">
-            <div class="h5 mt-30">Save Time and Money</div>
+            <h4 class="h5 mt-30">Save Time and Money</h4>
             <p>Building a responsive website is a daunting task. If you decide to hire a developer or design agency to make the illustration, it may take them several months to build the complete mobile responsive website.</p>
             <p>It is not a viable solution for the small-scale industries where the market changes overnight, and the business that was booming a few days back may now not have the demand. Therefore, the startups and small businesses trying to capture a large market share need an instant solution.</p>
             <p>The modern business starts bootstrap templates with ease and makes their website live immediately once they have a vision for the site. Choose the template from the list offered by the Lettstart Design. Pay the amount to purchase the license, and the template will be yours. Ready-to-use templates save money and time. It enables businesses to focus on other important aspects.</p>
         </div>
         <div class="mb-30">
-            <div class="h5 mt-30">Corporate Business Templates Key Features Listed on the Lettstart Design</div>
+            <h3 class="h5 mt-30">Corporate Business Templates Key Features Listed on the Lettstart Design</h3>
             <div class="checklist">
               <ul class="list-unstyled">
                 <li>
@@ -120,7 +120,7 @@
 </section>
 <section class="section">
   <div class="container">
-    <h3 class="mb-30">Why Lettstart Design?</h3>
+    <h4 class="h3 mb-30">Why Lettstart Design?</h4>
     <p>Lettstart Design offers various responsive bootstrap business website templates for free download. These ready-to-use templates come with advanced features. You can download them from the Lettstart Design website and upload them on your server to make the site active.</p>
     <p>However, before you decide to use the template, read the guidelines carefully. The free bootstrap corporate templates come with user guidelines. However, unlike premium corporate templates, you will not benefit from the 1-year support from the Lettstart Design.</p>
    <p>Limited support is offered to the users who choose to go with the free template option. Also, you cannot resell these templates on your portal. Free corporate design templates come with copyright restrictions limiting users from selling the template made by Lettstart Design on the other platforms.</p>
@@ -132,7 +132,7 @@
             <div class="row no-gutters align-items-center flex-lg-row-reverse">
                 <div class="col-lg-8">
                     <div class="highlight-content">
-                      <h3 class="mb-30">Conclusion</h3>
+                      <h4 class="h3 mb-30">Conclusion</h4>
                       <p>If you search for the best templates for business or corporate themes, your search ends here. The Lettstart Design has everything that you need. We have an extensive collection of templates for bootstrap and angular. You can download the premium and free templates from the website that suits your need.</p>
                       <p>The customization option would give you the flexibility to add or remove elements from the design. Make the required functional changes. Connect more plug-in in the templates to make some of the pages dynamic and improve the site's quality. Get bootstrap premium theme today and start your web journey.</p>
                     </div>

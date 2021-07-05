@@ -132,9 +132,9 @@
         <h3 class="mb-30">Check Out Our Various Bootstrap Admin Templates</h3>
         <p>The introduction of a vast collection of Bootstrap Dashboard templates and admin templates has substantially reduced the number of users for developing web apps.</p>
         <p> Below mentioned are some best open-source Bootstrap admin templates:</p>
-        <p><strong>Marvel admin:</strong> Marvel admin provides a bootstrap framework that provides users with many possibilities for creating and customising websites. It has responsive designs and compatible cross-browsers. Some prominent features include double dashboards, various widgets, apps and tablets, sidebar layouts, etc. </p>
-        <p><strong>Adminator:</strong> It is a free bootstrap admin dashboard template open-source with appealing dashboards, charts, and tables, fonts, etc.</p>
-        <p class="mb-0"><strong>APIC admin:</strong> A modern and multipurpose admin template, APIC is characterized by its collection of UI elements, clean and clear code, sidebar layouts, different pages, appealing designs, colorful tones, etc.</p>
+        <p><h4 class="h6 d-inline">Marvel admin:</h4> Marvel admin provides a bootstrap framework that provides users with many possibilities for creating and customising websites. It has responsive designs and compatible cross-browsers. Some prominent features include double dashboards, various widgets, apps and tablets, sidebar layouts, etc. </p>
+        <p><h4 class="h6 d-inline">Adminator:</h4> It is a free bootstrap admin dashboard template open-source with appealing dashboards, charts, and tables, fonts, etc.</p>
+        <p class="mb-0"><h4 class="h6 d-inline">APIC admin:</h4> A modern and multipurpose admin template, APIC is characterized by its collection of UI elements, clean and clear code, sidebar layouts, different pages, appealing designs, colorful tones, etc.</p>
       </div>
       <div class="col-lg-4">
         <img src="{{ url('assets/images/admin-template.jpg') }}" class="img-fluid border-radius-2x" alt="Admin Dashboard Template" />

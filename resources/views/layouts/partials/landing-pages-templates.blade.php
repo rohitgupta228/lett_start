@@ -20,31 +20,31 @@
         <p>The templates for landing pages are high-quality pages of the website design to serve a single purpose. It is made to address specific queries and provide the solution to the user's problem. Less clutter on the page with a step-by-step guide allows the user to understand the given information effortlessly. Therefore, comprehending the given information on the landing page is easy, which leads to instant conversion.</p>
         <div class="mt-30">
             <div class="mb-30">
-                <div class="h5 mt-30">Prominent Headlines</div>
+                <h4 class="h5 mt-30">Prominent Headlines</h4>
                 <p>The main headline is placed on the top of the landing page with a relatively large font. It conveys the message with the depiction of the clear purpose behind creating the landing page.
                 </p>
             </div>
             <div id="read-more-3" style="display: none;">
               <div class="mb-30">
-                <div class="h5 mt-30">Call to Action</div>
+                <h4 class="h5 mt-30">Call to Action</h4>
                 <p>The call to action buttons such as "register now," "buy now," "join the community," "signup," "add to cart," "Register for the newsletter" should be easy to spot on the page. In addition, the use of the right contrast colors on the button would make it stand out in the content.</p>
                 <p>The ultimate goal of the landing page Html template is to increase the conversion. If none of the users reaches the page and no action is taken, whole efforts are futile.</p>
               </div>
               <div class="mb-30">
-                <div class="h5 mt-30">Email Signup Form</div>
+                <h4 class="h5 mt-30">Email Signup Form</h4>
                 <p>A clean and neat email signup form makes the users fill it without any trouble. Too many widgets, extra fields, difficult drop and selection processes would make your signup form too bloated with unwanted stuff. It would help to reduce the time and effort a person would take to fill the signup form. It should be quick and seamless without any error on the page.</p>
               </div>
               <div class="mb-30">
-                <div class="h5 mt-30">Visual Content</div>
+                <h4 class="h5 mt-30">Visual Content</h4>
                 <p>Enhance the user experience with digital media such as photos and videos. Arranging the digital media on the responsive landing page template bootstrap is an art. You cannot simply put the images or videos anywhere on the page because they look good.</p>
                 <p>It would be best if you gave thought to how the user will scroll the page. You want them to stop and make them reach the call to action so that the user will fill the form, and the goal of the landing page will get complete.</p>
               </div>
               <div class="mb-30">
-                <div class="h5 mt-30">Social Proof</div>
+                <h4 class="h5 mt-30">Social Proof</h4>
                 <p>Use the past publication to show your presence in the industry. This template must have the trust-building factors that encourage people to sign up for the service. Use your PR content to depict the social proof. Your visitor will feel safe about their provided information, and they will show trust in your brand.</p>
               </div>
               <div>
-                <div class="h5 mt-30">Urgency</div>
+                <h4 class="h5 mt-30">Urgency</h4>
                 <p>The urgency is used to trigger the human emotion that makes the end-user feel they will lose something if they do not act immediately. Use certain words on the landing page, such as limited time offers, only 10 products left, early-bird discounts, etc., to make people sign up today.</p>
               </div>
             </div>
@@ -76,7 +76,7 @@
 </section>
 <section class="section bg-light">
     <div class="container">
-        <h3 class="mb-30">Why Choose Lettstart Design?</h3>
+        <h4 class="h3 mb-30">Why Choose Lettstart Design?</h4>
         <p>We are following modern technology with the state of the art design to offer a pleasant experience to the user. We understand that it is essential if you want to win the heart of your customer. The angular & bootstrap landing page template developed by Lettstart Design offers many benefits to the user.</p>
         <div id="read-more-2" style="display: none;">
             <p>Several features are geared into the single page to reduce the efforts and time spent accessing the landing page. As a result, the conversion rate of your marketing campaign would skyrocket when you start using these templates.</p>
