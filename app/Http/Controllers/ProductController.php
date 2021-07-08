@@ -76,8 +76,8 @@ class ProductController extends Controller
                     break;
                 case 'landing-pages-templates':
                     $search = 'landing';
-                    $pageTitle = "Bootstrap Landing Page Templates";
-                    $pageDescription = "Bootstrap landing page templates and themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
+                    $pageTitle = "Landing Page Templates";
+                    $pageDescription = "Landing page templates and themes that are ready to customize and publish. It's a complete website with other supportive pages that increase your business.";
                     break;
                 case 'app':
                     $search = 'app';
@@ -86,8 +86,8 @@ class ProductController extends Controller
                     break;
                 case 'business-corporate-templates':
                     $search = 'business';
-                    $pageTitle = "Bootstrap Business Templates and Corporate Themes";
-                    $pageDescription = "Bootstrap business templates and corporate themes that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
+                    $pageTitle = "Business Templates and Corporate Themes";
+                    $pageDescription = "Business website templates and corporate templates that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
                     break;
                 case 'portfolio-resume-templates':
                     $search = 'portfolio';

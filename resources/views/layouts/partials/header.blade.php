@@ -25,6 +25,9 @@
 
         <meta property="og:title" content="@yield('meta_title','Premium &amp; Free Bootstrap Themes &amp; Templates from Lettstart Design')">
         <meta property="og:description" content="@yield('meta_description','Discover premium and free bootstrap themes &amp; templates including admin templates, angular templates, portfolio &amp; resume templates &amp; landing pages')">
+        @if (trim($__env->yieldContent('keywords')))
+        <meta property="og:keywords" content="@yield('keywords')">
+        @endif
         <title>@yield('title', 'Premium and Free Bootstrap Themes &amp; Templates') </title>
         <!--=== Fav Icon ===-->
         <link rel="shortlink" href="https://lettstartdesign.com/">
