@@ -79,6 +79,11 @@ class ProductController extends Controller
                     $pageTitle = "Bootstrap Landing Page Templates";
                     $pageDescription = "Bootstrap landing page templates and themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
                     break;
+                case 'app':
+                    $search = 'app';
+                    $pageTitle = "Bootstrap Landing Page Templates";
+                    $pageDescription = "Bootstrap landing page templates and themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
+                    break;
                 case 'business-corporate-templates':
                     $search = 'business';
                     $pageTitle = "Bootstrap Business Templates and Corporate Themes";

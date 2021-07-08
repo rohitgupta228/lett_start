@@ -21,6 +21,28 @@
       "answer": "<p>You can visit our website www.lettstartdesign.com and fill the contact us form. Or drop us an email at <a href=`mailto:support@lettstartdesign.com`>support@lettstartdesign.com</a> and <a href=`mailto:info@lettstartdesign.com`>info@lettstartdesign.com</a> Our customer support team will get in touch with you as soon as we receive your message.</p>"
     }
   ],
+  "app": [
+    {
+      "question": "Does the landing page is mobile responsive?",
+      "answer": "<p>Yes. All the landing page designs are crafted with the use of bootstrap technology. Each element use in the landing page design is 100% mobile responsive.</p>"
+    },
+    {
+      "question": "Are these landing page designs considering emotional marketing?",
+      "answer": "<p>Yes. We are using emotional factors while designing the landing page. The ultimate goal of the landing page is to guide the user to the call to action button and make them fill the form. The page will benefit you to trigger the emotion of the user and make them become your loyal customer.</p>"
+    },
+    {
+      "question": "Are these bootstrap landing pages are free to download?",
+      "answer": "<p>There are a few bootstrap landing page download available for free of cost. You can download them as many times over without needing to pay. However, we do not offer customer support and documentation with the free template. You only receive technical support with the premium themes.</p>"
+    },
+    {
+      "question": "Do I allow to modify the design of the template once purchase?",
+      "answer": "<p>Paid users have complete freedom to make any changes to the purchased <a href=`https://lettstartdesign.com/category/bootstrap-templates`>bootstrap themes</a>. You can add, remove, or customize the complete template without any limitation.</p><p>However, we would not be able to serve you if the technology you use in making the changes to the theme is not part of the contract. Therefore, it is advisable to consult with our support team before making any changes to keep your 1-year support service valid.</p>"
+    },
+    {
+      "question": "How to contact the customer support team of the Lettstart Design?",
+      "answer": "<p>You can visit our website www.lettstartdesign.com and fill the contact us form. Or drop us an email at <a href=`mailto:support@lettstartdesign.com`>support@lettstartdesign.com</a> and <a href=`mailto:info@lettstartdesign.com`>info@lettstartdesign.com</a> Our customer support team will get in touch with you as soon as we receive your message.</p>"
+    }
+  ],
   "bootstrap-templates": [
     {
       "question": "Do I allow you to create unlimited websites or applications using these templates?",
