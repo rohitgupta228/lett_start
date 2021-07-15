@@ -135,11 +135,6 @@
             "position": 1, 
             "name": "Home",
             "item": "https://lettstartdesign.com"  
-        },{
-            "@type": "ListItem", 
-            "position": 2, 
-            "name": 'All Themes',
-            "item": "https://lettstartdesign.com/category/premium-admin-bootstrap-templates"
         }]
     };
     if(pageTitle && pageTitle != 'All Themes, Templates & Landing Pages') {
@@ -191,7 +186,11 @@
             }
 		]
 	};
-    var itemList = addProduct(products.data);
+    var metaData = {
+        pageTitle: pageTitle,
+        description: description
+    }
+    var itemList = addProduct(products.data, metaData);
     ldSchema["@graph"].push(itemList);
     if(faqData.length){
         var faq = {

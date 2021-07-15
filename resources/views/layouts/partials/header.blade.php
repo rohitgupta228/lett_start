@@ -68,9 +68,7 @@
         <!--=== Icon Fonts ===-->
         <link href="{{ url('assets/vendors/boxicons/css/boxicons.min.css') }}" rel="stylesheet" />
 
-        @if (trim($__env->yieldContent('canonicalLink')))
-        <link rel="canonical" href="@yield('canonicalLink')" />
-        @endif
+        
         <!--=== Plugins CSS===-->
         <link rel="stylesheet" href="{{ url('assets/css/plugins.min.css') }}" />
 
