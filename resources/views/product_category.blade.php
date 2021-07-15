@@ -189,7 +189,7 @@
     var metaData = {
         pageTitle: pageTitle,
         description: description
-    }
+    };
     var itemList = addProduct(products.data, metaData);
     ldSchema["@graph"].push(itemList);
     if(faqData.length){
