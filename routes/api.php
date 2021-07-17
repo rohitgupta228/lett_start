@@ -60,11 +60,19 @@ Route::group(['prefix' => 'product', 'middleware' => ['auth:api', 'IsAdmin']], f
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'IsAdmin']], function() {
     Route::get('get-affiliate-users', 'Api\AdminController@getAffiliateUsers')->name('admin.affiliate.users');
     Route::post('update-affiliate-status', 'Api\AdminController@updateAffiliateStatus')->name('admin.affiliate.status');
+    Route::get('get-coupans', 'Api\AdminController@getAllCoupans')->name('admin.coupans');
+    Route::post('save-coupan', 'Api\AdminController@saveCoupan')->name('admin.save.coupan');
+    Route::put('update-coupan', 'Api\AdminController@updateCoupan')->name('admin.update.coupan');
+    Route::delete('delete-coupan', 'Api\AdminController@deleteCoupan')->name('admin.delete.coupan');
+});
+
+Route::group(['middleware' => 'api'], function() {
+    Route::post('validate-coupan', 'Api\PaymentController@validateCoupan')->name('validate.coupan');
 });
 
 Route::group(['prefix' => 'payment', 'middleware' => 'api'], function() {
 
-//    Route::post('stripe', 'Api\PaymentController@submitPayment')->name('payment.stripe');
+    //    Route::post('stripe', 'Api\PaymentController@submitPayment')->name('payment.stripe');
 
     Route::post('paypal', 'Api\PaymentController@postPaymentWithpaypal')->name('payment.paypal');
 

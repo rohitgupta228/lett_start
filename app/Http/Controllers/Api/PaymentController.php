@@ -67,6 +67,34 @@ class PaymentController extends Controller
         return Auth::guard();
     }
 
+    public function validateCoupan(Request $request)
+    {
+        $data = $request->all();
+        $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
+        if ($coupanDetails) {
+            $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+            $amountPaid = $amount = $data['multi'] ? $product->price * 5 : $product->price;
+            $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
+            $response = [
+                'code' => 200,
+                'message' => 'success',
+                'data' => [
+                    'amountPaid' => $amountPaid
+                ]
+            ];
+        } else {
+            $response = [
+                'code' => 404,
+                'message' => 'Invalid Coupan code',
+                'data' => [
+                    'url' => '',
+                    'status' => false
+                ],
+            ];
+        }
+        return response()->json($response);
+    }
+
     /**
      * Function to submit paypal request
      *
@@ -80,7 +108,7 @@ class PaymentController extends Controller
             $product = \App\Models\Product::where('productId', $data['product_id'])->first();
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
-            $amountPaid = $amount = $data['multi'] ? $product->price * 5 : $product->price;
+            $amountPaid = $data['multi'] ? $product->price * 5 : $product->price;
             if ($data['coupan']) {
                 $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
                 if ($coupanDetails)
@@ -147,7 +175,7 @@ class PaymentController extends Controller
                     'txn_id' => $payment->getId(),
                     'multi' => $data['multi'],
                     'amount' => $amountPaid,
-                    'coupan_code' => $data['coupan'],
+                    'coupan_code' => $data['coupan'] ?? null,
                     'response' => null,
                 ];
                 $transaction = Transaction::create($paymentData);
@@ -332,6 +360,7 @@ class PaymentController extends Controller
             'txn_id' => $data['txn_id'],
             'response' => $data['response'],
             'amount' => $amountPaid,
+            'coupan_code' => $data['coupan'] ?? null,
             'multi' => $data['multi']
         ];
         $transaction = Transaction::create($paymentData);
