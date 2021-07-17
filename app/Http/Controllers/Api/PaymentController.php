@@ -85,15 +85,17 @@ class PaymentController extends Controller
                 $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
                 if ($coupanDetails)
                     $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
-                else
-                    return $response = [
+                else {
+                    $response = [
                         'code' => 404,
-                        'message' => 'Coupan Code not found',
+                        'message' => 'Invalid Coupan code',
                         'data' => [
                             'url' => '',
                             'status' => false
                         ],
                     ];
+                    return response()->json($response);
+                }
             }
             $item_1 = new Item();
             $item_1->setName('Item 1') /** item name * */
@@ -233,6 +235,18 @@ class PaymentController extends Controller
             $product = \App\Models\Product::where('productId', $data['product_id'])->first();
             if ($product && $product->price > 0) {
                 $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
+                if ($data['coupan']) {
+                    $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
+                    if ($coupanDetails)
+                        $amount = $amount - ($amount * ($coupanDetails->discount_percent / 100));
+                    else {
+                        $response = [
+                            'code' => 404,
+                            'message' => 'Invalid Coupan code',
+                        ];
+                        return response()->json($response);
+                    }
+                }
                 $order = $api->order->create(array(
                     'receipt' => 'rcptid_11',
                     'amount' => $amount,
@@ -303,6 +317,12 @@ class PaymentController extends Controller
         $paymentStatus = config('settings.payment_status');
         $user = \App\User::find($data['user_id']);
         $data['user'] = $user;
+        $amountPaid = $data['multi'] ? $data['product']->price * 5 : $data['product']->price;
+        if ($data['coupan']) {
+            $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
+            if ($coupanDetails)
+                $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
+        }
         DB::beginTransaction();
         $paymentData = [
             'user_id' => $user->id,
@@ -311,7 +331,7 @@ class PaymentController extends Controller
             'payment_type' => $data['payment_type'],
             'txn_id' => $data['txn_id'],
             'response' => $data['response'],
-            'amount' => $data['multi'] ? $data['product']->price * 5 : $data['product']->price,
+            'amount' => $amountPaid,
             'multi' => $data['multi']
         ];
         $transaction = Transaction::create($paymentData);
