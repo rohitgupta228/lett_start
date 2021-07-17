@@ -61,8 +61,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'IsAdmin']], fun
     Route::get('get-affiliate-users', 'Api\AdminController@getAffiliateUsers')->name('admin.affiliate.users');
 
     Route::post('update-affiliate-status', 'Api\AdminController@updateAffiliateStatus')->name('admin.affiliate.status');
-
-    Route::get('get-coupans', 'Api\AdminController@getAllCoupans')->name('admin.coupans');
     
     Route::post('save-coupan', 'Api\AdminController@saveCoupan')->name('admin.save.coupan');
 
@@ -72,6 +70,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:api', 'IsAdmin']], fun
 });
 
 Route::group(['middleware' => 'api'], function() {
+    Route::get('get-coupans', 'Api\AdminController@getAllCoupans')->name('admin.coupans');
+
     Route::post('validate-coupan', 'Api\PaymentController@validateCoupan')->name('validate.coupan');
 });
 
