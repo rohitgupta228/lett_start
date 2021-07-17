@@ -81,6 +81,20 @@ class PaymentController extends Controller
             $payer = new Payer();
             $payer->setPaymentMethod('paypal');
             $amountPaid = $amount = $data['multi'] ? $product->price * 5 : $product->price;
+            if ($data['coupan']) {
+                $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
+                if ($coupanDetails)
+                    $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
+                else
+                    return $response = [
+                        'code' => 404,
+                        'message' => 'Coupan Code not found',
+                        'data' => [
+                            'url' => '',
+                            'status' => false
+                        ],
+                    ];
+            }
             $item_1 = new Item();
             $item_1->setName('Item 1') /** item name * */
                     ->setCurrency('USD')
@@ -131,6 +145,7 @@ class PaymentController extends Controller
                     'txn_id' => $payment->getId(),
                     'multi' => $data['multi'],
                     'amount' => $amountPaid,
+                    'coupan_code' => $data['coupan'],
                     'response' => null,
                 ];
                 $transaction = Transaction::create($paymentData);
@@ -345,7 +360,7 @@ class PaymentController extends Controller
             if ($product) {
                 $createdDate = $product->created_at;
                 $dateAfter24Hours = Carbon::parse($product->created_at)->addHour(24)->toDateTimeString();
-                
+
                 if (Carbon::now()->toDateTimeString() > $dateAfter24Hours) {
                     $product->delete();
                     return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
