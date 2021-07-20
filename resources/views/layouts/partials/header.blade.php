@@ -45,7 +45,7 @@
         <link rel="preload" href="{{ url('assets/css/style.min.css') }}" as="style">
         <link rel="preload" href="{{ url('assets/js/plugins.min.js') }}" as="script">
         <link rel="preload" href="{{ url('assets/js/api.min.js') }}" as="script">
-        <link rel="preload" href="{{ url('assets/js/app.min.js') }}" as="script">
+        <link rel="preload" href="{{ url('assets/js/app.min.js?v=1') }}" as="script">
         {{-- <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=UA-167253243-1" as="script">
         <link rel="preload" href="https://www.google-analytics.com/analytics.js" as="script"> --}}
         {{-- <link rel="preconnect" href="https://www.googletagmanager.com"> --}}
