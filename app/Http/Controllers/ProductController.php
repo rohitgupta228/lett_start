@@ -76,18 +76,18 @@ class ProductController extends Controller
                     break;
                 case 'landing-pages-templates':
                     $search = 'landing';
-                    $pageTitle = "Landing Page Templates";
-                    $pageDescription = "Landing page templates and themes that are ready to customize and publish. It's a complete website with other supportive pages that increase your business.";
+                    $pageTitle = "Angular & Bootstrap Landing Page Templates";
+                    $pageDescription = "Angular & Bootstrap landing page templates and themes that are ready to customize and publish. It's a complete website with other supportive pages that increase your business.";
                     break;
                 case 'app':
                     $search = 'app';
-                    $pageTitle = "Bootstrap Landing Page Templates";
-                    $pageDescription = "Bootstrap landing page templates and themes that are ready to customize and publish. It's complete website with other supportive pages that increase your business.";
+                    $pageTitle = "App Landing Page Template";
+                    $pageDescription = "App landing pages are a bunch of web pages designed to promote mobile applications and drive downloads. For example, you can reach your search app through a marketing campaign or search traffic. Through this, you can get the information and download it. Landing pages have become a vital tool to generate sales easily and quickly. App landing pages can be built in HTML using cascading style sheets by changing the style of elements. The mobile app landing page template is specially made for promoting your mobile app.";
                     break;
                 case 'business-corporate-templates':
                     $search = 'business';
-                    $pageTitle = "Business Templates and Corporate Themes";
-                    $pageDescription = "Business website templates and corporate templates that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
+                    $pageTitle = "Bootstrap Business Templates and Corporate Themes";
+                    $pageDescription = "Bootstrap Business website templates and corporate templates that are ready to customize and publish - perfect for creating business websites for clients, or any other type of project.";
                     break;
                 case 'portfolio-resume-templates':
                     $search = 'portfolio';

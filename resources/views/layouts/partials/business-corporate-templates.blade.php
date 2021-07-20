@@ -33,7 +33,7 @@
 </section>
 <section class="section bg-light">
   <div class="container">
-    <h3 class="mb-30">Business & Corporate Templates Benefits</h3>
+    <h3 class="mb-30">Bootstrap Business & Corporate Templates Benefits</h3>
     <div>
       <h4 class="h5 mt-30">Responsive</h4>
       <p>One of the great deals with the modern website template is the responsiveness of the design. It should be device-friendly and easily adaptable to the screen sizes. The bootstrap corporate theme comes with responsive technology. All the bootstrap <a href="{{ route('product.category', ['category' => 'angular-templates']) }}" title="Angular Templates">angular templates</a> are built using mobile and device responsive technology. So you do not have to make changes separately. Download the template and make it live. It will automatically adjust itself according to the screen size.</p>
