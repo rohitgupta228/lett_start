@@ -103,6 +103,7 @@
                             @endif
                             @if ($product['price'] != 0)
                                 <div class="package-type position-relative">
+                                    <div class="alert alert-success d-none font-size-13 mt-2" id="coupon-apply-msg"></div>
                                         <ul class="list-unstyled mb-2" id="licence-types">
                                                 <li class="selected" data-tab="single">
                                                         <div class="licence-type">
@@ -114,7 +115,8 @@
                                                         </div>
                                                         <div class="licence-value ml-auto text-right">
                                                                 <h6 class="price mb-0 font-weight-bold" id="single-use">
-                                                                        ${{ $product['price'] }}
+                                                                    <span class="disc"></span>
+                                                                    <span class="orig">${{ $product['price'] }}</span>
                                                                 </h6>
                                                                 <span class="subtext">One time pay</span>
                                                         </div>
@@ -129,7 +131,9 @@
                                                         </div>
                                                         <div class="licence-value ml-auto text-right">
                                                                 <h6 class="price mb-0 font-weight-bold" id="multi-use">
-                                                                        ${{ $product['price'] * 5 }}</h6>
+                                                                    <span class="disc"></span>
+                                                                    <span class="orig">${{ $product['price'] * 5 }}</span>
+                                                                </h6>
                                                                 <span class="subtext">One time pay</span>
                                                         </div>
                                                 </li>
@@ -138,6 +142,7 @@
                             @endif
                             @if ($product['price'] != 0)
                             <div class="licence-link mb-15">
+                                <a href="javascript:void(0)" data-target="#applyCouponModal" data-toggle="modal">Apply Coupon</a>
                                 <a href="{{ route('license') }}">Licence Details</a>
                             </div>
                             @endif
@@ -508,6 +513,31 @@
                     <p class="mb-15">Something went wrong. Please try after some time or send us mail <a
                             href="mailto:support@lettstartdesign.com" class="text-primary">support@lettstartdesign.com</a>
                         or <a href="{{ route('contact-us') }}" class="text-primary">contact us</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade apply-coupon-modal" id="applyCouponModal" tabindex="-1" aria-labelledby="applyCouponModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header px-30 py-15">
+                    <div class="h6 modal-title" id="applyCouponModalLabel">Apply Coupon</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x h3 mb-0 font-weight-normal"></i>
+                    </button>
+                </div>
+                <div class="modal-body py-30 px-0">
+                    <form id="checkCouponForm" class="px-30 mb-30">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="input-group-text" type="submit">Check</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="coupon-list" class="coupon-list">
+                    </div>
                 </div>
             </div>
         </div>
