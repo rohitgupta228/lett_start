@@ -91,7 +91,7 @@ class AdminController extends Controller
         try {
             $data = $request->request->all();
             $coupan = Coupan::find($data['id']);
-            $coupan->update(['discount_percent' => $data['discount_percent'], 'coupan_code' => $data['coupan_code']]);
+            $coupan->update(['discount_percent' => $data['discount_percent'], 'coupan_code' => $data['coupan_code'], 'coupan_description' => $data['coupan_description']]);
             $response = [
                 'code' => 200,
                 'message' => 'success'
@@ -104,7 +104,7 @@ class AdminController extends Controller
         }
         return response()->json($response, 200);
     }
-    
+
     public function deleteCoupan(Request $request)
     {
         try {

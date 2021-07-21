@@ -13,7 +13,7 @@ class Coupan extends Model
      * @var array
      */
     protected $fillable = [
-        'coupan_code', 'discount_percent'
+        'coupan_code', 'discount_percent', 'coupan_description'
     ];
 
 
