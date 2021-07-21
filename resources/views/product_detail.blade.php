@@ -142,7 +142,7 @@
                             @endif
                             @if ($product['price'] != 0)
                             <div class="licence-link mb-15">
-                                <a href="javascript:void(0)" data-target="#applyCouponModal" data-toggle="modal">Apply Coupon</a>
+                                <a href="javascript:void(0)" id="apply-coupon-btn">Apply Coupon</a>
                                 <a href="{{ route('license') }}">Licence Details</a>
                             </div>
                             @endif
