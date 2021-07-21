@@ -73,13 +73,13 @@ class PaymentController extends Controller
                 }
             }
             $product = \App\Models\Product::where('productId', $data['product_id'])->first();
-            $amountPaid = $product->price - ($product->price * ($coupanDetails->discount_percent / 100));
+            $amount = $this->getAmountAfterDiscount($product->price, $coupanDetails->discount_percent);
             $response = [
                 'code' => 200,
                 'message' => 'success',
                 'data' => [
-                    'singleAmount' => round($amountPaid, 2),
-                    'multiAmount' => round($amountPaid * 5, 2)
+                    'singleAmount' => $amount,
+                    'multiAmount' => $amount * 5
                 ]
             ];
         } else
@@ -107,7 +107,7 @@ class PaymentController extends Controller
             if ($data['coupan']) {
                 $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
                 if ($coupanDetails)
-                    $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
+                    $amountPaid = $this->getAmountAfterDiscount($amountPaid, $coupanDetails->discount_percent);
                 else {
                     $response = [
                         'code' => 404,
@@ -257,11 +257,11 @@ class PaymentController extends Controller
             $data = $request->request->all();
             $product = \App\Models\Product::where('productId', $data['product_id'])->first();
             if ($product && $product->price > 0) {
-                $amount = $data['multi'] ? $product->price * 100 * 5 : $product->price * 100;
+                $amount = $data['multi'] ? $product->price * 5 : $product->price;
                 if ($data['coupan']) {
                     $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
                     if ($coupanDetails)
-                        $amount = $amount - ($amount * ($coupanDetails->discount_percent / 100));
+                        $amount = $this->getAmountAfterDiscount($amount, $coupanDetails->discount_percent);
                     else {
                         $response = [
                             'code' => 404,
@@ -344,8 +344,9 @@ class PaymentController extends Controller
         if ($data['coupan']) {
             $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
             if ($coupanDetails)
-                $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
+                $amountPaid = $this->getAmountAfterDiscount($amountPaid, $coupanDetails->discount_percent);
         }
+        $data['amountPaid'] = $amountPaid;
         DB::beginTransaction();
         $paymentData = [
             'user_id' => $user->id,
@@ -381,7 +382,7 @@ class PaymentController extends Controller
         $data = [
             'license' => $data['multi'] ? 'multiple' : 'single',
             'product_name' => $product->name,
-            'price' => $data['multi'] ? $product->price * 5 : $product->price,
+            'price' => $data['amountPaid'],
             'txnId' => $data['txn_id'],
             'url' => $this->url->to('/') . '/api/download-theme?email=' . $email . '&productId=' . $product->productId . '&token=' . $token,
             'subject' => 'Download Theme',
@@ -420,6 +421,12 @@ class PaymentController extends Controller
             logger($exc->getMessage());
         }
         return Redirect::to(env('FRONT_END_BASE_URL') . '404.html');
+    }
+
+    public function getAmountAfterDiscount($originalAmount, $discount)
+    {
+        $amount = $originalAmount - ($originalAmount * ($discount / 100));
+        return round($amount, 2);
     }
 
 }
