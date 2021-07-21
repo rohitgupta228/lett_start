@@ -60,32 +60,33 @@ class PaymentController extends Controller
     public function validateCoupan(Request $request)
     {
         $data = $request->all();
-        if ($data['coupan'] == env('FIRST_TIME_TRANSACTION_COUPAN_CODE')) {
-            $user = \App\User::find($data['user_id']);
-            if (!$user->first_time_transaction)
-                $response = [
-                    'code' => 404,
-                    'message' => 'This coupan is only valid for first time transaction',
-                ];
-        } else {
-            $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
-            if ($coupanDetails) {
-                $product = \App\Models\Product::where('productId', $data['product_id'])->first();
-                $amountPaid = $amount = $data['multi'] ? $product->price * 5 : $product->price;
-                $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
-                $response = [
-                    'code' => 200,
-                    'message' => 'success',
-                    'data' => [
-                        'amountPaid' => $amountPaid
-                    ]
-                ];
-            } else
-                $response = [
-                    'code' => 404,
-                    'message' => 'Invalid Coupan code',
-                ];
-        }
+        $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
+        if ($coupanDetails) {
+            if ($data['coupan'] == env('FIRST_TIME_TRANSACTION_COUPAN_CODE')) {
+                $user = \App\User::find($data['user_id']);
+                if (!$user->first_time_transaction) {
+                    $response = [
+                        'code' => 404,
+                        'message' => 'This coupan is only valid for first time transaction',
+                    ];
+                    return response()->json($response);
+                }
+            }
+            $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+            $amountPaid = $product->price - ($product->price * ($coupanDetails->discount_percent / 100));
+            $response = [
+                'code' => 200,
+                'message' => 'success',
+                'data' => [
+                    'singleAmount' => round($amountPaid, 2),
+                    'multiAmount' => round($amountPaid * 5, 2)
+                ]
+            ];
+        } else
+            $response = [
+                'code' => 404,
+                'message' => 'Invalid Coupan code',
+            ];
         return response()->json($response);
     }
 
