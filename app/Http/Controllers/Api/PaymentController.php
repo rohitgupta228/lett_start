@@ -57,40 +57,34 @@ class PaymentController extends Controller
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
 
-    /**
-     * Get the guard to be used during authentication.
-     *
-     * @return \Illuminate\Contracts\Auth\Guard
-     */
-    public function guard()
-    {
-        return Auth::guard();
-    }
-
     public function validateCoupan(Request $request)
     {
         $data = $request->all();
-        $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
-        if ($coupanDetails) {
-            $product = \App\Models\Product::where('productId', $data['product_id'])->first();
-            $amountPaid = $amount = $data['multi'] ? $product->price * 5 : $product->price;
-            $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
-            $response = [
-                'code' => 200,
-                'message' => 'success',
-                'data' => [
-                    'amountPaid' => $amountPaid
-                ]
-            ];
+        if ($data['coupan'] == env('FIRST_TIME_TRANSACTION_COUPAN_CODE')) {
+            $user = \App\User::find($data['user_id']);
+            if (!$user->first_time_transaction)
+                $response = [
+                    'code' => 404,
+                    'message' => 'This coupan is only valid for first time transaction',
+                ];
         } else {
-            $response = [
-                'code' => 404,
-                'message' => 'Invalid Coupan code',
-                'data' => [
-                    'url' => '',
-                    'status' => false
-                ],
-            ];
+            $coupanDetails = \App\Models\Coupan::where('coupan_code', $data['coupan'])->first();
+            if ($coupanDetails) {
+                $product = \App\Models\Product::where('productId', $data['product_id'])->first();
+                $amountPaid = $amount = $data['multi'] ? $product->price * 5 : $product->price;
+                $amountPaid = $amountPaid - ($amountPaid * ($coupanDetails->discount_percent / 100));
+                $response = [
+                    'code' => 200,
+                    'message' => 'success',
+                    'data' => [
+                        'amountPaid' => $amountPaid
+                    ]
+                ];
+            } else
+                $response = [
+                    'code' => 404,
+                    'message' => 'Invalid Coupan code',
+                ];
         }
         return response()->json($response);
     }
@@ -363,6 +357,7 @@ class PaymentController extends Controller
             'coupan_code' => $data['coupan'] ?? null,
             'multi' => $data['multi']
         ];
+        $user->update(['first_time_transaction' => false]);
         $transaction = Transaction::create($paymentData);
         $downloads = \App\Models\Download::where('product_id', $data['product']->id)->first();
         $downloads = $downloads ? $downloads->update(['num_downloads' => $downloads->num_downloads + 1]) : \App\Models\Download::create(['product_id' => $data['product']->id, 'num_downloads' => 1]);

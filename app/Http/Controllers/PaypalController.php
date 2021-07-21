@@ -69,6 +69,8 @@ class PaypalController extends Controller
                 if ($result->getState() == 'approved') {
                     logger($result->getState());
                     $this->sendEmailOnSuccess($data, $product);
+                    $user = Auth::user();
+                    $user->update(['first_time_transaction' => false]);
                     $transaction->update(['payment_status' => $paymentStatus[0], 'response' => $result]);
                     $downloads = \App\Models\Download::where('product_id', $product->id)->first();
                     $downloads = $downloads ? $downloads->update(['num_downloads' => $downloads->num_downloads + 1]) : \App\Models\Download::create(['product_id' => $product->id, 'num_downloads' => 1]);
